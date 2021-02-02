@@ -1,0 +1,319 @@
+@use "colors" as *;
+@use "breakpoints" as *;
+@use "shadows" as *;
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  top: 3px;
+
+  a {
+    font-size: 26px;
+    font-family: "Poppins";
+    text-decoration: none;
+    color: $color--primary;
+    font-weight: bolder;
+  }
+}
+
+nav {
+  top: 0;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  z-index: 1000;
+  z-index: 999;
+
+  .menu__wrapper {
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+
+  .container {
+    position: relative;
+  }
+}
+
+.mobile-menu__toggle {
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+  cursor: pointer;
+  height: 46px;
+  width: 46px;
+  padding: 10px;
+  margin-left: auto;
+  position: relative;
+  transition: all 0.15s ease-in-out; /* all 0.15s ease-in-out */
+  transform: none; /* rotate(-45deg) */
+  border-radius: 9999px;
+
+  .mobile-menu__toggle--mask {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: $color--text;
+    border-radius: 20px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: all 0.1s ease-out; /* all 0.15s ease-in */
+  }
+
+  span:nth-child(1) {
+    top: 10%; /* calc(50% - 1px) */
+  }
+  span:nth-child(2) {
+    top: calc(50% - 2px);
+    left: 0;
+    transform-origin: left center;
+    opacity: 1; /* 0 */
+  }
+  span:nth-child(3) {
+    top: calc(90% - 4px); /* 0 */
+    left: 0; /* calc(50% - 1px) */
+    transform-origin: left center;
+    width: 100%;
+    height: 2px; /* 100% */
+    width: 100%; /* 2px */
+    transform-origin: left center;
+  }
+
+  /* purgecss start ignore */
+  &.open {
+    transition: all 0.15s ease-in-out;
+    transform: rotate(-45deg);
+
+    span {
+      transition: all 0.15s ease-in;
+      color: white;
+      background: $color--text;
+    }
+    span:nth-child(1) {
+      top: calc(50% - 1px);
+    }
+    span:nth-child(2) {
+      top: calc(50% - 2px);
+      left: 0;
+      transform-origin: left center;
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      top: 0;
+      left: calc(50% - 1px);
+      transform-origin: left center;
+      width: 100%;
+      height: 100%;
+      width: 2px;
+      transform-origin: left center;
+    }
+  }
+  /* purgecss end ignore */
+}
+
+.navigation-menu {
+  transition: 0.2s;
+  position: absolute;
+  top: calc(100%);
+  margin: 0 auto;
+  z-index: 999;
+  background: #ffffff;
+  width: 100%;
+  height: fit-content;
+  left: 0;
+  top: 0;
+  border-radius: 8px;
+  padding: 2rem;
+  color: white;
+  box-shadow: 2px 2px 80px 0px #00000010, 2px 2px 40px -20px #00000030;
+  top: calc(100% + 24px);
+
+  @include media-breakpoint-up(sm) {
+    padding: 1.5rem;
+  }
+  @include media-breakpoint-up(md) {
+    padding: 2.2rem;
+  }
+
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out, visibility 0s 0.1s;
+  transform: scale(0.95);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+
+  /* purgecss start ignore */
+  &.open {
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out, visibility 0s 0s;
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+
+    .menu__main a.menu__item {
+      visibility: visible;
+    }
+  }
+  /* purgecss end ignore */
+
+  .menu__main {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: auto;
+
+    a.menu__item {
+      text-decoration: none;
+      font-size: 17px;
+      color: $color--heading;
+      padding: 10px 0;
+      display: block;
+      font-weight: 400;
+      font-family: "Poppins";
+
+      &:hover {
+        color: $color--primary;
+      }
+
+      @include media-breakpoint-up(lg) {
+        visibility: visible;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: row;
+    visibility: visible;
+    opacity: 1;
+    transition: none;
+    transform: none;
+    justify-content: space-between;
+    background: transparent;
+    position: static;
+    height: 100%;
+    margin: 0;
+    min-height: 0;
+    padding: 0;
+    align-items: center;
+    box-shadow: none;
+
+    .menu__main {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      margin-bottom: auto;
+      display: flex;
+      align-items: center;
+      margin-left: 2rem;
+      background: transparent;
+
+      a.menu__item,
+      span.menu__item {
+        font-size: 16px;
+        padding: 0;
+        padding: 4px 12px;
+        font-family: "Poppins";
+
+        &:hover {
+          color: $color--primary;
+        }
+      }
+    }
+
+    .menu__cta {
+      flex-direction: row;
+      margin: 0;
+      margin-top: 2px;
+
+      p {
+        box-sizing: inherit;
+        font-family: "Avenir Regular", "Raleway", "Raleway Extrabold";
+        font-size: 1rem;
+        color: $color--text;
+      }
+
+      a {
+        color: $color--heading;
+        text-decoration: none;
+        font-size: 16px;
+        font-family: "Avenir Demi";
+      }
+
+      a.accent {
+        color: $color--heading;
+        text-decoration: none;
+      }
+
+      .btn {
+        color: #fff;
+        border-radius: 5px;
+        display: inline-block;
+        margin-left: 1.3rem;
+        margin-right: 0;
+        background: $color--heading;
+        border: 1px solid $color--heading;
+
+        &:hover {
+          background: $color--primary;
+          border: 1px solid $color--primary;
+        }
+      }
+    }
+  }
+}
+
+.silo nav {
+  position: absolute;
+}
+
+.light-nav nav {
+  position: absolute;
+  .logo svg {
+    #mindtrust-text path,
+    #mindtrust-icon path,
+    #mindtrust-copyright path {
+      fill: #fff;
+    }
+
+    #mindtrust-icon > #mindtrust-shape-1,
+    #mindtrust-icon > #mindtrust-shape-3 {
+      fill: rgba(255, 255, 255, 0.35);
+    }
+
+    #mindtrust-icon > #mindtrust-center-shape {
+      fill: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .navigation-menu .menu__main .menu__item {
+    color: #ffffffcc;
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  .navigation-menu .menu__main .has-submenu {
+    &:hover span {
+      color: #fff;
+    }
+  }
+
+  .navigation-menu .menu__cta p {
+    color: #ffffff;
+  }
+
+  .mobile-menu__toggle span {
+    background: $color--text;
+  }
+}

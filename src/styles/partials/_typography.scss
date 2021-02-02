@@ -1,0 +1,102 @@
+@use "colors" as *;
+@use "breakpoints" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap");
+
+html,
+body,
+div,
+p,
+span,
+small,
+input,
+::placeholder,
+textarea,
+button,
+a {
+  color: $color--text;
+  font-family: "Poppins", "Raleway";
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color--heading;
+  font-weight: 600;
+  font-family: "Poppins", "Raleway Extrabold";
+  margin-bottom: 1.125rem;
+}
+
+h1,
+.h1 {
+  font-size: 38px;
+  line-height: 48px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 52px;
+    line-height: 64px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 28px;
+  line-height: 30px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 22px;
+  line-height: 30px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 18px;
+  line-height: 30px;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 2rem;
+}
+
+a {
+  color: $color--link;
+  font-weight: bold;
+}
+
+.section-heading {
+  margin-bottom: 1rem;
+  margin-top: 0;
+  max-width: 600px;
+  font-weight: 900;
+  line-height: 3.125rem;
+}
+
+.section-description {
+  font-size: 20px;
+  margin-top: 0;
+  max-width: 769px;
+}
+
+.section-description:last-of-type {
+  margin-bottom: 2rem;
+}
