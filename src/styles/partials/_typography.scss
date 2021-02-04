@@ -37,9 +37,9 @@ h1,
   font-size: 38px;
   line-height: 48px;
 
-  @include media-breakpoint-up(md) {
-    font-size: 52px;
-    line-height: 64px;
+  @include media-breakpoint-up(lg) {
+    font-size: 44px;
+    line-height: 60px;
   }
 }
 
@@ -48,7 +48,7 @@ h2,
   font-size: 28px;
   line-height: 30px;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     font-size: 30px;
     line-height: 40px;
   }
@@ -59,7 +59,7 @@ h3,
   font-size: 22px;
   line-height: 30px;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     font-size: 24px;
     line-height: 30px;
   }
@@ -73,9 +73,14 @@ h4,
 }
 
 p {
-  font-size: 17px;
   font-weight: 300;
-  line-height: 2rem;
+  font-size: 16px;
+  line-height: 28px;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 17px;
+    line-height: 2rem;
+  }
 }
 
 a {
@@ -92,9 +97,17 @@ a {
 }
 
 .section-description {
-  font-size: 18px;
   margin-top: 0;
   max-width: 769px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  font-family: "Nunito Sans" !important;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 19.5px;
+    line-height: 28px;
+  }
 }
 
 .section-description:last-of-type {
