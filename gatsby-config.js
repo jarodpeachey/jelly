@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Launch Outreach - Cold email outreach to grow your B2B agency`,
-    description: `25+ customizable themes for Twitter`,
+    title: `Custom websites tailored to grow your business`,
+    description: `At Jelly Development, we offer fully custom websites that are SEO-friendly, responsive, fully accessible and blazing fast. Our websites are crafted to target your audience, making them the perfect way to get your business a better online presence.`,
     author: `@jarodpeachey`,
-    siteUrl: "https://launchoutreach.com",
+    siteUrl: "https://jellydevelopment.com",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
