@@ -18,16 +18,16 @@ const Home = ({ props }) => {
           </div>
           <div className="container container--wide">
             <div className="row">
-              <div className="col-md-10 col-lg-8">
+              <div className="col-md-10 col-lg-8 col-xl-6">
                 <h1 className="">Custom websites and solutions tailored to grow your business.</h1>
                 <p className="section-description">Your website represents your business, and your business needs the best website it can get.</p>
                 <p className="section-description">We combine design, branding, SEO and copywriting to craft the perfect website for you and your customers.</p>
 
-                <a href="" className="btn">
+                <a href="#contact" className="btn">
                   Get your website
                 </a>
-                <a href="" className="btn outlined">
-                  View projects
+                <a href="#services" className="btn outlined">
+                  Read more
                 </a>
               </div>
             </div>
@@ -78,7 +78,7 @@ const Home = ({ props }) => {
           </svg>
         </section>
         <main>
-          <section className="services">
+          <section id="services" className="services">
             <div className="container">
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
@@ -148,7 +148,7 @@ const Home = ({ props }) => {
               </div>
             </div>
           </section>
-          <section className="cta">
+          <section className="cta" id="contact">
             <div className="container">
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
@@ -157,41 +157,32 @@ const Home = ({ props }) => {
                     Upgrade your website
                   </a> */}
                   <div className="card">
-                    <div className="row">
-                      <div className="col-lg-12">
-                        <label name="name">
-                          Name
-                          <input type="text" id="name" name="name" placeholder="name" />
-                        </label>
+                    <form action="https://getform.io/f/33532d76-9ec0-4244-bd5a-fd210a4a2a96" method="POST">
+                      <div className="row">
+                        <div className="col-lg-12">
+                          <label name="name">
+                            Name <span>*</span>
+                            <input required type="text" id="name" name="name" placeholder="Name" />
+                          </label>
+                        </div>
+                        <div className="col-lg-12">
+                          <label name="email">
+                            Email <span>*</span>
+                            <input required type="email" id="email" name="email" placeholder="Email" />
+                          </label>
+                        </div>
+                        <div className="col-lg-12">
+                          <label name="message">
+                            What are you looking for? <span>*</span>
+                            <textarea required id="message" name="message" placeholder="I'd like to chat about a website for my business" />
+                          </label>
+                        </div>
+                        <div className="col-lg-12">
+                          <input type="submit" value="Send it away!" className="btn" />
+                        </div>
                       </div>
-                      <div className="col-lg-12">
-                        <label name="email">
-                          Email
-                          <input type="email" id="email" name="email" placeholder="email" />
-                        </label>
-                      </div>
-                      <div className="col-lg-12">
-                        <label name="services">
-                          What are you looking for?
-                          <label>
-                            <input type="checkbox" name="services" value="design" />
-                            Website design
-                          </label>
-                          <label>
-                            <input type="checkbox" name="services" value="seo" />
-                            SEO
-                          </label>
-                          <label>
-                            <input type="checkbox" name="services" value="copywriting" />
-                            Copywriting
-                          </label>
-                          <label>
-                            <input type="checkbox" name="services" value="custom" />
-                            Custom solutions
-                          </label>
-                        </label>
-                      </div>
-                    </div>
+                      <p className="subtext">We'll get in touch with you within 24 hours, and we'll never spam you.</p>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -199,7 +190,11 @@ const Home = ({ props }) => {
           </section>
         </main>
       </div>
-      {/* <Footer /> */}
+      <footer className="footer">
+        <div className="container">
+          <p>© 2021 Jelly Development LLC</p>
+        </div>
+      </footer>
     </>
   );
 };

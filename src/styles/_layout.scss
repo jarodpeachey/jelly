@@ -2,6 +2,7 @@
 @use "partials/_buttons" as *;
 @use "partials/_breakpoints" as *;
 @use "vendor/_grid" as *;
+@use "partials/_footer.scss" as *;
 
 html {
   font-size: 100%;

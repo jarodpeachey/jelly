@@ -26,11 +26,11 @@ const Navigation = () => {
                   Services
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#projects" className="menu__item">
                   Projects
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="#contact" className="menu__item">
                   Contact
