@@ -4,33 +4,33 @@
 // @use "utilities" as *;
 
 .btn {
-  background: $color--primary !important;
-  color: white !important;
-  padding: 16px 24px 15px 24px !important;
-  font-size: 15px !important;
-  text-decoration: none !important;
-  border-radius: 3px !important;
-  border: 1px solid $color--primary !important;
-  display: block !important;
-  text-align: center !important;
-  width: fit-content !important;
-  font-weight: 500 !important;
-  // font-family: "Nunito Sans" !important;
-  transition: background 0.3s, box-shadow .3s !important;
-  text-transform: uppercase !important;
-  box-shadow: 1px 2px 4px -1px #1b1a2710, 3px 5px 8px -2px #1b1a2710 !important;
+  background: $color--primary;
+  color: white;
+  padding: 16px 24px 15px 24px;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 3px;
+  border: 1px solid $color--primary;
+  display: block;
+  text-align: center;
+  width: fit-content;
+  font-weight: 500;
+  // font-family: "Nunito Sans";
+  transition: background 0.3s, box-shadow .3s;
+  text-transform: uppercase;
+  box-shadow: 1px 2px 4px -1px #1b1a2710, 3px 5px 8px -2px #1b1a2710;
 
   &:hover {
-    box-shadow: 1px 2px 4px -1px #1b1a2720, 3px 5px 8px -2px #1b1a2720, 1px 1px 26px -6px #1b1a2720 !important;
+    box-shadow: 1px 2px 4px -1px #1b1a2720, 3px 5px 8px -2px #1b1a2720, 1px 1px 26px -6px #1b1a2720;
   }
 
   &.outlined {
-    background: transparent !important;
-    color: $color--primary !important;
-    box-shadow: none !important;
+    background: transparent;
+    color: $color--primary;
+    box-shadow: none;
 
     &:hover {
-      box-shadow: 1px 2px 4px -1px #1b1a2710, 3px 5px 8px -2px #1b1a2710 !important;
+      box-shadow: 1px 2px 4px -1px #1b1a2710, 3px 5px 8px -2px #1b1a2710;
     }
   }
 }

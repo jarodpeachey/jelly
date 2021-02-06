@@ -255,6 +255,7 @@ nav {
       // margin-left: 2rem;
       background: transparent;
       width: fit-content;
+      flex-direction: row;
 
       a.menu__item,
       span.menu__item {
