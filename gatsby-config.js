@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Custom websites tailored to grow your business`,
-    description: `At Jelly Development, we offer fully custom websites that are SEO-friendly, responsive, fully accessible and blazing fast. Our websites are crafted to target your audience, making them the perfect way to get your business a better online presence.`,
+    description: `We create fully custom websites that are SEO-friendly, responsive, fully accessible and blazing fast. Our websites are crafted to target your audience, making them the perfect way to get your business a better online presence.`,
     author: `@jarodpeachey`,
     siteUrl: "https://jellydevelopment.com",
   },
