@@ -21,7 +21,7 @@ function SEO({ description, title, bodyClass }) {
 
   const defaultDescription = site.siteMetadata.description;
   const defaultTitle = site.siteMetadata.title;
-  const image = "/media/img/seo.jpg?test=true";
+  const image = "/media/img/seo.jpg?test=false";
 
 
   return (
@@ -31,8 +31,8 @@ function SEO({ description, title, bodyClass }) {
       <meta name="og:description" content={description || defaultDescription} />
       <meta name="og:type" content="website" />
       <link rel="icon" type="image/svg+xml" href="/media/img/icons/icon--rocket.png"></link>
-      <meta name="og:image" content={`https://launchoutreach.com${image}?test=true`} />
-      <meta name="twitter:image" content={`https://launchoutreach.com${image}?test=true`} />
+      <meta name="og:image" content={`https://launchoutreach.com${image}`} />
+      <meta name="twitter:image" content={`https://launchoutreach.com${image}`} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={site.siteMetadata.author} />
       <meta name="twitter:title" content={title || defaultTitle} />
