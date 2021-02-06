@@ -168,6 +168,7 @@ nav {
   border-radius: 5px;
   box-shadow: 1px 2px 4px -1px #18144105, 3px 5px 8px -2px #1b1a2710, 1px 1px 40px -6px #1b1a2710, 1px 1px 80px -16px #1b1a2720;
   top: calc(100% + 24px);
+  max-height: 50%;
 
   @include media-breakpoint-up(sm) {
     padding: 1.5rem;
@@ -202,6 +203,10 @@ nav {
     padding: 0;
     list-style: none;
     margin-bottom: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
     a.menu__item {
       text-decoration: none;
@@ -249,6 +254,7 @@ nav {
       align-items: center;
       // margin-left: 2rem;
       background: transparent;
+      width: fit-content;
 
       a.menu__item,
       span.menu__item {
