@@ -303,8 +303,10 @@
       }
 
       input[type="text"],
-      input[type="button"] {
-        -webkit-appearance: none;
+      input[type="button"],
+      input,
+      input[type="submit"] {
+        -webkit-appearance: none !important;
         -webkit-border-radius: 0;
       }
 
