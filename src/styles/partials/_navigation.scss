@@ -168,7 +168,7 @@ nav {
   border-radius: 5px;
   box-shadow: 1px 2px 4px -1px #18144105, 3px 5px 8px -2px #1b1a2710, 1px 1px 40px -6px #1b1a2710, 1px 1px 80px -16px #1b1a2720;
   top: calc(100% + 24px);
-  max-height: 50%;
+  max-height: 50vh;
 
   @include media-breakpoint-up(sm) {
     padding: 1.5rem;
