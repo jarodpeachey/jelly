@@ -13,11 +13,32 @@
     mobileMenuToggle.addEventListener("click", toggleMobileMenu);
   }
 
+  if (window.scrollY > 80) {
+    document.querySelector("nav").classList.add("scrolled");
+  } else {
+    document.querySelector("nav").classList.remove("scrolled");
+  }
+
   document.addEventListener("scroll", e => {
     if (window.scrollY > 80) {
       document.querySelector("nav").classList.add("scrolled");
     } else {
       document.querySelector("nav").classList.remove("scrolled");
+    }
+  });
+
+  document.addEventListener("click", e => {
+    if (
+      open &&
+      !e.target.classList.contains("navigation-menu") &&
+      !e.target.classList.contains("mobile-menu__toggle--mask") &&
+      !e.target.classList.contains("mobile-menu__toggle") &&
+      !e.target.classList.contains("mobile-menu__toggle--span")
+    ) {
+      menu.classList.remove("open");
+      mobileMenuToggle.classList.remove("open");
+      wrapper.classList.remove("blur");
+      open = false;
     }
   });
 

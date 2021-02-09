@@ -39,20 +39,20 @@ section {
 aside,
 section,
 footer {
-  padding: 3rem 0;
+  margin-bottom: -2rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+
+  .container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 
   &.overflow {
     padding-bottom: 50rem;
-    margin-bottom: -47rem;
-  }
-
-  @include media-breakpoint-up(md) {
-    padding: 5rem 0;
-
-    &.overflow {
-      padding-bottom: 50rem;
-      margin-bottom: -45rem;
-    }
+    margin-bottom: -50rem;
   }
 }
 

@@ -1,6 +1,12 @@
 footer {
   background: #181c2b;
   padding: 1.5rem 0 !important;
+  margin-top: 2rem;
+
+  .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
 
   p {
     color: white;

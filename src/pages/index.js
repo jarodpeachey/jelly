@@ -12,7 +12,7 @@ const Home = ({ props }) => {
         <Navigation />
       </header>
       <div id="wrapper" className="wrapper">
-        <section className="hero">
+        <section className="hero" id="home">
           <div className="background">
             <div></div>
           </div>
@@ -78,8 +78,8 @@ const Home = ({ props }) => {
           </svg>
         </section>
         <main>
-          <section id="services" className="services">
-            <div className="container">
+          <section className="services">
+            <div className="container" id="services">
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
                   <p className="display">WHY JELLY</p>
@@ -148,8 +148,8 @@ const Home = ({ props }) => {
               </div>
             </div>
           </section>
-          <section className="cta" id="contact">
-            <div className="container">
+          <section className="cta">
+            <div className="container" id="contact">
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
                   <h2>Ready for a brand new website for your business?</h2>
@@ -178,7 +178,7 @@ const Home = ({ props }) => {
                           </label>
                         </div>
                         <div className="col-lg-12">
-                          <input type="submit" value="Send it away!" className="btn" />
+                          <input type="submit" value="Get in touch" className="btn" />
                         </div>
                       </div>
                       <p className="subtext">We'll get in touch with you within 24 hours, and we'll never spam you.</p>

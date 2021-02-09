@@ -8,15 +8,15 @@ const Navigation = () => {
       <div className="container container--wide">
         <div className="menu__wrapper">
           <div className="logo" id="logo">
-            <a href="/" aria-label="MindTrust Homepage">
+            <a href="#home" aria-label="MindTrust Homepage">
               Jelly
             </a>
           </div>
           <div className="mobile-menu__toggle">
             <div className="mobile-menu__toggle--mask">
-              <span></span>
-              <span></span>
-              <span></span>
+              <span className="mobile-menu__toggle--span"></span>
+              <span className="mobile-menu__toggle--span"></span>
+              <span className="mobile-menu__toggle--span"></span>
             </div>
           </div>
           <div className="navigation-menu">
