@@ -22,7 +22,9 @@
     }
 
     @include media-breakpoint-up(md) {
-      padding-top: calc(9rem);
+      .container {
+        padding-top: 9rem;
+      }
     }
 
     text-align: left;
