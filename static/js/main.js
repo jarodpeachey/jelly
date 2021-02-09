@@ -13,5 +13,5 @@
     console.log("Appended script: ", script);
   }
 
-  // addScript("https://cdn.panelbear.com/analytics.js?site=AWDiQlAMLLe");
+  addScript("https://cdn.panelbear.com/analytics.js?site=6ypKAkp1UIM");
 })();

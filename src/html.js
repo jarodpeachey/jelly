@@ -21,7 +21,7 @@ export default function HTML(props) {
         <script
           dangerouslySetInnerHTML={{
             __html:
-              'window.panelbear=window.panelbear||function(){window.panelbearQ=window.panelbearQ||[],panelbearQ.push(arguments)},panelbear("config",{site: "AWDiQlAMLLe"});',
+              'window.panelbear=window.panelbear||function(){window.panelbearQ=window.panelbearQ||[],panelbearQ.push(arguments)},panelbear("config",{site: "6ypKAkp1UIM"});',
           }}
         />
       </body>
