@@ -19,8 +19,8 @@ const Home = ({ props }) => {
           <div className="container container--wide">
             <div className="row">
               <div className="col-md-10 col-lg-8 col-xl-6">
-                <h1 className="">Custom websites designed to grow your business.</h1>
-                <p className="section-description">Get a fully-custom website designed to increase your revenue and make your customers happy.</p>
+                <h1 className="">Remarkable custom websites designed to grow your business.</h1>
+                <p className="section-description">Get a fully-custom website designed to generate more traffic and make your customers happy.</p>
                 {/* <p className="section-description">We combine design, branding, SEO and copywriting to craft the perfect website for you and your customers.</p> */}
 
                 <a href="#contact" className="btn">
@@ -83,7 +83,7 @@ const Home = ({ props }) => {
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
                   <p className="display">WHY JELLY</p>
-                  <h2>Everything you need from a custom website</h2>
+                  <h2>Custom website design from start to finish</h2>
                   <p className="section-description">
                     A custom website is more than just a design; Our websites are crafted from top to bottom so that every aspect is perfect for you and your
                     business.
@@ -93,7 +93,7 @@ const Home = ({ props }) => {
               <div className="row">
                 <div className="col-md-6 col-lg-4 p-4">
                   <div className="service">
-                    <img src="/media/img/icons/icon--book.svg" alt="" />
+                    <img loading="lazy" src="/media/img/icons/icon--book.svg" alt="Custom website design" />
                     <h3>Brand Identity</h3>
                     <p>
                       Your website needs to be designed to attract potential customers. That's why we research your market and competitors to design and build a
@@ -103,7 +103,7 @@ const Home = ({ props }) => {
                 </div>
                 <div className="col-md-6 col-lg-4 p-4">
                   <div className="service">
-                    <img src="/media/img/icons/icon--search.svg" alt="" />
+                    <img loading="lazy" src="/media/img/icons/icon--search.svg" alt="SEO optimization" />
                     <h3>SEO Optimized</h3>
                     <p>
                       A website isn't much help if people can't find it. After market research, we make sure to optimize your website for Google search results,
@@ -113,7 +113,7 @@ const Home = ({ props }) => {
                 </div>
                 <div className="col-md-6 col-lg-4 p-4">
                   <div className="service">
-                    <img src="/media/img/icons/icon--rocket.svg" alt="" />
+                    <img loading="lazy" src="/media/img/icons/icon--rocket.svg" alt="Blazing fast load times" />
                     <h3>Blazing Fast</h3>
                     <p>
                       A fast website not only helps your search rankings, it also increases your conversion rate. We make sure your website loads in the blink
@@ -123,14 +123,14 @@ const Home = ({ props }) => {
                 </div>
                 <div className="col-md-6 col-lg-4 p-4">
                   <div className="service">
-                    <img src="/media/img/icons/icon--users.svg" alt="" />
+                    <img loading="lazy" src="/media/img/icons/icon--users.svg" alt="Full accessible website" />
                     <h3>Fully Accessible</h3>
                     <p>Not all of your customers are the same. We make sure that your website is usable by those with visual or other impairments.</p>
                   </div>
                 </div>
                 <div className="col-md-6 col-lg-4 p-4">
                   <div className="service">
-                    <img src="/media/img/icons/icon--database.svg" alt="" />
+                    <img loading="lazy" src="/media/img/icons/icon--database.svg" alt="Modern hosting" />
                     <h3>Modern Hosting</h3>
                     <p>
                       Hosting your website will never be easier. We set up and manage monthly hosting for you, so you don't have to worry about downtime or
@@ -140,7 +140,7 @@ const Home = ({ props }) => {
                 </div>
                 <div className="col-md-6 col-lg-4 p-4">
                   <div className="service">
-                    <img src="/media/img/icons/icon--headset.svg" alt="" />
+                    <img loading="lazy" src="/media/img/icons/icon--headset.svg" alt="Easy to maintain" />
                     <h3>Ongoing Support</h3>
                     <p>
                       We know that your website is going to run into some issues, and you'll want updates in the future. We offer ongoing maintenance for your
@@ -166,11 +166,8 @@ const Home = ({ props }) => {
             <div className="container" id="contact">
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
-                  {/* <a href="/contact" className="btn">
-                    Upgrade your website
-                  </a> */}
                   <div className="card">
-                    <h3>Ready for a brand new website for your business?</h3>
+                    <h3>Ready for your perfect custom website?</h3>
                     <form action="https://getform.io/f/33532d76-9ec0-4244-bd5a-fd210a4a2a96" method="POST">
                       <div className="row">
                         <div className="col-lg-12">

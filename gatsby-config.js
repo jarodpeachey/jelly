@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Full-service custom website design & development`,
-    description: `Get the perfect custom website for your business. We specialize in website design, SEO, accessibility and copywriting. Our websites are crafted to be beautiful, easy-to-use and optimized for increasing your business's revenue.`,
+    title: `Custom website design & development`,
+    description: `Get the perfect custom website for your business. We specialize in custom website design, SEO, accessibility and copywriting. Our websites are crafted to be beautiful, easy-to-use and optimized for increasing your business's revenue.`,
     author: `@jarodpeachey`,
     siteUrl: "https://jellydevelopment.com",
   },
