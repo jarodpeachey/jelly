@@ -19,12 +19,12 @@ const Home = ({ props }) => {
           <div className="container container--wide">
             <div className="row">
               <div className="col-md-10 col-lg-8 col-xl-6">
-                <h1 className="">Custom websites and solutions tailored to grow your business.</h1>
-                <p className="section-description">Your website represents your business, and your business needs the best website it can get.</p>
-                <p className="section-description">We combine design, branding, SEO and copywriting to craft the perfect website for you and your customers.</p>
+                <h1 className="">Custom websites designed to grow your business.</h1>
+                <p className="section-description">Get a fully-custom website designed to increase your revenue and make your customers happy.</p>
+                {/* <p className="section-description">We combine design, branding, SEO and copywriting to craft the perfect website for you and your customers.</p> */}
 
                 <a href="#contact" className="btn">
-                  Get your website
+                  Get your custom website
                 </a>
                 <a href="#services" className="btn outlined">
                   Read more
@@ -83,8 +83,11 @@ const Home = ({ props }) => {
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
                   <p className="display">WHY JELLY</p>
-                  <h2>Quality inside and out</h2>
-                  <p className="section-description">Our websites are crafted from top to bottom so that every aspect is perfect for you and your business.</p>
+                  <h2>Everything you need from a custom website</h2>
+                  <p className="section-description">
+                    A custom website is more than just a design; Our websites are crafted from top to bottom so that every aspect is perfect for you and your
+                    business.
+                  </p>
                 </div>
               </div>
               <div className="row">
@@ -93,8 +96,8 @@ const Home = ({ props }) => {
                     <img src="/media/img/icons/icon--book.svg" alt="" />
                     <h3>Brand Identity</h3>
                     <p>
-                      Your website needs to be tailored to your customers. That's why we research your market and competitors to design and build a website that
-                      your customers will love.
+                      Your website needs to be designed to attract potential customers. That's why we research your market and competitors to design and build a
+                      website that your customers will love.
                     </p>
                   </div>
                 </div>
@@ -148,15 +151,26 @@ const Home = ({ props }) => {
               </div>
             </div>
           </section>
+          <section className="benefits">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+                  <h2>Attract more customers</h2>
+                  <p>With a custom website, you can reach more customers for your business with tailored SEO, accessibility and copywriting.</p>
+                  <p>We research your target market before designing your website, so you get a website that attracts and converts new customers.</p>
+                </div>
+              </div>
+            </div>
+          </section>
           <section className="cta">
             <div className="container" id="contact">
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
-                  <h2>Ready for a brand new website for your business?</h2>
                   {/* <a href="/contact" className="btn">
                     Upgrade your website
                   </a> */}
                   <div className="card">
+                    <h3>Ready for a brand new website for your business?</h3>
                     <form action="https://getform.io/f/33532d76-9ec0-4244-bd5a-fd210a4a2a96" method="POST">
                       <div className="row">
                         <div className="col-lg-12">
