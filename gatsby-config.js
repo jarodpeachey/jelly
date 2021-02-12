@@ -45,5 +45,6 @@ module.exports = {
         excludeFiles: "request",
       },
     },
+    "gatsby-plugin-robots-txt",
   ],
 };
