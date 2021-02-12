@@ -9,8 +9,6 @@
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
-
-    console.log("Appended script: ", script);
   }
 
   addScript("https://cdn.panelbear.com/analytics.js?site=6ypKAkp1UIM");
