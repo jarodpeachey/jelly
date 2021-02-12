@@ -83,7 +83,7 @@ const Home = ({ props }) => {
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
                   <p className="display">WHY JELLY</p>
-                  <h2>Custom website design from start to finish</h2>
+                  <h2>We give you more than just a beautiful website</h2>
                   <p className="section-description">
                     We do more than just design pretty websites; Our sites are crafted from top to bottom so that every aspect is perfect for you and your
                     business.
