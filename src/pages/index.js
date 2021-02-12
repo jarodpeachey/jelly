@@ -85,7 +85,7 @@ const Home = ({ props }) => {
                   <p className="display">WHY JELLY</p>
                   <h2>Custom website design from start to finish</h2>
                   <p className="section-description">
-                    A custom website is more than just a design; Our websites are crafted from top to bottom so that every aspect is perfect for you and your
+                    We do more than just design pretty websites; Our sites are crafted from top to bottom so that every aspect is perfect for you and your
                     business.
                   </p>
                 </div>
@@ -96,7 +96,7 @@ const Home = ({ props }) => {
                     <img loading="lazy" src="/media/img/icons/icon--book.svg" alt="Custom website design" />
                     <h3>Brand Identity</h3>
                     <p>
-                      Your website needs to be designed to attract potential customers. That's why we research your market and competitors to design and build a
+                      Your business needs a website designed to attract potential customers. That's why we research your market and competitors to design and build a
                       website that your customers will love.
                     </p>
                   </div>
@@ -105,9 +105,7 @@ const Home = ({ props }) => {
                   <div className="service">
                     <img loading="lazy" src="/media/img/icons/icon--search.svg" alt="SEO optimization" />
                     <h3>SEO Optimized</h3>
-                    <p>
-                      A website isn't much help if people can't find it. After market research, we make sure to optimize your website for Google search results,
-                      so your customers will come to you.
+                    <p>We fully optimize every part of your site to make it easier for customers to find you, not the other way around.
                     </p>
                   </div>
                 </div>
@@ -116,7 +114,7 @@ const Home = ({ props }) => {
                     <img loading="lazy" src="/media/img/icons/icon--rocket.svg" alt="Blazing fast load times" />
                     <h3>Blazing Fast</h3>
                     <p>
-                      A fast website not only helps your search rankings, it also increases your conversion rate. We make sure your website loads in the blink
+                      A fast website not only helps your search rankings, it also increases your conversion rate. We make sure your new site loads in the blink
                       of an eye, so you can turn your visitors into customers.
                     </p>
                   </div>
@@ -143,8 +141,7 @@ const Home = ({ props }) => {
                     <img loading="lazy" src="/media/img/icons/icon--headset.svg" alt="Easy to maintain" />
                     <h3>Ongoing Support</h3>
                     <p>
-                      We know that your website is going to run into some issues, and you'll want updates in the future. We offer ongoing maintenance for your
-                      website, so you never have to struggle to fix something.
+                      We know that your website is going to run into some issues, and you'll want updates in the future. We offer ongoing maintenance and support, for a super low price.
                     </p>
                   </div>
                 </div>
@@ -157,7 +154,7 @@ const Home = ({ props }) => {
                 <div className="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
                   <h2>Attract more customers</h2>
                   <p>With a custom website, you can reach more customers for your business with tailored SEO, accessibility and copywriting.</p>
-                  <p>We research your target market before designing your website, so you get a website that attracts and converts new customers.</p>
+                  <p>We research your target market before designing your website, so you can attract and convert new customers.</p>
                 </div>
               </div>
             </div>
