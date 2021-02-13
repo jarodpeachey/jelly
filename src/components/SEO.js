@@ -30,7 +30,7 @@ function SEO({ description, title, bodyClass }) {
       <meta name="og:title" content={title || defaultTitle} />
       <meta name="og:description" content={description || defaultDescription} />
       <meta name="og:type" content="website" />
-      <link rel="icon" type="image/svg+xml" href="/media/img/icons/icon--rocket.png"></link>
+      <link rel="icon" type="image/svg+xml" href="/media/img/logo.png"></link>
       <meta name="og:image" content={`https://jellydevelopment.com${image}`} />
       <meta name="twitter:image" content={`https://jellydevelopment.com${image}`} />
       <meta name="twitter:card" content="summary_large_image" />
