@@ -212,23 +212,6 @@
   }
 
   .services {
-    .col-md-6.col-lg-4 {
-      &:last-child {
-        padding-bottom: 0;
-      }
-
-      @include media-breakpoint-up(md) {
-        &:nth-child(5) {
-          padding-bottom: 0;
-        }
-      }
-
-      @include media-breakpoint-up(lg) {
-        &:nth-child(4) {
-          padding-bottom: 0;
-        }
-      }
-    }
     h2 {
       text-align: center;
       margin-top: 0;
@@ -251,6 +234,23 @@
     .section-description {
       text-align: center;
       margin-bottom: 48px;
+    }
+    .col-md-6.col-lg-4 {
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      @include media-breakpoint-up(md) {
+        &:nth-child(5) {
+          padding-bottom: 0;
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        &:nth-child(4) {
+          padding-bottom: 0;
+        }
+      }
     }
 
     .service {

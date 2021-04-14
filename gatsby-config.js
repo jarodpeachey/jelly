@@ -8,6 +8,16 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: "gatsby-source-cosmicjs",
+      options: {
+        bucketSlug: "jelly-development-production", // Bucket Slug
+        objectTypes: ["posts"], // List of the Object Types you want to be able to request from Gatsby.
+        apiAccess: {
+          read_key: "vA17oFFhuUlFosf6AJhSjW0J9u3cyA63XgYEe7NzSYEJr5vpn9",
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

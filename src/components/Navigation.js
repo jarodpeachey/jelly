@@ -8,7 +8,7 @@ const Navigation = () => {
       <div className="container container--wide">
         <div className="menu__wrapper">
           <div className="logo" id="logo">
-            <a href="#home" aria-label="MindTrust Homepage">
+            <a href="/" aria-label="MindTrust Homepage">
               Jelly
             </a>
           </div>
@@ -22,17 +22,17 @@ const Navigation = () => {
           <div className="navigation-menu">
             <ul className="menu__main">
               <li>
-                <a href="#services" className="menu__item">
+                <a href="/#services" className="menu__item">
                   Services
                 </a>
               </li>
-              {/* <li>
-                <a href="#projects" className="menu__item">
-                  Projects
-                </a>
-              </li> */}
               <li>
-                <a href="#contact" className="menu__item">
+                <a href="/blog" className="menu__item">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="/#contact" className="menu__item">
                   Contact
                 </a>
               </li>
