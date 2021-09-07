@@ -6,31 +6,70 @@
 .btn {
   background: $color--primary;
   color: white;
-  padding: 16px 24px 15px 24px;
-  font-size: 15px;
-  text-decoration: none;
-  border-radius: 3px;
-  border: 1px solid $color--primary;
-  display: block;
+  padding: 16px 32px 15px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 300;
   text-align: center;
+  border: 1px solid $color--primary;
+  box-shadow: 2px 2px 12px 0px #1C2C5E1A;
+  text-decoration: none;
+  position: relative;
+  transition: .2s ease;
+  display: block;
   width: fit-content;
-  font-weight: 500;
-  // font-family: "Nunito Sans";
-  transition: background 0.3s, box-shadow .3s;
-  text-transform: uppercase;
-  box-shadow: 1px 2px 4px -1px #1b1a2710, 3px 5px 8px -2px #1b1a2710;
 
-  &:hover {
-    box-shadow: 1px 2px 4px -1px #1b1a2720, 3px 5px 8px -2px #1b1a2720, 1px 1px 26px -6px #1b1a2720;
+  &::after {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid $color--primary-light;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    display: block;
+    transition: .2s ease;
+    z-index: -1;
+    border-radius: 8px;
   }
 
-  &.outlined {
+  &:hover {
+    // transform: rotate(-4deg);
+    box-shadow: 2px 2px 24px 0px #1c2d5e25;
+
+    &::after {
+      transform: rotate(-6deg);
+      z-index: -1;
+    }
+  }
+
+  &.text {
+    padding-left: 0;
+    padding-right: 0;
     background: transparent;
-    color: $color--primary;
+    color: $color--primary-dark;
+    border: none;
+    display: flex;
+    align-items: center;
     box-shadow: none;
 
+    svg, img {
+      margin-left: 8px;
+      transition: .2s ease;
+    }
+
+    &::after {
+      display: none;
+    }
+
     &:hover {
-      box-shadow: 1px 2px 4px -1px #1b1a2710, 3px 5px 8px -2px #1b1a2710;
+      box-shadow: none;
+
+      svg, img {
+        margin-left: 12px;
+      }
     }
   }
 }
