@@ -51,7 +51,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-md-6 fcol-lg-4">
+                <div className="col-md-6 col-lg-4">
                   <div className="feature">
                     <img src="/media/img/icons/icon--target.svg" alt="Target icon" />
                     <h3>Get more potential customers to your site</h3>
@@ -59,7 +59,7 @@ const Home = () => {
                     <p>We'll optimize your website so more people can find you, and convert them into new customers.</p>
                   </div>
                 </div>
-                <div className="col-md-6 fcol-lg-4">
+                <div className="col-md-6 col-lg-4">
                   <div className="feature">
                     <img src="/media/img/icons/icon--bolt.svg" alt="Target icon" />
                     <h3>Don’t lose customers with a slow website</h3>
@@ -67,7 +67,7 @@ const Home = () => {
                     <p>We'll build your website to load in the blink of an eye, so you don't lose potential business.</p>
                   </div>
                 </div>
-                <div className="col-md-6 fcol-lg-4">
+                <div className="col-md-6 col-lg-4">
                   <div className="feature">
                     <img src="/media/img/icons/icon--badge.svg" alt="Target icon" />
                     <h3>Showcase what your brand is effortlessly</h3>
