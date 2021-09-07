@@ -24,51 +24,44 @@ const Contact = () => {
         </section>
         <main>
           <section className="cta">
-            <svg width="1440" height="187" viewBox="0 0 1440 187" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0)">
-                <ellipse cx="763" cy="185" rx="941" ry="185" fill="white" />
-              </g>
-              <defs>
-                <clipPath id="clip0">
-                  <rect width="1882" height="187" fill="white" transform="translate(-178)" />
-                </clipPath>
-              </defs>
-            </svg>
+            <img src="/media/img/backgrounds/circle.svg" alt="" />
 
             <img className="blob" src="/media/img/backgrounds/blob.svg" role="presentation" />
             <img className="blobs" src="/media/img/backgrounds/blobs.svg" role="presentation" />
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-8 offset-lg-2 max-560">
-                  <div className="card">
-                    <form name="contact" method="POST" data-netlify="true">
-                      <div className="row">
-                        <div className="col-lg-12">
-                          <label name="name">
-                            Name <span>*</span>
-                            <input required type="text" id="name" name="name" placeholder="Name" />
-                          </label>
+            <div className="white">
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-8 offset-lg-2 max-560">
+                    <div className="card">
+                      <form name="contact" method="POST" data-netlify="true">
+                        <div className="row">
+                          <div className="col-lg-12">
+                            <label name="name">
+                              Name <span>*</span>
+                              <input required type="text" id="name" name="name" placeholder="Name" />
+                            </label>
+                          </div>
+                          <div className="col-lg-12">
+                            <label name="email">
+                              Email <span>*</span>
+                              <input required type="email" id="email" name="email" placeholder="Email" />
+                            </label>
+                          </div>
+                          <div className="col-lg-12">
+                            <label name="message">
+                              Message? <span>*</span>
+                              <textarea required id="message" name="message" placeholder="I've got some questions about a new website" />
+                            </label>
+                          </div>
+                          <div className="col-lg-12">
+                            <input type="submit" value="Let's chat!" className="btn" />
+                          </div>
                         </div>
-                        <div className="col-lg-12">
-                          <label name="email">
-                            Email <span>*</span>
-                            <input required type="email" id="email" name="email" placeholder="Email" />
-                          </label>
-                        </div>
-                        <div className="col-lg-12">
-                          <label name="message">
-                            Message? <span>*</span>
-                            <textarea required id="message" name="message" placeholder="I've got some questions about a new website" />
-                          </label>
-                        </div>
-                        <div className="col-lg-12">
-                          <input type="submit" value="Let's chat!" className="btn" />
-                        </div>
-                      </div>
-                      <p className="subtext">
-                        or email us at <a href="mailto:sales@jellydevelopment.com">sales@jellydevelopment.com</a>
-                      </p>
-                    </form>
+                        <p className="subtext">
+                          or email us at <a href="mailto:sales@jellydevelopment.com">sales@jellydevelopment.com</a>
+                        </p>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
