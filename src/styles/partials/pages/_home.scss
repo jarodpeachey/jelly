@@ -73,6 +73,8 @@
       position: absolute;
       left: 0;
       bottom: 0;
+      // top: -159px;
+      width: 100%;
 
       @media (min-width: 1400px) {
         width: 100%;
@@ -364,7 +366,9 @@
     img.wave {
       position: absolute;
       left: 0;
-      top: -159px;
+      bottom: 100%;
+      // top: -159px;
+      width: 100%;
 
       @media (min-width: 1400px) {
         width: 100%;

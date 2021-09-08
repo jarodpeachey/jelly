@@ -62,7 +62,7 @@ const Home = () => {
                 <div className="col-md-6 col-lg-4">
                   <div className="feature">
                     <img src="/media/img/icons/icon--bolt.svg" alt="Target icon" />
-                    <h3>Don’t lose customers with a slow website</h3>
+                    <h3>Keep your visitors on your site longer</h3>
                     <p>46% of visitors don't come back if your website doesn't load fast.</p>
                     <p>We'll build your website to load in the blink of an eye, so you don't lose potential business.</p>
                   </div>
@@ -70,7 +70,7 @@ const Home = () => {
                 <div className="col-md-6 col-lg-4">
                   <div className="feature">
                     <img src="/media/img/icons/icon--badge.svg" alt="Target icon" />
-                    <h3>Showcase what your brand is effortlessly</h3>
+                    <h3>Showcase your brand to your visitors effortlessly</h3>
                     <p>Letting your visitors know what you're about is tough.</p>
                     <p>We'll make sure your website effectively communicates your brand - and looks great while doing it.</p>
                   </div>
