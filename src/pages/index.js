@@ -54,7 +54,7 @@ const Home = () => {
               <div className="row">
                 <div className="col-md-6 col-lg-4">
                   <div className="feature">
-                    <img src="/media/img/icons/icon--target.svg" alt="Target icon" />
+                    <img width="83" height="64" src="/media/img/icons/icon--target.svg" alt="Target icon" />
                     <h3>Get more potential customers to your site</h3>
                     <p>Finding potential customers is a pain, and SEO isn't easy either.</p>
                     <p>We'll optimize your website so more people can find you, and convert them into new customers.</p>
@@ -62,7 +62,7 @@ const Home = () => {
                 </div>
                 <div className="col-md-6 col-lg-4">
                   <div className="feature">
-                    <img src="/media/img/icons/icon--bolt.svg" alt="Target icon" />
+                    <img width="74" height="70" src="/media/img/icons/icon--bolt.svg" alt="Thundercloud icon" />
                     <h3>Keep your visitors on your site longer</h3>
                     <p>46% of visitors don't come back if your website doesn't load fast.</p>
                     <p>We'll build your website to load in the blink of an eye, so you don't lose potential business.</p>
@@ -70,7 +70,7 @@ const Home = () => {
                 </div>
                 <div className="col-md-6 col-lg-4">
                   <div className="feature">
-                    <img src="/media/img/icons/icon--badge.svg" alt="Target icon" />
+                    <img width="86" height="65" src="/media/img/icons/icon--badge.svg" alt="Badge icon" />
                     <h3>Showcase your brand to your visitors effortlessly</h3>
                     <p>Letting your visitors know what you're about is tough.</p>
                     <p>We'll make sure your website effectively communicates your brand - and looks great while doing it.</p>

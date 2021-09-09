@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="d-flex">
-          <img src="/media/img/Logo White.svg" alt="Jelly Development logo" />
+          <img width="83" height="64" src="/media/img/Logo White.svg" alt="Jelly Development logo" />
         </div>
         <div className="d-flex">
           <a aria-label="Jelly Development Twitter" target="_blank" rel="noreferrer" href="https://twitter.com/jellydevelop">

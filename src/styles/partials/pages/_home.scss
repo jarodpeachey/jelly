@@ -60,6 +60,8 @@
     }
 
     img.graphic {
+      // width: 590px;
+      // height: 585px;
       @include media-breakpoint-down(sm) {
         width: 120%;
         margin-left: -3rem;
@@ -73,20 +75,25 @@
       margin-left: -6rem;
 
       @include media-breakpoint-up(md) {
-        margin-top: -4rem;
-        margin-left: -8rem;
+        margin-top: 0rem;
+        margin-left: -2rem;
+        width: 724px;
+        height: 717px;
       }
 
       @include media-breakpoint-up(lg) {
         margin-top: -6rem;
         margin-left: -8rem;
-        width: 200%;
+        width: 576px;
+        height: 570px;
       }
 
       @include media-breakpoint-up(xl) {
         margin-top: -6rem;
         margin-left: -4rem;
         width: auto;
+        width: 724px;
+        height: 717px;
       }
     }
 
