@@ -1,4 +1,6 @@
 (function () {
+  console.log = function () {};
+
   const notBuild = typeof window !== "undefined";
 
   addScript("/js/navigation.js");
