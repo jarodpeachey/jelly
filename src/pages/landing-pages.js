@@ -167,7 +167,7 @@ const Home = () => {
                         <div className="col-lg-12">
                           <label name="message">
                             Message? <span>*</span>
-                            <textarea required id="message" name="message" placeholder="I've got some questions about a new website" />
+                            <textarea required id="message" name="message" placeholder="I've got some questions about a new landing page" />
                           </label>
                         </div>
                         <div className="col-lg-12">

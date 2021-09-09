@@ -56,7 +56,7 @@ const GetStarted = () => {
                             </label>
                           </div>
                           <div className="col-lg-12">
-                            <input type="submit" value="Let's get started!" className="btn" />
+                            <input data-splitbee-event="Get Started Form" type="submit" value="Let's get started!" className="btn" />
                           </div>
                         </div>
                         <p className="subtext">
