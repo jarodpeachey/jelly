@@ -67,6 +67,7 @@ module.exports = {
         mergeStyleHashes: false,
         directives: {
           "script-src": "'self' 'unsafe-inline' data: plausible.io cdn.splitbee.io",
+          "script-src": "'self' 'unsafe-inline' d33wubrfki0l68.cloudfront.net",
           "style-src": "'self' 'unsafe-inline'",
           // you can add your directives or override defaults
         },
