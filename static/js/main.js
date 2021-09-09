@@ -10,6 +10,4 @@
     script.defer = true;
     document.body.appendChild(script);
   }
-
-  addScript("https://cdn.panelbear.com/analytics.js?site=6ypKAkp1UIM");
 })();
