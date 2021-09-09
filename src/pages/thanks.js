@@ -4,7 +4,7 @@ import Navigation from "../components/Navigation";
 import "../styles/partials/pages/_default.scss";
 import Footer from "../components/Footer";
 
-const NotFound = ({ props }) => {
+const Thanks = ({ props }) => {
   return (
     <>
       <SEO bodyClass="default" />
@@ -16,9 +16,9 @@ const NotFound = ({ props }) => {
       <section className="hero">
         <div className="container">
           <div className="card">
-            <h1 className="">This page doesn't exist.</h1>
-            <p className="section-description">Well, it does, but it doesn't have anything cool on it.</p>
-            <a href="/" className="btn">Go back to our homepage</a>
+            <h1 className="">Thanks for contacting us!</h1>
+            <p className="section-description">We'll get back to you within 24 hours.</p>
+            <p className="section-description">Until then, peace out ✌</p>
           </div>
         </div>
       </section>
@@ -27,4 +27,4 @@ const NotFound = ({ props }) => {
   );
 };
 
-export default NotFound;
+export default Thanks;

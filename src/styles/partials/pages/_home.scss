@@ -7,8 +7,8 @@
     position: relative;
     overflow: visible;
     padding-bottom: 2rem;
-    padding-top: 124px;
     background: $color--primary-lightest;
+    padding-top: 124px;
 
     @include media-breakpoint-up(md) {
       padding-top: 170px;
