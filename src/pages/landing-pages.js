@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 const Home = () => {
   return (
     <>
-      <SEO bodyClass="home" title="Custom SaaS Websites | Jelly Development" />
+      <SEO bodyClass="home" title="High-Converting SaaS Landing Pages | Jelly Development" />
 
       <header>
         <Navigation />
@@ -17,12 +17,12 @@ const Home = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-10 col-lg-8 col-xl-6">
-                <h1>Custom websites designed to grow your SaaS</h1>
-                <p className="section-description">We build websites that are tailored to your brand and designed to get you more customers.</p>
+                <h1>High-converting landing pages engineered to grow your SaaS</h1>
+                <p className="section-description">We build landing pages that are tailored to your brand and designed to get you more customers.</p>
                 {/* <p className="section-description">We combine design, branding, SEO and copywriting to craft the perfect website for you and your customers.</p> */}
 
                 <a href="/get-started" className="btn">
-                  Let’s build your website
+                  Let’s build your landing page
                 </a>
                 <a href="#services" className="btn text">
                   Read more{" "}
@@ -47,7 +47,7 @@ const Home = () => {
                   <p className="display">WHAT WE DO</p>
                   <h2>Let us do the hard stuff.</h2>
                   <p className="section-description">
-                    We’ll build you an amazing website, so you can focus on what matters: keeping your users happy and growing your business.
+                    We’ll build you an amazing landing page, so you can focus on what matters: keeping your users happy and increasing your MRR.
                   </p>
                 </div>
               </div>
@@ -57,15 +57,15 @@ const Home = () => {
                     <img width="83" height="64" src="/media/img/icons/icon--target.svg" alt="Target icon" />
                     <h3>Get more potential customers to your site</h3>
                     <p>Finding potential customers is a pain, and SEO isn't easy either.</p>
-                    <p>We'll optimize your website so more people can find you, and convert them into new customers.</p>
+                    <p>We'll optimize your landing page so more people can find you, and convert them into new customers.</p>
                   </div>
                 </div>
                 <div className="col-md-6 col-lg-4">
                   <div className="feature">
                     <img width="74" height="70" src="/media/img/icons/icon--bolt.svg" alt="Thundercloud icon" />
                     <h3>Keep your visitors on your site longer</h3>
-                    <p>46% of visitors don't come back if your website doesn't load fast.</p>
-                    <p>We'll build your website to load in the blink of an eye, so you don't lose potential business.</p>
+                    <p>46% of visitors don't come back if your landing page doesn't load fast.</p>
+                    <p>We'll build your landing page to load in the blink of an eye, so you don't lose potential business.</p>
                   </div>
                 </div>
                 <div className="col-md-6 col-lg-4">
@@ -73,22 +73,22 @@ const Home = () => {
                     <img width="86" height="65" src="/media/img/icons/icon--badge.svg" alt="Badge icon" />
                     <h3>Showcase your brand to your visitors effortlessly</h3>
                     <p>Letting your visitors know what you're about is tough.</p>
-                    <p>We'll make sure your website effectively communicates your brand - and looks great while doing it.</p>
+                    <p>We'll make sure your landing page effectively communicates your brand - and looks great while doing it.</p>
                   </div>
                 </div>
               </div>
             </div>
           </section>
           <section className="chat">
-            <img role="presentation" alt=""  className="blob" src="/media/img/backgrounds/blob.svg" />
-            <img role="presentation" alt=""  className="blobs" src="/media/img/backgrounds/blobs.svg" />
+            <img role="presentation" alt="" className="blob" src="/media/img/backgrounds/blob.svg" />
+            <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs.svg" />
             <div className="container">
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 max-560">
-                  <h2>Ready to chat about your new website?</h2>
+                  <h2>Ready to chat about your new landing page?</h2>
                   <div className="d-flex">
                     <a href="/get-started" className="btn mr-4">
-                      I’m ready for a new website
+                      I’m ready for a new landing page
                     </a>
                     <a href="/contact" className="btn text">
                       I've got questions{" "}
@@ -107,7 +107,7 @@ const Home = () => {
               <div className="col-lg-8 offset-lg-2 max-560">
                 <p className="display">WHAT PEOPLE SAY</p>
                 <h2 className="section-heading">Don’t settle for anything less than incredible.</h2>
-                <p className="section-description">At Jelly Development, we’re proud to say we go all in to bring the best websites we can to our clients.</p>
+                <p className="section-description">At Jelly Development, we’re proud to say we go all in to bring the best landing pages we can to our clients.</p>
               </div>
               <div className="row">
                 <div className="col-md-6">
@@ -148,7 +148,7 @@ const Home = () => {
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 max-560">
                   <p className="display">CONTACT US</p>
-                  <h2 className="section-heading">Let's discuss your new website.</h2>
+                  <h2 className="section-heading">Let's discuss your new landing page.</h2>
                   <div className="card">
                     <form name="contact" method="POST" data-netlify="true">
                       <div className="row">
