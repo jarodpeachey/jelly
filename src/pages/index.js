@@ -33,7 +33,7 @@ const Home = () => {
                 </a>
               </div>
               <div className="col-lg-4 col-xl-6">
-                <img className="graphic" src="/media/img/hero-2.png" alt="Landing page preview" />
+                <img width="724" height="717" className="graphic" src="/media/img/hero-2.png" alt="Landing page preview" />
               </div>
             </div>
           </div>
@@ -80,8 +80,8 @@ const Home = () => {
             </div>
           </section>
           <section className="chat">
-            <img role="presentation" alt=""  className="blob" src="/media/img/backgrounds/blob.svg" />
-            <img role="presentation" alt=""  className="blobs" src="/media/img/backgrounds/blobs.svg" />
+            <img role="presentation" alt="" className="blob" src="/media/img/backgrounds/blob.svg" />
+            <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs.svg" />
             <div className="container">
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 max-560">
