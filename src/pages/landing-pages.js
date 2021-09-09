@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 const Home = () => {
   return (
     <>
-      <SEO bodyClass="home" title="High-Converting SaaS Landing Pages | Jelly Development" />
+      <SEO bodyClass="home" title="High-Converting SaaS Landing Pages | Jelly Development" description="Get the perfect landing page for your SaaS, designed to be blazing fast, fully accessible and to increase your conversions and MRR." />
 
       <header>
         <Navigation />
