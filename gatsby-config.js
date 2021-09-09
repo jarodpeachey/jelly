@@ -72,5 +72,8 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-plugin-zopfli",
+    },
   ],
 };
