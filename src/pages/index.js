@@ -33,7 +33,7 @@ const Home = () => {
                 </a>
               </div>
               <div className="col-lg-4 col-xl-6">
-                <img className="graphic" src="/media/img/hero.png" alt="Landing page preview" />
+                <img className="graphic" src="/media/img/hero-2.png" alt="Landing page preview" />
               </div>
             </div>
           </div>
