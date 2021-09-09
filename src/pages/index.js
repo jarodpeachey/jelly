@@ -119,7 +119,7 @@ const Home = () => {
                     <p>- Josh Manders | CEO of Primcloud</p>
                   </div>
                 </div>
-                <div className="col-md-6">
+                {/* <div className="col-md-6">
                   <div className="testimonial">
                     <p>Working with Jelly Development was awesome. Here's something about how amazing they were. Truly awesome!</p>
                     <p>- Jarod Peachey | CEO of Jelly Development</p>
@@ -136,7 +136,7 @@ const Home = () => {
                     <p>Working with Jelly Development was awesome. Here's something about how amazing they were. Truly awesome!</p>
                     <p>- Jarod Peachey | CEO of Jelly Development</p>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </section>
