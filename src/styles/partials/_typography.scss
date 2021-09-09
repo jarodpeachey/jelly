@@ -112,9 +112,7 @@ a {
   margin-top: 0;
   max-width: 769px;
   font-size: 18px;
-  // font-weight: 300;
   line-height: 28px;
-  font-family: "Nunito Sans" !important;
 
   @include media-breakpoint-up(md) {
     font-size: 20px;

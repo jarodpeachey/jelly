@@ -60,12 +60,33 @@
     }
 
     img.graphic {
+      @include media-breakpoint-down(sm) {
+        width: 120%;
+        margin-left: -3rem;
+      }
+      @include media-breakpoint-down(xs) {
+        width: 100%;
+        margin-left: -1rem;
+      }
+
       margin-top: -2rem;
       margin-left: -6rem;
 
       @include media-breakpoint-up(md) {
+        margin-top: -4rem;
+        margin-left: -8rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin-top: -6rem;
+        margin-left: -8rem;
+        width: 200%;
+      }
+
+      @include media-breakpoint-up(xl) {
         margin-top: -6rem;
         margin-left: -4rem;
+        width: auto;
       }
     }
 
@@ -191,10 +212,10 @@
       top: -5rem;
       width: 500px;
       left: -15rem;
-      opacity: .6;
+      opacity: 0.6;
 
       @include media-breakpoint-up(md) {
-        opacity: .9;
+        opacity: 0.9;
       }
 
       @include media-breakpoint-up(lg) {
@@ -212,10 +233,10 @@
       top: -5rem;
       width: 500px;
       right: -15rem;
-      opacity: .6;
+      opacity: 0.6;
 
       @include media-breakpoint-up(md) {
-        opacity: .9;
+        opacity: 0.9;
       }
 
       @include media-breakpoint-up(lg) {
@@ -309,12 +330,21 @@
     }
 
     .row {
-      margin-left: -32px;
-      margin-right: -32px;
+      margin-left: -16px;
+      margin-right: -16px;
+
+      @include media-breakpoint-up(md) {
+        margin-left: -32px;
+        margin-right: -32px;
+      }
     }
 
     .col-md-6 {
-      padding: 32px;
+      padding: 16px;
+
+      @include media-breakpoint-up(md) {
+        padding: 32px;
+      }
 
       &:first-child {
         padding-top: 0;
@@ -458,7 +488,7 @@
         display: block;
 
         span {
-          color: rgb(238, 63, 20);
+          color: rgb(192, 46, 10);
         }
 
         &.mt {
