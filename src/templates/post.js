@@ -36,7 +36,24 @@ const PostTemplate = ({ data, pageContext }) => {
             <img role="presentation" alt="" src="/media/img/backgrounds/circle.svg" alt="" />
             <div className="white">
               <div className="container">
-                <ReactMarkdown source={post.metadata.markdown_content} />
+                <ReactMarkdown className="content__inner" source={post.metadata.markdown_content} />
+                <div className="chat">
+                  <img role="presentation" alt="" className="blob" src="/media/img/backgrounds/blob--dark.svg" />
+                  <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs--dark.svg" />
+                  <h2>Ready to chat about your new website?</h2>
+                  <div className="d-flex">
+                    <a href="/get-started" className="btn mr-4">
+                      I’m ready for a new website
+                    </a>
+                    <a href="/contact" className="btn text">
+                      I've got questions{" "}
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19" stroke="#1C2C5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 5L19 12L12 19" stroke="#1C2C5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
