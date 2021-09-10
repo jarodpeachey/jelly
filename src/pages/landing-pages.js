@@ -171,7 +171,7 @@ const Home = () => {
                           </label>
                         </div>
                         <div className="col-lg-12">
-                          <input type="submit" value="Let's chat!" className="btn" />
+                          <input data-splitbee-event="Get Started Form" data-splitbee-event-page="/landing-pages" type="submit" value="Let's chat!" className="btn" />
                         </div>
                       </div>
                       <p className="subtext">
