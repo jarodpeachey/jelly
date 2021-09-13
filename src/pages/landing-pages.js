@@ -7,7 +7,11 @@ import Footer from "../components/Footer";
 const Home = () => {
   return (
     <>
-      <SEO bodyClass="home" title="High-Converting SaaS Landing Pages | Jelly Development" description="Get the perfect landing page for your SaaS, designed to be blazing fast, fully accessible and to increase your conversions and MRR." />
+      <SEO
+        bodyClass="home"
+        title="High-Converting SaaS Landing Pages | Jelly Development"
+        description="Get the perfect landing page for your SaaS, designed to be blazing fast, fully accessible and to increase your conversions and MRR."
+      />
 
       <header>
         <Navigation />
@@ -107,7 +111,9 @@ const Home = () => {
               <div className="col-lg-8 offset-lg-2 max-560">
                 <p className="display">WHAT PEOPLE SAY</p>
                 <h2 className="section-heading">Don’t settle for anything less than incredible.</h2>
-                <p className="section-description">At Jelly Development, we’re proud to say we go all in to bring the best landing pages we can to our clients.</p>
+                <p className="section-description">
+                  At Jelly Development, we’re proud to say we go all in to bring the best landing pages we can to our clients.
+                </p>
               </div>
               <div className="row">
                 <div className="col-md-6">
@@ -150,7 +156,12 @@ const Home = () => {
                   <p className="display">CONTACT US</p>
                   <h2 className="section-heading">Let's discuss your new landing page.</h2>
                   <div className="card">
-                    <form name="contact" method="POST" data-netlify="true">
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                      <p class="hidden">
+                        <label>
+                          Don’t fill this out if you’re human: <input name="bot-field" />
+                        </label>
+                      </p>
                       <div className="row">
                         <div className="col-lg-12">
                           <label name="name">
@@ -171,7 +182,13 @@ const Home = () => {
                           </label>
                         </div>
                         <div className="col-lg-12">
-                          <input data-splitbee-event="Get Started Form" data-splitbee-event-page="/landing-pages" type="submit" value="Let's chat!" className="btn" />
+                          <input
+                            data-splitbee-event="Get Started Form"
+                            data-splitbee-event-page="/landing-pages"
+                            type="submit"
+                            value="Let's chat!"
+                            className="btn"
+                          />
                         </div>
                       </div>
                       <p className="subtext">

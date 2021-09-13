@@ -79,7 +79,12 @@ const Blog = ({ pageContext }) => {
                   <p className="display">CONTACT US</p>
                   <h2 className="section-heading">Let's discuss your new website.</h2>
                   <div className="card">
-                    <form name="contact" method="POST" data-netlify="true">
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                                            <p class="hidden">
+                        <label>
+                          Don’t fill this out if you’re human: <input name="bot-field" />
+                        </label>
+                      </p>
                       <div className="row">
                         <div className="col-lg-12">
                           <label name="name">

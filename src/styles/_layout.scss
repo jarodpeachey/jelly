@@ -122,3 +122,24 @@ html {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+p.hidden {
+  height: 0px;
+  width: 0px;
+  overflow: hidden;
+  margin: 0;
+
+  label {
+    font-size: 0px;
+    line-height: 0px;
+    height: 0px;
+    width: 0px;
+    display: block;
+  }
+
+  input {
+    height: 0px;
+    width: 0px;
+    display: block;
+  }
+}
