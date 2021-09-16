@@ -31,12 +31,26 @@ const Home = () => {
                     <path d="M12 5L19 12L12 19" stroke="#1C2C5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                 </a>
+                <div className="proof">
+                  <div className="stars">
+                    <img src="/media/img/icons/icon--rating.svg" alt="" />
+                    <img src="/media/img/icons/icon--rating.svg" alt="" />
+                    <img src="/media/img/icons/icon--rating.svg" alt="" />
+                    <img src="/media/img/icons/icon--rating.svg" alt="" />
+                    <img src="/media/img/icons/icon--rating.svg" alt="" />
+                  </div>
+                  <p>
+                    Jelly Development knocked it out of the park.
+                  </p>
+                  <p>- Josh Manders | <strong>CEO of Primcloud</strong></p>
+                </div>
               </div>
               <div className="col-lg-4 col-xl-6">
                 <img width="724" height="717" className="graphic" src="/media/img/hero-2.png" alt="Landing page preview" />
               </div>
             </div>
           </div>
+
           <img role="presentation" src="/media/img/backgrounds/wave.svg" alt="" className="wave" />
         </section>
         <main>
@@ -151,7 +165,7 @@ const Home = () => {
                   <h2 className="section-heading">Let's discuss your new website.</h2>
                   <div className="card">
                     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                                            <p class="hidden">
+                      <p class="hidden">
                         <label>
                           Don’t fill this out if you’re human: <input name="bot-field" />
                         </label>

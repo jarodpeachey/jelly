@@ -35,6 +35,17 @@ const Home = () => {
                     <path d="M12 5L19 12L12 19" stroke="#1C2C5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                 </a>
+                <div className="proof">
+                  <div className="stars">
+                    <img src="/media/img/icons/icon--rating.svg" alt="" />
+                    <img src="/media/img/icons/icon--rating.svg" alt="" />
+                    <img src="/media/img/icons/icon--rating.svg" alt="" />
+                    <img src="/media/img/icons/icon--rating.svg" alt="" />
+                    <img src="/media/img/icons/icon--rating.svg" alt="" />
+                  </div>
+                  <p>Jelly Development knocked it out of the park.</p>
+                  <p>- Josh Manders | <strong>CEO of Primcloud</strong></p>
+                </div>
               </div>
               <div className="col-lg-4 col-xl-6">
                 <img width="724" height="717" className="graphic" src="/media/img/hero-2.png" alt="Landing page preview" />
