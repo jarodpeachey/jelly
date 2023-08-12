@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 const Home = () => {
   return (
     <>
-      <SEO bodyClass="home" title="Custom SaaS Websites | Jelly Development" />
+      <SEO bodyClass="home" />
 
       <header>
         <Navigation />
@@ -38,10 +38,10 @@ const Home = () => {
                     <img src="/media/img/icons/icon--rating.svg" alt="" />
                     <img src="/media/img/icons/icon--rating.svg" alt="" />
                   </div>
+                  <p>Jelly Development knocked it out of the park.</p>
                   <p>
-                    Jelly Development knocked it out of the park.
+                    - Josh Manders | <strong>CEO of Primcloud</strong>
                   </p>
-                  <p>- Josh Manders | <strong>CEO of Primcloud</strong></p>
                 </div>
               </div>
               <div className="col-lg-4 col-xl-6">
@@ -59,9 +59,7 @@ const Home = () => {
                 <div className="col-lg-8 offset-lg-2 max-560">
                   <p className="display">WHAT WE DO</p>
                   <h2>Everything working together</h2>
-                  <p className="section-description">
-                    We combine simple design, SEO and performance to craft the perfect website to grow your business.
-                  </p>
+                  <p className="section-description">We combine simple design, SEO and performance to craft the perfect website to grow your business.</p>
                 </div>
               </div>
               <div className="row">

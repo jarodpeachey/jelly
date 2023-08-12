@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Custom website design & development`,
-    description: `Get the perfect website for your SaaS, designed to be blazing fast, fully accessible and to increase your conversions and MRR.`,
+    title: `Small business website design & development in Orlando`,
+    description: `Get the perfect website for your small business, designed to feel like home for your local customers in Orlando and Winter Garden`,
     author: `@jarodpeachey`,
     siteUrl: "https://jellydevelopment.com",
   },
