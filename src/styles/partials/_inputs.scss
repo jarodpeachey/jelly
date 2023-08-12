@@ -1,0 +1,61 @@
+@use "./colors" as *;
+
+::placeholder {
+  font-size: 16px;
+}
+
+input[type="text"],
+input[type="button"],
+input,
+input[type="submit"] {
+  -webkit-appearance: none !important;
+  // -webkit-border-radius: 0;
+}
+
+label {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  width: 100%;
+  color: #191a1c;
+  margin-bottom: 16px;
+  display: block;
+
+  span {
+    color: rgb(192, 46, 10);
+  }
+
+  &.mt {
+    margin-top: 8px;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  border: 1px solid #e5eafa;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: block;
+  padding: 13px 16px 12px;
+  color: $color--text;
+  width: 100%;
+  margin-top: 8px;
+
+  &::placeholder {
+    color: $color--text;
+    opacity: 0.6;
+  }
+
+  &:focus {
+    border-color: $color--primary;
+    outline: none;
+  }
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
