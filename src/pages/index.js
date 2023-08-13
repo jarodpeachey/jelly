@@ -17,8 +17,9 @@ const Home = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-10 col-lg-8 col-xl-6">
-                <h1>Modern websites grow your business</h1>
-                <p className="section-description">At Jelly Development, we focus on making it as easy as possible for people to become your customers.</p>
+                <h1>Websites that build trust and get more customers</h1>
+                <p className="section-description">Your website is your way of letting people know why they should trust your business..</p>
+                <p className="section-description"> At Jelly Development, we focus on crafting a website that fits your business and turns visitors into customers</p>
 
                 <a href="/get-started" className="btn">
                   Let’s build your website
