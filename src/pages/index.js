@@ -46,10 +46,11 @@ const Home = () => {
                 </div>
               </div>
               <div className="col-lg-4 col-xl-6">
-                <img width="724" height="717" className="graphic" src="/media/img/hero-2.png" alt="Landing page preview" />
+                {/* <img width="724" height="717" className="graphic" src="/media/img/hero-2.png" alt="Landing page preview" /> */}
               </div>
             </div>
           </div>
+          <img className="hero__background" src="/media/img/backgrounds/hero.svg" />
 
           <img role="presentation" src="/media/img/backgrounds/wave.svg" alt="" className="wave" />
         </section>

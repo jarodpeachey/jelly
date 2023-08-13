@@ -187,6 +187,24 @@
         width: 100%;
       }
     }
+
+    img.hero__background {
+      position: absolute;
+      top: -20vh;
+      z-index: 0;
+      
+      right: -60vh;
+      @include media-breakpoint-up(md) {
+        right: -40vh;
+      }
+      @include media-breakpoint-up(lg) {
+        right: -10vh;
+      }
+      @include media-breakpoint-up(xl) {
+        right: -10vh;
+        width: 1200px;
+      }
+    }
   }
 
   .services {
