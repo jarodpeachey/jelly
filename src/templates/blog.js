@@ -109,7 +109,7 @@ const Blog = ({ pageContext }) => {
                         </div>
                       </div>
                       <p className="subtext">
-                        or email us at <a href="mailto:sales@jellydevelopment.com">sales@jellydevelopment.com</a>
+                        or email us at <a href="mailto:jarod@jellydevelopment.com">jarod@jellydevelopment.com</a>
                       </p>
                     </form>
                   </div>

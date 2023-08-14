@@ -60,7 +60,7 @@ const Home = () => {
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 max-560">
                   <p className="display">WHAT WE DO</p>
-                  <h2>Everything working together</h2>
+                  <h2>Building your business</h2>
                   <p className="section-description">We combine simple design, SEO and performance to craft the perfect website to grow your business.</p>
                 </div>
               </div>
@@ -69,7 +69,7 @@ const Home = () => {
                   <div className="feature">
                     <img width="83" height="64" src="/media/img/icons/icon--target.svg" alt="Target icon" />
                     <h3>Get more potential customers to your site</h3>
-                    <p>Finding potential customers is a pain, and SEO isn't easy either.</p>
+                    <p>Finding potential customers is a pain, but a good website will make it easy.</p>
                     <p>We'll optimize your website so more people can find you, and convert them into new customers.</p>
                   </div>
                 </div>
@@ -84,9 +84,9 @@ const Home = () => {
                 <div className="col-md-6 col-lg-4">
                   <div className="feature">
                     <img width="86" height="65" src="/media/img/icons/icon--badge.svg" alt="Badge icon" />
-                    <h3>Showcase your brand to your visitors effortlessly</h3>
+                    <h3>Build loyalty from your customers</h3>
                     <p>Letting your visitors know what you're about is tough.</p>
-                    <p>We'll make sure your website effectively communicates your brand - and looks great while doing it.</p>
+                    <p>We'll make sure your website communicates what you're all about - and looks great while doing it.</p>
                   </div>
                 </div>
               </div>
@@ -193,7 +193,7 @@ const Home = () => {
                         </div>
                       </div>
                       <p className="subtext">
-                        or email us at <a href="mailto:sales@jellydevelopment.com">sales@jellydevelopment.com</a>
+                        or email us at <a href="mailto:jarod@jellydevelopment.com">jarod@jellydevelopment.com</a>
                       </p>
                     </form>
                   </div>

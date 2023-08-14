@@ -192,10 +192,12 @@
       position: absolute;
       top: -20vh;
       z-index: 0;
+      filter: brightness(97%);
       
       right: -60vh;
       @include media-breakpoint-up(md) {
         right: -40vh;
+        filter: brightness(98%);
       }
       @include media-breakpoint-up(lg) {
         right: -10vh;
