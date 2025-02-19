@@ -35,7 +35,7 @@ const GetStarted = () => {
                 <div className="row">
                   <div className="col-lg-8 offset-lg-2 max-560">
                     <div className="card">
-                      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                      <form name="get-started" method="POST" data-netlify="true">
                                               <p class="hidden">
                         <label>
                           Don't fill this out if you're human: <input name="bot-field" />
@@ -61,7 +61,7 @@ const GetStarted = () => {
                             </label>
                           </div>
                           <div className="col-lg-12">
-                            <input data-splitbee-event="Get Started Form" data-splitbee-event-page="/get-started" type="submit" value="Let's get started!" className="btn" />
+                            <input type="submit" value="Let's get started!" className="btn" />
                           </div>
                         </div>
                         <p className="subtext">
