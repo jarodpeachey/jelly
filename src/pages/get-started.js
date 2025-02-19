@@ -35,12 +35,12 @@ const GetStarted = () => {
                 <div className="row">
                   <div className="col-lg-8 offset-lg-2 max-560">
                     <div className="card">
-                      <form name="get-started" method="POST" data-netlify="true">
-                                              <p class="hidden">
-                        <label>
-                          Don't fill this out if you're human: <input name="bot-field" />
-                        </label>
-                      </p>
+                      <form name="get-started" method="POST" data-netlify="true" action="/success">
+                        <p class="hidden">
+                          <label>
+                            Don't fill this out if you're human: <input name="bot-field" />
+                          </label>
+                        </p>
                         <div className="row">
                           <div className="col-lg-12">
                             <label name="name">

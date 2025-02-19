@@ -18,7 +18,6 @@ const Thanks = ({ props }) => {
           <div className="card">
             <h1 className="">Thanks for contacting us!</h1>
             <p className="section-description">We'll get back to you within 24 hours.</p>
-            <p className="section-description">Until then, peace out ✌</p>
           </div>
         </div>
       </section>
