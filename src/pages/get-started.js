@@ -5,6 +5,33 @@ import "../styles/partials/pages/_contact.scss";
 import Footer from "../components/Footer";
 
 const GetStarted = () => {
+  const [status, setStatus] = useState(null);
+  const [error, setError] = useState(null);
+
+  const handleFormSubmit = async event => {
+    event.preventDefault();
+    try {
+      setStatus("pending");
+      setError(null);
+      const myForm = event.target;
+      const formData = new FormData(myForm);
+      const res = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+      if (res.status === 200) {
+        setStatus("ok");
+      } else {
+        setStatus("error");
+        setError(`${res.status} ${res.statusText}`);
+      }
+    } catch (e) {
+      setStatus("error");
+      setError(`${e}`);
+    }
+  };
+
   return (
     <>
       <SEO bodyClass="contact" />
@@ -35,12 +62,8 @@ const GetStarted = () => {
                 <div className="row">
                   <div className="col-lg-8 offset-lg-2 max-560">
                     <div className="card">
-                      <form name="get-started" method="POST" data-netlify="true" action="/success">
-                        <p class="hidden">
-                          <label>
-                            Don't fill this out if you're human: <input name="bot-field" />
-                          </label>
-                        </p>
+                      <form name="feedback" onSubmit={handleFormSubmit}>
+                        <input type="hidden" name="form-name" value="get-started" />
                         <div className="row">
                           <div className="col-lg-12">
                             <label name="name">
@@ -67,6 +90,17 @@ const GetStarted = () => {
                         <p className="subtext">
                           or email us at <a href="mailto:jarod@jellydevelopment.com">jarod@jellydevelopment.com</a>
                         </p>
+
+                        {status === "ok" && (
+                          <p>
+                            Submitted!
+                          </p>
+                        )}
+                        {status === "error" && (
+                          <p>
+                            {error}
+                          </p>
+                        )}
                       </form>
                     </div>
                   </div>
