@@ -3,15 +3,12 @@
 @use "../colors" as *;
 
 .blog {
-  // .logo {
-  //   width: 80px;
-  // }
   .hero {
-    position: relative;
+    background: $color--primary-lightest;
     overflow: visible;
     padding-bottom: 224px;
     padding-top: 164px;
-    background: $color--primary-lightest;
+    position: relative;
 
     @include media-breakpoint-up(md) {
       padding-top: 170px;
@@ -34,14 +31,13 @@
     }
 
     h1 {
+      color: $color--heading;
       font-size: 48px;
+      font-weight: 600;
       line-height: 56px;
-      text-align: center;
       margin-bottom: 0;
       margin-top: 0;
-      color: $color--heading;
-      font-weight: 600;
-      // max-width: 520px;
+      text-align: center;
 
       @include media-breakpoint-up(md) {
         font-size: 56px;
@@ -51,22 +47,19 @@
   }
 
   .posts {
-    // padding: 0;
-    // background: white;
+    margin-top: -100px;
+    overflow: visible;
+    padding-bottom: 300px;
     padding-top: 0;
     position: relative;
-    overflow: visible;
-    // margin-top: 159px;
-    margin-top: -100px;
-    padding-bottom: 300px;
 
     @include media-breakpoint-up(md) {
       padding-bottom: 400px;
     }
 
     @include media-breakpoint-up(lg) {
-      padding-top: 0;
       margin-top: -60px;
+      padding-top: 0;
     }
 
     .white {
@@ -79,11 +72,11 @@
     }
 
     img[src*="circle"] {
-      max-width: 99999px;
-      width: 100%;
       bottom: 99%;
-      position: absolute;
       left: 0;
+      max-width: 99999px;
+      position: absolute;
+      width: 100%;
     }
 
     .col-md-6.col-lg-4 {
@@ -105,51 +98,49 @@
     }
 
     .post-card {
-      height: 100%;
-      display: block;
-      text-decoration: none;
-      margin: 0 auto;
-      max-width: 335px;
       background: white;
       border-radius: 8px;
       box-shadow: 2px 2px 40px 0px #44455510;
+      display: block;
+      height: 100%;
+      margin: 0 auto;
+      max-width: 335px;
+      text-decoration: none;
       transition: 0.2s;
-      // padding: 32px;
 
       &:hover {
         transform: scale(1.05);
       }
 
       @include media-breakpoint-up(lg) {
-        text-align: left;
         margin: 0;
+        text-align: left;
       }
 
       img {
-        width: 100%;
-        margin-bottom: 16px;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
+        margin-bottom: 16px;
+        width: 100%;
       }
 
       h3 {
-        padding: 0px 32px;
-        margin-top: 0;
         margin-bottom: 8px;
+        margin-top: 0;
+        padding: 0px 32px;
       }
 
       p {
-        padding: 0px 32px;
-        margin-bottom: 0;
         font-size: 16px;
         margin: 0;
         margin-bottom: 32px;
+        padding: 0px 32px;
       }
 
       small {
         display: block;
-        padding: 0px 32px;
         margin-bottom: 32px;
+        padding: 0px 32px;
       }
     }
   }
@@ -186,60 +177,60 @@
     h3,
     .post-card__date {
       background: #e7e7e7 !important;
-      color: #e7e7e7 !important;
       border-radius: 8px !important;
-      position: relative !important;
+      color: #e7e7e7 !important;
       overflow: hidden !important;
+      position: relative !important;
 
       &:after {
-        width: 200%;
-        height: 100%;
-        position: absolute;
-        content: "";
-        display: block;
-        top: 0;
-        left: 0;
         animation: skeleton 2s infinite forwards;
         background: linear-gradient(to right, #ffffff20, #ffffffaa, #ffffff20);
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 200%;
       }
     }
 
     .tag {
       background: #ffffff !important;
       color: transparent !important;
-      position: relative !important;
       display: block !important;
       overflow: hidden !important;
+      position: relative !important;
 
       &:after {
-        width: 200%;
-        height: 100%;
-        position: absolute;
-        content: "";
-        display: block;
-        top: 0;
-        left: 0;
         animation: skeleton 2s infinite forwards;
         background: linear-gradient(to right, #ffffff01, #ffffff20, #ffffff01);
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 200%;
       }
     }
 
     .post-card__image {
+      aspect-ratio: 16/10.4;
+      background: #e7e7e7;
       overflow: hidden !important;
       position: relative;
-      background: #e7e7e7;
-      aspect-ratio: 16/10.4;
 
       &:after {
-        width: 200%;
-        height: 100%;
-        position: absolute;
-        content: "";
-        display: block;
-        top: 0;
-        left: 0;
         animation: skeleton 2s infinite forwards;
         background: linear-gradient(to right, #ffffff20, #ffffffaa, #ffffff20);
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 200%;
       }
     }
 
@@ -248,35 +239,31 @@
     }
 
     .silo__image {
-      transform: none !important;
       box-shadow: none !important;
+      transform: none !important;
     }
 
     img[src*="icon--"] {
       display: block;
-      transition: 0.2s;
       filter: brightness(400%) grayscale(200%);
-
       transform: none !important;
+      transition: 0.2s;
     }
   }
 
   .cta {
     background: $color--primary-dark;
-    position: relative;
     overflow: visible;
-    // margin-top: 159px;
+    position: relative;
 
     @include media-breakpoint-up(lg) {
       background-size: contain;
     }
-    // }
 
     img.wave {
-      position: absolute;
-      left: 0;
       bottom: 99%;
-      // top: -159px;
+      left: 0;
+      position: absolute;
       width: 100%;
 
       @media (min-width: 1400px) {
@@ -286,29 +273,29 @@
 
     .blob {
       position: absolute;
+      right: -15rem;
       top: -5rem;
       width: 400px;
-      right: -15rem;
 
       @include media-breakpoint-up(lg) {
-        width: 500px;
         top: -9rem;
+        width: 500px;
       }
     }
 
     .blobs {
-      position: absolute;
       bottom: 0;
-      width: 500px;
       left: -15rem;
+      position: absolute;
+      width: 500px;
 
       @include media-breakpoint-up(md) {
         left: -5rem;
       }
 
       @include media-breakpoint-up(lg) {
-        width: 600px;
         bottom: 0rem;
+        width: 600px;
       }
     }
 
@@ -317,10 +304,10 @@
     }
 
     h2 {
-      text-align: center;
-      margin-top: 0;
-      margin-bottom: 48px;
       color: white;
+      margin-bottom: 48px;
+      margin-top: 0;
+      text-align: center;
 
       @include media-breakpoint-up(md) {
         margin-bottom: 64px;
@@ -333,31 +320,28 @@
 
     .card {
       background: white;
-      margin: 0 auto;
-      max-width: 500px;
       border-radius: 8px;
       box-shadow: 2px 2px 40px 0px #7879961a;
+      margin: 0 auto;
+      max-width: 500px;
       padding: 32px;
 
       @include media-breakpoint-up(md) {
         padding: 64px;
       }
 
-
-
       .btn {
-        margin-top: 16px !important;
-        width: 100% !important;
         cursor: pointer !important;
         margin-bottom: 12px;
+        margin-top: 16px !important;
+        width: 100% !important;
       }
-
 
       .subtext {
         color: $color--text;
         font-family: "Poppins";
-        font-weight: 300;
         font-size: 16px;
+        font-weight: 300;
         line-height: 28px;
 
         a {

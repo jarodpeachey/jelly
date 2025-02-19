@@ -3,15 +3,12 @@
 @use "../colors" as *;
 
 .post {
-  // .logo {
-  //   width: 80px;
-  // }
   .hero {
-    position: relative;
+    background: $color--primary-lightest;
     overflow: visible;
     padding-bottom: 224px;
     padding-top: 164px;
-    background: $color--primary-lightest;
+    position: relative;
 
     @include media-breakpoint-up(md) {
       padding-top: 170px;
@@ -19,29 +16,28 @@
     }
 
     .col-lg-8 {
-      max-width: 700px;
       margin: 0 auto;
+      max-width: 700px;
     }
 
     .container {
-      padding-top: 0;
       padding-bottom: 0;
+      padding-top: 0;
     }
 
     p {
-      text-align: center;
       margin-bottom: 16px;
+      text-align: center;
     }
 
     h1 {
+      color: $color--heading;
       font-size: 48px;
+      font-weight: 600;
       line-height: 56px;
-      text-align: center;
       margin-bottom: 0;
       margin-top: 0;
-      color: $color--heading;
-      font-weight: 600;
-      // max-width: 520px;
+      text-align: center;
 
       @include media-breakpoint-up(md) {
         font-size: 56px;
@@ -51,14 +47,14 @@
   }
 
   .content {
-    position: relative;
-    overflow: visible;
     margin-top: -100px;
+    overflow: visible;
     padding-bottom: 150px;
+    position: relative;
 
     @include media-breakpoint-up(lg) {
-      padding-top: 0;
       margin-top: -60px;
+      padding-top: 0;
     }
 
     .container {
@@ -81,11 +77,11 @@
     }
 
     img[src*="circle"] {
-      max-width: 99999px;
-      width: 100%;
       bottom: 99%;
-      position: absolute;
       left: 0;
+      max-width: 99999px;
+      position: absolute;
+      width: 100%;
     }
 
     h2,
@@ -99,47 +95,38 @@
     }
 
     img[src*='wave'] {
-      // top: 10vw;
-      position: absolute;
-      left: 0;
-      width: 100%;
-      max-width: 99999px;
       bottom: 99%;
-
-      @include media-breakpoint-up(lg) {
-        // top: 3vw;
-      }
+      left: 0;
+      max-width: 99999px;
+      position: absolute;
+      width: 100%;
 
       @include media-breakpoint-up(xl) {
-        // top: 0;
         width: 100%;
       }
     }
   }
 
   .chat {
-    padding: 48px;
-    margin-top: 96px;
-
-    box-shadow: 2px 2px 160px 0px #44455540;
-
-    @include media-breakpoint-up(md) {
-      padding: 64px;
-      margin-top: 128px;
-    }
-    position: relative;
-    overflow: hidden;
-    // overflow: visible;
     background: $color--primary;
     border-radius: 8px;
+    box-shadow: 2px 2px 160px 0px #44455540;
+    margin-top: 96px;
+    overflow: hidden;
+    padding: 48px;
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 128px;
+      padding: 64px;
+    }
 
     .blob {
+      left: -5rem;
+      opacity: 0.6;
       position: absolute;
       top: 0rem;
       width: 200px;
-      left: -5rem;
-      opacity: 0.6;
-      // display: none;
 
       @include media-breakpoint-up(md) {
         opacity: 0.9;
@@ -147,20 +134,17 @@
 
       @include media-breakpoint-up(lg) {
         opacity: 1;
-      }
-
-      @include media-breakpoint-up(lg) {
-        width: 300px;
         top: -4rem;
+        width: 300px;
       }
     }
 
     .blobs {
+      opacity: 0.6;
       position: absolute;
+      right: -3rem;
       top: -2rem;
       width: 200px;
-      right: -3rem;
-      opacity: 0.6;
 
       @include media-breakpoint-up(md) {
         opacity: 0.9;
@@ -168,21 +152,18 @@
 
       @include media-breakpoint-up(lg) {
         opacity: 1;
-      }
-
-      @include media-breakpoint-up(lg) {
-        width: 300px;
         top: -3rem;
+        width: 300px;
       }
     }
 
     h2 {
-      text-align: center;
-      margin-top: 0;
+      color: white;
       margin-bottom: 24px;
       margin-left: auto;
       margin-right: auto;
-      color: white;
+      margin-top: 0;
+      text-align: center;
 
       @include media-breakpoint-up(md) {
         margin-bottom: 32px;
@@ -195,24 +176,23 @@
     }
 
     .d-flex {
+      flex-direction: column;
       margin-left: auto;
       margin-right: auto;
       width: fit-content;
 
-      flex-direction: column;
-
       .btn {
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 12px;
         background: white;
         border-color: white;
         color: $color--primary;
+        margin-bottom: 12px;
+        margin-left: auto;
+        margin-right: auto;
 
         &:last-child {
-          margin-bottom: 0;
           background: transparent;
           color: white;
+          margin-bottom: 0;
 
           svg, path {
             stroke: white;
@@ -232,20 +212,17 @@
 
   .cta {
     background: $color--primary-dark;
-    position: relative;
     overflow: visible;
-    // margin-top: 159px;
+    position: relative;
 
     @include media-breakpoint-up(lg) {
       background-size: contain;
     }
-    // }
 
     img.wave {
-      position: absolute;
-      left: 0;
       bottom: 99%;
-      // top: -159px;
+      left: 0;
+      position: absolute;
       width: 100%;
 
       @media (min-width: 1400px) {
@@ -255,29 +232,29 @@
 
     .blob {
       position: absolute;
+      right: -15rem;
       top: -5rem;
       width: 400px;
-      right: -15rem;
 
       @include media-breakpoint-up(lg) {
-        width: 500px;
         top: -9rem;
+        width: 500px;
       }
     }
 
     .blobs {
-      position: absolute;
       bottom: 0;
-      width: 500px;
       left: -15rem;
+      position: absolute;
+      width: 500px;
 
       @include media-breakpoint-up(md) {
         left: -5rem;
       }
 
       @include media-breakpoint-up(lg) {
-        width: 600px;
         bottom: 0rem;
+        width: 600px;
       }
     }
 
@@ -286,10 +263,10 @@
     }
 
     h2 {
-      text-align: center;
-      margin-top: 0;
-      margin-bottom: 48px;
       color: white;
+      margin-bottom: 48px;
+      margin-top: 0;
+      text-align: center;
 
       @include media-breakpoint-up(md) {
         margin-bottom: 64px;
@@ -302,30 +279,28 @@
 
     .card {
       background: white;
-      margin: 0 auto;
-      max-width: 500px;
       border-radius: 8px;
       box-shadow: 2px 2px 40px 0px #7879961a;
+      margin: 0 auto;
+      max-width: 500px;
       padding: 32px;
 
       @include media-breakpoint-up(md) {
         padding: 64px;
       }
 
-
-
       .btn {
-        margin-top: 16px !important;
-        width: 100% !important;
         cursor: pointer !important;
         margin-bottom: 12px;
+        margin-top: 16px !important;
+        width: 100% !important;
       }
 
       .subtext {
         color: $color--text;
         font-family: "Poppins";
-        font-weight: 300;
         font-size: 16px;
+        font-weight: 300;
         line-height: 28px;
 
         a {
