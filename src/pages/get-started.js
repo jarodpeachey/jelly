@@ -22,6 +22,7 @@ const GetStarted = () => {
       });
       if (res.status === 200) {
         setStatus("ok");
+        window.location.href = "/success";
       } else {
         setStatus("error");
         setError(`${res.status} ${res.statusText}`);
@@ -29,6 +30,7 @@ const GetStarted = () => {
     } catch (e) {
       setStatus("error");
       setError(`${e}`);
+      window.location.href = "/error";
     }
   };
 
@@ -62,7 +64,7 @@ const GetStarted = () => {
                 <div className="row">
                   <div className="col-lg-8 offset-lg-2 max-560">
                     <div className="card">
-                      <form name="feedback" onSubmit={handleFormSubmit}>
+                      <form name="get-started" onSubmit={handleFormSubmit}>
                         <input type="hidden" name="form-name" value="get-started" />
                         <div className="row">
                           <div className="col-lg-12">
