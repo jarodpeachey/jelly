@@ -26,7 +26,7 @@ const Home = () => {
                 {/* <p className="section-description">We combine design, branding, SEO and copywriting to craft the perfect website for you and your customers.</p> */}
 
                 <a href="/get-started" className="btn">
-                  Let’s build your landing page
+                  Let's build your landing page
                 </a>
                 <a href="#services" className="btn text">
                   Read more{" "}
@@ -62,7 +62,7 @@ const Home = () => {
                   <p className="display">WHAT WE DO</p>
                   <h2>Let us do the hard stuff.</h2>
                   <p className="section-description">
-                    We’ll build you an amazing landing page, so you can focus on what matters: keeping your users happy and increasing your MRR.
+                    We'll build you an amazing landing page, so you can focus on what matters: keeping your users happy and increasing your MRR.
                   </p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const Home = () => {
                   <h2>Ready to chat about your new landing page?</h2>
                   <div className="d-flex">
                     <a href="/get-started" className="btn mr-4">
-                      I’m ready for a new landing page
+                      I'm ready for a new landing page
                     </a>
                     <a href="/contact" className="btn text">
                       I've got questions{" "}
@@ -121,9 +121,9 @@ const Home = () => {
             <div className="container">
               <div className="col-lg-8 offset-lg-2 max-560">
                 <p className="display">WHAT PEOPLE SAY</p>
-                <h2 className="section-heading">Don’t settle for anything less than incredible.</h2>
+                <h2 className="section-heading">Don't settle for anything less than incredible.</h2>
                 <p className="section-description">
-                  At Jelly Development, we’re proud to say we go all in to bring the best landing pages we can to our clients.
+                  At Jelly Development, we're proud to say we go all in to bring the best landing pages we can to our clients.
                 </p>
               </div>
               <div className="row">
@@ -170,7 +170,7 @@ const Home = () => {
                     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                       <p class="hidden">
                         <label>
-                          Don’t fill this out if you’re human: <input name="bot-field" />
+                          Don't fill this out if you're human: <input name="bot-field" />
                         </label>
                       </p>
                       <div className="row">

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Small business website design & development in Orlando`,
-    description: `Get the perfect website for your small business, designed to feel like home for your local customers in Orlando and Winter Garden`,
+    title: `Jelly Development | Website design & management agency in Orlando`,
+    description: `Custom websites for small businesses in Orlando and Winter Garden`,
     author: `@jarodpeachey`,
     siteUrl: "https://jellydevelopment.com",
   },

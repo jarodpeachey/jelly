@@ -43,7 +43,7 @@ const PostTemplate = ({ data, pageContext }) => {
                   <h2>Ready to chat about your new website?</h2>
                   <div className="d-flex">
                     <a href="/get-started" className="btn mr-4">
-                      I’m ready for a new website
+                      I'm ready for a new website
                     </a>
                     <a href="/contact" className="btn text">
                       I've got questions{" "}
@@ -70,7 +70,7 @@ const PostTemplate = ({ data, pageContext }) => {
                     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                                             <p class="hidden">
                         <label>
-                          Don’t fill this out if you’re human: <input name="bot-field" />
+                          Don't fill this out if you're human: <input name="bot-field" />
                         </label>
                       </p>
                       <div className="row">

@@ -18,7 +18,7 @@ const GetStarted = () => {
             <div className="row">
               <div className="col-lg-8 offset-lg-2">
                 <p className="display">CONTACT US</p>
-                <h1>Let’s get started on your new website</h1>
+                <h1>Let's get started on your new website</h1>
                 <p>Send us a message and we'll schedule a time to go over your goals and requirements for your new site.</p>
               </div>
             </div>
@@ -38,7 +38,7 @@ const GetStarted = () => {
                       <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                                               <p class="hidden">
                         <label>
-                          Don’t fill this out if you’re human: <input name="bot-field" />
+                          Don't fill this out if you're human: <input name="bot-field" />
                         </label>
                       </p>
                         <div className="row">

@@ -17,12 +17,12 @@ const Home = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-10 col-lg-8 col-xl-6">
-                <h1>Websites that build trust and get more customers</h1>
-                <p className="section-description">Your website is your way of letting people know why they should trust your business.</p>
-                <p className="section-description"> At Jelly Development, we focus on crafting a website that fits your business and turns visitors into customers</p>
+                <h1>Orlando Website Design for Small Businesses</h1>
+                <p className="section-description">Stand out in the Orlando market with a professional website that attracts local customers and grows your business.</p>
+                <p className="section-description">As your Orlando web design partner, we create beautiful, high-converting websites tailored specifically for small businesses in Central Florida.</p>
 
                 <a href="/get-started" className="btn">
-                  Let’s build your website
+                  Get a Free Website Consultation
                 </a>
                 <a href="#services" className="btn text">
                   Read more{" "}
@@ -60,33 +60,33 @@ const Home = () => {
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 max-560">
                   <p className="display">WHAT WE DO</p>
-                  <h2>Building your business</h2>
-                  <p className="section-description">We combine simple design, SEO and performance to craft the perfect website to grow your business.</p>
+                  <h2>Growing your business</h2>
+                  <p className="section-description">We help you grow your business online with all-in-one website solution that handles everything you need to succeed.</p>
                 </div>
               </div>
               <div className="row">
                 <div className="col-md-6 col-lg-4">
                   <div className="feature">
                     <img width="83" height="64" src="/media/img/icons/icon--target.svg" alt="Target icon" />
-                    <h3>Get more potential customers to your site</h3>
-                    <p>Finding potential customers is a pain, but a good website will make it easy.</p>
-                    <p>We'll optimize your website so more people can find you, and convert them into new customers.</p>
+                    <h3>Attract More Local Customers</h3>
+                    <p>Your website should be your best salesperson, working 24/7 to bring in new business.</p>
+                    <p>We'll optimize your site to rank higher in local searches and convert visitors into paying customers.</p>
                   </div>
                 </div>
                 <div className="col-md-6 col-lg-4">
                   <div className="feature">
                     <img width="74" height="70" src="/media/img/icons/icon--bolt.svg" alt="Thundercloud icon" />
-                    <h3>Keep your visitors on your site longer</h3>
-                    <p>46% of visitors don't come back if your website doesn't load fast.</p>
-                    <p>We'll build your website to load in the blink of an eye, so you don't lose potential business.</p>
+                    <h3>Lightning-Fast Performance</h3>
+                    <p>Every second of load time costs you money. Most visitors leave if a site takes over 3 seconds to load.</p>
+                    <p>Our websites are built for speed from the ground up, ensuring visitors stay engaged with your content.</p>
                   </div>
                 </div>
                 <div className="col-md-6 col-lg-4">
                   <div className="feature">
                     <img width="86" height="65" src="/media/img/icons/icon--badge.svg" alt="Badge icon" />
-                    <h3>Build loyalty from your customers</h3>
-                    <p>Letting your visitors know what you're about is tough.</p>
-                    <p>We'll make sure your website communicates what you're all about - and looks great while doing it.</p>
+                    <h3>Build a Memorable Brand</h3>
+                    <p>Your website is often the first impression potential customers have of your business.</p>
+                    <p>We create distinctive designs that showcase your unique value and help build lasting customer relationships.</p>
                   </div>
                 </div>
               </div>
@@ -101,14 +101,7 @@ const Home = () => {
                   <h2>Ready to chat about your new website?</h2>
                   <div className="d-flex">
                     <a href="/get-started" className="btn mr-4">
-                      I’m ready for a new website
-                    </a>
-                    <a href="/contact" className="btn text">
-                      I've got questions{" "}
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19" stroke="#1C2C5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M12 5L19 12L12 19" stroke="#1C2C5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
+                      Get a Free Website Consultation
                     </a>
                   </div>
                 </div>
@@ -119,8 +112,8 @@ const Home = () => {
             <div className="container">
               <div className="col-lg-8 offset-lg-2 max-560">
                 <p className="display">WHAT PEOPLE SAY</p>
-                <h2 className="section-heading">Don’t settle for anything less than incredible.</h2>
-                <p className="section-description">At Jelly Development, we’re proud to say we go all in to bring the best websites we can to our clients.</p>
+                <h2 className="section-heading">Don't settle for anything less than incredible.</h2>
+                <p className="section-description">At Jelly Development, we're proud to say we go all in to bring the best websites we can to our clients.</p>
               </div>
               <div className="row">
                 <div className="col-md-6">
@@ -166,7 +159,7 @@ const Home = () => {
                     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                       <p class="hidden">
                         <label>
-                          Don’t fill this out if you’re human: <input name="bot-field" />
+                          Don't fill this out if you're human: <input name="bot-field" />
                         </label>
                       </p>
                       <div className="row">
