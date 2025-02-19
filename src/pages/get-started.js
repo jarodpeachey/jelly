@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SEO from "../components/SEO";
 import Navigation from "../components/Navigation";
 import "../styles/partials/pages/_contact.scss";
@@ -91,16 +91,8 @@ const GetStarted = () => {
                           or email us at <a href="mailto:jarod@jellydevelopment.com">jarod@jellydevelopment.com</a>
                         </p>
 
-                        {status === "ok" && (
-                          <p>
-                            Submitted!
-                          </p>
-                        )}
-                        {status === "error" && (
-                          <p>
-                            {error}
-                          </p>
-                        )}
+                        {status === "ok" && <p>Submitted!</p>}
+                        {status === "error" && <p>{error}</p>}
                       </form>
                     </div>
                   </div>
