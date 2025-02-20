@@ -3,6 +3,7 @@ import SEO from "../components/SEO";
 import Navigation from "../components/Navigation";
 import "../styles/partials/pages/_contact.scss";
 import Footer from "../components/Footer";
+import Form from "../components/Form";
 
 const GetStarted = () => {
   const [status, setStatus] = useState(null);
@@ -64,38 +65,7 @@ const GetStarted = () => {
                 <div className="row">
                   <div className="col-lg-8 offset-lg-2 max-560">
                     <div className="card">
-                      <form name="get-started" onSubmit={handleFormSubmit}>
-                        <input type="hidden" name="form-name" value="get-started" />
-                        <div className="row">
-                          <div className="col-lg-12">
-                            <label name="name">
-                              Name <span>*</span>
-                              <input required type="text" id="name" name="name" placeholder="Name" />
-                            </label>
-                          </div>
-                          <div className="col-lg-12">
-                            <label name="email">
-                              Email <span>*</span>
-                              <input required type="email" id="email" name="email" placeholder="Email" />
-                            </label>
-                          </div>
-                          <div className="col-lg-12">
-                            <label name="message">
-                              Message? <span>*</span>
-                              <textarea required id="message" name="message" placeholder="I need a new website or landing page" />
-                            </label>
-                          </div>
-                          <div className="col-lg-12">
-                            <input type="submit" value="Let's get started!" className="btn" />
-                          </div>
-                        </div>
-                        <p className="subtext">
-                          or email us at <a href="mailto:jarod@jellydevelopment.com">jarod@jellydevelopment.com</a>
-                        </p>
-
-                        {status === "ok" && <p>Submitted!</p>}
-                        {status === "error" && <p>{error}</p>}
-                      </form>
+                      <Form />
                     </div>
                   </div>
                 </div>

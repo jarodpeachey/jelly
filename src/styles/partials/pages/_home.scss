@@ -195,7 +195,7 @@
       right: -60vh;
       top: -20vh;
       z-index: 0;
-      
+
       @include media-breakpoint-up(md) {
         filter: brightness(98%);
         right: -40vh;
@@ -208,6 +208,44 @@
       @include media-breakpoint-up(xl) {
         right: -10vh;
         width: 1200px;
+      }
+    }
+  }
+
+  .technologies {
+    margin-bottom: -64px;
+
+    .technology {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        line-height: 1.3;
+        font-weight: bold;
+      }
+    }
+
+    .row {
+      width: 100%;
+      margin: 0;
+
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+
+        img {
+          max-width: 100%;
+          height: auto;
+          max-width: 44px;
+
+          @include media-breakpoint-up(sm) {
+            max-width: 54px;
+          }
+        }
       }
     }
   }

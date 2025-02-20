@@ -3,6 +3,7 @@ import SEO from "../components/SEO";
 import Navigation from "../components/Navigation";
 import "../styles/partials/pages/_home.scss";
 import Footer from "../components/Footer";
+import Form from "../components/Form";
 
 const Home = () => {
   return (
@@ -17,9 +18,10 @@ const Home = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-10 col-lg-8 col-xl-6">
-                <h1>Orlando Website Design for Small Businesses</h1>
-                <p className="section-description">Stand out in the Orlando market with a professional website that attracts local customers and grows your business.</p>
-                <p className="section-description">As your Orlando web design partner, we create beautiful, high-converting websites tailored specifically for small businesses in Central Florida.</p>
+                <h1>Affordable Website Design for Small Businesses in Orlando</h1>
+                <p className="section-description">
+                  Stand out in the Orlando market with a professional website that attracts local customers and grows your business.
+                </p>
 
                 <a href="/get-started" className="btn">
                   Get a Free Website Consultation
@@ -48,6 +50,28 @@ const Home = () => {
               <div className="col-lg-4 col-xl-6">
                 {/* <img width="724" height="717" className="graphic" src="/media/img/hero-2.png" alt="Landing page preview" /> */}
               </div>
+              <div className="col-12">
+                <div className="technologies mt-4 mt-lg-5">
+                  <div className="row">
+                    <div className="col-3 technology">
+                      <img src="/media/img/icons/icon--wordpress.svg" alt="WordPress" title="WordPress" />
+                      <p className="d-none d-sm-block" style={{fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center"}}>WordPress Development</p>
+                    </div>
+                    <div className="col-3 technology">
+                      <img src="/media/img/icons/icon--squarespace.svg" alt="Squarespace" title="Squarespace" />
+                      <p className="d-none d-sm-block" style={{fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center"}}>Squarespace Design</p>
+                    </div>
+                    <div className="col-3 technology">
+                      <img src="/media/img/icons/icon--shopify.svg" alt="Shopify" title="Shopify" />
+                      <p className="d-none d-sm-block" style={{fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center"}}>Shopify Stores</p>
+                    </div>
+                    <div className="col-3 technology">
+                      <img src="/media/img/icons/icon--code.svg" alt="Custom Development" title="Custom Development" />
+                      <p className="d-none d-sm-block" style={{fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center"}}>Custom Solutions</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <img className="hero__background" src="/media/img/backgrounds/hero.svg" />
@@ -61,16 +85,19 @@ const Home = () => {
                 <div className="col-lg-8 offset-lg-2 max-560">
                   <p className="display">WHAT WE DO</p>
                   <h2>Growing your business</h2>
-                  <p className="section-description">We help you grow your business online with all-in-one website solution that handles everything you need to succeed.</p>
+                  <p className="section-description">
+                    As your Orlando web design partner, we create beautiful, high-converting websites tailored for small businesses in Central Florida. We help
+                    you grow your business online with an all-in-one website solution that handles everything you need.
+                  </p>
                 </div>
               </div>
               <div className="row">
                 <div className="col-md-6 col-lg-4">
                   <div className="feature">
                     <img width="83" height="64" src="/media/img/icons/icon--target.svg" alt="Target icon" />
-                    <h3>Attract More Local Customers</h3>
+                    <h3>Search Engine Optimization</h3>
                     <p>Your website should be your best salesperson, working 24/7 to bring in new business.</p>
-                    <p>We'll optimize your site to rank higher in local searches and convert visitors into paying customers.</p>
+                    <p>We'll optimize your site to rank higher in local searches and attract more customers.</p>
                   </div>
                 </div>
                 <div className="col-md-6 col-lg-4">
@@ -84,7 +111,7 @@ const Home = () => {
                 <div className="col-md-6 col-lg-4">
                   <div className="feature">
                     <img width="86" height="65" src="/media/img/icons/icon--badge.svg" alt="Badge icon" />
-                    <h3>Build a Memorable Brand</h3>
+                    <h3>Brand Identity</h3>
                     <p>Your website is often the first impression potential customers have of your business.</p>
                     <p>We create distinctive designs that showcase your unique value and help build lasting customer relationships.</p>
                   </div>
@@ -100,7 +127,7 @@ const Home = () => {
                 <div className="col-lg-8 offset-lg-2 max-560">
                   <h2>Ready to chat about your new website?</h2>
                   <div className="d-flex">
-                    <a href="/get-started" className="btn mr-4">
+                    <a href="/get-started" className="btn">
                       Get a Free Website Consultation
                     </a>
                   </div>
@@ -156,39 +183,7 @@ const Home = () => {
                   <p className="display">CONTACT US</p>
                   <h2 className="section-heading">Let's discuss your new website.</h2>
                   <div className="card">
-                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                      <p class="hidden">
-                        <label>
-                          Don't fill this out if you're human: <input name="bot-field" />
-                        </label>
-                      </p>
-                      <div className="row">
-                        <div className="col-lg-12">
-                          <label name="name">
-                            Name <span>*</span>
-                            <input required type="text" id="name" name="name" placeholder="Name" />
-                          </label>
-                        </div>
-                        <div className="col-lg-12">
-                          <label name="email">
-                            Email <span>*</span>
-                            <input required type="email" id="email" name="email" placeholder="Email" />
-                          </label>
-                        </div>
-                        <div className="col-lg-12">
-                          <label name="message">
-                            Message? <span>*</span>
-                            <textarea required id="message" name="message" placeholder="I've got some questions about a new website" />
-                          </label>
-                        </div>
-                        <div className="col-lg-12">
-                          <input type="submit" value="Let's chat!" className="btn" />
-                        </div>
-                      </div>
-                      <p className="subtext">
-                        or email us at <a href="mailto:jarod@jellydevelopment.com">jarod@jellydevelopment.com</a>
-                      </p>
-                    </form>
+                    <Form formName="homepage" />
                   </div>
                 </div>
               </div>
