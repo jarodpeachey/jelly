@@ -17,13 +17,13 @@ const Home = () => {
         <section className="hero">
           <div className="container">
             <div className="row">
-              <div className="col-md-10 col-lg-8 col-xl-6">
+              <div className="col-md-10 col-lg-6 col-xl-7">
                 <h1>Affordable Website Design for Small Businesses in Orlando</h1>
                 <p className="section-description">
                   Stand out in the Orlando market with a professional website that attracts local customers and grows your business.
                 </p>
 
-                <a href="/get-started" className="btn">
+                <a href="/get-started" className="btn secondary">
                   Get a Free Website Consultation
                 </a>
                 <a href="#services" className="btn text">
@@ -47,27 +47,67 @@ const Home = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-lg-4 col-xl-6">
-                {/* <img width="724" height="717" className="graphic" src="/media/img/hero-2.png" alt="Landing page preview" /> */}
+              <div className="col-lg-6 col-xl-5">
+                <div className="hero__services">
+                  <ul>
+                    <li className="hero__service">
+                      <img src="/media/img/icons/icon--design.svg" alt="Web Design" title="Web Design" />
+                      <div className="hero__service-content">
+                        <h4>Web Design</h4>
+                        <p>Beautiful, modern websites that help your business stand out online.</p>
+                      </div>
+                    </li>
+                    <li className="hero__service">
+                      <img src="/media/img/icons/icon--seo.svg" alt="SEO Services" title="SEO Services" />
+                      <div className="hero__service-content">
+                        <h4>SEO Services</h4>
+                        <p>Get found by local customers searching for your services.</p>
+                      </div>
+                    </li>
+                    <li className="hero__service">
+                      <img src="/media/img/icons/icon--hosting.svg" alt="Website Hosting" title="Website Hosting" />
+                      <div className="hero__service-content">
+                        <h4>Website Hosting</h4>
+                        <p>Fast, secure hosting to keep your website running smoothly.</p>
+                      </div>
+                    </li>
+                    <li className="hero__service">
+                      <img src="/media/img/icons/icon--maintenance.svg" alt="Website Maintenance" title="Website Maintenance" />
+                      <div className="hero__service-content">
+                        <h4>Website Maintenance</h4>
+                        <p>Regular updates and support to maintain your site's performance.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
+
               <div className="col-12">
-                <div className="technologies mt-4 mt-lg-5">
+                <div className="technologies mt-5 mt-lg-5">
                   <div className="row">
                     <div className="col-3 technology">
                       <img src="/media/img/icons/icon--wordpress.svg" alt="WordPress" title="WordPress" />
-                      <p className="d-none d-sm-block" style={{fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center"}}>WordPress Development</p>
+                      <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
+                        WordPress Development
+                      </p>
                     </div>
                     <div className="col-3 technology">
                       <img src="/media/img/icons/icon--squarespace.svg" alt="Squarespace" title="Squarespace" />
-                      <p className="d-none d-sm-block" style={{fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center"}}>Squarespace Design</p>
+                      <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
+                        Squarespace Design
+                      </p>
                     </div>
                     <div className="col-3 technology">
                       <img src="/media/img/icons/icon--shopify.svg" alt="Shopify" title="Shopify" />
-                      <p className="d-none d-sm-block" style={{fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center"}}>Shopify Stores</p>
+                      <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
+                        Shopify Stores
+                      </p>
                     </div>
                     <div className="col-3 technology">
                       <img src="/media/img/icons/icon--code.svg" alt="Custom Development" title="Custom Development" />
-                      <p className="d-none d-sm-block" style={{fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center"}}>Custom Solutions</p>
+                      <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
+                        Custom Solutions
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -127,7 +167,7 @@ const Home = () => {
                 <div className="col-lg-8 offset-lg-2 max-560">
                   <h2>Ready to chat about your new website?</h2>
                   <div className="d-flex">
-                    <a href="/get-started" className="btn">
+                    <a href="/get-started" className="btn secondary">
                       Get a Free Website Consultation
                     </a>
                   </div>

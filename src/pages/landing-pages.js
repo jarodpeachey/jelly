@@ -25,7 +25,7 @@ const Home = () => {
                 <p className="section-description">We build landing pages that are tailored to your brand and designed to get you more customers.</p>
                 {/* <p className="section-description">We combine design, branding, SEO and copywriting to craft the perfect website for you and your customers.</p> */}
 
-                <a href="/get-started" className="btn">
+                <a href="/get-started" className="btn secondary">
                   Let's build your landing page
                 </a>
                 <a href="#services" className="btn text">
@@ -198,7 +198,7 @@ const Home = () => {
                             data-splitbee-event-page="/landing-pages"
                             type="submit"
                             value="Let's chat!"
-                            className="btn"
+                            className="btn secondary"
                           />
                         </div>
                       </div>

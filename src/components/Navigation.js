@@ -39,7 +39,7 @@ const Navigation = () => {
                 </a>
               </li>
               <li>
-                <a href="/get-started" className="btn primary">
+                <a href="/get-started" className="btn secondary">
                   Get started
                 </a>
               </li>

@@ -105,7 +105,7 @@
 //                           </label>
 //                         </div>
 //                         <div className="col-lg-12">
-//                           <input type="submit" value="Let's chat!" className="btn" />
+//                           <input type="submit" value="Let's chat!" className="btn secondary" />
 //                         </div>
 //                       </div>
 //                       <p className="subtext">
