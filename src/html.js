@@ -39,14 +39,12 @@ export default function HTML(props) {
         <meta name="author" content="Jelly Development" />
         <meta name="geo.region" content="US-FL" />
         <meta name="geo.placename" content="Orlando" />
-        {/* <script async src="https://cdn.splitbee.io/sb.js"></script> */}
-        {/* <script async defer data-domain="jellydevelopment.com" src="https://plausible.io/js/plausible.js"></script> */}
-        <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
         <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
         {props.postBodyComponents}
+        <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
       </body>
     </html>
   );
