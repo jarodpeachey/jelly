@@ -107,7 +107,7 @@
     }
 
     .proof {
-      background: white;
+      background: $color--background;
       border-radius: 8px;
       box-shadow: 2px 2px 6px -1px #171a5010, 2px 2px 48px -6px #15195006;
       margin-top: 32px;
@@ -226,7 +226,7 @@
     @include media-breakpoint-up(lg) {
       align-items: flex-start;
     }
-    background: white;
+    background: $color--background;
     border: 1px solid #dfdfdf;
     border-radius: 12px;
     box-shadow: 2px 2px 40px 0px #44455510;
@@ -577,7 +577,7 @@
     }
 
     .testimonial {
-      background: white;
+      background: $color--background;
       border: 1px solid #dfdfdf;
       border-radius: 8px;
       box-shadow: 2px 2px 40px 0px #44455510;
@@ -672,7 +672,7 @@
     }
 
     .card {
-      background: white;
+      background: $color--background;
       border-radius: 8px;
       box-shadow: 2px 2px 40px 0px #7879961a;
       margin: 0 auto;

@@ -34,7 +34,7 @@ const Navigation = () => {
                 </a>
               </li> */}
               <li>
-                <a href="/contact" className="menu__item">
+                <a href="/contact" className="menu__item mr-4">
                   Contact
                 </a>
               </li>
