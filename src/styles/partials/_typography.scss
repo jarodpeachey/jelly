@@ -43,7 +43,7 @@ a {
   color: $color--text;
   font-family: "Poppins", "Raleway";
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1.28rem;
   line-height: 28px;
 }
 
@@ -61,41 +61,41 @@ h6 {
 
 h1,
 .h1 {
-  font-size: 48px;
+  font-size: 3.84rem;
   line-height: 56px;
 
   @include media-breakpoint-up(md) {
-    font-size: 56px;
+    font-size: 4.48rem;
     line-height: 66px;
   }
 }
 
 h2,
 .h2 {
-  font-size: 28px;
+  font-size: 2.24rem;
   line-height: 34px;
 
   @include media-breakpoint-up(md) {
     font-weight: 600;
-    font-size: 32px;
+    font-size: 2.56rem;
     line-height: 40px;
   }
 }
 
 h3,
 .h3 {
-  font-size: 18px;
+  font-size: 1.44rem;
   line-height: 30px;
 
   @include media-breakpoint-up(md) {
-    font-size: 18px;
+    font-size: 1.44rem;
     line-height: 30px;
   }
 }
 
 h4,
 .h4 {
-  font-size: 18px;
+  font-size: 1.44rem;
   line-height: 30px;
   margin-bottom: 1rem;
 }
@@ -104,24 +104,33 @@ p,
 ul,
 li {
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1.28rem;
   line-height: 28px;
   margin-top: 0;
   margin-bottom: 24px;
 
   @include media-breakpoint-up(md) {
-    font-size: 16px;
+    font-size: 1.28rem;
     line-height: 2rem;
   }
 
   &.display {
-    font-size: 16px;
+    font-size: 1.28rem;
     line-height: 20px;
     font-weight: 600;
     color: $color--primary;
     text-align: center;
     text-transform: uppercase;
   }
+}
+
+.display {
+  font-size: 1.28rem;
+  line-height: 20px;
+  font-weight: 600;
+  color: $color--primary;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 a {
@@ -138,7 +147,7 @@ a {
 .section-description {
   margin-top: 0;
   max-width: 769px;
-  font-size: 18px;
+  font-size: 1.44rem;
   line-height: 28px;
 }
 

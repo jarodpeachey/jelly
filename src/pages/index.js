@@ -18,16 +18,16 @@ const Home = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-10 col-lg-6 col-xl-7">
-                <h1>Affordable Website Design for Small Businesses in Orlando</h1>
+                <h1>Affordable, Done-for-You Websites for Service-Based Small Businesses</h1>
                 <p className="section-description">
-                  Stand out in the Orlando market with a professional website that attracts local customers and grows your business.
+                  We design, build, and manage SEO-optimized websites for Orlando's small business owners — so you can focus on your clients, not your code.
                 </p>
 
                 <a href="/get-started" className="btn secondary">
-                  Get a Free Website Consultation
+                  Get a Free Website Quote
                 </a>
-                <a href="#services" className="btn text">
-                  Read more{" "}
+                <a href="#packages" className="btn text">
+                  See Packages & Pricing{" "}
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12H19" stroke="#1C2C5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M12 5L19 12L12 19" stroke="#1C2C5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -119,47 +119,153 @@ const Home = () => {
           <img role="presentation" src="/media/img/backgrounds/wave.svg" alt="" className="wave" />
         </section>
         <main>
+          <section className="pain-points">
+            <div className="container">
+              <p className="display" style={{ textAlign: "left" }}>
+                WHY JELLY DEVELOPMENT
+              </p>
+              <h2>Your Website Is Losing You Customers</h2>
+              <p className="section-description">
+                <em>Or Maybe You Don't Have One Yet</em>
+              </p>
+
+              <ul class="pain-points-list">
+                <li>
+                  <img width="50" height="50" src="/media/img/icons/icon--x.svg" alt="x icon" />{" "}
+                  <span>
+                    Slow or <span style={{ fontWeight: "900", whiteSpace: "nowrap" }}>broken websites</span> turn potential customers away
+                  </span>
+                </li>
+                <li>
+                  <img width="50" height="50" src="/media/img/icons/icon--x.svg" alt="x icon" />{" "}
+                  <span>
+                    <span style={{ fontWeight: "900", whiteSpace: "nowrap" }}>80%</span> of people Google your business before calling
+                  </span>
+                </li>
+                <li>
+                  <img width="50" height="50" src="/media/img/icons/icon--x.svg" alt="x icon" />{" "}
+                  <span>
+                    You're <span style={{ fontWeight: "900", whiteSpace: "nowrap" }}>invisible</span> in the digital age without a modern website
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </section>
           <section className="services" id="services">
             <div className="container">
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 max-560">
                   <p className="display">WHAT WE DO</p>
-                  <h2>Growing your business</h2>
+                  <h2>Websites Built for Service-Based Pros — Designed to Get You Found</h2>
                   <p className="section-description">
-                    As your Orlando web design partner, we create beautiful, high-converting websites tailored for small businesses in Central Florida. We help
-                    you grow your business online with an all-in-one website solution that handles everything you need.
+                    As your Orlando web design partner, we create beautiful, high-converting websites that help you grow your business online with an all-in-one
+                    website solution that handles everything you need.
                   </p>
                 </div>
               </div>
               <div className="row">
-                <div className="col-md-6 col-lg-4">
+                <div className="col-sm-6 col-md-4">
                   <div className="feature">
                     <img width="83" height="64" src="/media/img/icons/icon--target.svg" alt="Target icon" />
                     <h3>Search Engine Optimization</h3>
-                    <p>Your website should be your best salesperson, working 24/7 to bring in new business.</p>
-                    <p>We'll optimize your site to rank higher in local searches and attract more customers.</p>
+                    <p>Show up in Google searches when potential customers are looking for your services.</p>
                   </div>
                 </div>
-                <div className="col-md-6 col-lg-4">
+                <div className="col-sm-6 col-md-4">
                   <div className="feature">
                     <img width="74" height="70" src="/media/img/icons/icon--bolt.svg" alt="Thundercloud icon" />
                     <h3>Lightning-Fast Performance</h3>
-                    <p>Every second of load time costs you money. Most visitors leave if a site takes over 3 seconds to load.</p>
-                    <p>Our websites are built for speed from the ground up, ensuring visitors stay engaged with your content.</p>
+                    <p>Fast, mobile-friendly websites that are optimized for conversions.</p>
                   </div>
                 </div>
-                <div className="col-md-6 col-lg-4">
+                <div className="col-sm-6 col-md-4">
                   <div className="feature">
                     <img width="86" height="65" src="/media/img/icons/icon--badge.svg" alt="Badge icon" />
                     <h3>Brand Identity</h3>
-                    <p>Your website is often the first impression potential customers have of your business.</p>
-                    <p>We create distinctive designs that showcase your unique value and help build lasting customer relationships.</p>
+                    <p>Distinctive designs that showcase your unique value and help build lasting customer relationships.</p>
+                  </div>
+                </div>
+                {/* <div className="col-sm-6 col-md-4">
+                  <div className="feature">
+                    <img width="86" height="65" src="/media/img/icons/icon--headset.svg" alt="Badge icon" />
+                    <h3>Hands-Free Support</h3>
+                    <p>Fully-managed websites, so you can stay focused on your clients and growing your business.</p>
+                  </div>
+                </div> */}
+              </div>
+            </div>
+          </section>
+          <section className="packages" id="packages">
+            <div className="container">
+              <p className="display" style={{ textAlign: "center" }}>
+                PACKAGES & PRICING
+              </p>
+              <h2 style={{ textAlign: "center", marginBottom: "2rem" }}>Affordable Website Solutions for Small Businesses</h2>
+              <p className="section-description" style={{ textAlign: "center", marginBottom: "2rem" }}>
+                All packages include a fully-custom website, SEO and performance optimization, and free maintenance and support for a month
+              </p>
+              <div className="row">
+                {/* Starter Package */}
+                <div className="col-md-4">
+                  <div className="card packages__card">
+                    <h3 className="display">Starter</h3>
+                    <p className="price">$850</p>
+                    <ul>
+                      <li>Up to 5 pages</li>
+                      <li>Basic SEO optimization</li>
+                      <li>Hosting included</li>
+                      <li>3-4 week turnaround</li>
+                      <li style={{borderBottom: 'none'}}>2 rounds of revisions</li>
+                    </ul>
+
+                    <a href="/get-started" className="btn secondary">
+                      Get Started
+                    </a>
+                  </div>
+                </div>
+
+                {/* Growth Package */}
+                <div className="col-md-4">
+                  <div className="card packages__card">
+                    <h3 className="display">Growth</h3>
+                    <p className="price">$2,500</p>
+                    <ul>
+                      <li>Everything in Starter</li>
+                      <li>Up to 10 pages</li>
+                      <li>Advanced SEO and analytics</li>
+                      <li>Design and branding services</li>
+                      <li style={{borderBottom: 'none'}}>3 rounds of revisions</li>
+                    </ul>
+
+                    <a href="/get-started" className="btn secondary">
+                      Get Started
+                    </a>
+                  </div>
+                </div>
+
+                {/* Premium Package */}
+                <div className="col-md-4">
+                  <div className="card packages__card">
+                    <h3 className="display">Premium</h3>
+                    <p className="price">$6,500</p>
+
+                    <ul>
+                      <li>Everything in Growth</li>
+                      <li>Unlimited pages</li>
+                      <li>Free maintenance and support for 6 months</li>
+                      <li style={{borderBottom: 'none'}}>Unlimited rounds of revisions</li>
+                    </ul>
+
+                    <a href="/get-started" className="btn secondary">
+                      Get Started
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <section className="chat">
+
+          {/* <section className="chat">
             <img role="presentation" alt="" className="blob" src="/media/img/backgrounds/blob.svg" />
             <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs.svg" />
             <div className="container">
@@ -174,7 +280,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
           <section className="testimonials">
             <div className="container">
               <div className="col-lg-8 offset-lg-2 max-560">

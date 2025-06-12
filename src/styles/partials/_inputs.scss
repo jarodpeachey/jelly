@@ -1,7 +1,7 @@
 @use "./colors" as *;
 
 ::placeholder {
-  font-size: 16px;
+  font-size: 1.28rem;
 }
 
 input[type="text"],
@@ -16,7 +16,7 @@ label {
   color: #191a1c;
   display: block;
   font-family: "Poppins";
-  font-size: 16px;
+  font-size: 1.28rem;
   font-style: normal;
   font-weight: 400;
   line-height: 28px;
