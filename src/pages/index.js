@@ -18,9 +18,9 @@ const Home = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-10 col-lg-6 col-xl-7">
-                <h1>Affordable, Done-for-You Websites for Service-Based Small Businesses</h1>
+                <h1>Affordable, Done-for-You Websites for Orlando Businesses</h1>
                 <p className="section-description hero__paragraph">
-                  We design, build, and manage SEO-optimized websites for Orlando's small business owners — so you can focus on your clients, not your code.
+                  We design, build, and manage SEO-optimized websites for Orlando's business owners — so you can focus on your clients, not your website.
                 </p>
 
                 <a href="/get-started" className="btn secondary">
@@ -82,7 +82,7 @@ const Home = () => {
                         <img src="/media/img/icons/icon--maintenance.svg" alt="Website Maintenance" title="Website Maintenance" />
                         <div className="hero__service-content">
                           <h4>Website Maintenance</h4>
-                          <p>Regular updates and support to maintain your site's performance.</p>
+                          <p>Regular updates and support to maintain and improve your online presence.</p>
                         </div>
                       </div>
                     </div>
