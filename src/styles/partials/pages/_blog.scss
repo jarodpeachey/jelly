@@ -32,7 +32,7 @@
 
     h1 {
       color: $color--heading;
-      font-size: 3.84rem;
+      font-size: 3.091rem;
       font-weight: 600;
       line-height: 56px;
       margin-bottom: 0;
@@ -40,7 +40,7 @@
       text-align: center;
 
       @include media-breakpoint-up(md) {
-        font-size: 4.48rem;
+        font-size: 3.606rem;
         line-height: 66px;
       }
     }
@@ -131,7 +131,7 @@
       }
 
       p {
-        font-size: 1.28rem;
+        font-size: 0.896rem;
         margin: 0;
         margin-bottom: 32px;
         padding: 0px 32px;
@@ -340,7 +340,7 @@
       .subtext {
         color: $color--text;
         font-family: "Poppins";
-        font-size: 1.28rem;
+        font-size: 0.896rem;
         font-weight: 300;
         line-height: 28px;
 

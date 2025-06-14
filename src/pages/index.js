@@ -19,7 +19,7 @@ const Home = () => {
             <div className="row">
               <div className="col-md-10 col-lg-6 col-xl-7">
                 <h1>Affordable, Done-for-You Websites for Service-Based Small Businesses</h1>
-                <p className="section-description">
+                <p className="section-description hero__paragraph">
                   We design, build, and manage SEO-optimized websites for Orlando's small business owners — so you can focus on your clients, not your code.
                 </p>
 
@@ -49,36 +49,44 @@ const Home = () => {
               </div>
               <div className="col-lg-6 col-xl-5">
                 <div className="hero__services">
-                  <ul>
-                    <li className="hero__service">
-                      <img src="/media/img/icons/icon--design.svg" alt="Web Design" title="Web Design" />
-                      <div className="hero__service-content">
-                        <h4>Web Design</h4>
-                        <p>Beautiful, modern websites that help your business stand out online.</p>
+                  <div className="row">
+                    <div className="col-md-6 col-lg-12">
+                      <div className="hero__service">
+                        <img src="/media/img/icons/icon--design.svg" alt="Web Design" title="Web Design" />
+                        <div className="hero__service-content">
+                          <h4>Web Design</h4>
+                          <p>Beautiful, modern websites that help your business stand out online.</p>
+                        </div>
                       </div>
-                    </li>
-                    <li className="hero__service">
-                      <img src="/media/img/icons/icon--seo.svg" alt="SEO Services" title="SEO Services" />
-                      <div className="hero__service-content">
-                        <h4>SEO Services</h4>
-                        <p>Get found by local customers searching for your services.</p>
+                    </div>
+                    <div className="col-md-6 col-lg-12">
+                      <div className="hero__service">
+                        <img src="/media/img/icons/icon--seo.svg" alt="SEO Services" title="SEO Services" />
+                        <div className="hero__service-content">
+                          <h4>SEO Services</h4>
+                          <p>Get found by local customers searching for your services.</p>
+                        </div>
                       </div>
-                    </li>
-                    <li className="hero__service">
-                      <img src="/media/img/icons/icon--hosting.svg" alt="Website Hosting" title="Website Hosting" />
-                      <div className="hero__service-content">
-                        <h4>Website Hosting</h4>
-                        <p>Fast, secure hosting to keep your website running smoothly.</p>
+                    </div>
+                    <div className="col-md-6 col-lg-12">
+                      <div className="hero__service">
+                        <img src="/media/img/icons/icon--hosting.svg" alt="Website Hosting" title="Website Hosting" />
+                        <div className="hero__service-content">
+                          <h4>Website Hosting</h4>
+                          <p>Fast, secure hosting to keep your website running smoothly.</p>
+                        </div>
                       </div>
-                    </li>
-                    <li className="hero__service">
-                      <img src="/media/img/icons/icon--maintenance.svg" alt="Website Maintenance" title="Website Maintenance" />
-                      <div className="hero__service-content">
-                        <h4>Website Maintenance</h4>
-                        <p>Regular updates and support to maintain your site's performance.</p>
+                    </div>
+                    <div className="col-md-6 col-lg-12">
+                      <div className="hero__service">
+                        <img src="/media/img/icons/icon--maintenance.svg" alt="Website Maintenance" title="Website Maintenance" />
+                        <div className="hero__service-content">
+                          <h4>Website Maintenance</h4>
+                          <p>Regular updates and support to maintain your site's performance.</p>
+                        </div>
                       </div>
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -201,7 +209,7 @@ const Home = () => {
                 PACKAGES & PRICING
               </p>
               <h2 style={{ textAlign: "center", marginBottom: "2rem" }}>Affordable Website Solutions for Small Businesses</h2>
-              <p className="section-description" style={{ textAlign: "center", marginBottom: "2rem" }}>
+              <p className="section-description" style={{ textAlign: "center", marginBottom: "2rem", marginRight: 'auto', marginLeft: 'auto' }}>
                 All packages include a fully-custom website, SEO and performance optimization, and free maintenance and support for a month
               </p>
               <div className="row">
@@ -233,7 +241,7 @@ const Home = () => {
                       <li>Everything in Starter</li>
                       <li>Up to 10 pages</li>
                       <li>Advanced SEO and analytics</li>
-                      <li>Design and branding services</li>
+                      <li>Free maintenance and support for 1 month</li>
                       <li style={{borderBottom: 'none'}}>3 rounds of revisions</li>
                     </ul>
 
@@ -247,11 +255,13 @@ const Home = () => {
                 <div className="col-md-4">
                   <div className="card packages__card">
                     <h3 className="display">Premium</h3>
-                    <p className="price">$6,500</p>
+                    <p className="price">$4,750</p>
 
                     <ul>
                       <li>Everything in Growth</li>
                       <li>Unlimited pages</li>
+                      <li>Brand identity research</li>
+                      <li>Logo design</li>
                       <li>Free maintenance and support for 6 months</li>
                       <li style={{borderBottom: 'none'}}>Unlimited rounds of revisions</li>
                     </ul>

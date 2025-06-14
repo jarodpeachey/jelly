@@ -44,7 +44,7 @@ section {
 aside,
 section,
 footer {
-  margin-bottom: -2rem;
+  // margin-bottom: -2rem;
 
   @include media-breakpoint-up(md) {
     margin-bottom: 0;
