@@ -33,7 +33,7 @@ return (
             </section>
             <main>
                 <section className="posts">
-                    <img role="presentation" alt="" src="/media/img/backgrounds/circle.svg" alt="" />
+                    <img role="presentation" src="/media/img/backgrounds/circle.svg" alt="" />
                     <div className="white">
                         <div className="container">
                             <div className="infinite">
@@ -45,7 +45,7 @@ return (
                                                     <a href={`/blog/${node.slug}`} className="post-card">
                                                         <img src={node.metadata.featured_image.url} alt="" />
                                                         <h3>{node.title}</h3>
-                                                        <p>{node.meta_description}</p>
+                                                        <p>{node.metadata && node.metadata.meta_description}</p>
                                                         <small>{node.published_at}</small>
                                                     </a>
                                                 </div>
@@ -56,7 +56,7 @@ return (
                                                     <a href={`/blog/${node.slug}`} className="post-card">
                                                         <img src={node.metadata.featured_image.url} alt="" />
                                                         <h3>{node.title}</h3>
-                                                        <p>{node.meta_description}</p>
+                                                        <p>{node.metadata && node.metadata.meta_description}</p>
                                                         <small>{node.published_at}</small>
                                                     </a>
                                                 </div>
@@ -80,7 +80,7 @@ return (
                                 <h2 className="section-heading">Let's discuss your new website.</h2>
                                 <div className="card">
                                     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                                                                                    <p class="hidden">
+                                                                                    <p className="hidden">
                                             <label>
                                                 Don't fill this out if you're human: <input name="bot-field" />
                                             </label>

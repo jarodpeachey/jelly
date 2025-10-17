@@ -3,311 +3,271 @@
 @use "../colors" as *;
 
 .post {
-  .hero {
-    background: $color--primary-lightest;
-    overflow: visible;
-    padding-bottom: 224px;
-    padding-top: 164px;
-    position: relative;
+    .hero {
+        background: $color--primary-lightest;
+        overflow: visible;
+        padding-bottom: 24px;
+        padding-top: 164px;
+        position: relative;
 
-    @include media-breakpoint-up(md) {
-      padding-top: 170px;
-      padding-bottom: 224px;
+        @include media-breakpoint-up(md) {
+            padding-top: 170px;
+            padding-bottom: 24px;
+        }
+
+        .col-lg-8 {
+            margin: 0 auto;
+            max-width: 700px;
+        }
+
+        .container {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+
+        p {
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        h1 {
+            color: $color--heading;
+            font-weight: 600;
+            margin-bottom: 0;
+            margin-top: 0;
+            text-align: center;
+        }
     }
 
-    .col-lg-8 {
-      margin: 0 auto;
-      max-width: 700px;
-    }
+    .content {
+        position: relative;
+        background: linear-gradient(to bottom, $color--primary-lightest 0%, #ffffff 100%);
+        // padding-top: 50px;
+        // margin-top: -100px;
+        overflow: visible;
+        padding-bottom: 150px;
+        position: relative;
 
-    .container {
-      padding-bottom: 0;
-      padding-top: 0;
-    }
+        @include media-breakpoint-up(lg) {
+            // margin-top: -60px;
+            // padding-top: 0;
+        }
 
-    p {
-      margin-bottom: 16px;
-      text-align: center;
-    }
+        .container {
+            @include media-breakpoint-up(lg) {
+                max-width: 800px !important;
+            }
+        }
 
-    h1 {
-      color: $color--heading;
-      font-size: 3.091rem;
-      font-weight: 600;
-      line-height: 56px;
-      margin-bottom: 0;
-      margin-top: 0;
-      text-align: center;
+        .content__inner img {
+            max-width: 100%;
+        }
 
-      @include media-breakpoint-up(md) {
-        font-size: 3.606rem;
-        line-height: 66px;
-      }
-    }
-  }
-
-  .content {
-    margin-top: -100px;
-    overflow: visible;
-    padding-bottom: 150px;
-    position: relative;
-
-    @include media-breakpoint-up(lg) {
-      margin-top: -60px;
-      padding-top: 0;
-    }
-
-    .container {
-      @include media-breakpoint-up(lg) {
-        max-width: 800px !important;
-      }
-    }
-
-    .white {
-      background: white;
-      padding-top: 60px;
-
-      @include media-breakpoint-up(lg) {
-        padding-top: 0;
-      }
-    }
-
-    .content__inner img {
-      max-width: 100%;
-    }
-
-    img[src*="circle"] {
-      bottom: 99%;
-      left: 0;
-      max-width: 99999px;
-      position: absolute;
-      width: 100%;
-    }
-
-    h2,
-    h3,
-    h4 {
-      margin-top: 48px;
-    }
-
-    @include media-breakpoint-up(md) {
-      padding-bottom: 300px;
-    }
-
-    img[src*='wave'] {
-      bottom: 99%;
-      left: 0;
-      max-width: 99999px;
-      position: absolute;
-      width: 100%;
-
-      @include media-breakpoint-up(xl) {
-        width: 100%;
-      }
-    }
-  }
-
-  .chat {
-    background: $color--primary;
-    border-radius: 8px;
-    box-shadow: 2px 2px 160px 0px #44455540;
-    margin-top: 96px;
-    overflow: hidden;
-    padding: 48px;
-    position: relative;
-
-    @include media-breakpoint-up(md) {
-      margin-top: 128px;
-      padding: 64px;
-    }
-
-    .blob {
-      left: -5rem;
-      opacity: 0.6;
-      position: absolute;
-      top: 0rem;
-      width: 200px;
-
-      @include media-breakpoint-up(md) {
-        opacity: 0.9;
-      }
-
-      @include media-breakpoint-up(lg) {
-        opacity: 1;
-        top: -4rem;
-        width: 300px;
-      }
-    }
-
-    .blobs {
-      opacity: 0.6;
-      position: absolute;
-      right: -3rem;
-      top: -2rem;
-      width: 200px;
-
-      @include media-breakpoint-up(md) {
-        opacity: 0.9;
-      }
-
-      @include media-breakpoint-up(lg) {
-        opacity: 1;
-        top: -3rem;
-        width: 300px;
-      }
-    }
-
-    h2 {
-      color: white;
-      margin-bottom: 24px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 0;
-      text-align: center;
-
-      @include media-breakpoint-up(md) {
-        margin-bottom: 32px;
-      }
-    }
-
-    p {
-      color: #ffffffd3;
-      text-align: center;
-    }
-
-    .d-flex {
-      flex-direction: column;
-      margin-left: auto;
-      margin-right: auto;
-      width: fit-content;
-
-      .btn {
-        background: white;
-        border-color: white;
-        color: $color--primary;
-        margin-bottom: 12px;
-        margin-left: auto;
-        margin-right: auto;
-
-        &:last-child {
-          background: transparent;
-          color: white;
-          margin-bottom: 0;
-
-          svg, path {
-            stroke: white;
-          }
+        h2,
+        h3,
+        h4 {
+            margin-top: 48px;
         }
 
         @include media-breakpoint-up(md) {
-          margin-bottom: 0;
+            padding-bottom: 300px;
         }
-      }
 
-      @include media-breakpoint-up(md) {
-        flex-direction: row;
-      }
-    }
-  }
+        img[src*="wave"] {
+            bottom: 99%;
+            left: 0;
+            max-width: 99999px;
+            position: absolute;
+            width: 100%;
 
-  .cta {
-    background: $color--primary-dark;
-    overflow: visible;
-    position: relative;
-
-    @include media-breakpoint-up(lg) {
-      background-size: contain;
-    }
-
-    img.wave {
-      bottom: 99%;
-      left: 0;
-      position: absolute;
-      width: 100%;
-
-      @media (min-width: 1400px) {
-        width: 100%;
-      }
-    }
-
-    .blob {
-      position: absolute;
-      right: -15rem;
-      top: -5rem;
-      width: 400px;
-
-      @include media-breakpoint-up(lg) {
-        top: -9rem;
-        width: 500px;
-      }
-    }
-
-    .blobs {
-      bottom: 0;
-      left: -15rem;
-      position: absolute;
-      width: 500px;
-
-      @include media-breakpoint-up(md) {
-        left: -5rem;
-      }
-
-      @include media-breakpoint-up(lg) {
-        bottom: 0rem;
-        width: 600px;
-      }
-    }
-
-    p.display {
-      color: white;
-    }
-
-    h2 {
-      color: white;
-      margin-bottom: 48px;
-      margin-top: 0;
-      text-align: center;
-
-      @include media-breakpoint-up(md) {
-        margin-bottom: 64px;
-      }
-    }
-
-    .section-description {
-      text-align: center;
-    }
-
-    .card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 2px 2px 40px 0px #7879961a;
-      margin: 0 auto;
-      max-width: 500px;
-      padding: 32px;
-
-      @include media-breakpoint-up(md) {
-        padding: 64px;
-      }
-
-      .btn {
-        cursor: pointer !important;
-        margin-bottom: 12px;
-        margin-top: 16px !important;
-        width: 100% !important;
-      }
-
-      .subtext {
-        color: $color--text;
-        font-family: "Poppins";
-        font-size: 1.03rem;
-        font-weight: 300;
-        line-height: 28px;
-
-        a {
-          color: $color--link;
-          font-weight: 300;
+            @include media-breakpoint-up(xl) {
+                width: 100%;
+            }
         }
-      }
     }
-  }
+
+    .chat {
+        background: $color--primary-dark;
+        border-radius: 8px;
+        box-shadow: 2px 2px 160px 0px #44455540;
+        border: 1px solid #e6e6e6;
+        margin-top: 96px;
+        overflow: hidden;
+        padding: 48px;
+        position: relative;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 128px;
+            padding: 64px;
+        }
+
+        .blob {
+            left: -5rem;
+            opacity: 1;
+            position: absolute;
+            top: 0rem;
+            width: 200px;
+
+            @include media-breakpoint-up(md) {
+                opacity: 1;
+            }
+
+            @include media-breakpoint-up(lg) {
+                opacity: 1;
+                top: -4rem;
+                width: 300px;
+            }
+        }
+
+        .blobs {
+            opacity: 0.6;
+            position: absolute;
+            right: -3rem;
+            top: -2rem;
+            width: 200px;
+
+            @include media-breakpoint-up(md) {
+                opacity: 0.9;
+            }
+
+            @include media-breakpoint-up(lg) {
+                opacity: 1;
+                top: -3rem;
+                width: 300px;
+            }
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: 24px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+            text-align: center;
+            @include media-breakpoint-up(md) {
+                margin-bottom: 32px;
+            }
+        }
+
+        p {
+            color: #ffffffd3;
+            text-align: center;
+        }
+
+        .btn {
+            margin-bottom: 12px;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 0;
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+        }
+    }
+
+    .cta {
+        background: $color--primary-dark;
+        overflow: visible;
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+            background-size: contain;
+        }
+
+        img.wave {
+            bottom: 99%;
+            left: 0;
+            position: absolute;
+            width: 100%;
+
+            @media (min-width: 1400px) {
+                width: 100%;
+            }
+        }
+
+        .blob {
+            position: absolute;
+            right: -15rem;
+            top: -5rem;
+            width: 400px;
+
+            @include media-breakpoint-up(lg) {
+                top: -9rem;
+                width: 500px;
+            }
+        }
+
+        .blobs {
+            bottom: 0;
+            left: -15rem;
+            position: absolute;
+            width: 500px;
+
+            @include media-breakpoint-up(md) {
+                left: -5rem;
+            }
+
+            @include media-breakpoint-up(lg) {
+                bottom: 0rem;
+                width: 600px;
+            }
+        }
+
+        p.display {
+            color: white;
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: 48px;
+            margin-top: 0;
+            text-align: center;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 64px;
+            }
+        }
+
+        .section-description {
+            text-align: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 2px 2px 40px 0px #7879961a;
+            border: 1px solid #e6e6e6;
+            margin: 0 auto;
+            max-width: 500px;
+            padding: 32px;
+
+            @include media-breakpoint-up(md) {
+                padding: 64px;
+            }
+
+            .btn {
+                cursor: pointer !important;
+                margin-bottom: 12px;
+                margin-top: 16px !important;
+                width: 100% !important;
+            }
+
+            .subtext {
+                color: $color--text;
+                font-family: "Poppins";
+                font-size: 1.03rem;
+                font-weight: 300;
+                line-height: 28px;
+
+                a {
+                    color: $color--link;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
 }

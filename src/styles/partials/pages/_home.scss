@@ -27,14 +27,14 @@
 
     h1 {
       color: $color--heading;
-      font-size: 2.705rem;
+  font-size: 48px;
       font-weight: 600;
       line-height: 56px;
       margin-bottom: 24px;
       max-width: 520px;
 
       @include media-breakpoint-up(md) {
-        font-size: 3.22rem;
+  font-size: 57px;
         line-height: 66px;
         margin-bottom: 32px;
       }
@@ -42,7 +42,7 @@
 
     p.hero__paragraph {
       color: $color--text;
-      font-size: 1.159rem;
+  font-size: 20px;
       line-height: 30px;
       margin-bottom: 24px;
       margin-top: 0;
@@ -110,6 +110,7 @@
       background: $color--background;
       border-radius: 8px;
       box-shadow: 2px 2px 6px -1px #171a5010, 2px 2px 48px -6px #15195006;
+      border: 1px solid #e6e6e6;
       margin-top: 32px;
       padding: 16px 24px;
       width: fit-content;
@@ -231,6 +232,7 @@
     border: 1px solid #dfdfdf;
     border-radius: 12px;
     box-shadow: 2px 2px 40px 0px #44455510;
+    border: 1px solid #e6e6e6;
     // height: 100%;
     padding: 32px;
 
@@ -261,6 +263,7 @@
         border-radius: 8px;
         background-color: $color--primary-light;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e6e6e6;
         padding: 12px;
         width: 100%;
         max-width: 48px;
@@ -430,6 +433,7 @@
       border: 1px solid #dfdfdf;
       border-radius: 12px;
       box-shadow: 2px 2px 40px 0px #44455510;
+      border: 1px solid #e6e6e6;
       // height: 100%;
       padding: 32px;
 
@@ -478,6 +482,7 @@
       border-radius: 8px;
       padding: 2rem 1.5rem;
       box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      border: 1px solid #e6e6e6;
       flex: 1 1 280px;
       text-align: center;
       margin-bottom: 2rem;
@@ -485,6 +490,7 @@
       border: 1px solid #dfdfdf;
       border-radius: 12px;
       box-shadow: 2px 2px 40px 0px #44455510;
+      border: 1px solid #e6e6e6;
       // height: 100%;
       padding: 32px;
 
@@ -682,6 +688,7 @@
       border: 1px solid #dfdfdf;
       border-radius: 12px;
       box-shadow: 2px 2px 40px 0px #44455510;
+      border: 1px solid #e6e6e6;
       // height: 100%;
       padding: 32px;
 
@@ -779,6 +786,7 @@
       border: 1px solid #dfdfdf;
       border-radius: 12px;
       box-shadow: 2px 2px 40px 0px #44455510;
+      border: 1px solid #e6e6e6;
       // height: 100%;
       padding: 32px;
 

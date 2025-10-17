@@ -43,8 +43,8 @@ a {
   color: $color--text;
   font-family: "Poppins", "Raleway";
   font-weight: 300;
-  font-size: 1.03rem;
-  line-height: 28px;
+  font-size: 17px;
+  line-height: 32px;
 }
 
 h1,
@@ -61,41 +61,42 @@ h6 {
 
 h1,
 .h1 {
-  font-size: 3.091rem;
+  /* reduced ~10% from original sizes */
+  font-size: 44px; /* ~3.091rem -> 49.5px -> reduced to ~44px */
   line-height: 56px;
 
   @include media-breakpoint-up(md) {
-    font-size: 3.606rem;
+    font-size: 52px; /* ~3.606rem -> 57.7px -> reduced to ~52px */
     line-height: 66px;
   }
 }
 
 h2,
 .h2 {
-  font-size: 1.803rem;
+  font-size: 29px; /* 1.803rem -> ~28.8px */
   line-height: 34px;
 
   @include media-breakpoint-up(md) {
     font-weight: 600;
-    font-size: 2.061rem;
+    font-size: 33px; /* 2.061rem -> ~33px */
     line-height: 40px;
   }
 }
 
 h3,
 .h3 {
-  font-size: 1.159rem;
+  font-size: 19px; /* 1.159rem -> ~18.5px */
   line-height: 30px;
 
   @include media-breakpoint-up(md) {
-    font-size: 1.159rem;
+    font-size: 19px;
     line-height: 30px;
   }
 }
 
 h4,
 .h4 {
-  font-size: 1.159rem;
+  font-size: 19px; /* 1.159rem -> ~18.5px */
   line-height: 30px;
   margin-bottom: 1rem;
 }
@@ -103,19 +104,19 @@ h4,
 p,
 ul,
 li {
-  font-weight: 300;
-  font-size: 1.03rem;
-  line-height: 28px;
+  font-weight: 400;
+  font-size: 17px; /* 1.03rem -> ~16.48px, rounded to 17px for readability */
+  line-height: 32px;
   margin-top: 0;
   margin-bottom: 24px;
 
   @include media-breakpoint-up(md) {
-    font-size: 1.03rem;
-    line-height: 2rem;
+    font-size: 17px;
+    line-height: 32px; /* previously 2rem -> 32px */
   }
 
   &.display {
-    font-size: 1.03rem;
+    font-size: 17px;
     line-height: 20px;
     font-weight: 600;
     color: $color--primary;
@@ -125,7 +126,7 @@ li {
 }
 
 .display {
-  font-size: 1.03rem;
+  font-size: 17px;
   line-height: 20px;
   font-weight: 600;
   color: $color--primary;
@@ -147,7 +148,7 @@ a {
 .section-description {
   margin-top: 0;
   max-width: 769px;
-  font-size: 1.159rem;
+  font-size: 19px;
   line-height: 28px;
 }
 

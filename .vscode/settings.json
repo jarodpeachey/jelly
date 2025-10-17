@@ -1,0 +1,17 @@
+{
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "javascriptreact": "html",
+    "typescriptreact": "html",
+    "scss": "css"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.formatOnSave": false
+}
