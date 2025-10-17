@@ -28,11 +28,11 @@ const Navigation = () => {
           </div>
           <div className="navigation-menu">
             <ul className="menu__main">
-              {/* <li>
+              <li>
                 <a href="/blog" className="menu__item">
                   Blog
                 </a>
-              </li> */}
+              </li>
               <li>
                 <a href="/contact" className="menu__item mr-4">
                   Contact
