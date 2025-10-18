@@ -282,12 +282,12 @@
         align-items: center;
         padding: 12px;
         background: $color--primary-dark;
-        box-shadow: 0 -6px 30px rgba(0,0,0,0.12);
+        box-shadow: 0 -6px 30px rgba(0, 0, 0, 0.12);
         transition: transform 240ms ease, bottom 240ms ease, opacity 240ms ease;
         z-index: 2000;
 
         &.is-visible {
-            bottom: 0px;
+            bottom: -50px;
             transform: translateY(0);
             opacity: 1;
         }
@@ -317,7 +317,7 @@
             padding: 10px 16px;
             text-decoration: none;
             font-weight: 600;
-            box-shadow: 0 6px 16px rgba(34,34,34,0.12);
+            box-shadow: 0 6px 16px rgba(34, 34, 34, 0.12);
             transition: transform 120ms ease;
 
             &:hover {
@@ -332,9 +332,14 @@
                 align-items: center;
             }
 
+            &.is-visible {
+                bottom: -0px;
+                transform: translateY(0);
+                opacity: 1;
+            }
+
             .toolbar-text {
                 text-align: left;
-
             }
         }
     }
