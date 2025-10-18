@@ -249,6 +249,7 @@
     .cta {
         background: $color--primary-dark;
         overflow: visible;
+        overflow-x: hidden;
         position: relative;
 
         @include media-breakpoint-up(lg) {

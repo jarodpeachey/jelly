@@ -714,6 +714,7 @@
     background: $color--primary-dark;
     overflow: visible;
     position: relative;
+    overflow-x: hidden;
     // margin-top: 159px;
 
     @include media-breakpoint-up(lg) {
