@@ -287,7 +287,7 @@
         z-index: 2000;
 
         &.is-visible {
-            bottom: -50px;
+            bottom: -1px;
             transform: translateY(0);
             opacity: 1;
         }
