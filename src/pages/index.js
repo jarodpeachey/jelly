@@ -219,7 +219,7 @@ const Home = () => {
                     <h3 className="display">Starter</h3>
                     <p className="price">$850</p>
                     <ul>
-                      <li>Up to 5 pages</li>
+                      <li>One page</li>
                       <li>Basic SEO optimization</li>
                       <li>Hosting included</li>
                       <li>3-4 week turnaround</li>
@@ -239,7 +239,7 @@ const Home = () => {
                     <p className="price">$2,500</p>
                     <ul>
                       <li>Everything in Starter</li>
-                      <li>Up to 10 pages</li>
+                      <li>Up to 5 pages</li>
                       <li>Advanced SEO and analytics</li>
                       <li>Free maintenance and support for 1 month</li>
                       <li style={{borderBottom: 'none'}}>3 rounds of revisions</li>
@@ -259,7 +259,7 @@ const Home = () => {
 
                     <ul>
                       <li>Everything in Growth</li>
-                      <li>Unlimited pages</li>
+                      <li>Up to 10 pages</li>
                       <li>Brand identity research</li>
                       <li>Logo design</li>
                       <li>Free maintenance and support for 6 months</li>
@@ -276,7 +276,6 @@ const Home = () => {
           </section>
 
           {/* <section className="chat">
-            <img role="presentation" alt="" className="blob" src="/media/img/backgrounds/blob.svg" />
             <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs.svg" />
             <div className="container">
               <div className="row">
@@ -331,7 +330,6 @@ const Home = () => {
           </section>
           <section className="cta">
             <img role="presentation" src="/media/img/backgrounds/wave--dark.svg" alt="" className="wave" />
-            <img role="presentation" alt="" className="blob" src="/media/img/backgrounds/blob--dark.svg" />
             <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs--dark.svg" />
             <div className="container">
               <div className="row">

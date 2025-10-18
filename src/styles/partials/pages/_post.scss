@@ -172,7 +172,6 @@
     .cta {
         background: $color--primary-dark;
         overflow: visible;
-        overflow-x: hidden;
         position: relative;
 
         @include media-breakpoint-up(lg) {
@@ -268,6 +267,74 @@
                     color: $color--link;
                     font-weight: 300;
                 }
+            }
+        }
+    }
+
+    // Bottom floating toolbar that appears after scrolling
+    .post__toolbar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: -140px; // hidden by default
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        background: $color--primary-dark;
+        box-shadow: 0 -6px 30px rgba(0,0,0,0.12);
+        transition: transform 240ms ease, bottom 240ms ease, opacity 240ms ease;
+        z-index: 2000;
+
+        &.is-visible {
+            bottom: 0px;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toolbar-inner {
+            max-width: 1100px;
+            width: 100%;
+            padding: 8px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toolbar-text {
+            font-weight: 600;
+            color: white;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .btn-schedule {
+            background: $color--primary;
+            color: white;
+            border-radius: 6px;
+            padding: 10px 16px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 6px 16px rgba(34,34,34,0.12);
+            transition: transform 120ms ease;
+
+            &:hover {
+                transform: translateY(-2px);
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            .toolbar-inner {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .toolbar-text {
+                text-align: left;
+
             }
         }
     }

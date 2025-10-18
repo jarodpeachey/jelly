@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // removed GraphQL query - post data is provided via pageContext by gatsby-node
 import ReactMarkdown from "react-markdown";
 import "../styles/partials/pages/_post.scss";
 import Navigation from "../components/Navigation";
 import SEO from "../components/SEO";
 import Footer from "../components/Footer";
+import formatDate from "../utils/formatDate";
 
 const PostTemplate = ({ pageContext }) => {
     let post = pageContext.post;
+    const [toolbarVisible, setToolbarVisible] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => {
+            const y = window.scrollY || window.pageYOffset;
+            setToolbarVisible(y > 200);
+        };
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        // set initial
+        onScroll();
+
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
     return (
         <>
             <SEO
@@ -27,7 +42,7 @@ const PostTemplate = ({ pageContext }) => {
                                 <h1>{post.title}</h1>
                                 <br />
                                 <p className="author">By Jarod Peachey</p>
-                                <p className="date">{post.published_at}</p>
+                                <p className="date">{formatDate(post.published_at)}</p>
                             </div>
                         </div>
                     </div>
@@ -48,7 +63,6 @@ const PostTemplate = ({ pageContext }) => {
                     </section>
                     <section className="cta">
                         <img role="presentation" src="/media/img/backgrounds/wave--dark.svg" alt="" className="wave" />
-                        <img role="presentation" alt="" className="blob" src="/media/img/backgrounds/blob--dark.svg" />
                         <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs--dark.svg" />
                         <div className="container">
                             <div className="row">
@@ -102,6 +116,19 @@ const PostTemplate = ({ pageContext }) => {
                 </main>
             </div>
             <Footer />
+            <div className={`post__toolbar ${toolbarVisible ? "is-visible" : ""}`}>
+                <div className="toolbar-inner">
+                    <h4 className="toolbar-text">Ready for your website?</h4>
+                    <a
+                        className="btn"
+                        href="https://calendly.com/jarodpeachey/meeting-with-jarod-peachey"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Schedule a Call
+                    </a>
+                </div>
+            </div>
         </>
     );
 };

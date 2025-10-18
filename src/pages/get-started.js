@@ -58,7 +58,6 @@ const GetStarted = () => {
           <section className="cta">
             <img role="presentation" src="/media/img/backgrounds/circle.svg" alt="" />
 
-            <img role="presentation" alt="" className="blob" src="/media/img/backgrounds/blob.svg" />
             <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs.svg" />
             <div className="white">
               <div className="container">

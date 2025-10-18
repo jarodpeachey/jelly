@@ -105,6 +105,7 @@
 
             &:hover {
                 transform: scale(1.02);
+                border: 1px solid $color--primary;
             }
 
             @include media-breakpoint-up(lg) {
@@ -132,10 +133,13 @@
                 padding: 0px 32px;
             }
 
-            small {
+            a {
                 display: block;
                 margin-bottom: 32px;
                 padding: 0px 32px;
+                color: $color--primary;
+                font-weight: 400;
+                font-size: 16px;
             }
         }
     }
@@ -249,7 +253,6 @@
     .cta {
         background: $color--primary-dark;
         overflow: visible;
-        overflow-x: hidden;
         position: relative;
 
         @include media-breakpoint-up(lg) {
