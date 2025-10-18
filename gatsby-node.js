@@ -72,4 +72,50 @@ exports.createPages = async ({ actions, reporter }) => {
       },
     });
   });
+
+  // --- Sitemap generation (fallback/manual) ---
+  // We generate a simple sitemap.xml in public/ using the posts we just read.
+  try {
+    const siteConfig = require("./gatsby-config.js");
+    const siteUrl = (siteConfig && siteConfig.siteMetadata && siteConfig.siteMetadata.siteUrl) || "";
+    if (siteUrl) {
+      const urls = [];
+
+      // Home
+      urls.push({ url: `${siteUrl}/`, priority: 1.0, changefreq: "daily" });
+
+      // Blog listing
+      urls.push({ url: `${siteUrl}/blog`, priority: 0.8, changefreq: "weekly" });
+
+      // Posts (use published_at for lastmod if available)
+      posts.forEach((p) => {
+        const loc = `${siteUrl}/blog/${p.slug}`;
+        const lastmod = p.published_at || null;
+        urls.push({ url: loc, priority: 0.7, changefreq: "monthly", lastmod });
+      });
+
+      // Build XML
+      const xmlItems = urls
+        .map((u) => {
+          const parts = [`<loc>${u.url}</loc>`];
+          if (u.lastmod) parts.push(`<lastmod>${u.lastmod}</lastmod>`);
+          if (u.changefreq) parts.push(`<changefreq>${u.changefreq}</changefreq>`);
+          if (u.priority !== undefined) parts.push(`<priority>${u.priority}</priority>`);
+          return `<url>${parts.join("")}</url>`;
+        })
+        .join("\n");
+
+      const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n` +
+        `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${xmlItems}\n</urlset>`;
+
+      const outDir = path.resolve(__dirname, "public");
+      if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+      fs.writeFileSync(path.join(outDir, "sitemap.xml"), sitemap, "utf8");
+      reporter.info(`Wrote sitemap.xml with ${urls.length} URLs to ${outDir}`);
+    } else {
+      reporter.warn("siteUrl not configured in gatsby-config.js; skipping sitemap generation");
+    }
+  } catch (err) {
+    reporter.warn(`Error generating sitemap.xml: ${err}`);
+  }
 };
