@@ -6,11 +6,16 @@ export default function HTML(props) {
     return (
         <html {...props.htmlAttributes} lang="en">
             <head>
-                <meta name="sa-verify" content="5jellydevel186" />
                 <meta charSet="utf-8" />
                 <meta httpEquiv="x-ua-compatible" content="ie=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 {props.headComponents}
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NWTZ5EG98G"></script>
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NWTZ5EG98G');",
+                        }}
+                    />
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Jelly Development | Website design & management agency in Orlando" />
@@ -34,10 +39,6 @@ export default function HTML(props) {
                 {props.preBodyComponents}
                 <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
                 {props.postBodyComponents}
-                <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-                <noscript>
-                    <img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" />
-                </noscript>
             </body>
         </html>
     );
