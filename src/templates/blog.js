@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import SEO from "../components/SEO";
 import Navigation from "../components/Navigation";
 import "../styles/partials/pages/_blog.scss";
@@ -9,7 +9,10 @@ const Blog = ({ pageContext }) => {
         posts: { edges: posts },
     } = pageContext;
 
-    console.log(posts);
+    const [inputValue, setInputValue] = useState("");
+    const [searchQuery, setSearchQuery] = useState("");
+
+    console.log(posts, searchQuery);
     const truncate = (text, max = 100) => {
         if (!text) return "";
         if (text.length <= max) return text;
@@ -33,6 +36,39 @@ const Blog = ({ pageContext }) => {
                         <div className="row">
                             <div className="col-lg-8 offset-lg-2">
                                 <h1>Blog</h1>
+                                <form
+                                    className="search-wrapper"
+                                    onSubmit={(e) => {
+                                        e.preventDefault();
+                                        setSearchQuery((inputValue || "").trim());
+                                    }}
+                                >
+                                    <input
+                                        type="text"
+                                        className="input"
+                                        placeholder="Search posts..."
+                                        value={inputValue}
+                                        onChange={(e) => setInputValue(e.target.value)}
+                                        aria-label="Search posts"
+                                    />
+                                    <button type="submit" className="btn">
+                                        Search
+                                    </button>
+                                </form>
+                                {searchQuery ? (
+                                    <div className="search-clear">
+                                        <a
+                                            href="#"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setInputValue("");
+                                                setSearchQuery("");
+                                            }}
+                                        >
+                                            Clear
+                                        </a>
+                                    </div>
+                                ) : null}
                             </div>
                         </div>
                     </div>
@@ -43,33 +79,53 @@ const Blog = ({ pageContext }) => {
                         <div className="white">
                             <div className="container">
                                 <div className="infinite">
-                                    <div className="row">
-                                        {posts.map(({ node }, index) => {
-                                            if (index <= 10) {
-                                                return (
-                                                    <div className="col-sm-6 col-lg-4  infinite__item" data-index={index}>
-                                                        <a href={`/blog/${node.slug}`} className="post-card">
-                                                            <img src={node.metadata.featured_image.url} alt="" />
-                                                            <h3>{node.title}</h3>
-                                                            <p>{truncate(node.metadata && node.metadata.meta_description, 100)}</p>
-                                                            <a href={`/blog/${node.slug}`}>Read More</a>
-                                                        </a>
-                                                    </div>
-                                                );
-                                            } else {
-                                                return (
-                                                    <div className="col-sm-6 col-lg-4  infinite__item hidden" data-index={index}>
-                                                        <a href={`/blog/${node.slug}`} className="post-card">
-                                                            <img src={node.metadata.featured_image.url} alt="" />
-                                                            <h3>{node.title}</h3>
-                                                            <p>{truncate(node.metadata && node.metadata.meta_description, 100)}</p>
-                                                            <a href={`/blog/${node.slug}`}>Read More</a>
-                                                        </a>
-                                                    </div>
-                                                );
-                                            }
-                                        })}
-                                    </div>
+                                    {useMemo(() => {
+                                        const q = (searchQuery || "").trim().toLowerCase();
+                                        const filtered = !q
+                                            ? posts
+                                            : posts.filter(({ node }) => {
+                                                  const title = (node.title || "").toLowerCase();
+                                                  const meta = (node.metadata && node.metadata.meta_description) || "";
+                                                  const seo = (node.metadata && node.metadata.seo_description) || "";
+                                                  const desc = (meta || seo || "").toLowerCase();
+                                                  return title.indexOf(q) !== -1 || desc.indexOf(q) !== -1;
+                                              });
+
+                                        return (
+                                            <>
+                                                {searchQuery ? (
+                                                    <div className="search-results">Showing {filtered.length} results for "{searchQuery}"</div>
+                                                ) : null}
+                                                <div className="row">
+                                                    {filtered.map(({ node }, index) => {
+                                                        if (index <= 10) {
+                                                            return (
+                                                                <div className="col-sm-6 col-lg-4  infinite__item" data-index={index} key={node.slug}>
+                                                                    <a href={`/blog/${node.slug}`} className="post-card">
+                                                                        <img src={node.metadata.featured_image.url} alt="" />
+                                                                        <h3>{node.title}</h3>
+                                                                        <p>{truncate(node.metadata && node.metadata.meta_description, 100)}</p>
+                                                                        <a href={`/blog/${node.slug}`}>Read More</a>
+                                                                    </a>
+                                                                </div>
+                                                            );
+                                                        } else {
+                                                            return (
+                                                                <div className="col-sm-6 col-lg-4  infinite__item hidden" data-index={index} key={node.slug}>
+                                                                    <a href={`/blog/${node.slug}`} className="post-card">
+                                                                        <img src={node.metadata.featured_image.url} alt="" />
+                                                                        <h3>{node.title}</h3>
+                                                                        <p>{truncate(node.metadata && node.metadata.meta_description, 100)}</p>
+                                                                        <a href={`/blog/${node.slug}`}>Read More</a>
+                                                                    </a>
+                                                                </div>
+                                                            );
+                                                        }
+                                                    })}
+                                                </div>
+                                            </>
+                                        );
+                                    }, [posts, searchQuery])}
                                     {posts.length > 11 && <div className="btn infinite__button outlined secondary">Load More</div>}
                                 </div>
                             </div>

@@ -6,13 +6,13 @@
     .hero {
         background: $color--primary-lightest;
         overflow: visible;
-        padding-bottom: 224px;
+        padding-bottom: 170px;
         padding-top: 164px;
         position: relative;
 
         @include media-breakpoint-up(md) {
             padding-top: 170px;
-            padding-bottom: 224px;
+            padding-bottom: 170px;
         }
 
         .col-lg-8 {
@@ -33,10 +33,62 @@
         h1 {
             color: $color--heading;
             font-weight: 600;
-            margin-bottom: 0;
+            // margin-bottom: 0;
             margin-top: 0;
             text-align: center;
         }
+    }
+
+    .search-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        input {
+            display: block;
+            width: 100%;
+            margin: 0;
+        }
+
+        .btn {
+            cursor: pointer;
+            margin-top: 12px;
+            width: 100%;
+            padding: 13px 16px 12px;
+
+            @include media-breakpoint-up(sm) {
+                margin: 0;
+                margin-left: 12px;
+                width: fit-content;
+            }
+        }
+
+        @include media-breakpoint-up(sm) {
+            flex-direction: row;
+        }
+    }
+
+    .search-clear {
+        margin-top: 8px;
+        a {
+            font-weight: 400;
+            color: $color--primary;
+            text-decoration: underline;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 16px;
+            position: relative;
+            left: -16px;
+        }
+    }
+
+    .search-results {
+        // margin-top: 12px;
+        color: $color--text;
+        font-size: 14px;
+        font-weight: 500;
+        width: 100%;
+        margin-bottom: 8px;
     }
 
     .posts {
