@@ -38,7 +38,7 @@ const Blog = ({ pageContext }) => {
                                 <h1>Blog</h1>
                                 <form
                                     className="search-wrapper"
-                                    onSubmit={(e) => {
+                                    onSubmit={e => {
                                         e.preventDefault();
                                         setSearchQuery((inputValue || "").trim());
                                     }}
@@ -48,7 +48,7 @@ const Blog = ({ pageContext }) => {
                                         className="input"
                                         placeholder="Search posts..."
                                         value={inputValue}
-                                        onChange={(e) => setInputValue(e.target.value)}
+                                        onChange={e => setInputValue(e.target.value)}
                                         aria-label="Search posts"
                                     />
                                     <button type="submit" className="btn">
@@ -59,7 +59,7 @@ const Blog = ({ pageContext }) => {
                                     <div className="search-clear">
                                         <a
                                             href="#"
-                                            onClick={(e) => {
+                                            onClick={e => {
                                                 e.preventDefault();
                                                 setInputValue("");
                                                 setSearchQuery("");
@@ -75,67 +75,66 @@ const Blog = ({ pageContext }) => {
                 </section>
                 <main>
                     <section className="posts">
-                        <img role="presentation" src="/media/img/backgrounds/circle.svg" alt="" />
-                        <div className="white">
-                            <div className="container">
-                                <div className="infinite">
-                                    {useMemo(() => {
-                                        const q = (searchQuery || "").trim().toLowerCase();
+                        <div className="container">
+                            <div className="infinite">
+                                {useMemo(() => {
+                                    const q = (searchQuery || "").trim().toLowerCase();
 
-                                        // Sort posts by published_at (newest first). Use Date.parse fallback to 0.
-                                        const sorted = posts.slice().sort((a, b) => {
-                                            const aDate = Date.parse(a.node.published_at) || 0;
-                                            const bDate = Date.parse(b.node.published_at) || 0;
-                                            return bDate - aDate;
-                                        });
+                                    // Sort posts by published_at (newest first). Use Date.parse fallback to 0.
+                                    const sorted = posts.slice().sort((a, b) => {
+                                        const aDate = Date.parse(a.node.published_at) || 0;
+                                        const bDate = Date.parse(b.node.published_at) || 0;
+                                        return bDate - aDate;
+                                    });
 
-                                        const filtered = !q
-                                            ? sorted
-                                            : sorted.filter(({ node }) => {
-                                                  const title = (node.title || "").toLowerCase();
-                                                  const meta = (node.metadata && node.metadata.meta_description) || "";
-                                                  const seo = (node.metadata && node.metadata.seo_description) || "";
-                                                  const desc = (meta || seo || "").toLowerCase();
-                                                  return title.indexOf(q) !== -1 || desc.indexOf(q) !== -1;
-                                              });
+                                    const filtered = !q
+                                        ? sorted
+                                        : sorted.filter(({ node }) => {
+                                              const title = (node.title || "").toLowerCase();
+                                              const meta = (node.metadata && node.metadata.meta_description) || "";
+                                              const seo = (node.metadata && node.metadata.seo_description) || "";
+                                              const desc = (meta || seo || "").toLowerCase();
+                                              return title.indexOf(q) !== -1 || desc.indexOf(q) !== -1;
+                                          });
 
-                                        return (
-                                            <>
-                                                {searchQuery ? (
-                                                    <div className="search-results">Showing {filtered.length} results for "{searchQuery}"</div>
-                                                ) : null}
-                                                <div className="row">
-                                                    {filtered.map(({ node }, index) => {
-                                                        if (index <= 10) {
-                                                            return (
-                                                                <div className="col-sm-6 col-lg-4  infinite__item" data-index={index} key={node.slug}>
-                                                                    <a href={`/blog/${node.slug}`} className="post-card">
-                                                                        <img src={node.metadata.featured_image.url} alt="" />
-                                                                        <h3>{node.title}</h3>
-                                                                        <p>{truncate(node.metadata && node.metadata.meta_description, 100)}</p>
-                                                                        <a href={`/blog/${node.slug}`}>Read More</a>
-                                                                    </a>
-                                                                </div>
-                                                            );
-                                                        } else {
-                                                            return (
-                                                                <div className="col-sm-6 col-lg-4  infinite__item hidden" data-index={index} key={node.slug}>
-                                                                    <a href={`/blog/${node.slug}`} className="post-card">
-                                                                        <img src={node.metadata.featured_image.url} alt="" />
-                                                                        <h3>{node.title}</h3>
-                                                                        <p>{truncate(node.metadata && node.metadata.meta_description, 100)}</p>
-                                                                        <a href={`/blog/${node.slug}`}>Read More</a>
-                                                                    </a>
-                                                                </div>
-                                                            );
-                                                        }
-                                                    })}
+                                    return (
+                                        <>
+                                            {searchQuery ? (
+                                                <div className="search-results">
+                                                    Showing {filtered.length} results for "{searchQuery}"
                                                 </div>
-                                            </>
-                                        );
-                                    }, [posts, searchQuery])}
-                                    {posts.length > 11 && <div className="btn infinite__button outlined secondary">Load More</div>}
-                                </div>
+                                            ) : null}
+                                            <div className="row">
+                                                {filtered.map(({ node }, index) => {
+                                                    if (index <= 10) {
+                                                        return (
+                                                            <div className="col-sm-6 col-lg-4  infinite__item" data-index={index} key={node.slug}>
+                                                                <a href={`/blog/${node.slug}`} className="post-card">
+                                                                    <img src={node.metadata.featured_image.url} alt="" />
+                                                                    <h3>{node.title}</h3>
+                                                                    <p>{truncate(node.metadata && node.metadata.meta_description, 100)}</p>
+                                                                    <a href={`/blog/${node.slug}`}>Read More</a>
+                                                                </a>
+                                                            </div>
+                                                        );
+                                                    } else {
+                                                        return (
+                                                            <div className="col-sm-6 col-lg-4  infinite__item hidden" data-index={index} key={node.slug}>
+                                                                <a href={`/blog/${node.slug}`} className="post-card">
+                                                                    <img src={node.metadata.featured_image.url} alt="" />
+                                                                    <h3>{node.title}</h3>
+                                                                    <p>{truncate(node.metadata && node.metadata.meta_description, 100)}</p>
+                                                                    <a href={`/blog/${node.slug}`}>Read More</a>
+                                                                </a>
+                                                            </div>
+                                                        );
+                                                    }
+                                                })}
+                                            </div>
+                                        </>
+                                    );
+                                }, [posts, searchQuery])}
+                                {posts.length > 11 && <div className="btn infinite__button outlined secondary">Load More</div>}
                             </div>
                         </div>
                     </section>
