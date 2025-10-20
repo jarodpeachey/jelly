@@ -81,9 +81,17 @@ const Blog = ({ pageContext }) => {
                                 <div className="infinite">
                                     {useMemo(() => {
                                         const q = (searchQuery || "").trim().toLowerCase();
+
+                                        // Sort posts by published_at (newest first). Use Date.parse fallback to 0.
+                                        const sorted = posts.slice().sort((a, b) => {
+                                            const aDate = Date.parse(a.node.published_at) || 0;
+                                            const bDate = Date.parse(b.node.published_at) || 0;
+                                            return bDate - aDate;
+                                        });
+
                                         const filtered = !q
-                                            ? posts
-                                            : posts.filter(({ node }) => {
+                                            ? sorted
+                                            : sorted.filter(({ node }) => {
                                                   const title = (node.title || "").toLowerCase();
                                                   const meta = (node.metadata && node.metadata.meta_description) || "";
                                                   const seo = (node.metadata && node.metadata.seo_description) || "";
