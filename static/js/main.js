@@ -4,6 +4,7 @@
   const notBuild = typeof window !== "undefined";
 
   addScript("/js/navigation.js");
+  addScript("/js/carousel.js");
 
   function addScript(url) {
     const script = document.createElement("script");

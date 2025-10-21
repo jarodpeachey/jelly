@@ -1,0 +1,263 @@
+@use "colors" as *;
+@use "breakpoints" as *;
+@use "shadows" as *;
+
+$slideWidth: 250;
+$slideHeight: 200;
+
+.carousel {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    // overflow-y: visible;
+    // max-width: 400px;
+    // left: -400px;
+    height: 160px;
+    width: 140%;
+    left: -20%;
+
+    @include media-breakpoint-up(xs) {
+        height: 160px;
+        width: 120%;
+        left: -10%;
+    }
+
+    @include media-breakpoint-up(md) {
+        height: 220px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        height: 305px;
+        width: 110%;
+        left: -5%;
+    }
+
+    @include media-breakpoint-up(xl) {
+        height: 333px;
+        width: 100%;
+        left: 0;
+    }
+
+    .carousel__mask {
+        position: relative;
+        // width: #{$slideWidth}px;
+        width: 100%;
+    }
+
+    .carousel__track {
+        position: relative;
+        display: flex;
+        width: 100%;
+        // overflow-y: visible;
+
+        &.active {
+            transition: 0.3s ease;
+        }
+
+        // @media (min-width: 1200px) {
+        //   left: -120px;
+        // }
+    }
+
+    .carousel__slide {
+        position: relative;
+        left: 0;
+        position: relative;
+        overflow: hidden;
+        box-shadow: none;
+        z-index: 0;
+        overflow: visible;
+        // opacity: 0.4;
+        perspective: 1000px;
+        opacity: 0;
+
+        &.middle {
+          a {
+            opacity: 1;
+          }
+        }
+
+        a {
+            opacity: 0;
+            background: $color--primary;
+            border: 1px solid $color--primary;
+            border-radius: 8px;
+            box-shadow: 2px 2px 12px 0px #1c2c5e1a;
+            color: white;
+            text-align: center;
+            transition: 0.2s ease;
+            text-decoration: none;
+            position: absolute;
+            display: block;
+            bottom: -15px;
+            cursor: pointer;
+            background: $color--primary;
+            padding: 0px 0;
+            line-height: 17px;
+            font-weight: 400;
+            // text-transform: uppercase;
+            color: white;
+            border-radius: 99px;
+            left: calc(50% - 50px) !important;
+            width: 100px;
+            text-align: center;
+            font-size: 7px;
+            transition: 0.2s ease;
+
+            &:hover {
+                box-shadow: 2px 2px 24px 0px #101a3656;
+                background-color: #2b48a9;
+                border-color: #2b48a9;
+            }
+        }
+
+        * {
+            visibility: visible !important;
+        }
+
+        svg {
+            transition: 0.6s ease;
+            position: relative;
+            left: 0;
+            visibility: visible !important;
+
+            image {
+                visibility: visible !important;
+            }
+        }
+
+        &.middle {
+            z-index: 9;
+            // opacity: 1;
+
+            @include media-breakpoint-up(sm) {
+                svg {
+                    box-shadow: $shadow--four;
+                }
+            }
+        }
+
+        &.edge {
+            z-index: 3;
+            // opacity: 0.8;
+
+            @include media-breakpoint-up(sm) {
+                svg {
+                    box-shadow: $shadow--three;
+                }
+            }
+        }
+
+        &.outer {
+            // opacity: 0.6;
+            z-index: 1;
+
+            @include media-breakpoint-up(sm) {
+                svg {
+                    box-shadow: $shadow--two;
+                }
+            }
+        }
+
+        &:first-child {
+            margin-left: -#{12 / 1.5 / 12 * 100%};
+
+            @media (min-width: 1200px) {
+                margin-left: -#{12 / 5 / 12 * 100%};
+            }
+        }
+
+        width: 100%;
+        flex: 1 1 0;
+        flex-basis: #{12 / 3 / 12 * 100%};
+        width: #{12 / 3 / 12 * 100%};
+        min-width: #{12 / 3 / 12 * 100%};
+        max-width: #{12 / 3 / 12 * 100%};
+
+        @include media-breakpoint-up(sm) {
+            flex-basis: #{12 / 3 / 12 * 100%};
+            width: #{12 / 3 / 12 * 100%};
+            min-width: #{12 / 3 / 12 * 100%};
+            max-width: #{12 / 3 / 12 * 100%};
+        }
+
+        @include media-breakpoint-up(md) {
+            flex-basis: #{12 / 3 / 12 * 100%};
+            width: #{12 / 3 / 12 * 100%};
+            min-width: #{12 / 3 / 12 * 100%};
+            max-width: #{12 / 3 / 12 * 100%};
+        }
+
+        @include media-breakpoint-up(lg) {
+            flex-basis: #{12 / 3 / 12 * 100%};
+            width: #{12 / 3 / 12 * 100%};
+            min-width: #{12 / 3 / 12 * 100%};
+            max-width: #{12 / 3 / 12 * 100%};
+        }
+
+        @media (min-width: 1200px) {
+            flex-basis: #{12 / 5 / 12 * 100%};
+            width: #{12 / 5 / 12 * 100%};
+            min-width: #{12 / 5 / 12 * 100%};
+            max-width: #{12 / 5 / 12 * 100%};
+
+            // &.middle {
+            //   flex-basis: #{12 / 5 / 12 * 120%};
+            //   width: #{12 / 5 / 12 * 120%};
+            //   min-width: #{12 / 5 / 12 * 120%};
+            //   max-width: #{12 / 5 / 12 * 120%};
+            // }
+        }
+
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.carousel__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    // font-family: "Mont", "Courier New";
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 80px;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 110px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 126px;
+    }
+}
+
+.carousel__indicator {
+    padding: 5px 12px 4px;
+    border-radius: 999px;
+    font-size: 16px;
+    // text-transform: uppercase;
+    background: $color--primary-light;
+    color: $color--heading;
+    font-weight: bold;
+    min-width: 180px;
+    text-align: center;
+}
+
+.carousel__control {
+    outline: none;
+    background: transparent;
+    border: none;
+    margin: 0px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 18px;
+        height: 18px;
+    }
+}
