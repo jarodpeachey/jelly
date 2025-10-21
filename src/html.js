@@ -10,12 +10,6 @@ export default function HTML(props) {
                 <meta httpEquiv="x-ua-compatible" content="ie=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 {props.headComponents}
-                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NWTZ5EG98G"></script>
-                    <script
-                        dangerouslySetInnerHTML={{
-                            __html: "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NWTZ5EG98G');",
-                        }}
-                    />
                     {/* Initial full-screen overlay to prevent flash of unstyled text (FOUST). */}
                     <style
                         dangerouslySetInnerHTML={{
