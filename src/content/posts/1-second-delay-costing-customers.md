@@ -23,7 +23,7 @@ Even a one-second delay can have measurable impacts on business outcomes. For e-
 
 Slow websites also affect customer perception. Visitors may associate a lagging site with poor quality, unreliability, or unprofessionalism. This perception can reduce repeat visits and weaken brand loyalty. For small businesses in particular, where word-of-mouth and trust are essential, speed issues can subtly erode credibility and customer confidence over time.
 
-Search engine rankings are also impacted. Google evaluates page load times as part of its ranking algorithm. Sites that load slowly may drop in search results, reducing organic traffic and limiting exposure to potential customers. For practical optimization tips, check out [Neil Patel's advice on speeding up websites](https://neilpatel.com/blog/speed-optimization/). You can also refer to our internal guide on [The SEO Checklist for Small Business Websites](/blog/seo-checklist-small-business-websites) for related strategies.
+Search engine rankings are also impacted. Google evaluates page load times as part of its ranking algorithm. Sites that load slowly may drop in search results, reducing organic traffic and limiting exposure to potential customers. For practical optimization tips, refer to our guide - [The SEO Checklist for Small Business Websites](/blog/seo-checklist-small-business-websites) - for related strategies.
 
 ## Factors That Cause Slow Load Times
 

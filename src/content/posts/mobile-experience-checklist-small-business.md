@@ -46,8 +46,6 @@ To keep your site fast:
 - Minify your CSS and JavaScript.
 - Implement lazy loading for media elements.
 
-If you want a deeper dive into how site performance affects customer behavior, check out our post **[How a 1-Second Delay Could Be Costing You Customers](https://jellydevelopment.com/blog/how-a-1-second-delay-could-be-costing-you-customers)** for detailed strategies on improving load times.
-
 ## 5. Make Content Readable and Accessible
 
 Mobile screens are smaller, so readability matters more than ever. Use larger font sizes (at least 16px for body text), short paragraphs, and plenty of white space. Avoid walls of text that require zooming or pinching.
@@ -77,8 +75,3 @@ Regularly review bounce rates, page load times, and conversion paths. These insi
 ### Conclusion
 
 Delivering a strong mobile experience isn’t optional anymore—it’s the standard. By following this checklist, small business owners can ensure their websites not only look great but also perform flawlessly across all devices. A fast, user-friendly mobile experience builds trust, boosts engagement, and ultimately drives more conversions.
-
-For more insight into optimizing your website’s performance and conversions, explore external guides like:
-- [Google’s Mobile-Friendly Guide](https://developers.google.com/search/docs/fundamentals/mobile-friendly)
-- [HubSpot’s Mobile Website Best Practices](https://blog.hubspot.com/marketing/mobile-website-optimization)
-- [Smashing Magazine’s Responsive Design Principles](https://www.smashingmagazine.com/category/responsive-design/)

@@ -13,19 +13,19 @@ A website designed to generate leads can significantly impact a business’s gro
 
 Knowing your audience is the first step to designing for conversions. Identify pain points, needs, and preferences through surveys, analytics, and user feedback. Tailoring your website content and layout to meet audience expectations increases engagement and encourages lead capture.
 
-Understanding what motivates visitors helps craft targeted calls-to-action and design elements. For additional strategies, see [HubSpot’s guide to improving conversion rates](https://blog.hubspot.com/marketing/conversion-rate-optimization).
+Understanding what motivates visitors helps craft targeted calls-to-action and design elements.
 
 ## Simplifying Navigation and User Flow
 
 Clear navigation ensures visitors can find information quickly. Simplified menus, intuitive layout, and prominent calls-to-action guide users through the site efficiently. A smooth user flow reduces frustration and increases the likelihood of lead submissions.
 
-Using internal linking between posts, such as [The SEO Checklist for Small Business Websites](/blog/seo-checklist-small-business-websites), also helps guide visitors toward relevant content and enhances overall engagement.
+Using internal linking between posts on your own website also helps guide visitors toward relevant content and enhances overall engagement.
 
 ## Optimizing Forms for Conversion
 
 Forms are central to lead capture. Short, well-structured forms encourage completion, while multi-step forms reduce perceived effort. Include trust signals such as privacy notes and secure badges near forms to improve confidence.
 
-Placement and visual prominence of forms, along with compelling calls-to-action, increase conversion rates. For examples and best practices, see [Neil Patel’s form optimization tips](https://neilpatel.com/blog/lead-generation-forms/).
+Placement and visual prominence of forms, along with compelling calls-to-action, increase conversion rates.
 
 ## Leveraging Visual Hierarchy and Trust Signals
 

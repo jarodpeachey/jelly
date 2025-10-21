@@ -19,7 +19,7 @@ Once you identify your target keywords, strategically incorporate them into your
 
 On-page SEO involves optimizing content and HTML elements to improve search engine rankings. Unique meta titles and descriptions, proper use of H1–H3 headings, and internal linking are essential. Each page should target a specific keyword and provide clear value to the reader.
 
-Internal linking helps search engines discover new pages and improves user navigation. Linking to relevant posts within your website, such as [How a 1-Second Delay Could Be Costing You Customers](/blog/1-second-delay-costing-customers), enhances SEO and keeps users engaged longer.
+Internal linking helps search engines discover new pages and improves user navigation. Linking to relevant posts within your website enhances SEO and keeps users engaged longer.
 
 ## Technical SEO Considerations
 
@@ -43,4 +43,4 @@ SEO is an ongoing effort. Regularly review traffic, rankings, and engagement met
 
 ## Conclusion
 
-Implementing a thorough SEO strategy is critical for small business websites. By following this checklist—covering keyword research, on-page and technical SEO, content optimization, backlinks, and monitoring—you can increase search visibility, attract qualified traffic, and generate more leads. For related insights on improving website performance, see [How a 1-Second Delay Could Be Costing You Customers](/blog/1-second-delay-costing-customers).
+Implementing a thorough SEO strategy is critical for small business websites. By following this checklist—covering keyword research, on-page and technical SEO, content optimization, backlinks, and monitoring—you can increase search visibility, attract qualified traffic, and generate more leads.

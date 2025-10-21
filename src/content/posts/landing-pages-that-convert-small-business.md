@@ -23,15 +23,13 @@ Examples include:
 
 The key to a high-converting page is clarity. Your landing page should tell users exactly what to do and why it benefits them. This simplicity reduces confusion and increases conversions.
 
-For inspiration, check out **[The Ultimate Guide to a Lightning-Fast Small Business Website](https://jellydevelopment.com/blog/the-ultimate-guide-to-a-lightning-fast-small-business-website)**—a fast-loading page improves conversions significantly.
-
 ## 2. Crafting a Compelling Headline and Subheadline
 
 Your headline is the first thing users see, and it determines whether they’ll stay or bounce. A strong headline instantly communicates value. For example, “Get a Professional Website in Just 7 Days” is clear and benefit-driven.  
 
 Follow it with a subheadline that expands on the promise, such as “We help small businesses grow online with beautiful, high-performing websites.” Together, these elements set expectations and engage readers right away.  
 
-A/B testing different versions of your headline is one of the easiest ways to identify what resonates best with your audience. According to **[Unbounce’s Landing Page Optimization Guide](https://unbounce.com/landing-page-articles/landing-page-optimization-guide/)**, even small headline tweaks can increase conversion rates by 10–20%.
+A/B testing different versions of your headline is one of the easiest ways to identify what resonates best with your audience.
 
 ## 3. The Power of Visual Hierarchy
 
@@ -52,8 +50,6 @@ For example:
 
 This kind of authentic, specific testimonial can significantly boost confidence and reduce hesitation.
 
-If you’re unsure where to start, check out **[How Great Web Design Builds Trust With New Visitors](https://jellydevelopment.com/blog/how-great-web-design-builds-trust)** for more insights into creating content that converts.
-
 ## 5. Strategic Call-to-Action (CTA) Placement
 
 Your CTA is the most critical element on the page—it’s where the conversion happens. Whether it’s “Get Started,” “Book a Demo,” or “Claim Your Free Quote,” the wording and placement matter.  
@@ -73,8 +69,6 @@ Highlight testimonials from happy clients, showcase recognizable logos of past c
 
 Design-wise, your landing page should look professional and consistent with your brand identity. Poor design can make even great offers seem untrustworthy. For example, mismatched colors, inconsistent fonts, or low-quality images can instantly hurt your credibility.
 
-Learn more about building user trust in **[7 Signs It’s Time to Redesign Your Website](https://jellydevelopment.com/blog/7-signs-its-time-to-redesign-your-website)**.
-
 ## 7. Testing and Optimization
 
 High-performing landing pages aren’t built overnight—they’re refined over time through testing and data analysis. Tools like **Google Optimize**, **Hotjar**, and **Crazy Egg** help you see how users interact with your page.  
@@ -86,8 +80,6 @@ Experiment with:
 - Visuals and testimonials  
 
 Always base changes on real user behavior, not assumptions. Continuous improvement ensures your landing pages stay relevant, effective, and profitable.
-
-For deeper insights, explore **[HubSpot’s Guide to Landing Page Optimization](https://blog.hubspot.com/marketing/landing-page-optimization)** and **[CXL’s Conversion Research Framework](https://cxl.com/blog/conversion-research-framework/)**.
 
 ## Conclusion
 

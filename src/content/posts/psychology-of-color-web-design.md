@@ -13,13 +13,13 @@ Color influences perception, emotions, and decision-making on websites. For smal
 
 Colors evoke specific emotions. Blue conveys trust and reliability, making it ideal for financial and tech companies. Red encourages urgency and action, often used for promotions or call-to-action buttons. Green is associated with growth and health, while yellow signals optimism and attention.
 
-Using color thoughtfully can influence user behavior and improve conversions. For insights into color psychology in web marketing, see [Smashing Magazine’s article on color in design](https://www.smashingmagazine.com/2010/01/color-theory-for-designer-part-3/). Additionally, [Canva’s guide on color psychology](https://www.canva.com/colors/color-psychology/) provides practical examples.
+Using color thoughtfully can influence user behavior and improve conversions.
 
 ## Creating a Cohesive Color Palette
 
 A harmonious color palette ensures visual consistency and reinforces branding. Start with a primary color reflecting your brand identity, add secondary colors for emphasis, and accent colors for calls-to-action. Tools like [Adobe Color](https://color.adobe.com/create) and [Coolors](https://coolors.co/) help create balanced color schemes.
 
-Maintain contrast to ensure readability, particularly for text and buttons. Consistent color use improves user experience and recognition. Linking color choices to user emotions strengthens the overall design strategy. For inspiration, see our internal post [How to Capture More Leads With Smart Web Design](/blog/capture-more-leads-smart-web-design).
+Maintain contrast to ensure readability, particularly for text and buttons. Consistent color use improves user experience and recognition. Linking color choices to user emotions strengthens the overall design strategy.
 
 ## Using Color to Guide User Behavior
 
