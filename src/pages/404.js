@@ -18,7 +18,7 @@ const NotFound = ({ props }) => {
           <div className="card">
             <h1 className="">This page doesn't exist.</h1>
             <p className="section-description">Well, it does, but it doesn't have anything cool on it.</p>
-            <a href="/" className="btn secondary">Go back to our homepage</a>
+            <a href="/" className="btn">Go back to our homepage</a>
           </div>
         </div>
       </section>

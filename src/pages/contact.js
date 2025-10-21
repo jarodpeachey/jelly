@@ -56,8 +56,8 @@ const Contact = () => {
         </section>
         <main>
           <section className="cta">
-            <img role="presentation" src="/media/img/backgrounds/circle.svg" alt="" />
-            <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs.svg" />
+            <img role="presentation" src="/media/img/backgrounds/circle.svg" alt="Background image" />
+            <img role="presentation" className="blobs" src="/media/img/backgrounds/blobs.svg" alt="Background image" />
             <div className="white">
               <div className="container">
                 <div className="row">

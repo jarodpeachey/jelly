@@ -23,23 +23,23 @@ const Home = () => {
                   We design, build, and manage SEO-optimized websites for Orlando's business owners — so you can focus on your clients, not your website.
                 </p>
 
-                <a href="/get-started" className="btn secondary">
+                <a href="/get-started" className="btn">
                   Get a Free Website Quote
                 </a>
                 <a href="#packages" className="btn text">
                   See Packages & Pricing{" "}
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19" stroke="#1C2C5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M12 5L19 12L12 19" stroke="#1C2C5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M5 12H19" stroke="#1C2C5E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12 5L19 12L12 19" stroke="#1C2C5E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </a>
                 <div className="proof">
                   <div className="stars">
-                    <img src="/media/img/icons/icon--rating.svg" alt="" />
-                    <img src="/media/img/icons/icon--rating.svg" alt="" />
-                    <img src="/media/img/icons/icon--rating.svg" alt="" />
-                    <img src="/media/img/icons/icon--rating.svg" alt="" />
-                    <img src="/media/img/icons/icon--rating.svg" alt="" />
+                    <img src="/media/img/icons/icon--rating.svg" alt="Star icon" />
+                    <img src="/media/img/icons/icon--rating.svg" alt="Star icon" />
+                    <img src="/media/img/icons/icon--rating.svg" alt="Star icon" />
+                    <img src="/media/img/icons/icon--rating.svg" alt="Star icon" />
+                    <img src="/media/img/icons/icon--rating.svg" alt="Star icon" />
                   </div>
                   <p>Jelly Development knocked it out of the park.</p>
                   <p>
@@ -52,36 +52,36 @@ const Home = () => {
                   <div className="row">
                     <div className="col-md-6 col-lg-12">
                       <div className="hero__service">
-                        <img src="/media/img/icons/icon--design.svg" alt="Web Design" title="Web Design" />
+                        <img src="/media/img/icons/icon--design.svg" alt="Web Design icon" title="Web Design" />
                         <div className="hero__service-content">
-                          <h4>Web Design</h4>
+                          <h2 className="h4">Web Design</h2>
                           <p>Beautiful, modern websites that help your business stand out online.</p>
                         </div>
                       </div>
                     </div>
                     <div className="col-md-6 col-lg-12">
                       <div className="hero__service">
-                        <img src="/media/img/icons/icon--seo.svg" alt="SEO Services" title="SEO Services" />
+                        <img src="/media/img/icons/icon--seo.svg" alt="Magnifying glass icon" title="SEO Services" />
                         <div className="hero__service-content">
-                          <h4>SEO Services</h4>
+                          <h2 className="h4">SEO Services</h2>
                           <p>Get found by local customers searching for your services.</p>
                         </div>
                       </div>
                     </div>
                     <div className="col-md-6 col-lg-12">
                       <div className="hero__service">
-                        <img src="/media/img/icons/icon--hosting.svg" alt="Website Hosting" title="Website Hosting" />
+                        <img src="/media/img/icons/icon--hosting.svg" alt="Database icon" title="Website Hosting" />
                         <div className="hero__service-content">
-                          <h4>Website Hosting</h4>
+                          <h2 className="h4">Website Hosting</h2>
                           <p>Fast, secure hosting to keep your website running smoothly.</p>
                         </div>
                       </div>
                     </div>
                     <div className="col-md-6 col-lg-12">
                       <div className="hero__service">
-                        <img src="/media/img/icons/icon--maintenance.svg" alt="Website Maintenance" title="Website Maintenance" />
+                        <img src="/media/img/icons/icon--maintenance.svg" alt="Tools icon" title="Website Maintenance" />
                         <div className="hero__service-content">
-                          <h4>Website Maintenance</h4>
+                          <h2 className="h4">Website Maintenance</h2>
                           <p>Regular updates and support to maintain and improve your online presence.</p>
                         </div>
                       </div>
@@ -94,25 +94,25 @@ const Home = () => {
                 <div className="technologies mt-5 mt-lg-5">
                   <div className="row">
                     <div className="col-3 technology">
-                      <img src="/media/img/icons/icon--wordpress.svg" alt="WordPress" title="WordPress" />
+                      <img src="/media/img/icons/icon--wordpress.svg" alt="WordPress icon" title="WordPress" />
                       <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
                         WordPress Development
                       </p>
                     </div>
                     <div className="col-3 technology">
-                      <img src="/media/img/icons/icon--squarespace.svg" alt="Squarespace" title="Squarespace" />
+                      <img src="/media/img/icons/icon--squarespace.svg" alt="Squarespace icon" title="Squarespace" />
                       <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
                         Squarespace Design
                       </p>
                     </div>
                     <div className="col-3 technology">
-                      <img src="/media/img/icons/icon--shopify.svg" alt="Shopify" title="Shopify" />
+                      <img src="/media/img/icons/icon--shopify.svg" alt="Shopify icon" title="Shopify" />
                       <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
                         Shopify Stores
                       </p>
                     </div>
                     <div className="col-3 technology">
-                      <img src="/media/img/icons/icon--code.svg" alt="Custom Development" title="Custom Development" />
+                      <img src="/media/img/icons/icon--code.svg" alt="Custom Development icon" title="Custom Development" />
                       <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
                         Custom Solutions
                       </p>
@@ -124,7 +124,7 @@ const Home = () => {
           </div>
           <img className="hero__background" src="/media/img/backgrounds/hero.svg" />
 
-          <img role="presentation" src="/media/img/backgrounds/wave.svg" alt="" className="wave" />
+          <img role="presentation" src="/media/img/backgrounds/wave.svg" alt="Background image" className="wave" />
         </section>
         <main>
           <section className="pain-points">
@@ -137,7 +137,7 @@ const Home = () => {
                 <em>Or Maybe You Don't Have One Yet</em>
               </p>
 
-              <ul class="pain-points-list">
+              <ul className="pain-points-list">
                 <li>
                   <img width="50" height="50" src="/media/img/icons/icon--x.svg" alt="x icon" />{" "}
                   <span>
@@ -226,7 +226,7 @@ const Home = () => {
                       <li style={{borderBottom: 'none'}}>2 rounds of revisions</li>
                     </ul>
 
-                    <a href="/get-started" className="btn secondary">
+                    <a href="/get-started" className="btn">
                       Get Started
                     </a>
                   </div>
@@ -245,7 +245,7 @@ const Home = () => {
                       <li style={{borderBottom: 'none'}}>3 rounds of revisions</li>
                     </ul>
 
-                    <a href="/get-started" className="btn secondary">
+                    <a href="/get-started" className="btn">
                       Get Started
                     </a>
                   </div>
@@ -266,7 +266,7 @@ const Home = () => {
                       <li style={{borderBottom: 'none'}}>Unlimited rounds of revisions</li>
                     </ul>
 
-                    <a href="/get-started" className="btn secondary">
+                    <a href="/get-started" className="btn">
                       Get Started
                     </a>
                   </div>
@@ -282,7 +282,7 @@ const Home = () => {
                 <div className="col-lg-8 offset-lg-2 max-560">
                   <h2>Ready to chat about your new website?</h2>
                   <div className="d-flex">
-                    <a href="/get-started" className="btn secondary">
+                    <a href="/get-started" className="btn">
                       Get a Free Website Consultation
                     </a>
                   </div>
@@ -329,8 +329,8 @@ const Home = () => {
             </div>
           </section>
           <section className="cta">
-            <img role="presentation" src="/media/img/backgrounds/wave--dark.svg" alt="" className="wave" />
-            <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs--dark.svg" />
+            <img role="presentation" src="/media/img/backgrounds/wave--dark.svg" alt="Background image" className="wave" />
+            <img role="presentation" alt="Background image" className="blobs" src="/media/img/backgrounds/blobs--dark.svg" />
             <div className="container">
               <div className="row">
                 <div className="col-lg-8 offset-lg-2 max-560">

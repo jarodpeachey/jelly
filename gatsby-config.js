@@ -67,7 +67,7 @@ module.exports = {
         mergeScriptHashes: false,
         mergeStyleHashes: false,
         directives: {
-          "script-src": "'self' 'unsafe-inline' data: plausible.io cdn.splitbee.io d33wubrfki0l68.cloudfront.net",
+          "script-src": "'self' 'unsafe-inline' data: googletagmanager.com",
           "style-src": "'self' 'unsafe-inline'",
           // you can add your directives or override defaults
         },

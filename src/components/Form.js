@@ -53,7 +53,7 @@ const Form = ({ formName = "get-started" }) => {
           </label>
         </div>
         <div className="col-lg-12">
-          <input type="submit" value="Let's get started!" className="btn secondary" />
+          <input type="submit" value="Let's get started!" className="btn" />
         </div>
       </div>
       <p className="subtext">

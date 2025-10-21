@@ -116,7 +116,7 @@ const Blog = ({ pageContext }) => {
                                         {filteredPosts.slice(0, visibleCount).map(({ node }, index) => (
                                             <div className="col-sm-6 col-lg-4  infinite__item" data-index={index} key={node.slug}>
                                                 <a href={`/blog/${node.slug}`} className="post-card">
-                                                    <img src={node.metadata.featured_image.url} alt="" />
+                                                    {/* <img src={node.metadata.featured_image.url} alt="" /> */}
                                                     <h3>{node.title}</h3>
                                                     <p>{truncate(node.metadata && node.metadata.meta_description, 100)}</p>
                                                     <a href={`/blog/${node.slug}`}>Read More</a>
@@ -140,8 +140,8 @@ const Blog = ({ pageContext }) => {
                     </section>
 
                     <section className="cta">
-                        <img role="presentation" src="/media/img/backgrounds/wave--dark.svg" alt="" className="wave" />
-                        <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs--dark.svg" />
+                        <img role="presentation" src="/media/img/backgrounds/wave--dark.svg" alt="Background image" className="wave" />
+                        <img role="presentation" alt="Background image" className="blobs" src="/media/img/backgrounds/blobs--dark.svg" />
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-8 offset-lg-2 max-560">
@@ -179,7 +179,7 @@ const Blog = ({ pageContext }) => {
                                                     </label>
                                                 </div>
                                                 <div className="col-lg-12">
-                                                    <input type="submit" value="Let's chat!" className="btn secondary" />
+                                                    <input type="submit" value="Let's chat!" className="btn" />
                                                 </div>
                                             </div>
                                             <p className="subtext">

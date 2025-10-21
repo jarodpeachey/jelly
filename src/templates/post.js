@@ -52,8 +52,8 @@ const PostTemplate = ({ pageContext }) => {
                         <div className="container">
                             <ReactMarkdown className="content__inner" source={post.metadata.markdown_content} />
                             <div className="chat">
-                                <img role="presentation" alt="" className="blob" src="/media/img/backgrounds/blob--dark.svg" />
-                                <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs--dark.svg" />
+                                <img role="presentation" alt="Background image" className="blob" src="/media/img/backgrounds/blob--dark.svg" />
+                                <img role="presentation" alt="Background image" className="blobs" src="/media/img/backgrounds/blobs--dark.svg" />
                                 <h2>Ready to chat about your new website?</h2>
                                 <a href="/get-started" className="btn mx-auto">
                                     I'm ready for a new website
@@ -62,8 +62,8 @@ const PostTemplate = ({ pageContext }) => {
                         </div>
                     </section>
                     <section className="cta">
-                        <img role="presentation" src="/media/img/backgrounds/wave--dark.svg" alt="" className="wave" />
-                        <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs--dark.svg" />
+                        <img role="presentation" src="/media/img/backgrounds/wave--dark.svg" alt="Background image" className="wave" />
+                        <img role="presentation" alt="Background image" className="blobs" src="/media/img/backgrounds/blobs--dark.svg" />
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-8 offset-lg-2 max-560">
@@ -101,7 +101,7 @@ const PostTemplate = ({ pageContext }) => {
                                                     </label>
                                                 </div>
                                                 <div className="col-lg-12">
-                                                    <input type="submit" value="Let's chat!" className="btn secondary" />
+                                                    <input type="submit" value="Let's chat!" className="btn" />
                                                 </div>
                                             </div>
                                             <p className="subtext">

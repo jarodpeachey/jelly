@@ -25,7 +25,7 @@ const Home = () => {
                 <p className="section-description">We build landing pages that are tailored to your brand and designed to get you more customers.</p>
                 {/* <p className="section-description">We combine design, branding, SEO and copywriting to craft the perfect website for you and your customers.</p> */}
 
-                <a href="/get-started" className="btn secondary">
+                <a href="/get-started" className="btn">
                   Let's build your landing page
                 </a>
                 <a href="#services" className="btn text">
@@ -161,7 +161,7 @@ const Home = () => {
                   <h2 className="section-heading">Let's discuss your new landing page.</h2>
                   <div className="card">
                     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                      <p class="hidden">
+                      <p className="hidden">
                         <label>
                           Don't fill this out if you're human: <input name="bot-field" />
                         </label>
@@ -191,7 +191,7 @@ const Home = () => {
                             data-splitbee-event-page="/landing-pages"
                             type="submit"
                             value="Let's chat!"
-                            className="btn secondary"
+                            className="btn"
                           />
                         </div>
                       </div>
