@@ -52,7 +52,7 @@ const Home = () => {
                   <div className="row">
                     <div className="col-md-6 col-lg-12">
                       <div className="hero__service">
-                        <img src="/media/img/icons/icon--design.svg" alt="Web Design icon" title="Web Design" />
+                        <img width={48} height={46} src="/media/img/icons/icon--design.svg" alt="Web Design icon" title="Web Design" />
                         <div className="hero__service-content">
                           <h2 className="h4">Web Design</h2>
                           <p>Beautiful, modern websites that help your business stand out online.</p>
@@ -61,7 +61,7 @@ const Home = () => {
                     </div>
                     <div className="col-md-6 col-lg-12">
                       <div className="hero__service">
-                        <img src="/media/img/icons/icon--seo.svg" alt="Magnifying glass icon" title="SEO Services" />
+                        <img width={48} height={48} src="/media/img/icons/icon--seo.svg" alt="Magnifying glass icon" title="SEO Services" />
                         <div className="hero__service-content">
                           <h2 className="h4">SEO Services</h2>
                           <p>Get found by local customers searching for your services.</p>
@@ -70,7 +70,7 @@ const Home = () => {
                     </div>
                     <div className="col-md-6 col-lg-12">
                       <div className="hero__service">
-                        <img src="/media/img/icons/icon--hosting.svg" alt="Database icon" title="Website Hosting" />
+                        <img width={48} height={48} src="/media/img/icons/icon--hosting.svg" alt="Database icon" title="Website Hosting" />
                         <div className="hero__service-content">
                           <h2 className="h4">Website Hosting</h2>
                           <p>Fast, secure hosting to keep your website running smoothly.</p>
@@ -79,7 +79,7 @@ const Home = () => {
                     </div>
                     <div className="col-md-6 col-lg-12">
                       <div className="hero__service">
-                        <img src="/media/img/icons/icon--maintenance.svg" alt="Tools icon" title="Website Maintenance" />
+                        <img width={48} height={48} src="/media/img/icons/icon--maintenance.svg" alt="Tools icon" title="Website Maintenance" />
                         <div className="hero__service-content">
                           <h2 className="h4">Website Maintenance</h2>
                           <p>Regular updates and support to maintain and improve your online presence.</p>
@@ -94,25 +94,25 @@ const Home = () => {
                 <div className="technologies mt-5 mt-lg-5">
                   <div className="row">
                     <div className="col-3 technology">
-                      <img src="/media/img/icons/icon--wordpress.svg" alt="WordPress icon" title="WordPress" />
+                      <img width={54} height={54} src="/media/img/icons/icon--wordpress.svg" alt="WordPress icon" title="WordPress" />
                       <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
                         WordPress Development
                       </p>
                     </div>
                     <div className="col-3 technology">
-                      <img src="/media/img/icons/icon--squarespace.svg" alt="Squarespace icon" title="Squarespace" />
+                      <img width={54} height={54} src="/media/img/icons/icon--squarespace.svg" alt="Squarespace icon" title="Squarespace" />
                       <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
                         Squarespace Design
                       </p>
                     </div>
                     <div className="col-3 technology">
-                      <img src="/media/img/icons/icon--shopify.svg" alt="Shopify icon" title="Shopify" />
+                      <img width={54} height={62} src="/media/img/icons/icon--shopify.svg" alt="Shopify icon" title="Shopify" />
                       <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
                         Shopify Stores
                       </p>
                     </div>
                     <div className="col-3 technology">
-                      <img src="/media/img/icons/icon--code.svg" alt="Custom Development icon" title="Custom Development" />
+                      <img width={54} height={43} src="/media/img/icons/icon--code.svg" alt="Custom Development icon" title="Custom Development" />
                       <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
                         Custom Solutions
                       </p>
@@ -122,7 +122,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <img className="hero__background" src="/media/img/backgrounds/hero.svg" />
+          <img className="hero__background" src="/media/img/backgrounds/hero.svg" alt="Background image" />
 
           <img role="presentation" src="/media/img/backgrounds/wave.svg" alt="Background image" className="wave" />
         </section>
