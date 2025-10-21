@@ -1,7 +1,7 @@
 ---
 slug: capture-more-leads-smart-web-design
 title: "How to Capture More Leads With Smart Web Design"
-published_at: "2025-10-17"
+published_at: "2025-10-6"
 meta_description: "Learn actionable web design strategies that convert visitors into leads, increase engagement, and grow your small business or SaaS company effectively."
 seo_description: "Learn actionable web design strategies to capture more leads. Discover how small businesses and SaaS websites can optimize user flow, navigation, forms, calls-to-action, and trust signals to increase conversions and grow revenue online."
 featured_image: "/media/img/blog/smart-web-design-leads.jpg"

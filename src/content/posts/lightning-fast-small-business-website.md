@@ -1,7 +1,7 @@
 ---
 slug: lightning-fast-small-business-website
 title: "The Ultimate Guide to a Lightning-Fast Small Business Website"
-published_at: "2025-10-20"
+published_at: "2025-9-2"
 meta_description: "Learn how to build a lightning-fast small business website with expert tips on hosting, caching, image optimization, and performance monitoring."
 seo_description: "Discover how to create a lightning-fast small business website. Learn proven techniques for speed optimization including caching, image compression, hosting setup, lazy loading, CDN integration, and mobile performance to improve SEO, conversions, and user experience."
 featured_image: "/media/img/blog/lightning-fast-website.jpg"

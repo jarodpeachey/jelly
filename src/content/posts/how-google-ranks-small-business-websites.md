@@ -1,7 +1,7 @@
 ---
 slug: how-google-ranks-small-business-websites
 title: "How Google Actually Ranks Small Business Websites"
-published_at: "2025-10-20"
+published_at: "2025-9-28"
 meta_description: "Learn how Google ranks small business websites and how to improve your visibility in search results with effective SEO strategies."
 seo_description: "Discover how Google ranks small business websites and what factors truly influence your search visibility. Learn about SEO fundamentals, site structure, page speed, backlinks, mobile optimization, and user experience to improve your Google rankings and attract more customers."
 featured_image: "/media/img/blog/how-google-ranks-small-business-websites.jpg"

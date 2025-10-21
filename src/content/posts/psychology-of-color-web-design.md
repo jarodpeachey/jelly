@@ -1,7 +1,7 @@
 ---
 slug: psychology-of-color-web-design
 title: "The Psychology of Color in Web Design: What Works for Small Businesses"
-published_at: "2025-10-17"
+published_at: "2025-7-24"
 meta_description: "Explore how color choices impact user perception, engagement, and conversions on small business websites, and learn how to apply psychology-driven design principles."
 seo_description: "Explore the psychology of color in web design for small businesses. Learn how to choose brand colors, create cohesive palettes, guide user behavior, enhance conversions, and improve UX while building trust and credibility online."
 featured_image: "/media/img/blog/color-psychology.jpg"

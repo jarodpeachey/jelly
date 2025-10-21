@@ -1,7 +1,7 @@
 ---
 slug: seo-checklist-small-business-websites
 title: "The SEO Checklist for Small Business Websites"
-published_at: "2025-10-17"
+published_at: "2025-7-13"
 meta_description: "A comprehensive SEO checklist for small business websites to improve search visibility, attract more visitors, and convert leads effectively."
 seo_description: "Follow this comprehensive SEO checklist for small business websites. Learn keyword research, on-page optimization, technical SEO, backlink strategies, local SEO, and ongoing monitoring to increase organic traffic, search rankings, and lead generation."
 featured_image: "/media/img/blog/seo-checklist.jpg"

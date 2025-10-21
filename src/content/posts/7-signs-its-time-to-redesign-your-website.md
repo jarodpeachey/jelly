@@ -1,7 +1,7 @@
 ---
 slug: 7-signs-its-time-to-redesign-your-website
 title: "7 Signs It’s Time to Redesign Your Website"
-published_at: "2025-10-20"
+published_at: "2025-10-12"
 meta_description: "Is your website holding your business back? Discover 7 clear signs it’s time to redesign your website and boost your conversions, SEO, and user experience."
 seo_description: "Learn the 7 most important signs that indicate your website needs a redesign. Discover how outdated design, poor mobile experience, slow speed, and low conversion rates affect your business. Get actionable tips to create a modern, responsive website that builds trust and drives leads."
 featured_image: "/media/img/blog/7-signs-its-time-to-redesign-your-website.jpg"

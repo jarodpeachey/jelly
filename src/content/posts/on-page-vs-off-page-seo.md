@@ -1,7 +1,7 @@
 ---
 slug: on-page-vs-off-page-seo
 title: "The Difference Between On-Page and Off-Page SEO"
-published_at: "2025-10-21"
+published_at: "2025-8-6"
 meta_description: "Learn the difference between on-page and off-page SEO for small business websites and discover practical tips to boost search rankings and attract more customers."
 seo_description: "Understand on-page vs off-page SEO for small businesses. Learn actionable strategies to optimize content, meta tags, backlinks, and authority to improve search engine visibility and drive traffic."
 featured_image: "/media/img/blog/on-page-vs-off-page-seo.jpg"

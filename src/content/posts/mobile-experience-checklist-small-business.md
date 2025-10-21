@@ -1,7 +1,7 @@
 ---
 slug: mobile-experience-checklist-small-business
 title: "The Mobile Experience Checklist for Small Businesses"
-published_at: "2025-10-20"
+published_at: "2025-8-25"
 meta_description: "A complete checklist to help small businesses ensure their websites are mobile-friendly, user-focused, and optimized for every screen size."
 seo_description: "Learn how to make your small business website truly mobile-responsive with this comprehensive checklist. Discover key mobile UX strategies, design best practices, speed optimizations, and mobile SEO techniques to boost conversions and keep customers engaged."
 featured_image: "/media/img/blog/mobile-experience-checklist.jpg"

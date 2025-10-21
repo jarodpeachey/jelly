@@ -1,7 +1,7 @@
 ---
 slug: website-capture-more-leads
 title: "How to Use Your Website to Capture More Leads"
-published_at: "2025-10-21"
+published_at: "2025-10-1"
 meta_description: "Discover practical strategies for small business websites to capture more leads, optimize forms, and improve conversions through effective design and content."
 seo_description: "Learn how small business websites can capture more leads. Explore strategies for optimizing forms, calls to action, landing pages, content, and user experience to increase conversions."
 featured_image: "/media/img/blog/website-capture-more-leads.jpg"

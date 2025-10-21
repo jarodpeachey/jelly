@@ -1,7 +1,7 @@
 ---
 slug: website-first-impression
 title: "Why Your Website’s First Impression Can Make or Break a Sale"
-published_at: "2025-10-21"
+published_at: "2025-7-3"
 meta_description: "Learn why your small business website’s first impression is critical for conversions and discover actionable tips to improve design, trust, and user experience."
 seo_description: "Discover how your website's first impression affects conversions for small businesses. Learn tips to improve design, credibility, usability, speed, and mobile experience to attract and retain customers."
 featured_image: "/media/img/blog/website-first-impression.jpg"

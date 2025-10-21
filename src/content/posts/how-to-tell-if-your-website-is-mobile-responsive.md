@@ -1,7 +1,7 @@
 ---
 slug: how-to-tell-if-your-website-is-mobile-responsive
 title: "How to Tell If Your Website Is Truly Mobile-Responsive"
-published_at: "2025-10-17"
+published_at: "2025-9-22"
 meta_description: "Learn how to evaluate if your website is mobile-responsive, why mobile-first design matters, and actionable steps to improve the user experience on all devices."
 seo_description: "Discover how to evaluate if your website is mobile-responsive. Learn mobile-first design principles, tools to test responsiveness, optimize navigation and performance, and improve user experience for small businesses and SaaS websites."
 featured_image: "/media/img/blog/mobile-responsive-check.jpg"

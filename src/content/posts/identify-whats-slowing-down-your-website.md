@@ -1,7 +1,7 @@
 ---
 slug: identify-whats-slowing-down-your-website
 title: "How to Identify What’s Slowing Down Your Website"
-published_at: "2025-10-21"
+published_at: "2025-9-15"
 meta_description: "Learn how to identify what is slowing down your small business website and discover practical tips to improve speed, user experience, and conversions."
 seo_description: "Discover how to identify website speed issues for small businesses. Learn practical tips to optimize performance, improve mobile responsiveness, enhance SEO, and boost conversions."
 featured_image: "/media/img/blog/identify-whats-slowing-down-your-website.jpg"

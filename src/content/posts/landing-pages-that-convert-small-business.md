@@ -1,7 +1,7 @@
 ---
 slug: landing-pages-that-convert-small-business
 title: "Landing Pages That Convert: What Every Small Business Should Know"
-published_at: "2025-10-20"
+published_at: "2025-9-8"
 meta_description: "Learn how to design landing pages that convert visitors into customers with proven strategies in layout, copywriting, and user experience."
 seo_description: "Discover how to build high-converting landing pages for your small business. Learn actionable strategies for persuasive copywriting, call-to-action placement, visual hierarchy, trust signals, and A/B testing to improve conversions and grow your customer base."
 featured_image: "/media/img/blog/landing-pages-that-convert-small-business.jpg"

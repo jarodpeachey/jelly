@@ -1,7 +1,7 @@
 ---
 slug: mobile-responsiveness-local-seo
 title: "The Impact of Mobile Responsiveness on Local SEO"
-published_at: "2025-10-21"
+published_at: "2025-8-16"
 meta_description: "Learn how mobile responsiveness impacts local SEO for small businesses and discover practical tips to optimize your website for mobile users and search engines."
 seo_description: "Discover the connection between mobile responsiveness and local SEO for small businesses. Learn how to improve mobile design, boost search rankings, enhance user experience, and attract more local customers."
 featured_image: "/media/img/blog/mobile-responsiveness-local-seo.jpg"
