@@ -27,7 +27,7 @@ const TalentCarouselSlide = ({ image, className, name, link }) => {
                     <circle cx="47" cy="14" r="4" fill="green" fillOpacity="0.8" />
                 </g>
             </svg>
-            {/* <a href={link} target="_blank" rel="noopener noreferrer">View Site</a> */}
+            <a href={link} target="_blank" rel="noopener noreferrer">View Site</a>
         </figure>
     );
 };
