@@ -94,7 +94,7 @@
     // ADD SKEW TO SLIDES
     slides.forEach((slide, index) => {
         if (index === totalSlides[originalMiddleSlide]) {
-            slide.style.transform = slide.style.transform.replace(edgeScale, "") + middleScale;
+            slide.style.transform = slide.style.transform.replace(`${edgeScale}`, "") + middleScale;
             slide.style.opacity = "1";
 
             slide.classList.add("middle");
@@ -110,7 +110,7 @@
             console.log(slide.id);
         } else if (index === totalSlides[originalEdgeSlideLeft] || index === totalSlides[originalEdgeSlideRight]) {
             slide.style.opacity = "1";
-            slide.style.transform = slide.style.transform.replace(middleScale, "").replace(outerScale, "") + edgeScale;
+            slide.style.transform = slide.style.transform.replace(`${middleScale}`, "").replace(`${outerScale}`, "") + edgeScale;
 
             slide.classList.add("edge");
             slide.classList.remove("middle");
@@ -125,7 +125,7 @@
             }
         } else if (index === totalSlides[originalOuterSlideLeft] || index === totalSlides[originalOuterSlideRight]) {
             slide.style.opacity = "1";
-            slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "") + outerScale;
+            slide.style.transform = slide.style.transform.replace(`${middleScale}`, "").replace(`${edgeScale}`, "") + outerScale;
 
             slide.classList.add("outer");
             slide.classList.remove("middle");
@@ -142,7 +142,7 @@
             slide.style.opacity = "1";
             slide.classList.remove("outer");
 
-            slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "").replace(outerScale, "");
+            slide.style.transform = slide.style.transform.replace(`${middleScale}`, "").replace(`${edgeScale}`, "").replace(`${outerScale}`, "");
 
             if (index === totalSlides[originalFarSlideLeft]) {
                 slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(100px)";
@@ -152,7 +152,7 @@
                 // slide.querySelector('a:first-of-type').style.transform = "rotateY(60deg) translateX(-100px)";
             }
         } else {
-            slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "").replace(outerScale, "");
+            slide.style.transform = slide.style.transform.replace(`${middleScale}`, "").replace(`${edgeScale}`, "").replace(`${outerScale}`, "");
 
             slide.classList.remove("middle");
             slide.classList.remove("edge");
@@ -240,7 +240,7 @@
                     slide.style.left = `${parseFloat(slide.style.left, 10) - slide.clientWidth}px`;
 
                     if (index === totalSlides[forwardsMiddleSlide]) {
-                        slide.style.transform = slide.style.transform.replace(edgeScale, "") + middleScale;
+                        slide.style.transform = slide.style.transform.replace(`${edgeScale}`, "") + middleScale;
 
                         slide.classList.add("middle");
                         slide.classList.remove("edge");
@@ -254,7 +254,7 @@
                         }, 200);
                         console.log(slide.id);
                     } else if (index === totalSlides[forwardsEdgeSlideLeft] || index === totalSlides[forwardsEdgeSlideRight]) {
-                        slide.style.transform = slide.style.transform.replace(middleScale, "").replace(outerScale, "") + edgeScale;
+                        slide.style.transform = slide.style.transform.replace(`${middleScale}`, "").replace(`${outerScale}`, "") + edgeScale;
 
                         slide.classList.add("edge");
                         slide.classList.remove("middle");
@@ -268,7 +268,7 @@
                             // slide.querySelector('a:first-of-type').style.transform = "rotateY(18deg) translateX(70px)";
                         }
                     } else if (index === totalSlides[forwardsOuterSlideLeft] || index === totalSlides[forwardsOuterSlideRight]) {
-                        slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "") + outerScale;
+                        slide.style.transform = slide.style.transform.replace(`${middleScale}`, "").replace(`${edgeScale}`, "") + outerScale;
 
                         slide.classList.add("outer");
                         slide.classList.remove("middle");
@@ -291,7 +291,7 @@
                         slide.firstElementChild.style.left = "0px";
                         // slide.querySelector('a:first-of-type').style.left = "0px";
 
-                        slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "").replace(outerScale, "");
+                        slide.style.transform = slide.style.transform.replace(`${middleScale}`, "").replace(`${edgeScale}`, "").replace(`${outerScale}`, "");
 
                         if (index === totalSlides[forwardsFarSlideLeft]) {
                             slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(0px)";
@@ -345,7 +345,7 @@
                 )`;
                                 }
 
-                                slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "").replace(outerScale, "");
+                                slide.style.transform = slide.style.transform.replace(`${middleScale}`, "").replace(`${edgeScale}`, "").replace(`${outerScale}`, "");
 
                                 slide.classList.remove("middle");
                                 slide.classList.remove("edge");
@@ -355,7 +355,7 @@
                                 // slide.querySelector('a:first-of-type').style.transform = "none";
                             }, 400);
                         } else {
-                            slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "").replace(outerScale, "");
+                            slide.style.transform = slide.style.transform.replace(`${middleScale}`, "").replace(`${edgeScale}`, "").replace(`${outerScale}`, "");
 
                             slide.classList.remove("middle");
                             slide.classList.remove("edge");
@@ -389,7 +389,7 @@
                             : `${parseFloat(slide.style.left, 10) + slide.clientWidth}px`;
 
                     if (index === totalSlides[backwardsMiddleSlide]) {
-                        slide.style.transform = slide.style.transform.replace(edgeScale, "") + middleScale;
+                        slide.style.transform = slide.style.transform.replace(`${edgeScale}`, "") + middleScale;
 
                         slide.classList.add("middle");
                         slide.classList.remove("edge");
@@ -403,7 +403,7 @@
                         }, 200);
                         console.log(slide.id);
                     } else if (index === totalSlides[backwardsEdgeSlideLeft] || index === totalSlides[backwardsEdgeSlideRight]) {
-                        slide.style.transform = slide.style.transform.replace(middleScale, "").replace(outerScale, "") + edgeScale;
+                        slide.style.transform = slide.style.transform.replace(`${middleScale}`, "").replace(`${outerScale}`, "") + edgeScale;
 
                         slide.classList.add("edge");
                         slide.classList.remove("middle");
@@ -417,7 +417,7 @@
                             // slide.querySelector('a:first-of-type').style.transform = "rotateY(18deg) translateX(70px)";
                         }
                     } else if (index === totalSlides[backwardsOuterSlideRight] || index === totalSlides[backwardsOuterSlideLeft]) {
-                        slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "") + outerScale;
+                        slide.style.transform = slide.style.transform.replace(`${middleScale}`, "").replace(`${edgeScale}`, "") + outerScale;
                         slide.firstElementChild.style.left = "0px";
                         // slide.querySelector('a:first-of-type').style.left = "0px";
 
@@ -440,7 +440,7 @@
                         slide.firstElementChild.style.left = "0px";
                         // slide.querySelector('a:first-of-type').style.left = "0px";
 
-                        slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "").replace(outerScale, "");
+                        slide.style.transform = slide.style.transform.replace(`${middleScale}`, "").replace(`${edgeScale}`, "").replace(`${outerScale}`, "");
 
                         if (index === totalSlides[backwardsFarSlideLeft]) {
                             slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(100px)";
@@ -471,7 +471,7 @@
                                 }, 10);
                             }, 400);
                         } else {
-                            slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "").replace(outerScale, "");
+                            slide.style.transform = slide.style.transform.replace(`${middleScale}`, "").replace(`${edgeScale}`, "").replace(`${outerScale}`, "");
 
                             slide.classList.remove("middle");
                             slide.classList.remove("edge");
