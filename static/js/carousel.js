@@ -16,11 +16,71 @@
     if (next) next.addEventListener("click", nextStep);
     if (prev) prev.addEventListener("click", previousStep);
 
+    // TOUCH / SWIPE SUPPORT
+    // Listen on the mask for touch gestures and translate to next/prev actions
+    (function setupTouch() {
+        if (!sliderMask) return;
+
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchDeltaX = 0;
+        let touchDeltaY = 0;
+        const SWIPE_THRESHOLD = 50; // px
+
+        function onTouchStart(e) {
+            if (isAnimating) return;
+            const t = e.touches ? e.touches[0] : e;
+            touchStartX = t.clientX;
+            touchStartY = t.clientY;
+            touchDeltaX = 0;
+            touchDeltaY = 0;
+        }
+
+        function onTouchMove(e) {
+            if (isAnimating) return;
+            if (!e.touches || e.touches.length > 1) return;
+            const t = e.touches[0];
+            touchDeltaX = t.clientX - touchStartX;
+            touchDeltaY = t.clientY - touchStartY;
+
+            // If horizontal movement dominates, prevent vertical page scroll to make swipe feel responsive
+            if (Math.abs(touchDeltaX) > Math.abs(touchDeltaY) && Math.abs(touchDeltaX) > 10) {
+                try { e.preventDefault(); } catch (err) {}
+            }
+        }
+
+        function onTouchEnd() {
+            if (isAnimating) return;
+            if (Math.abs(touchDeltaX) > Math.abs(touchDeltaY) && Math.abs(touchDeltaX) > SWIPE_THRESHOLD) {
+                if (touchDeltaX < 0) {
+                    // swipe left => next
+                    isAnimating = true;
+                    try { updateSlidesToShow("forwards"); } catch (e) {}
+                    setTimeout(() => { isAnimating = false; }, 450);
+                } else {
+                    // swipe right => previous
+                    isAnimating = true;
+                    try { updateSlidesToShow("backwards"); } catch (e) {}
+                    setTimeout(() => { isAnimating = false; }, 450);
+                }
+            }
+
+            touchDeltaX = 0;
+            touchDeltaY = 0;
+        }
+
+        sliderMask.addEventListener('touchstart', onTouchStart, { passive: true });
+        sliderMask.addEventListener('touchmove', onTouchMove, { passive: false });
+        sliderMask.addEventListener('touchend', onTouchEnd);
+    })();
+
     // The link button that accompanies the carousel (optional)
     let carouselLink = document.querySelector('.carousel__link');
 
     // ARRAY OF SLIDES IN ORDER (INDEX)
     let totalSlides = [];
+    // Guard to prevent handling input while animation is in progress
+    let isAnimating = false;
 
     // ADD LEFT POSITION TO ALL SLIDES
     for (let i = 0; i < slides.length; i++) {
@@ -583,6 +643,8 @@
 
     function nextStep(e) {
         e.preventDefault();
+        if (isAnimating) return;
+        isAnimating = true;
 
         updateSlidesToShow("forwards");
 
@@ -590,11 +652,14 @@
 
         setTimeout(() => {
             next.addEventListener("click", nextStep);
-        }, 400);
+            isAnimating = false;
+        }, 450);
     }
 
     function previousStep(e) {
         e.preventDefault();
+        if (isAnimating) return;
+        isAnimating = true;
 
         updateSlidesToShow("backwards");
 
@@ -602,6 +667,7 @@
 
         setTimeout(() => {
             prev.addEventListener("click", previousStep);
-        }, 400);
+            isAnimating = false;
+        }, 450);
     }
 })();
