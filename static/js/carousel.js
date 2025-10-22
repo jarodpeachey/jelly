@@ -17,7 +17,7 @@
         for (let i = 0; i < slides.length; i++) {
         console.log(slides[i]);
         totalSlides.push(i);
-        slides[i].style.left = "";
+        clearLeft(slides[i]);
         slides[i].style.left = "0px";
         slides[i].style.transform = "translateX(0px)";
     }
@@ -78,6 +78,12 @@
         const inline = el.style.transform || "";
         const match = inline.match(/translateX\((-?\d+(?:\.\d+)?)px\)/);
         return match ? parseFloat(match[1]) : 0;
+    }
+
+    // Helper: clear any inline left value for an element before setting a new one
+    function clearLeft(el) {
+        if (!el) return;
+        el.style.left = "";
     }
     if (window.innerWidth > 9) {
         originalMiddleSlide = 3;
@@ -204,13 +210,13 @@
                         if (index === totalSlides[0]) {
                             setTimeout(() => {
                                 slide.style.transition = "0s";
-                                slide.style.left = "";
+                                clearLeft(slide);
                                 slide.style.left = "0px";
                                 slide.style.transform = "translateX(0px)";
                             }, 400);
                         } else {
                             slide.style.transition = ".6s ease";
-                            slide.style.left = "";
+                            clearLeft(slide);
                             slide.style.left = "0px";
                             slide.style.transform = "translateX(0px)";
                         }
@@ -229,14 +235,14 @@
                             slide.classList.add("testingThisClassNameForThisSlide");
                             setTimeout(() => {
                                 slide.style.transition = "0s";
-                                slide.style.left = "";
+                                clearLeft(slide);
                                 slide.style.left = "0px";
                                 slide.style.transform = "translateX(0px)";
                             }, 400);
                         } else {
                             slide.classList.remove("testingThisClassNameForThisSlide");
                             slide.style.transition = ".6s ease";
-                            slide.style.left = "";
+                            clearLeft(slide);
                             slide.style.left = "0px";
                             slide.style.transform = "translateX(0px)";
                         }
@@ -258,7 +264,7 @@
                     // MOVE ALL SLIDES LEFT
                       // reset any inline left before setting a new value
                       const currentLeft = parseFloat(slide.style.left, 10) || 0;
-                      slide.style.left = "";
+                      clearLeft(slide);
                       slide.style.left = `${currentLeft - slide.clientWidth}px`;
 
                     if (index === totalSlides[forwardsMiddleSlide]) {
@@ -285,14 +291,14 @@
                         } else {
                             slide.firstElementChild.style.transform = "rotateY(18deg) translateX(70px)";
                         }
-                    } else if (index === totalSlides[forwardsOuterSlideLeft] || index === totalSlides[forwardsOuterSlideRight]) {
+              } else if (index === totalSlides[forwardsOuterSlideLeft] || index === totalSlides[forwardsOuterSlideRight]) {
                         slide.style.transform = (removeScale(slide.style.transform) + " " + outerScale).trim();
 
                         slide.classList.add("outer");
                         slide.classList.remove("middle");
                         slide.classList.remove("edge");
-                          slide.firstElementChild.style.left = "";
-                          slide.firstElementChild.style.left = "0px";
+                  clearLeft(slide.firstElementChild);
+                  slide.firstElementChild.style.left = "0px";
 
                         if (index === totalSlides[forwardsOuterSlideLeft]) {
                             slide.firstElementChild.style.transform = "rotateY(-42deg) translateX(-60px)";
@@ -309,23 +315,23 @@
 
                         slide.style.transform = removeScale(slide.style.transform);
 
-                        if (index === totalSlides[forwardsFarSlideLeft]) {
-                            slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(0px)";
-                              slide.firstElementChild.style.left = "";
-                              slide.firstElementChild.style.left = "50px";
+                                                if (index === totalSlides[forwardsFarSlideLeft]) {
+                                                        slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(0px)";
+                                                            clearLeft(slide.firstElementChild);
+                                                            slide.firstElementChild.style.left = "50px";
                         } else {
                             slide.style.transition = "0s";
                             slide.firstElementChild.style.transition = "none";
                             slide.firstElementChild.style.transform = "rotateY(60deg) translateX(0px) scale(.8)";
-                              slide.firstElementChild.style.left = "";
-                              slide.firstElementChild.style.left = "-120px";
+                                                            clearLeft(slide.firstElementChild);
+                                                            slide.firstElementChild.style.left = "-120px";
                             slide.style.zIndex = "-1";
 
                             setTimeout(() => {
                                 slide.style.transition = ".6s ease";
                                 slide.firstElementChild.style.transition = ".6s ease";
                                 slide.firstElementChild.style.transform = "rotateY(60deg) translateX(0px)";
-                                slide.firstElementChild.style.left = "";
+                                clearLeft(slide.firstElementChild);
                                 slide.firstElementChild.style.left = "-50px";
                                 slide.style.zIndex = null;
                             }, 10);
@@ -333,8 +339,8 @@
                     } else {
                         // MOVE FIRST SLIDE TO END
                         if (index === totalSlides[forwardsInvisibleSlideLeft]) {
-                              slide.firstElementChild.style.left = "";
-                              slide.firstElementChild.style.left = "400px";
+                                                            clearLeft(slide.firstElementChild);
+                                                            slide.firstElementChild.style.left = "400px";
                             slide.style.zIndex = "-1";
 
                             setTimeout(() => {
@@ -371,7 +377,7 @@
                             slide.classList.remove("outer");
 
                             slide.firstElementChild.style.transform = "none";
-                            slide.firstElementChild.style.left = "";
+                            clearLeft(slide.firstElementChild);
                             slide.firstElementChild.style.left = "0";
                         }
                     }
@@ -391,10 +397,10 @@
                     const currentTranslate = parseFloat(slide.style.transform.replace("translateX(", "").replace("px)", "")) || 0;
 
                     // MOVE ALL SLIDES LEFT
-                    slide.style.left =
-                        Math.abs(parseFloat(slide.style.left, 10)) === 0
-                            ? `${slide.clientWidth}px`
-                            : `${parseFloat(slide.style.left, 10) + slide.clientWidth}px`;
+                    // Parse prior left (fallback to 0), clear any previous inline left, then set new value
+                    const prevLeft = parseFloat(slide.style.left, 10) || 0;
+                    clearLeft(slide);
+                    slide.style.left = `${Math.abs(prevLeft) === 0 ? slide.clientWidth : prevLeft + slide.clientWidth}px`;
 
                     if (index === totalSlides[backwardsMiddleSlide]) {
                         slide.style.transform = (removeScale(slide.style.transform) + " " + middleScale).trim();
@@ -422,7 +428,7 @@
                         }
                     } else if (index === totalSlides[backwardsOuterSlideRight] || index === totalSlides[backwardsOuterSlideLeft]) {
                         slide.style.transform = (removeScale(slide.style.transform) + " " + outerScale).trim();
-                          slide.firstElementChild.style.left = "";
+                          clearLeft(slide.firstElementChild);
                           slide.firstElementChild.style.left = "0px";
 
                         slide.classList.add("outer");
@@ -439,8 +445,8 @@
                         slide.style.opacity = "1";
                         slide.style.transition = ".6s ease";
                         slide.classList.remove("outer");
-                        slide.firstElementChild.style.left = "";
-                        slide.firstElementChild.style.left = "0px";
+                              clearLeft(slide.firstElementChild);
+                              slide.firstElementChild.style.left = "0px";
 
                         slide.style.transform = removeScale(slide.style.transform);
 
@@ -458,7 +464,7 @@
                             slide.style.zIndex = "-1";
 
                             setTimeout(() => {
-                                slide.firstElementChild.style.left = "";
+                                clearLeft(slide.firstElementChild);
                                 slide.firstElementChild.style.left = "0px";
                                 slide.firstElementChild.style.transition = "none";
                                 slide.style.transition = "0s";
@@ -503,7 +509,7 @@
                         slide.style.transition = "0s";
                         slide.firstElementChild.style.transition = "none";
                         slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(0px) scale(.8)";
-                        slide.firstElementChild.style.left = "";
+                        clearLeft(slide.firstElementChild);
                         slide.firstElementChild.style.left = "120px";
                         slide.style.zIndex = "-1";
 
@@ -511,7 +517,7 @@
                             slide.style.transition = ".6s ease";
                             slide.firstElementChild.style.transition = ".6s ease";
                             slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(0px)";
-                            slide.firstElementChild.style.left = "";
+                            clearLeft(slide.firstElementChild);
                             slide.firstElementChild.style.left = "50px";
                             slide.style.zIndex = null;
                         }, 10);
