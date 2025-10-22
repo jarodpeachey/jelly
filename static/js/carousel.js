@@ -79,7 +79,6 @@
         const match = inline.match(/translateX\((-?\d+(?:\.\d+)?)px\)/);
         return match ? parseFloat(match[1]) : 0;
     }
-
     if (window.innerWidth > 9) {
         originalMiddleSlide = 3;
         originalEdgeSlideLeft = 2;
