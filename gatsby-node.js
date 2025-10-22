@@ -119,3 +119,35 @@ exports.createPages = async ({ actions, reporter }) => {
     reporter.warn(`Error generating sitemap.xml: ${err}`);
   }
 };
+
+// Keep console.* in production build by disabling Terser's drop_console
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  // Only adjust during the production JS build
+  if (stage === "build-javascript" || stage === "develop") {
+    const TerserPlugin = require("terser-webpack-plugin");
+    const webpack = require("webpack");
+
+    actions.setWebpackConfig({
+      optimization: {
+        minimizer: [
+          new TerserPlugin({
+            terserOptions: {
+              compress: {
+                // Ensure console statements are not dropped
+                drop_console: false,
+              },
+            },
+            extractComments: false,
+          }),
+        ],
+      },
+      plugins: [
+        new webpack.DefinePlugin({
+          // expose as string 'true' so checks like process.env.GATSBY_SHOW_LOGS === 'true' pass
+          'process.env.gatsbyshowlogs': JSON.stringify('true'),
+          'process.env.GATSBY_SHOW_LOGS': JSON.stringify('true'),
+        }),
+      ],
+    });
+  }
+};
