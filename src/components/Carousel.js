@@ -14,7 +14,7 @@ const Carousel = props => {
           <img src="/media/img/icons/icon--chevron-right.svg" alt=""/>
         </button>
       </div>
-      <a className="btn carousel__link" href={props.link} target="_blank" rel="noopener noreferrer">View Site</a>
+      {/* <a className="btn carousel__link" href={props.link} target="_blank" rel="noopener noreferrer">View Site</a> */}
       <div className="carousel">
         <div className="carousel__mask" id="carousel__mask">
           <div className="carousel__track" id="carousel__track">
