@@ -68,7 +68,9 @@ module.exports = {
                 mergeScriptHashes: false,
                 mergeStyleHashes: false,
                 directives: {
-                    "script-src": "'self' 'unsafe-inline' data: googletagmanager.com",
+                    // Allowing 'unsafe-eval' here unblocks code that relies on eval/new Function
+                    // (for example webpack runtime in some builds). This is the pragmatic fix.
+                    "script-src": "'self' 'unsafe-inline' 'unsafe-eval' data: googletagmanager.com",
                     "style-src": "'self' 'unsafe-inline'",
                     // you can add your directives or override defaults
                 },

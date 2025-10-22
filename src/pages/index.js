@@ -164,27 +164,11 @@ const Home = () => {
                     <img role="presentation" src="/media/img/backgrounds/wave.svg" alt="Background image" className="wave" />
                 </section>
                 <main>
-                    {/* <section class="portfolio">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8 offset-lg-2 max-560">
-                                    <p class="display">OUR WORK</p>
-                                    <h2 className="text-center center">Designs That Pop</h2>
-                                </div>
-                            </div>
-                            <Carousel
-                                slides={[
-
-                                ]}
-                            />
-                        </div>
-                    </section> */}
-
                     <section className="themes">
                         <div className="container">
-                            <div class="row">
-                                <div class="col-lg-8 offset-lg-2 max-560">
-                                    <p class="display">OUR WORK</p>
+                            <div className="row">
+                                <div className="col-lg-8 offset-lg-2 max-560">
+                                    <p className="display">OUR WORK</p>
                                     <h2 style={{textAlign: 'center'}}>Featured Website Designs</h2>
                                 </div>
                             </div>

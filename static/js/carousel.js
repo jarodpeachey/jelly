@@ -4,7 +4,6 @@
         if (window.__jelly_carousel_initialized) return;
         window.__jelly_carousel_initialized = true;
 
-        console.log("Start of the file");
         // SLIDER ELEMENTS
         const slides = document.querySelectorAll(".carousel__slide");
         const sliderMask = document.querySelector(".carousel__mask");
@@ -95,7 +94,6 @@
 
         // ADD LEFT POSITION TO ALL SLIDES
         for (let i = 0; i < slides.length; i++) {
-            console.log(slides[i]);
             totalSlides.push(i);
             clearLeft(slides[i]);
             slides[i].style.left = "0px";
@@ -162,7 +160,6 @@
 
         // Helper: clear any inline left value for an element before setting a new one
         function clearLeft(el) {
-            console.log("Running clear function: ", el);
             if (!el) return;
             // Remove any inline "left" declaration from the element's style string using regex
             const styleAttr = el.getAttribute("style") || el.style.cssText || "";
@@ -181,8 +178,6 @@
                     // No remaining inline styles — remove the attribute
                     el.removeAttribute("style");
                 }
-
-                console.log(`Cleaned up: `, cleaned);
             }
         }
 
@@ -263,7 +258,6 @@
                         if (carouselLink && href) carouselLink.setAttribute("href", href);
                     } catch (e) {}
                 }, 200);
-                console.log(slide.id);
             } else if (index === totalSlides[originalEdgeSlideLeft] || index === totalSlides[originalEdgeSlideRight]) {
                 slide.style.opacity = "1";
                 setTransform(slide, { translateX: null, scale: edgeScale, keepOther: true });
@@ -411,7 +405,6 @@
                                     if (carouselLink && href) carouselLink.setAttribute("href", href);
                                 } catch (e) {}
                             }, 200);
-                            console.log(slide.id);
                         } else if (index === totalSlides[forwardsEdgeSlideLeft] || index === totalSlides[forwardsEdgeSlideRight]) {
                             setTransform(slide, { translateX: null, scale: edgeScale, keepOther: true });
 
@@ -543,7 +536,6 @@
                                     if (carouselLink && href) carouselLink.setAttribute("href", href);
                                 } catch (e) {}
                             }, 200);
-                            console.log(slide.id);
                         } else if (index === totalSlides[backwardsEdgeSlideLeft] || index === totalSlides[backwardsEdgeSlideRight]) {
                             setTransform(slide, { translateX: null, scale: edgeScale, keepOther: true });
 
