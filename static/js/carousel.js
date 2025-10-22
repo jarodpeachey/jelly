@@ -83,7 +83,21 @@
     // Helper: clear any inline left value for an element before setting a new one
     function clearLeft(el) {
         if (!el) return;
-        el.style.left = "";
+        // Remove any inline "left" declaration from the element's style string using regex
+        const styleAttr = el.getAttribute("style") || el.style.cssText || "";
+        if (styleAttr) {
+            // Remove occurrences like "left: 10px;" or "left:10px" (with or without trailing ;)
+            let cleaned = styleAttr.replace(/(?:^|;)\s*left\s*:\s*[^;]+;?/gi, ";");
+            // Collapse multiple semicolons and trim leading/trailing semicolons/spaces
+            cleaned = cleaned.replace(/;{2,}/g, ";").replace(/^\s*;|;\s*$/g, "").trim();
+            if (cleaned) {
+          // Keep other styles intact
+          el.setAttribute("style", cleaned + (cleaned.endsWith(";") ? "" : ";"));
+            } else {
+          // No remaining inline styles — remove the attribute
+          el.removeAttribute("style");
+            }
+        }
     }
     if (window.innerWidth > 9) {
         originalMiddleSlide = 3;
