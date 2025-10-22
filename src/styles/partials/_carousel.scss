@@ -68,7 +68,7 @@ $slideHeight: 200;
         position: relative;
         left: 0;
         position: relative;
-        box-shadow: $shadow--four;
+
         z-index: -1;
         overflow: visible;
         overflow-y: visible;
@@ -91,6 +91,7 @@ $slideHeight: 200;
             position: relative;
             left: 0;
             visibility: visible !important;
+            box-shadow: $shadow--four;
 
             image {
                 visibility: visible !important;
@@ -107,7 +108,7 @@ $slideHeight: 200;
                     box-shadow: $shadow--four;
                 }
             }
-    }
+        }
 
         &.edge {
             z-index: 3 !important;
@@ -118,7 +119,7 @@ $slideHeight: 200;
                     box-shadow: $shadow--three;
                 }
             }
-    }
+        }
 
         &.outer {
             // opacity: 0.6;
@@ -129,8 +130,8 @@ $slideHeight: 200;
                     box-shadow: $shadow--two;
                 }
             }
-    }
-    /* purgecss end ignore */
+        }
+        /* purgecss end ignore */
 
         &:first-child {
             margin-left: -#{12 / 1.5 / 12 * 100%};
