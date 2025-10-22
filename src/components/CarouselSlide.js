@@ -3,7 +3,7 @@ import React from "react";
 const TalentCarouselSlide = ({ image, className, name, link }) => {
     let clipPathID = `${name.toLowerCase().replace(/ /, "-")}-cutout`;
     return (
-        <figure aria-labelledby="themes__title" className={`card carousel__slide ${className}`} id={name}>
+        <figure aria-labelledby="themes__title" className={`card carousel__slide ${className}`} id={name} data-link={link}>
             <svg viewBox="0 0 700 450" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <clipPath id={clipPathID} clipPathUnits="userSpaceOnUse">

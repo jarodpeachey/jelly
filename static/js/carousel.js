@@ -3,17 +3,21 @@
     if (window.__jelly_carousel_initialized) return;
     window.__jelly_carousel_initialized = true;
 
-    console.log("Start of the file")
+    console.log("Start of the file");
     // SLIDER ELEMENTS
     const slides = document.querySelectorAll(".carousel__slide");
     const sliderMask = document.querySelector(".carousel__mask");
     const prev = document.querySelector(".carousel__control--prev");
     const next = document.querySelector(".carousel__control--next");
     const indicator = document.querySelector(".carousel__indicator");
+    const link = document.querySelector(".carousel__link");
 
     // EVENT LISTENERS (check element existence properly)
     if (next) next.addEventListener("click", nextStep);
     if (prev) prev.addEventListener("click", previousStep);
+
+    // The link button that accompanies the carousel (optional)
+    let carouselLink = document.querySelector('.carousel__link');
 
     // ARRAY OF SLIDES IN ORDER (INDEX)
     let totalSlides = [];
@@ -87,7 +91,7 @@
 
     // Helper: clear any inline left value for an element before setting a new one
     function clearLeft(el) {
-      console.log("Running clear function: ", el)
+        console.log("Running clear function: ", el);
         if (!el) return;
         // Remove any inline "left" declaration from the element's style string using regex
         const styleAttr = el.getAttribute("style") || el.style.cssText || "";
@@ -110,7 +114,7 @@
             console.log(`Cleaned up: `, cleaned);
         }
     }
-    
+
     // Helper: set transform safely. options: { translateX: number|null, scale: string|null, keepOther: boolean }
     function setTransform(el, opts = {}) {
         const { translateX = null, scale = undefined, keepOther = true } = opts;
@@ -181,6 +185,12 @@
             slide.firstElementChild.style.transform = "none";
             setTimeout(() => {
                 indicator.innerHTML = slide.id;
+                // update link href from slide attribute 'link' when available
+                try {
+                    carouselLink = carouselLink || document.querySelector('.carousel__link');
+                    const href = slide.getAttribute && slide.getAttribute('data-link');
+                    if (carouselLink && href) carouselLink.setAttribute('href', href);
+                } catch (e) {}
             }, 200);
             console.log(slide.id);
         } else if (index === totalSlides[originalEdgeSlideLeft] || index === totalSlides[originalEdgeSlideRight]) {
@@ -232,21 +242,19 @@
     });
 
     function updateSlidesToShow(direction) {
-    // GET TRANSLATE OF A MIDDLE SLIDE
-    const slideTranslate = getTranslateX(slides[7]) || 0;
+        // GET TRANSLATE OF A MIDDLE SLIDE
+        const slideTranslate = getTranslateX(slides[7]) || 0;
 
-                // CHECK IF THE SLIDE IS ONE POSITION TO THE RIGHT OF ORIGINAL INDEX
-                const computedLeft7 = parseFloat(window.getComputedStyle(slides[7]).left, 10) || 0;
-                const isAfterOriginalIndex =
-                        slideTranslate !== 0 && computedLeft7 !== 0
-                                ? slideTranslate - Math.abs(computedLeft7) === 200 ||
-                                    Math.abs(computedLeft7) - Math.abs(slideTranslate) === 200
-                                : slideTranslate - computedLeft7 === -200;
+        // CHECK IF THE SLIDE IS ONE POSITION TO THE RIGHT OF ORIGINAL INDEX
+        const computedLeft7 = parseFloat(window.getComputedStyle(slides[7]).left, 10) || 0;
+        const isAfterOriginalIndex =
+            slideTranslate !== 0 && computedLeft7 !== 0
+                ? slideTranslate - Math.abs(computedLeft7) === 200 || Math.abs(computedLeft7) - Math.abs(slideTranslate) === 200
+                : slideTranslate - computedLeft7 === -200;
 
         // CHECK IF SLIDE IS ONE POSITION TO THE LEFT OF ORIGINAL INDEX
         const computedLeft4 = parseFloat(window.getComputedStyle(slides[4]).left, 10) || 0;
-        const isBeforeOriginalIndex =
-            Math.abs(slideTranslate) - computedLeft7 === 200 && Math.abs(computedLeft4) !== 0;
+        const isBeforeOriginalIndex = Math.abs(slideTranslate) - computedLeft7 === 200 && Math.abs(computedLeft4) !== 0;
 
         // RESET ALL TO 0 IF SLIDES ARE 1 INDEX AWAY FROM ORIGINAL INDEX
         if (direction === "forwards" && isAfterOriginalIndex) {
@@ -256,7 +264,7 @@
                 } else {
                     slide.classList.remove("middle");
                 }
-                        if (index === totalSlides[0]) {
+                if (index === totalSlides[0]) {
                     setTimeout(() => {
                         slide.style.transition = "0s";
                         clearLeft(slide);
@@ -283,17 +291,17 @@
                 if (index === totalSlides[totalSlides.length - 1]) {
                     slide.classList.add("testingThisClassNameForThisSlide");
                     setTimeout(() => {
-                            slide.style.transition = "0s";
-                            clearLeft(slide);
-                            slide.style.left = "0px";
-                            setTransform(slide, { translateX: 0, keepOther: false, scale: null });
+                        slide.style.transition = "0s";
+                        clearLeft(slide);
+                        slide.style.left = "0px";
+                        setTransform(slide, { translateX: 0, keepOther: false, scale: null });
                     }, 400);
                 } else {
                     slide.classList.remove("testingThisClassNameForThisSlide");
-                            slide.style.transition = ".6s ease";
-                            clearLeft(slide);
-                            slide.style.left = "0px";
-                            setTransform(slide, { translateX: 0, keepOther: false, scale: null });
+                    slide.style.transition = ".6s ease";
+                    clearLeft(slide);
+                    slide.style.left = "0px";
+                    setTransform(slide, { translateX: 0, keepOther: false, scale: null });
                 }
             });
 
@@ -326,6 +334,11 @@
                         slide.firstElementChild.style.transform = "none";
                         setTimeout(() => {
                             indicator.innerHTML = slide.id;
+                            try {
+                                carouselLink = carouselLink || document.querySelector('.carousel__link');
+                                const href = slide.getAttribute && slide.getAttribute('data-link');
+                                if (carouselLink && href) carouselLink.setAttribute('href', href);
+                            } catch (e) {}
                         }, 200);
                         console.log(slide.id);
                     } else if (index === totalSlides[forwardsEdgeSlideLeft] || index === totalSlides[forwardsEdgeSlideRight]) {
@@ -400,8 +413,8 @@
                                 slide.style.zIndex = "-1";
 
                                 // SET NEW TRANSFORM
-                                                                const newTx = currentTranslate !== 0 ? slide.clientWidth * slides.length + currentTranslate : slide.clientWidth * slides.length;
-                                                                setTransform(slide, { translateX: newTx, keepOther: false, scale: null });
+                                const newTx = currentTranslate !== 0 ? slide.clientWidth * slides.length + currentTranslate : slide.clientWidth * slides.length;
+                                setTransform(slide, { translateX: newTx, keepOther: false, scale: null });
 
                                 slide.classList.remove("middle");
                                 slide.classList.remove("edge");
@@ -452,6 +465,11 @@
                         slide.firstElementChild.style.transform = "none";
                         setTimeout(() => {
                             indicator.innerHTML = slide.id;
+                            try {
+                                carouselLink = carouselLink || document.querySelector('.carousel__link');
+                                const href = slide.getAttribute && slide.getAttribute('data-link');
+                                if (carouselLink && href) carouselLink.setAttribute('href', href);
+                            } catch (e) {}
                         }, 200);
                         console.log(slide.id);
                     } else if (index === totalSlides[backwardsEdgeSlideLeft] || index === totalSlides[backwardsEdgeSlideRight]) {
@@ -535,9 +553,9 @@
                         slide.firstElementChild.transition = "0s";
                         slide.style.opacity = "1";
 
-                                                // SET NEW TRANSFORM
-                                                const newTx = currentTranslate === 0 ? -slide.clientWidth * slides.length : currentTranslate - slide.clientWidth * slides.length;
-                                                setTransform(slide, { translateX: newTx, keepOther: false, scale: null });
+                        // SET NEW TRANSFORM
+                        const newTx = currentTranslate === 0 ? -slide.clientWidth * slides.length : currentTranslate - slide.clientWidth * slides.length;
+                        setTransform(slide, { translateX: newTx, keepOther: false, scale: null });
 
                         slide.style.transition = "0s";
                         slide.firstElementChild.style.transition = "none";

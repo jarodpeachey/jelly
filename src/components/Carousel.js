@@ -17,9 +17,10 @@ const Carousel = props => {
       <a className="btn carousel__link" href={props.link} target="_blank" rel="noopener noreferrer">View Site</a>
       <div className="carousel">
         <div className="carousel__mask" id="carousel__mask">
-          <div className="carousel__track" id="carousel__track">
+            <div className="carousel__track" id="carousel__track">
             {props.slides.map((slide, index) => {
-              return <CarouselSlide className={index === 3 ? "middle" : index === 2 || index === "4" ? "edge" : ""} image={slide.image} name={slide.name} key={index} />;
+              const cls = index === 3 ? "middle" : (index === 2 || index === 4) ? "edge" : "";
+              return <CarouselSlide className={cls} image={slide.image} name={slide.name} link={slide.link} key={index} />;
             })}
           </div>
         </div>
