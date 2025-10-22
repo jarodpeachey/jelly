@@ -9,13 +9,13 @@ $slideHeight: 200;
     position: relative;
     width: 100%;
     margin: 0 auto;
-    // overflow-y: visible;
+    overflow-y: visible;
     // max-width: 400px;
     // left: -400px;
     height: 160px;
     width: 140%;
     left: -20%;
-    box-shadow: $shadow--four;
+    // box-shadow: $shadow--four;
 
     @include media-breakpoint-up(xs) {
         height: 160px;
@@ -68,7 +68,7 @@ $slideHeight: 200;
         position: relative;
         left: 0;
         position: relative;
-        box-shadow: none;
+        box-shadow: $shadow--four;
         z-index: -1;
         overflow: visible;
         overflow-y: visible;
