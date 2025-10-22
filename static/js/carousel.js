@@ -1,5 +1,9 @@
 (function () {
-  console.log("Start of the file")
+    // Prevent this script from initializing more than once (guards against double-loads)
+    if (window.__jelly_carousel_initialized) return;
+    window.__jelly_carousel_initialized = true;
+
+    console.log("Start of the file")
     // SLIDER ELEMENTS
     const slides = document.querySelectorAll(".carousel__slide");
     const sliderMask = document.querySelector(".carousel__mask");
@@ -7,9 +11,9 @@
     const next = document.querySelector(".carousel__control--next");
     const indicator = document.querySelector(".carousel__indicator");
 
-    // EVENT LISTENERS
-    typeof next !== null && next.addEventListener("click", nextStep);
-    typeof prev !== null && prev.addEventListener("click", previousStep);
+    // EVENT LISTENERS (check element existence properly)
+    if (next) next.addEventListener("click", nextStep);
+    if (prev) prev.addEventListener("click", previousStep);
 
     // ARRAY OF SLIDES IN ORDER (INDEX)
     let totalSlides = [];
@@ -231,16 +235,18 @@
     // GET TRANSLATE OF A MIDDLE SLIDE
     const slideTranslate = getTranslateX(slides[7]) || 0;
 
-        // CHECK IF THE SLIDE IS ONE POSITION TO THE RIGHT OF ORIGINAL INDEX
-        const isAfterOriginalIndex =
-            slideTranslate !== 0 && parseFloat(slides[7].style.left, 10) !== 0
-                ? slideTranslate - Math.abs(parseFloat(slides[7].style.left, 10)) === 200 ||
-                  Math.abs(parseFloat(slides[7].style.left, 10)) - Math.abs(slideTranslate) === 200
-                : slideTranslate - parseFloat(slides[7].style.left, 10) === -200;
+                // CHECK IF THE SLIDE IS ONE POSITION TO THE RIGHT OF ORIGINAL INDEX
+                const computedLeft7 = parseFloat(window.getComputedStyle(slides[7]).left, 10) || 0;
+                const isAfterOriginalIndex =
+                        slideTranslate !== 0 && computedLeft7 !== 0
+                                ? slideTranslate - Math.abs(computedLeft7) === 200 ||
+                                    Math.abs(computedLeft7) - Math.abs(slideTranslate) === 200
+                                : slideTranslate - computedLeft7 === -200;
 
         // CHECK IF SLIDE IS ONE POSITION TO THE LEFT OF ORIGINAL INDEX
+        const computedLeft4 = parseFloat(window.getComputedStyle(slides[4]).left, 10) || 0;
         const isBeforeOriginalIndex =
-            Math.abs(slideTranslate) - parseFloat(slides[7].style.left, 10) === 200 && Math.abs(parseFloat(slides[4].style.left, 10)) !== 0;
+            Math.abs(slideTranslate) - computedLeft7 === 200 && Math.abs(computedLeft4) !== 0;
 
         // RESET ALL TO 0 IF SLIDES ARE 1 INDEX AWAY FROM ORIGINAL INDEX
         if (direction === "forwards" && isAfterOriginalIndex) {
@@ -305,8 +311,8 @@
                     const currentTranslate = getTranslateX(slide) || 0;
 
                     // MOVE ALL SLIDES LEFT
-                    // reset any inline left before setting a new value
-                    const currentLeft = parseFloat(slide.style.left, 10) || 0;
+                    // Read computed left (canonical) before clearing inline left, so we don't accumulate old inline values
+                    const currentLeft = parseFloat(window.getComputedStyle(slide).left, 10) || 0;
                     clearLeft(slide);
                     slide.style.left = `${currentLeft - slide.clientWidth}px`;
 
@@ -430,9 +436,9 @@
                     // GET CURRENT TRANSLATION
                     const currentTranslate = getTranslateX(slide) || 0;
 
-                    // MOVE ALL SLIDES LEFT
-                    // Parse prior left (fallback to 0), clear any previous inline left, then set new value
-                    const prevLeft = parseFloat(slide.style.left, 10) || 0;
+                    // MOVE ALL SLIDES LEFT (backwards)
+                    // Read computed left to avoid accumulating inline left values from previous runs
+                    const prevLeft = parseFloat(window.getComputedStyle(slide).left, 10) || 0;
                     clearLeft(slide);
                     slide.style.left = `${Math.abs(prevLeft) === 0 ? slide.clientWidth : prevLeft + slide.clientWidth}px`;
 
