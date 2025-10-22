@@ -338,6 +338,10 @@
 
   .themes {
     padding-bottom: 120px;
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: 60px;
+    }
   }
 
   .pain-points {
