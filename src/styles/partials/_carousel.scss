@@ -15,11 +15,16 @@ $slideHeight: 200;
     height: 160px;
     width: 140%;
     left: -20%;
+    box-shadow: $shadow--four;
 
     @include media-breakpoint-up(xs) {
         height: 160px;
         width: 120%;
         left: -10%;
+    }
+
+    @include media-breakpoint-up(sm) {
+        box-shadow: none;
     }
 
     @include media-breakpoint-up(md) {
@@ -97,35 +102,35 @@ $slideHeight: 200;
             z-index: 9 !important;
             // opacity: 1;
 
-            // @include media-breakpoint-up(sm) {
-            svg {
-                box-shadow: $shadow--four;
+            @include media-breakpoint-up(sm) {
+                svg {
+                    box-shadow: $shadow--four;
+                }
             }
-            // }
-        }
+    }
 
         &.edge {
             z-index: 3 !important;
             // opacity: 0.8;
 
-            // @include media-breakpoint-up(sm) {
-            svg {
-                box-shadow: $shadow--three;
+            @include media-breakpoint-up(sm) {
+                svg {
+                    box-shadow: $shadow--three;
+                }
             }
-            // }
-        }
+    }
 
         &.outer {
             // opacity: 0.6;
             z-index: 1 !important;
 
-            // @include media-breakpoint-up(sm) {
-            svg {
-                box-shadow: $shadow--two;
+            @include media-breakpoint-up(sm) {
+                svg {
+                    box-shadow: $shadow--two;
+                }
             }
-            // }
-        }
-        /* purgecss end ignore */
+    }
+    /* purgecss end ignore */
 
         &:first-child {
             margin-left: -#{12 / 1.5 / 12 * 100%};
