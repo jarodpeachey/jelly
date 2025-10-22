@@ -298,7 +298,7 @@ const Home = () => {
                             <div className="row">
                                 <div className="col-lg-8 offset-lg-2 max-560">
                                     <p className="display">WHAT WE DO</p>
-                                    <h2>Websites Built for Service-Based Pros — Designed to Get You Found</h2>
+                                    <h2>Websites Designed to Get You Noticed</h2>
                                     <p className="section-description">
                                         As your Orlando web design partner, we create beautiful, high-converting websites that help you grow your business
                                         online with an all-in-one website solution that handles everything you need.
