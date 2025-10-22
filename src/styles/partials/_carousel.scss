@@ -93,7 +93,7 @@ $slideHeight: 200;
         }
 
         &.middle {
-            z-index: 9;
+            z-index: 9 !important;
             // opacity: 1;
 
             @include media-breakpoint-up(sm) {
@@ -104,7 +104,7 @@ $slideHeight: 200;
         }
 
         &.edge {
-            z-index: 3;
+            z-index: 3 !important;
             // opacity: 0.8;
 
             @include media-breakpoint-up(sm) {
@@ -116,7 +116,7 @@ $slideHeight: 200;
 
         &.outer {
             // opacity: 0.6;
-            z-index: 1;
+            z-index: 1 !important;
 
             @include media-breakpoint-up(sm) {
                 svg {
