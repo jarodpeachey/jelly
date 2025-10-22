@@ -1,4 +1,5 @@
 (function () {
+  console.log("Start of the file")
     // SLIDER ELEMENTS
     const slides = document.querySelectorAll(".carousel__slide");
     const sliderMask = document.querySelector(".carousel__mask");
@@ -14,7 +15,7 @@
     let totalSlides = [];
 
     // ADD LEFT POSITION TO ALL SLIDES
-        for (let i = 0; i < slides.length; i++) {
+    for (let i = 0; i < slides.length; i++) {
         console.log(slides[i]);
         totalSlides.push(i);
         clearLeft(slides[i]);
@@ -82,6 +83,7 @@
 
     // Helper: clear any inline left value for an element before setting a new one
     function clearLeft(el) {
+      console.log("Running clear function: ", el)
         if (!el) return;
         // Remove any inline "left" declaration from the element's style string using regex
         const styleAttr = el.getAttribute("style") || el.style.cssText || "";
@@ -89,14 +91,19 @@
             // Remove occurrences like "left: 10px;" or "left:10px" (with or without trailing ;)
             let cleaned = styleAttr.replace(/(?:^|;)\s*left\s*:\s*[^;]+;?/gi, ";");
             // Collapse multiple semicolons and trim leading/trailing semicolons/spaces
-            cleaned = cleaned.replace(/;{2,}/g, ";").replace(/^\s*;|;\s*$/g, "").trim();
+            cleaned = cleaned
+                .replace(/;{2,}/g, ";")
+                .replace(/^\s*;|;\s*$/g, "")
+                .trim();
             if (cleaned) {
-          // Keep other styles intact
-          el.setAttribute("style", cleaned + (cleaned.endsWith(";") ? "" : ";"));
+                // Keep other styles intact
+                el.setAttribute("style", cleaned + (cleaned.endsWith(";") ? "" : ";"));
             } else {
-          // No remaining inline styles — remove the attribute
-          el.removeAttribute("style");
+                // No remaining inline styles — remove the attribute
+                el.removeAttribute("style");
             }
+
+            console.log(`Cleaned up: `, cleaned);
         }
     }
     if (window.innerWidth > 9) {
@@ -221,19 +228,19 @@
                 } else {
                     slide.classList.remove("middle");
                 }
-                        if (index === totalSlides[0]) {
-                            setTimeout(() => {
-                                slide.style.transition = "0s";
-                                clearLeft(slide);
-                                slide.style.left = "0px";
-                                slide.style.transform = "translateX(0px)";
-                            }, 400);
-                        } else {
-                            slide.style.transition = ".6s ease";
-                            clearLeft(slide);
-                            slide.style.left = "0px";
-                            slide.style.transform = "translateX(0px)";
-                        }
+                if (index === totalSlides[0]) {
+                    setTimeout(() => {
+                        slide.style.transition = "0s";
+                        clearLeft(slide);
+                        slide.style.left = "0px";
+                        slide.style.transform = "translateX(0px)";
+                    }, 400);
+                } else {
+                    slide.style.transition = ".6s ease";
+                    clearLeft(slide);
+                    slide.style.left = "0px";
+                    slide.style.transform = "translateX(0px)";
+                }
             });
 
             // SHIFT INDEXES ARRAY FIRST ITEM TO END
@@ -245,21 +252,21 @@
                 } else {
                     slide.classList.remove("middle");
                 }
-                        if (index === totalSlides[totalSlides.length - 1]) {
-                            slide.classList.add("testingThisClassNameForThisSlide");
-                            setTimeout(() => {
-                                slide.style.transition = "0s";
-                                clearLeft(slide);
-                                slide.style.left = "0px";
-                                slide.style.transform = "translateX(0px)";
-                            }, 400);
-                        } else {
-                            slide.classList.remove("testingThisClassNameForThisSlide");
-                            slide.style.transition = ".6s ease";
-                            clearLeft(slide);
-                            slide.style.left = "0px";
-                            slide.style.transform = "translateX(0px)";
-                        }
+                if (index === totalSlides[totalSlides.length - 1]) {
+                    slide.classList.add("testingThisClassNameForThisSlide");
+                    setTimeout(() => {
+                        slide.style.transition = "0s";
+                        clearLeft(slide);
+                        slide.style.left = "0px";
+                        slide.style.transform = "translateX(0px)";
+                    }, 400);
+                } else {
+                    slide.classList.remove("testingThisClassNameForThisSlide");
+                    slide.style.transition = ".6s ease";
+                    clearLeft(slide);
+                    slide.style.left = "0px";
+                    slide.style.transform = "translateX(0px)";
+                }
             });
 
             // SHIFT INDEXES ARRAY LAST ITEM TO START
@@ -276,10 +283,10 @@
                     const currentTranslate = parseFloat(slide.style.transform.replace("translateX(", "").replace("px)", "")) || 0;
 
                     // MOVE ALL SLIDES LEFT
-                      // reset any inline left before setting a new value
-                      const currentLeft = parseFloat(slide.style.left, 10) || 0;
-                      clearLeft(slide);
-                      slide.style.left = `${currentLeft - slide.clientWidth}px`;
+                    // reset any inline left before setting a new value
+                    const currentLeft = parseFloat(slide.style.left, 10) || 0;
+                    clearLeft(slide);
+                    slide.style.left = `${currentLeft - slide.clientWidth}px`;
 
                     if (index === totalSlides[forwardsMiddleSlide]) {
                         slide.style.transform = (removeScale(slide.style.transform) + " " + middleScale).trim();
@@ -305,14 +312,14 @@
                         } else {
                             slide.firstElementChild.style.transform = "rotateY(18deg) translateX(70px)";
                         }
-              } else if (index === totalSlides[forwardsOuterSlideLeft] || index === totalSlides[forwardsOuterSlideRight]) {
+                    } else if (index === totalSlides[forwardsOuterSlideLeft] || index === totalSlides[forwardsOuterSlideRight]) {
                         slide.style.transform = (removeScale(slide.style.transform) + " " + outerScale).trim();
 
                         slide.classList.add("outer");
                         slide.classList.remove("middle");
                         slide.classList.remove("edge");
-                  clearLeft(slide.firstElementChild);
-                  slide.firstElementChild.style.left = "0px";
+                        clearLeft(slide.firstElementChild);
+                        slide.firstElementChild.style.left = "0px";
 
                         if (index === totalSlides[forwardsOuterSlideLeft]) {
                             slide.firstElementChild.style.transform = "rotateY(-42deg) translateX(-60px)";
@@ -324,21 +331,21 @@
                         slide.style.opacity = "1";
                         slide.style.transition = ".6s ease";
                         slide.classList.remove("outer");
-                          slide.firstElementChild.style.left = "";
-                          slide.firstElementChild.style.left = "0px";
+                        slide.firstElementChild.style.left = "";
+                        slide.firstElementChild.style.left = "0px";
 
                         slide.style.transform = removeScale(slide.style.transform);
 
-                                                if (index === totalSlides[forwardsFarSlideLeft]) {
-                                                        slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(0px)";
-                                                            clearLeft(slide.firstElementChild);
-                                                            slide.firstElementChild.style.left = "50px";
+                        if (index === totalSlides[forwardsFarSlideLeft]) {
+                            slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(0px)";
+                            clearLeft(slide.firstElementChild);
+                            slide.firstElementChild.style.left = "50px";
                         } else {
                             slide.style.transition = "0s";
                             slide.firstElementChild.style.transition = "none";
                             slide.firstElementChild.style.transform = "rotateY(60deg) translateX(0px) scale(.8)";
-                                                            clearLeft(slide.firstElementChild);
-                                                            slide.firstElementChild.style.left = "-120px";
+                            clearLeft(slide.firstElementChild);
+                            slide.firstElementChild.style.left = "-120px";
                             slide.style.zIndex = "-1";
 
                             setTimeout(() => {
@@ -353,8 +360,8 @@
                     } else {
                         // MOVE FIRST SLIDE TO END
                         if (index === totalSlides[forwardsInvisibleSlideLeft]) {
-                                                            clearLeft(slide.firstElementChild);
-                                                            slide.firstElementChild.style.left = "400px";
+                            clearLeft(slide.firstElementChild);
+                            slide.firstElementChild.style.left = "400px";
                             slide.style.zIndex = "-1";
 
                             setTimeout(() => {
@@ -442,8 +449,8 @@
                         }
                     } else if (index === totalSlides[backwardsOuterSlideRight] || index === totalSlides[backwardsOuterSlideLeft]) {
                         slide.style.transform = (removeScale(slide.style.transform) + " " + outerScale).trim();
-                          clearLeft(slide.firstElementChild);
-                          slide.firstElementChild.style.left = "0px";
+                        clearLeft(slide.firstElementChild);
+                        slide.firstElementChild.style.left = "0px";
 
                         slide.classList.add("outer");
                         slide.classList.remove("middle");
@@ -459,8 +466,8 @@
                         slide.style.opacity = "1";
                         slide.style.transition = ".6s ease";
                         slide.classList.remove("outer");
-                              clearLeft(slide.firstElementChild);
-                              slide.firstElementChild.style.left = "0px";
+                        clearLeft(slide.firstElementChild);
+                        slide.firstElementChild.style.left = "0px";
 
                         slide.style.transform = removeScale(slide.style.transform);
 
@@ -473,8 +480,8 @@
                         // MOVE FIRST SLIDE TO END
                         if (index === totalSlides[backwardsInvisibleSlideRight]) {
                             // slide.style.transition = "0s";
-                              slide.firstElementChild.style.left = "";
-                              slide.firstElementChild.style.left = "-400px";
+                            slide.firstElementChild.style.left = "";
+                            slide.firstElementChild.style.left = "-400px";
                             slide.style.zIndex = "-1";
 
                             setTimeout(() => {
@@ -497,8 +504,8 @@
                             slide.classList.remove("outer");
 
                             slide.firstElementChild.style.transform = "none";
-                              slide.firstElementChild.style.left = "";
-                              slide.firstElementChild.style.left = "0";
+                            slide.firstElementChild.style.left = "";
+                            slide.firstElementChild.style.left = "0";
                         }
                     }
 
