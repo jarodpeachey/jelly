@@ -72,42 +72,8 @@ $slideHeight: 200;
         opacity: 0;
 
         &.middle {
-          a {
-            opacity: 1;
-          }
-        }
-
-        a {
-            opacity: 0;
-            background: $color--primary;
-            border: 1px solid $color--primary;
-            border-radius: 8px;
-            box-shadow: 2px 2px 12px 0px #1c2c5e1a;
-            color: white;
-            text-align: center;
-            transition: 0.2s ease;
-            text-decoration: none;
-            position: absolute;
-            display: block;
-            bottom: -15px;
-            cursor: pointer;
-            background: $color--primary;
-            padding: 0px 0;
-            line-height: 17px;
-            font-weight: 400;
-            // text-transform: uppercase;
-            color: white;
-            border-radius: 99px;
-            left: calc(50% - 50px) !important;
-            width: 100px;
-            text-align: center;
-            font-size: 7px;
-            transition: 0.2s ease;
-
-            &:hover {
-                box-shadow: 2px 2px 24px 0px #101a3656;
-                background-color: #2b48a9;
-                border-color: #2b48a9;
+            a {
+                opacity: 1;
             }
         }
 
@@ -215,6 +181,26 @@ $slideHeight: 200;
     }
 }
 
+.carousel__link {
+    display: block !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    margin-bottom: 80px !important;
+    margin-top: 12px;
+    padding: 4px 12px;
+    padding-top: 5px;
+    font-size: 14px;
+    cursor: pointer;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 110px !important;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 126px !important;
+    }
+}
+
 .carousel__buttons {
     display: flex;
     align-items: center;
@@ -223,15 +209,6 @@ $slideHeight: 200;
     // font-family: "Mont", "Courier New";
     font-weight: 500;
     font-size: 1.1rem;
-    margin-bottom: 80px;
-
-    @include media-breakpoint-up(md) {
-        margin-bottom: 110px;
-    }
-
-    @include media-breakpoint-up(lg) {
-        margin-bottom: 126px;
-    }
 }
 
 .carousel__indicator {

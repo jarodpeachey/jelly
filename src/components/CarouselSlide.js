@@ -3,7 +3,7 @@ import React from "react";
 const TalentCarouselSlide = ({ image, className, name, link }) => {
     let clipPathID = `${name.toLowerCase().replace(/ /, "-")}-cutout`;
     return (
-        <figure aria-labelledby="themes__title" className={`card carousel__slide ${className}`} id={name}>
+        <figure aria-labelledby="themes__title" className={`card carousel__slide ${className}`} id={name} link={link}>
             <svg viewBox="0 0 700 450" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <clipPath id={clipPathID} clipPathUnits="userSpaceOnUse">
@@ -27,7 +27,6 @@ const TalentCarouselSlide = ({ image, className, name, link }) => {
                     <circle cx="47" cy="14" r="4" fill="green" fillOpacity="0.8" />
                 </g>
             </svg>
-            <a href={link} target="_blank" rel="noopener noreferrer">View Site</a>
         </figure>
     );
 };
