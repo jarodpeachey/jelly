@@ -9,6 +9,7 @@ $slideHeight: 200;
     position: relative;
     width: 100%;
     margin: 0 auto;
+    overflow: visible;
     overflow-y: visible;
     // max-width: 400px;
     // left: -400px;
@@ -47,13 +48,16 @@ $slideHeight: 200;
         position: relative;
         // width: #{$slideWidth}px;
         width: 100%;
+        overflow: visible;
+        overflow-y: visible;
     }
 
     .carousel__track {
         position: relative;
         display: flex;
         width: 100%;
-        // overflow-y: visible;
+        overflow: visible;
+        overflow-y: visible;
 
         &.active {
             transition: 0.3s ease;
