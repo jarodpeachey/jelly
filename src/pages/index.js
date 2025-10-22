@@ -193,67 +193,67 @@ const Home = () => {
                                     {
                                         name: "Chime Social",
                                         image: "/media/img/chime-work.webp",
-                                        link: "https://chime-staging.netlify.app"
+                                        // link: "https://chime-staging.netlify.app"
                                     },
                                     {
                                         name: "Contenda",
                                         image: "/media/img/contenda-work.webp",
-                                        link: "https://contenda-staging.netlify.app/"
+                                        // link: "https://contenda-staging.netlify.app/"
                                     },
                                     {
                                         name: "Glitter",
                                         image: "/media/img/glitter-work.webp",
-                                        link: "https://get-glitter.netlify.app"
+                                        // link: "https://get-glitter.netlify.app"
                                     },
                                     {
                                         name: "Launch Outreach",
                                         image: "/media/img/launch-work.webp",
-                                        link: "https://launchoutreach.netlify.app"
+                                        // link: "https://launchoutreach.netlify.app"
                                     },
                                     {
                                         name: "Dad's Den Media",
                                         image: "/media/img/media-work.webp",
-                                        link: "https://dadsdenmedia.com/"
+                                        // link: "https://dadsdenmedia.com/"
                                     },
                                     {
                                         name: "Chime Social",
                                         image: "/media/img/chime-work.webp",
-                                        link: "https://chime-staging.netlify.app"
+                                        // link: "https://chime-staging.netlify.app"
                                     },
                                     {
                                         name: "Contenda",
                                         image: "/media/img/contenda-work.webp",
-                                        link: "https://contenda-staging.netlify.app/"
+                                        // link: "https://contenda-staging.netlify.app/"
                                     },
                                     {
                                         name: "Glitter",
                                         image: "/media/img/glitter-work.webp",
-                                        link: "https://get-glitter.netlify.app"
+                                        // link: "https://get-glitter.netlify.app"
                                     },
                                     {
                                         name: "Launch Outreach",
                                         image: "/media/img/launch-work.webp",
-                                        link: "https://launchoutreach.netlify.app"
+                                        // link: "https://launchoutreach.netlify.app"
                                     },
                                     {
                                         name: "Dad's Den Media",
                                         image: "/media/img/media-work.webp",
-                                        link: "https://dadsdenmedia.com/"
+                                        // link: "https://dadsdenmedia.com/"
                                     },
                                     {
                                         name: "Chime Social",
                                         image: "/media/img/chime-work.webp",
-                                        link: "https://chime-staging.netlify.app"
+                                        // link: "https://chime-staging.netlify.app"
                                     },
                                     {
                                         name: "Contenda",
                                         image: "/media/img/contenda-work.webp",
-                                        link: "https://contenda-staging.netlify.app/"
+                                        // link: "https://contenda-staging.netlify.app/"
                                     },
                                     {
                                         name: "Glitter",
                                         image: "/media/img/glitter-work.webp",
-                                        link: "https://get-glitter.netlify.app"
+                                        // link: "https://get-glitter.netlify.app"
                                     },
                                 ]}
                             />

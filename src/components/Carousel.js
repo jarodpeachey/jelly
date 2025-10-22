@@ -19,7 +19,7 @@ const Carousel = props => {
         <div className="carousel__mask" id="carousel__mask">
           <div className="carousel__track" id="carousel__track">
             {props.slides.map((slide, index) => {
-              return <CarouselSlide className={index === 3 ? "middle" : index === 2 || index === "4" ? "edge" : ""} image={slide.image} name={slide.name} key={index} link={slide.link} />;
+              return <CarouselSlide className={index === 3 ? "middle" : index === 2 || index === "4" ? "edge" : ""} image={slide.image} name={slide.name} key={index} />;
             })}
           </div>
         </div>
