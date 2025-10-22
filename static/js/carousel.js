@@ -101,7 +101,7 @@
       slide.classList.remove("outer");
 
       slide.firstElementChild.style.transform = "none";
-      slide.lastElementChild.style.transform = "none";
+      // slide.lastElementChild.style.transform = "none";
       setTimeout(() => {
         indicator.innerHTML = slide.id;
       }, 200);
@@ -116,10 +116,10 @@
 
       if (index === totalSlides[originalEdgeSlideLeft]) {
         slide.firstElementChild.style.transform = "rotateY(-18deg) translateX(-70px)";
-        slide.lastElementChild.style.transform = "rotateY(-18deg) translateX(-70px)";
+        // slide.lastElementChild.style.transform = "rotateY(-18deg) translateX(-70px)";
       } else {
         slide.firstElementChild.style.transform = "rotateY(18deg) translateX(70px)";
-        slide.lastElementChild.style.transform = "rotateY(18deg) translateX(70px)";
+        // slide.lastElementChild.style.transform = "rotateY(18deg) translateX(70px)";
       }
     } else if (index === totalSlides[originalOuterSlideLeft] || index === totalSlides[originalOuterSlideRight]) {
       slide.style.opacity = "1";
@@ -131,10 +131,10 @@
 
       if (index === totalSlides[originalOuterSlideLeft]) {
         slide.firstElementChild.style.transform = "rotateY(-42deg) translateX(-60px)";
-        slide.lastElementChild.style.transform = "rotateY(-42deg) translateX(-60px)";
+        // slide.lastElementChild.style.transform = "rotateY(-42deg) translateX(-60px)";
       } else {
         slide.firstElementChild.style.transform = "rotateY(42deg) translateX(60px)";
-        slide.lastElementChild.style.transform = "rotateY(42deg) translateX(60px)";
+        // slide.lastElementChild.style.transform = "rotateY(42deg) translateX(60px)";
       }
     } else if (index === totalSlides[originalFarSlideLeft] || index === totalSlides[originalFarSlideRight]) {
       slide.style.opacity = "1";
@@ -144,10 +144,10 @@
 
       if (index === totalSlides[originalFarSlideLeft]) {
         slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(100px)";
-        slide.lastElementChild.style.transform = "rotateY(-60deg) translateX(100px)";
+        // slide.lastElementChild.style.transform = "rotateY(-60deg) translateX(100px)";
       } else {
         slide.firstElementChild.style.transform = "rotateY(60deg) translateX(-100px)";
-        slide.lastElementChild.style.transform = "rotateY(60deg) translateX(-100px)";
+        // slide.lastElementChild.style.transform = "rotateY(60deg) translateX(-100px)";
       }
     } else {
       slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "").replace(outerScale, "");
@@ -157,7 +157,7 @@
       slide.classList.remove("outer");
 
       slide.firstElementChild.style.transform = "none";
-      slide.lastElementChild.style.transform = "none";
+      // slide.lastElementChild.style.transform = "none";
     }
   });
 
@@ -245,7 +245,7 @@
             slide.classList.remove("outer");
 
             slide.firstElementChild.style.transform = "none";
-            slide.lastElementChild.style.transform = "none";
+            // slide.lastElementChild.style.transform = "none";
             setTimeout(() => {
               indicator.innerHTML = slide.id;
             }, 200);
@@ -259,10 +259,10 @@
 
             if (index === totalSlides[forwardsEdgeSlideLeft]) {
               slide.firstElementChild.style.transform = "rotateY(-18deg) translateX(-70px)";
-              slide.lastElementChild.style.transform = "rotateY(-18deg) translateX(-70px)";
+              // slide.lastElementChild.style.transform = "rotateY(-18deg) translateX(-70px)";
             } else {
               slide.firstElementChild.style.transform = "rotateY(18deg) translateX(70px)";
-              slide.lastElementChild.style.transform = "rotateY(18deg) translateX(70px)";
+              // slide.lastElementChild.style.transform = "rotateY(18deg) translateX(70px)";
             }
           } else if (index === totalSlides[forwardsOuterSlideLeft] || index === totalSlides[forwardsOuterSlideRight]) {
             slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "") + outerScale;
@@ -271,14 +271,14 @@
             slide.classList.remove("middle");
             slide.classList.remove("edge");
             slide.firstElementChild.style.left = "0px";
-            slide.lastElementChild.style.left = "0px";
+            // slide.lastElementChild.style.left = "0px";
 
             if (index === totalSlides[forwardsOuterSlideLeft]) {
               slide.firstElementChild.style.transform = "rotateY(-42deg) translateX(-60px)";
-              slide.lastElementChild.style.transform = "rotateY(-42deg) translateX(-60px)";
+              // slide.lastElementChild.style.transform = "rotateY(-42deg) translateX(-60px)";
             } else {
               slide.firstElementChild.style.transform = "rotateY(42deg) translateX(60px)";
-              slide.lastElementChild.style.transform = "rotateY(42deg) translateX(60px)";
+              // slide.lastElementChild.style.transform = "rotateY(42deg) translateX(60px)";
             }
           } else if (index === totalSlides[forwardsFarSlideLeft] || index === totalSlides[forwardsFarSlideRight]) {
             slide.style.transition = "0s";
@@ -286,33 +286,33 @@
             slide.style.transition = ".6s ease";
             slide.classList.remove("outer");
             slide.firstElementChild.style.left = "0px";
-            slide.lastElementChild.style.left = "0px";
+            // slide.lastElementChild.style.left = "0px";
 
             slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "").replace(outerScale, "");
 
             if (index === totalSlides[forwardsFarSlideLeft]) {
               slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(0px)";
-              slide.lastElementChild.style.transform = "rotateY(-60deg) translateX(0px)";
+              // slide.lastElementChild.style.transform = "rotateY(-60deg) translateX(0px)";
               slide.firstElementChild.style.left = "50px";
-              slide.lastElementChild.style.left = "50px";
+              // slide.lastElementChild.style.left = "50px";
             } else {
               slide.style.transition = "0s";
               slide.firstElementChild.style.transition = "none";
-              slide.lastElementChild.style.transition = "none";
+              // slide.lastElementChild.style.transition = "none";
               slide.firstElementChild.style.transform = "rotateY(60deg) translateX(0px) scale(.8)";
-              slide.lastElementChild.style.transform = "rotateY(60deg) translateX(0px) scale(.8)";
+              // slide.lastElementChild.style.transform = "rotateY(60deg) translateX(0px) scale(.8)";
               slide.firstElementChild.style.left = "-120px";
-              slide.lastElementChild.style.left = "-120px";
+              // slide.lastElementChild.style.left = "-120px";
               slide.style.zIndex = "-1";
 
               setTimeout(() => {
                 slide.style.transition = ".6s ease";
                 slide.firstElementChild.style.transition = ".6s ease";
-                slide.lastElementChild.style.transition = ".6s ease";
+                // slide.lastElementChild.style.transition = ".6s ease";
                 slide.firstElementChild.style.transform = "rotateY(60deg) translateX(0px)";
-                slide.lastElementChild.style.transform = "rotateY(60deg) translateX(0px)";
+                // slide.lastElementChild.style.transform = "rotateY(60deg) translateX(0px)";
                 slide.firstElementChild.style.left = "-50px";
-                slide.lastElementChild.style.left = "-50px";
+                // slide.lastElementChild.style.left = "-50px";
                 slide.style.zIndex = null;
               }, 10);
             }
@@ -320,14 +320,14 @@
             // MOVE FIRST SLIDE TO END
             if (index === totalSlides[forwardsInvisibleSlideLeft]) {
               slide.firstElementChild.style.left = "400px";
-              slide.lastElementChild.style.left = "400px";
+              // slide.lastElementChild.style.left = "400px";
               slide.style.zIndex = "-1";
 
               setTimeout(() => {
                 // SET TRANSITION TO NONE
                 slide.style.transition = "0s";
                 slide.firstElementChild.style.transform = "";
-                slide.lastElementChild.style.transform = "";
+                // slide.lastElementChild.style.transform = "";
                 slide.style.opacity = "0";
                 slide.style.zIndex = "-1";
 
@@ -349,7 +349,7 @@
                 slide.classList.remove("outer");
 
                 slide.firstElementChild.style.transform = "none";
-                slide.lastElementChild.style.transform = "none";
+                // slide.lastElementChild.style.transform = "none";
               }, 400);
             } else {
               slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "").replace(outerScale, "");
@@ -359,9 +359,9 @@
               slide.classList.remove("outer");
 
               slide.firstElementChild.style.transform = "none";
-              slide.lastElementChild.style.transform = "none";
+              // slide.lastElementChild.style.transform = "none";
               slide.firstElementChild.style.left = "0";
-              slide.lastElementChild.style.left = "0";
+              // slide.lastElementChild.style.left = "0";
             }
           }
         });
@@ -391,7 +391,7 @@
             slide.classList.remove("outer");
 
             slide.firstElementChild.style.transform = "none";
-            slide.lastElementChild.style.transform = "none";
+            // slide.lastElementChild.style.transform = "none";
             setTimeout(() => {
               indicator.innerHTML = slide.id;
             }, 200);
@@ -405,15 +405,15 @@
 
             if (index === totalSlides[backwardsEdgeSlideLeft]) {
               slide.firstElementChild.style.transform = "rotateY(-18deg) translateX(-70px)";
-              slide.lastElementChild.style.transform = "rotateY(-18deg) translateX(-70px)";
+              // slide.lastElementChild.style.transform = "rotateY(-18deg) translateX(-70px)";
             } else {
               slide.firstElementChild.style.transform = "rotateY(18deg) translateX(70px)";
-              slide.lastElementChild.style.transform = "rotateY(18deg) translateX(70px)";
+              // slide.lastElementChild.style.transform = "rotateY(18deg) translateX(70px)";
             }
           } else if (index === totalSlides[backwardsOuterSlideRight] || index === totalSlides[backwardsOuterSlideLeft]) {
             slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "") + outerScale;
             slide.firstElementChild.style.left = "0px";
-            slide.lastElementChild.style.left = "0px";
+            // slide.lastElementChild.style.left = "0px";
 
             slide.classList.add("outer");
             slide.classList.remove("middle");
@@ -421,10 +421,10 @@
 
             if (index === totalSlides[backwardsOuterSlideLeft]) {
               slide.firstElementChild.style.transform = "rotateY(-42deg) translateX(-60px)";
-              slide.lastElementChild.style.transform = "rotateY(-42deg) translateX(-60px)";
+              // slide.lastElementChild.style.transform = "rotateY(-42deg) translateX(-60px)";
             } else {
               slide.firstElementChild.style.transform = "rotateY(42deg) translateX(60px)";
-              slide.lastElementChild.style.transform = "rotateY(42deg) translateX(60px)";
+              // slide.lastElementChild.style.transform = "rotateY(42deg) translateX(60px)";
             }
           } else if (index === totalSlides[backwardsFarSlideLeft] || index === totalSlides[backwardsFarSlideRight]) {
             slide.style.transition = "0s";
@@ -432,16 +432,16 @@
             slide.style.transition = ".6s ease";
             slide.classList.remove("outer");
             slide.firstElementChild.style.left = "0px";
-            slide.lastElementChild.style.left = "0px";
+            // slide.lastElementChild.style.left = "0px";
 
             slide.style.transform = slide.style.transform.replace(middleScale, "").replace(edgeScale, "").replace(outerScale, "");
 
             if (index === totalSlides[backwardsFarSlideLeft]) {
               slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(100px)";
-              slide.lastElementChild.style.transform = "rotateY(-60deg) translateX(100px)";
+              // slide.lastElementChild.style.transform = "rotateY(-60deg) translateX(100px)";
             } else {
               slide.firstElementChild.style.transform = "rotateY(60deg) translateX(-100px)";
-              slide.lastElementChild.style.transform = "rotateY(60deg) translateX(-100px)";
+              // slide.lastElementChild.style.transform = "rotateY(60deg) translateX(-100px)";
             }
           } else {
             // MOVE FIRST SLIDE TO END
@@ -452,15 +452,15 @@
 
               setTimeout(() => {
                 slide.firstElementChild.style.left = "0px";
-                slide.lastElementChild.style.left = "0px";
+                // slide.lastElementChild.style.left = "0px";
                 slide.firstElementChild.style.transition = "none";
-                slide.lastElementChild.style.transition = "none";
+                // slide.lastElementChild.style.transition = "none";
                 slide.style.transition = "0s";
                 slide.style.opacity = "0";
 
                 setTimeout(() => {
                   slide.firstElementChild.style.transition = ".6s ease";
-                  slide.lastElementChild.style.transition = ".6s ease";
+                  // slide.lastElementChild.style.transition = ".6s ease";
                   slide.style.zIndex = null;
                 }, 10);
               }, 400);
@@ -472,9 +472,9 @@
               slide.classList.remove("outer");
 
               slide.firstElementChild.style.transform = "none";
-              slide.lastElementChild.style.transform = "none";
+              // slide.lastElementChild.style.transform = "none";
               slide.firstElementChild.style.left = "0";
-              slide.lastElementChild.style.left = "0";
+              // slide.lastElementChild.style.left = "0";
             }
           }
 
@@ -498,7 +498,7 @@
 
             slide.style.transition = "0s";
             slide.firstElementChild.style.transition = "none";
-            slide.lastElementChild.style.transition = "none";
+            // slide.lastElementChild.style.transition = "none";
             slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(0px) scale(.8)";
             slide.firstElementChild.style.left = "120px";
             slide.style.zIndex = "-1";
@@ -506,11 +506,11 @@
             setTimeout(() => {
               slide.style.transition = ".6s ease";
               slide.firstElementChild.style.transition = ".6s ease";
-              slide.lastElementChild.style.transition = ".6s ease";
+              // slide.lastElementChild.style.transition = ".6s ease";
               slide.firstElementChild.style.transform = "rotateY(-60deg) translateX(0px)";
-              slide.lastElementChild.style.transform = "rotateY(-60deg) translateX(0px)";
+              // slide.lastElementChild.style.transform = "rotateY(-60deg) translateX(0px)";
               slide.firstElementChild.style.left = "50px";
-              slide.lastElementChild.style.left = "50px";
+              // slide.lastElementChild.style.left = "50px";
               slide.style.zIndex = null;
             }, 10);
           }
