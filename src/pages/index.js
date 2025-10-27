@@ -19,10 +19,9 @@ const Home = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-10 col-lg-6 col-xl-7">
-                                <h1>Affordable Websites for Orlando Businesses</h1>
+                                <h1>Afforable Web Design Agency in Orlando</h1>
                                 <p className="section-description hero__paragraph">
-                                    We design, build, and manage SEO-optimized websites for Orlando's business owners — so you can focus on your clients, not
-                                    your website.
+                                    We design high-performing websites built to grow your business.
                                 </p>
 
                                 <a
@@ -326,7 +325,7 @@ const Home = () => {
                             <p className="display" style={{ textAlign: "center" }}>
                                 PACKAGES & PRICING
                             </p>
-                            <h2 style={{ textAlign: "center", marginBottom: "2rem" }}>Affordable Website Solutions for Small Businesses</h2>
+                            <h2 style={{ textAlign: "center", marginBottom: "2rem" }}>Affordable Website Solutions</h2>
                             <p className="section-description" style={{ textAlign: "center", marginBottom: "2rem", marginRight: "auto", marginLeft: "auto" }}>
                                 All packages include a fully-custom website, SEO and performance optimization, and free maintenance and support for a month
                             </p>

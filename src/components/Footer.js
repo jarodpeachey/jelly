@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="d-flex">
           <img width="83" height="64" src="/media/img/Logo White.svg" alt="Jelly Development logo" />
         </div>
-        <div className="d-flex">
+        {/* <div className="d-flex">
           <a aria-label="Jelly Development Twitter" target="_blank" rel="noreferrer" href="https://twitter.com/jellydevelop">
             <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -43,7 +43,7 @@ const Footer = () => {
               />
             </svg>
           </a>
-        </div>
+        </div> */}
         <div className="d-flex">
           <p>© 2025 Jelly Development LLC</p>
         </div>
