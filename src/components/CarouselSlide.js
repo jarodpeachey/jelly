@@ -16,7 +16,6 @@ const TalentCarouselSlide = ({ image, className, name, link }) => {
                     preserveAspectRatio="xMinYMin slice"
                     xlinkHref={image}
                     clipPath={`url(#${clipPathID})`}
-                    loading="lazy"
                     y="25"
                 />
                 <g className="browser-top">
