@@ -6,27 +6,34 @@ export default function HTML(props) {
     return (
         <html {...props.htmlAttributes} lang="en">
             <head>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16889901199" />
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html:
+                            "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-16889901199');",
+                    }}
+                />
                 <meta charSet="utf-8" />
                 <meta httpEquiv="x-ua-compatible" content="ie=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 {props.headComponents}
-                    {/* Initial full-screen overlay to prevent flash of unstyled text (FOUST). */}
-                    <style
-                        dangerouslySetInnerHTML={{
-                            __html:
-                                '#site-overlay{position:fixed;inset:0;margin:0;padding:0;width:100%;height:100%;background:#ecf2ff;z-index:2147483647;transition:opacity .35s ease,visibility .35s ease;opacity:1;visibility:visible}#site-overlay.overlay-hidden{opacity:0;visibility:hidden;pointer-events:none}#site-overlay *{visibility:hidden}',
-                        }}
-                    />
-                    <noscript>
-                        <style dangerouslySetInnerHTML={{ __html: '#site-overlay{display:none!important}' }} />
-                    </noscript>
-                    <script
-                        // remove the overlay after first paint / DOM ready; keep a fallback timeout
-                        dangerouslySetInnerHTML={{
-                            __html:
-                                "(function(){var id='site-overlay';function remove(){var el=document.getElementById(id);if(!el) return;el.classList.add('overlay-hidden');setTimeout(function(){if(el&&el.parentNode) el.parentNode.removeChild(el);},450);}function onReady(){if('requestAnimationFrame' in window){requestAnimationFrame(function(){requestAnimationFrame(remove);});}else{remove();}}if(document.readyState!=='loading'){onReady();}else{document.addEventListener('DOMContentLoaded', onReady);window.addEventListener('load', onReady);}setTimeout(remove,2000);})();",
-                        }}
-                    />
+                {/* Initial full-screen overlay to prevent flash of unstyled text (FOUST). */}
+                <style
+                    dangerouslySetInnerHTML={{
+                        __html:
+                            "#site-overlay{position:fixed;inset:0;margin:0;padding:0;width:100%;height:100%;background:#ecf2ff;z-index:2147483647;transition:opacity .35s ease,visibility .35s ease;opacity:1;visibility:visible}#site-overlay.overlay-hidden{opacity:0;visibility:hidden;pointer-events:none}#site-overlay *{visibility:hidden}",
+                    }}
+                />
+                <noscript>
+                    <style dangerouslySetInnerHTML={{ __html: "#site-overlay{display:none!important}" }} />
+                </noscript>
+                <script
+                    // remove the overlay after first paint / DOM ready; keep a fallback timeout
+                    dangerouslySetInnerHTML={{
+                        __html:
+                            "(function(){var id='site-overlay';function remove(){var el=document.getElementById(id);if(!el) return;el.classList.add('overlay-hidden');setTimeout(function(){if(el&&el.parentNode) el.parentNode.removeChild(el);},450);}function onReady(){if('requestAnimationFrame' in window){requestAnimationFrame(function(){requestAnimationFrame(remove);});}else{remove();}}if(document.readyState!=='loading'){onReady();}else{document.addEventListener('DOMContentLoaded', onReady);window.addEventListener('load', onReady);}setTimeout(remove,2000);})();",
+                    }}
+                />
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Jelly Development | Website design & management agency in Orlando" />
