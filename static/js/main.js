@@ -1,5 +1,5 @@
 (function () {
-  // console.log = function () {};
+  console.log = function () {};
 
   const notBuild = typeof window !== "undefined";
 
