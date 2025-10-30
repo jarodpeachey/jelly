@@ -676,5 +676,5 @@
         }
     }
 
-    setTimeout(initCarousel(), 4000);
+    setTimeout(initCarousel, 4000);
 })();
