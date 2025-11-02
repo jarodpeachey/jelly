@@ -6,6 +6,33 @@ module.exports = {
         siteUrl: "https://jellydevelopment.com",
     },
     plugins: [
+        {
+            resolve: `gatsby-plugin-google-gtag`,
+            options: {
+                // You can add multiple tracking ids and a pageview event will be fired for all of them.
+                trackingIds: ["G-NWTZ5EG98G"],
+                // This object gets passed directly to the gtag config command
+                // This config will be shared across all trackingIds
+                gtagConfig: {
+                    optimize_id: "OPT_CONTAINER_ID",
+                    anonymize_ip: true,
+                    cookie_expires: 0,
+                },
+                // This object is used for configuration specific to this plugin
+                pluginConfig: {
+                    // Puts tracking script in the head instead of the body
+                    head: false,
+                    // Setting this parameter is also optional
+                    respectDNT: true,
+                    // Avoids sending pageview hits from custom paths
+                    exclude: ["/preview/**", "/do-not-track/me/too/"],
+                    // Defaults to https://www.googletagmanager.com
+                    origin: "https://jellydevelopment.com",
+                    // Delays processing pageview events on route update (in milliseconds)
+                    delayOnRouteUpdate: 0,
+                },
+            },
+        },
         `gatsby-plugin-react-helmet`,
         // {
         //   resolve: "gatsby-source-cosmicjs",
@@ -71,9 +98,11 @@ module.exports = {
                     // Allowing 'unsafe-eval' here unblocks code that relies on eval/new Function
                     // (for example webpack runtime in some builds). This is the pragmatic fix.
                     // Add Google tag/ads domains so their conversion/viewthrough scripts can load.
-                    "script-src": "'self' 'unsafe-inline' 'unsafe-eval' data: googletagmanager.com googleads.g.doubleclick.net www.googleadservices.com www.googletagservices.com",
+                    "script-src":
+                        "'self' 'unsafe-inline' 'unsafe-eval' data: googletagmanager.com googleads.g.doubleclick.net www.googleadservices.com www.googletagservices.com",
                     // For older browsers and explicit script element loads, set script-src-elem as well.
-                    "script-src-elem": "'self' 'unsafe-inline' 'unsafe-eval' data: googletagmanager.com googleads.g.doubleclick.net www.googleadservices.com www.googletagservices.com",
+                    "script-src-elem":
+                        "'self' 'unsafe-inline' 'unsafe-eval' data: googletagmanager.com googleads.g.doubleclick.net www.googleadservices.com www.googletagservices.com",
                     "style-src": "'self' 'unsafe-inline'",
                     // you can add your directives or override defaults
                 },
