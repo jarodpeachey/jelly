@@ -27,7 +27,8 @@ module.exports = {
                     // Avoids sending pageview hits from custom paths
                     exclude: ["/preview/**", "/do-not-track/me/too/"],
                     // Defaults to https://www.googletagmanager.com
-                    origin: "https://jellydevelopment.com",
+                    // Use the official googletagmanager origin so the plugin loads the gtag script
+                    origin: "https://www.googletagmanager.com",
                     // Delays processing pageview events on route update (in milliseconds)
                     delayOnRouteUpdate: 0,
                 },
