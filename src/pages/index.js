@@ -26,6 +26,7 @@ const Home = () => {
 
                                 <a
                                     className="btn"
+                                    onclick="return gtag_report_conversion('https://calendly.com/jarodpeachey/meeting-with-jarod-peachey');"
                                     href="https://calendly.com/jarodpeachey/meeting-with-jarod-peachey"
                                     target="_blank"
                                     rel="noopener noreferrer"
