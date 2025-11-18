@@ -323,7 +323,7 @@ const Home = () => {
                     </section>
                     <section className="packages" id="packages">
                         <div className="container">
-                            <p className="display" style={{ textAlign: "center" }}>
+                            <p className="display" id="pricing" style={{ textAlign: "center" }}>
                                 PACKAGES & PRICING
                             </p>
                             <h2 style={{ textAlign: "center", marginBottom: "2rem" }}>Affordable Website Solutions</h2>
