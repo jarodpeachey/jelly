@@ -335,12 +335,13 @@ const Home = () => {
                                 <div className="col-md-4">
                                     <div className="card packages__card">
                                         <h3 className="display">Starter</h3>
-                                        <p className="price">$850</p>
+                                        <p className="price">$500</p>
                                         <ul>
                                             <li>One page</li>
-                                            <li>Basic SEO optimization</li>
+                                            <li>Basic SEO integration</li>
+                                            <li>Website performance optimization</li>
+                                            <li>Responsive design</li>
                                             <li>Hosting included</li>
-                                            <li>3-4 week turnaround</li>
                                             <li style={{ borderBottom: "none" }}>2 rounds of revisions</li>
                                         </ul>
 
@@ -354,12 +355,12 @@ const Home = () => {
                                 <div className="col-md-4">
                                     <div className="card packages__card">
                                         <h3 className="display">Growth</h3>
-                                        <p className="price">$2,500</p>
+                                        <p className="price">$1,500</p>
                                         <ul>
                                             <li>Everything in Starter</li>
                                             <li>Up to 5 pages</li>
                                             <li>Advanced SEO and analytics</li>
-                                            <li>Free maintenance and support for 1 month</li>
+                                            <li>Logo design</li>
                                             <li style={{ borderBottom: "none" }}>3 rounds of revisions</li>
                                         </ul>
 
@@ -373,14 +374,13 @@ const Home = () => {
                                 <div className="col-md-4">
                                     <div className="card packages__card">
                                         <h3 className="display">Premium</h3>
-                                        <p className="price">$4,750</p>
+                                        <p className="price">$2,750</p>
 
                                         <ul>
                                             <li>Everything in Growth</li>
                                             <li>Up to 10 pages</li>
                                             <li>Brand identity research</li>
-                                            <li>Logo design</li>
-                                            <li>Free maintenance and support for 6 months</li>
+                                            <li>Free maintenance and support for 1 month</li>
                                             <li style={{ borderBottom: "none" }}>Unlimited rounds of revisions</li>
                                         </ul>
 
