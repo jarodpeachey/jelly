@@ -25,7 +25,7 @@ const Home = () => {
                 <p className="section-description">We build landing pages that are tailored to your brand and designed to get you more customers.</p>
                 {/* <p className="section-description">We combine design, branding, SEO and copywriting to craft the perfect website for you and your customers.</p> */}
 
-                <a href="/get-started" className="btn">
+                <a href="/contact" className="btn">
                   Let's build your landing page
                 </a>
                 <a href="#services" className="btn text">
@@ -102,7 +102,7 @@ const Home = () => {
                 <div className="col-lg-8 offset-lg-2 max-560">
                   <h2>Ready to chat about your new landing page?</h2>
                   <div className="d-flex">
-                    <a href="/get-started" className="btn mr-4">
+                    <a href="/contact" className="btn mr-4">
                       I'm ready for a new landing page
                     </a>
                   </div>

@@ -44,7 +44,7 @@ const Navigation = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="/get-started" className="btn">
+                                <a href="/contact" className="btn">
                                     Get started
                                 </a>
                             </li>

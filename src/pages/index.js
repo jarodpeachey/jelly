@@ -26,12 +26,11 @@ const Home = () => {
 
                                 <a
                                     className="btn"
-                                    onclick="return gtag_report_conversion('https://calendly.com/jarodpeachey/meeting-with-jarod-peachey');"
-                                    href="https://calendly.com/jarodpeachey/meeting-with-jarod-peachey"
+                                    href="/contact"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    Schedule a Call
+                                    Get Started Now
                                 </a>
                                 <a href="#packages" className="btn text">
                                     See Packages & Pricing{" "}
@@ -345,7 +344,7 @@ const Home = () => {
                                             <li style={{ borderBottom: "none" }}>2 rounds of revisions</li>
                                         </ul>
 
-                                        <a href="/get-started" className="btn">
+                                        <a href="/contact" className="btn">
                                             Get Started
                                         </a>
                                     </div>
@@ -364,7 +363,7 @@ const Home = () => {
                                             <li style={{ borderBottom: "none" }}>3 rounds of revisions</li>
                                         </ul>
 
-                                        <a href="/get-started" className="btn">
+                                        <a href="/contact" className="btn">
                                             Get Started
                                         </a>
                                     </div>
@@ -384,7 +383,7 @@ const Home = () => {
                                             <li style={{ borderBottom: "none" }}>Unlimited rounds of revisions</li>
                                         </ul>
 
-                                        <a href="/get-started" className="btn">
+                                        <a href="/contact" className="btn">
                                             Get Started
                                         </a>
                                     </div>
@@ -400,7 +399,7 @@ const Home = () => {
                 <div className="col-lg-8 offset-lg-2 max-560">
                   <h2>Ready to chat about your new website?</h2>
                   <div className="d-flex">
-                    <a href="/get-started" className="btn">
+                    <a href="/contact" className="btn">
                       Get a Free Website Consultation
                     </a>
                   </div>

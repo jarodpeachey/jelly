@@ -6,17 +6,17 @@
     .hero {
         background: $color--primary-lightest;
         overflow: visible;
-        padding-bottom: 324px;
+        // padding-bottom: 324px;
         padding-top: 124px;
         position: relative;
 
         @include media-breakpoint-up(md) {
             padding-top: 170px;
-            padding-bottom: 324px;
+            // padding-bottom: 324px;
         }
 
         @include media-breakpoint-up(xl) {
-            padding-bottom: 424px;
+            // padding-bottom: 424px;
         }
 
         .col-lg-8 {
@@ -27,6 +27,10 @@
         .container {
             padding-bottom: 0;
             padding-top: 0;
+        }
+
+        a.btn {
+            margin: 12px auto;
         }
 
         p {
@@ -57,12 +61,28 @@
                 margin-bottom: 32px;
             }
         }
+
+        @include media-breakpoint-up(lg) {
+            h1,
+            h2,
+            p,
+            a {
+                text-align: left !important;
+                margin-left: 0;
+                width: fit-content;
+            }
+
+            a {
+                width: fit-content !important;
+                margin-left: 0 !important;
+            }
+        }
     }
 
     .cta {
-        margin-top: calc(-100px + 7rem);
+        // margin-top: calc(-100px + 7rem);
         overflow: visible;
-        padding-bottom: 150px;
+        // padding-bottom: 150px;
         position: relative;
 
         @include media-breakpoint-up(md) {
@@ -70,13 +90,13 @@
         }
 
         @include media-breakpoint-up(lg) {
-            margin-top: 10px;
+            // margin-top: 10px;
             padding-top: 0;
         }
 
         .white {
             background: white;
-            padding-top: 60px;
+            // padding-top: 60px;
         }
 
         img[src*="circle"] {

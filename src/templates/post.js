@@ -55,7 +55,7 @@ const PostTemplate = ({ pageContext }) => {
                                 <img role="presentation" alt="Background image" className="blob" src="/media/img/backgrounds/blob--dark.svg" />
                                 <img role="presentation" alt="Background image" className="blobs" src="/media/img/backgrounds/blobs--dark.svg" />
                                 <h2>Ready to chat about your new website?</h2>
-                                <a href="/get-started" className="btn mx-auto">
+                                <a href="/contact" className="btn mx-auto">
                                     I'm ready for a new website
                                 </a>
                             </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Form = ({ formName = "get-started" }) => {
+const Form = ({ formName = "contact" }) => {
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
 
