@@ -4,6 +4,7 @@ import Navigation from "../components/Navigation";
 import "../styles/partials/pages/_contact.scss";
 import Footer from "../components/Footer";
 import Form from "../components/Form";
+import TallyForm from "../components/TallyForm";
 
 const Contact = () => {
     const [status, setStatus] = useState(null);
@@ -72,6 +73,12 @@ const Contact = () => {
                                 >
                                     Loading…
                                 </iframe>
+
+                                {/* <TallyForm
+                                    embedUrl="https://tally.so/embed/pbbXOZ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                                    height={673}
+                                    title="Website Inquiry"
+                                /> */}
                             </div>
                         </div>
                     </div>
