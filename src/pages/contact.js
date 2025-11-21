@@ -65,7 +65,7 @@ const Contact = () => {
                                 <iframe
                                     src="https://docs.google.com/forms/d/e/1FAIpQLSeBJ9gDrB2W_g1-jdVY0zwaXADjB17gx4OrXvhO6pv3Nmjd7g/viewform?embedded=true"
                                     width="640"
-                                    height="3200"
+                                    height="3300"
                                     style={{ width: "100%" }}
                                     frameborder="0"
                                     marginheight="0"
