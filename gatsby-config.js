@@ -63,7 +63,7 @@ module.exports = {
                 develop: false,
                 tailwind: false,
                 // Whitelist dynamic classes that are added/removed by JS at runtime
-                whitelist: ["scrolled", "open", "blur", "middle", "edge", "outer"],
+                whitelist: ["scrolled", "open", "blur", "middle", "edge", "outer", "request-storage-access"],
             },
         },
         // "gatsby-plugin-split-css",

@@ -12,6 +12,11 @@ html body .document-root div.request-storage-access {
     margin: 0 !important;
 }
 
+.request-storage-access {
+    justify-content: flex-start !important;
+    margin: 0 !important;
+}
+
 html {
     /* Use explicit pixel sizing as requested */
     font-size: 16px;
