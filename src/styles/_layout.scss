@@ -12,6 +12,12 @@ html body .document-root div.request-storage-access {
     margin: 0 !important;
 }
 
+body .formFooter-wrapper {
+    display: none !important;
+    opacity: 0 !important;
+    clip-path: inset(100%) !important;
+}
+
 .request-storage-access {
     justify-content: flex-start !important;
     margin: 0 !important;

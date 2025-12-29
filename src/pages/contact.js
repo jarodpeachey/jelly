@@ -4,7 +4,7 @@ import Navigation from "../components/Navigation";
 import "../styles/partials/pages/_contact.scss";
 import Footer from "../components/Footer";
 import Form from "../components/Form";
-import TallyForm from "../components/TallyForm";
+import JotForm from "../components/JotForm";
 
 const Contact = () => {
     const [status, setStatus] = useState(null);
@@ -47,7 +47,7 @@ const Contact = () => {
                 <section className="hero">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-6">
+                            <div className="col-lg-12">
                                 <p className="display">CONTACT US</p>
                                 <h1>Let's get started on your new website</h1>
                                 <p>Fill out the form, or schedule a call to discuss your project.</p>
@@ -61,24 +61,10 @@ const Contact = () => {
                                     Schedule a Call
                                 </a>
                             </div>
-                            <div className="col-lg-6">
-                                <iframe
-                                    src="https://docs.google.com/forms/d/e/1FAIpQLSeBJ9gDrB2W_g1-jdVY0zwaXADjB17gx4OrXvhO6pv3Nmjd7g/viewform?embedded=true"
-                                    width="640"
-                                    height="3300"
-                                    style={{ width: "100%" }}
-                                    frameborder="0"
-                                    marginheight="0"
-                                    marginwidth="0"
-                                >
-                                    Loading…
-                                </iframe>
-
-                                {/* <TallyForm
-                                    embedUrl="https://tally.so/embed/pbbXOZ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                                    height={673}
-                                    title="Website Inquiry"
-                                /> */}
+                            <div className="col-lg-12">
+                                <div id="jotform-wrapper">
+                                    <JotForm />
+                                </div>
                             </div>
                         </div>
                     </div>
