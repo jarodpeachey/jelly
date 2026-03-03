@@ -1,6 +1,7 @@
 @use "../breakpoints" as *;
 @use "../shadows" as *;
 @use "../colors" as *;
+@use "../spacing" as *;
 
 .blog {
     background: linear-gradient(to bottom, $color--primary-lightest 0%, #ffffff 100%);
@@ -8,13 +9,13 @@
     .hero {
         // background: $color--primary-lightest;
         overflow: visible;
-        padding-bottom: 64px;
+        padding-bottom: $space--xxxl;
         padding-top: 164px;
         position: relative;
 
         @include media-breakpoint-up(md) {
             padding-top: 170px;
-            padding-bottom: 64px;
+            padding-bottom: $space--xxxl;
         }
 
         .col-lg-8 {
@@ -29,12 +30,10 @@
 
         p {
             text-align: center;
-            margin-bottom: 16px;
+            margin-bottom: $space--md;
         }
 
         h1 {
-            color: $color--heading;
-            font-weight: 600;
             // margin-bottom: 0;
             margin-top: 0;
             text-align: center;
@@ -54,13 +53,13 @@
 
         .btn {
             cursor: pointer;
-            margin-top: 12px;
+            margin-top: $space--md;
             width: 100%;
-            padding: 13px 16px 12px;
+            padding: $space--md $space--md $space--md;
 
             @include media-breakpoint-up(sm) {
                 margin: 0;
-                margin-left: 12px;
+                margin-left: $space--md;
                 width: fit-content;
             }
         }
@@ -71,14 +70,14 @@
     }
 
     .search-clear {
-        margin-top: 8px;
+        margin-top: $space--sm;
         a {
             font-weight: 400;
             color: $color--primary;
             text-decoration: underline;
             font-size: 14px;
             cursor: pointer;
-            padding: 16px;
+            padding: $space--md;
             position: relative;
             left: -16px;
         }
@@ -90,7 +89,7 @@
         font-size: 14px;
         font-weight: 500;
         width: 100%;
-        margin-bottom: 8px;
+        margin-bottom: $space--sm;
     }
 
     .posts {
@@ -142,9 +141,9 @@
         }
 
         .post-card {
-            margin-bottom: 16px !important;
+            margin-bottom: $space--md !important;
             background: white;
-            border-radius: 8px;
+            border-radius: $radius--sm;
             border: 1px solid #e6e6e6;
             box-shadow: 2px 2px 40px 0px #44455510;
             display: block;
@@ -153,7 +152,7 @@
             max-width: 335px;
             text-decoration: none;
             transition: 0.2s;
-            padding: 32px;
+            padding: $space--xl;
 
             &:hover {
                 transform: scale(1.02);
@@ -168,24 +167,24 @@
             img {
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
-                margin-bottom: 16px;
+                margin-bottom: $space--md;
                 width: 100%;
             }
 
             h3 {
-                margin-bottom: 8px;
+                margin-bottom: $space--sm;
                 margin-top: 0;
             }
 
             p {
                 font-size: 16px;
                 margin: 0;
-                margin-bottom: 32px;
+                margin-bottom: $space--xl;
             }
 
             a {
                 display: block;
-                margin-bottom: 32px;
+                margin-bottom: $space--xl;
                 color: $color--primary;
                 font-weight: 400;
                 font-size: 16px;
@@ -225,7 +224,7 @@
         h3,
         .post-card__date {
             background: #e7e7e7 !important;
-            border-radius: 8px !important;
+            border-radius: $radius--sm !important;
             color: #e7e7e7 !important;
             overflow: hidden !important;
             position: relative !important;
@@ -353,12 +352,12 @@
 
         h2 {
             color: white;
-            margin-bottom: 48px;
+            margin-bottom: $space--xxl;
             margin-top: 0;
             text-align: center;
 
             @include media-breakpoint-up(md) {
-                margin-bottom: 64px;
+                margin-bottom: $space--xxxl;
             }
         }
 
@@ -368,20 +367,20 @@
 
         .card {
             background: white;
-            border-radius: 8px;
+            border-radius: $radius--sm;
             box-shadow: 2px 2px 40px 0px #7879961a;
             margin: 0 auto;
             max-width: 500px;
-            padding: 32px;
+            padding: $space--xl;
 
             @include media-breakpoint-up(md) {
-                padding: 64px;
+                padding: $space--xxxl;
             }
 
             .btn {
                 cursor: pointer !important;
-                margin-bottom: 12px;
-                margin-top: 16px !important;
+                margin-bottom: $space--md;
+                margin-top: $space--md !important;
                 width: 100% !important;
             }
 

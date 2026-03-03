@@ -1,6 +1,7 @@
 @use "colors" as *;
 @use "breakpoints" as *;
 @use "shadows" as *;
+@use "spacing" as *;
 
 .logo {
   align-items: center;
@@ -52,7 +53,7 @@ nav {
   cursor: pointer;
   height: 46px;
   margin-left: auto;
-  padding: 10px;
+  padding: $space--sm;
   position: relative;
   transform: none;
   transition: all 0.15s ease-in-out;
@@ -70,7 +71,7 @@ nav {
 
   span {
     background: #7c7e86;
-    border-radius: 20px;
+    border-radius: $radius--lg;
     display: block;
     height: 2px;
     left: 0;
@@ -131,7 +132,7 @@ nav {
 .navigation-menu {
   align-items: flex-start;
   background: #ffffff;
-  border-radius: 8px;
+  border-radius: $radius--sm;
   box-shadow: 2px 2px 40px 0px #7879961a;
   color: white;
   display: flex;
@@ -152,7 +153,7 @@ nav {
   z-index: 999;
 
   .btn {
-    margin-top: 12px;
+    margin-top: $space--md;
     width: 100%;
   }
 
@@ -193,7 +194,7 @@ nav {
       font-size: 1.03rem;
       font-weight: 300;
       line-height: 18px;
-      padding: 10px 0;
+      padding: $space--sm 0;
       text-decoration: none;
       transition: 0.2s;
 
@@ -247,7 +248,7 @@ nav {
         font-size: 1.03rem;
         font-weight: 300;
         line-height: 18px;
-        padding: 4px 16px;
+        padding: $space--xs $space--md;
 
         &:hover {
           color: $color--primary;

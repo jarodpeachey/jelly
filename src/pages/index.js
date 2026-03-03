@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SEO from "../components/SEO";
 import Navigation from "../components/Navigation";
 import "../styles/partials/pages/_home.scss";
@@ -6,7 +6,43 @@ import Footer from "../components/Footer";
 import Form from "../components/Form";
 import Carousel from "../components/Carousel";
 
+const JOTFORM_URL = "https://form.jotform.com/260614887108058";
+
+const PROCESS_STEPS = [
+    { step: "01", title: "Free Strategy Call", desc: "We learn about your business, goals, and local market — no pressure, no commitment." },
+    { step: "02", title: "Design & Build", desc: "We craft a custom website optimized for conversions and local SEO, with your input throughout." },
+    { step: "03", title: "Launch in 14 Days", desc: "Your site goes live and starts attracting leads. We support you every step of the way." },
+];
+
+const FAQS = [
+    { q: "How long does it take to build my website?", a: "Your website will be live within 2-4 weeks of receiving your content and design approval." },
+    { q: "Do I need to sign a long-term contract?", a: "Never. All packages are one-time fees, split 50/50 at the start and end of the project. The optional care plan is month-to-month — cancel anytime." },
+    { q: "What if I already have a website?", a: "We'll audit it for free. If it needs a full rebuild, we'll handle it. If parts are salvageable, we'll tell you." },
+    { q: "Do you handle hosting?", a: "Yes. Starter includes 3 months of free hosting; Growth and Premium include 6 months. After that, hosting is $19.99/mo — or included at no extra cost if you're on our monthly care plan." },
+    { q: "Do you provide the domain name?", a: "No — you'll need to purchase and own your own domain. We'll guide you through the process if needed, but keeping the domain in your name ensures you always have full ownership of your online presence." },
+    { q: "Will my site rank on Google?", a: "Every site we build includes on-page SEO setup. Rankings depend on your market and competition, but we give you the best possible foundation." },
+];
+
+const AREAS = [
+    "Orlando", "Kissimmee", "Sanford", "Altamonte Springs", "Winter Park",
+    "Lake Mary", "Oviedo", "Clermont", "Apopka", "Deltona",
+];
+
 const Home = () => {
+    const [showPopup, setShowPopup] = useState(false);
+
+    useEffect(() => {
+        if (localStorage.getItem("exit-popup-shown")) return;
+        const handleMouseLeave = (e) => {
+            if (e.clientY <= 0) {
+                setShowPopup(true);
+                localStorage.setItem("exit-popup-shown", "true");
+            }
+        };
+        document.addEventListener("mouseleave", handleMouseLeave);
+        return () => document.removeEventListener("mouseleave", handleMouseLeave);
+    }, []);
+
     return (
         <>
             <SEO bodyClass="home" />
@@ -19,156 +55,122 @@ const Home = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-10 col-lg-6 col-xl-7">
-                                <h1>Afforable Web Design Agency in Orlando</h1>
+                                <h1>
+                                    Websites That Bring More Customers to <span className="color-primary">Orlando Small Businesses</span>
+                                </h1>
                                 <p className="section-description hero__paragraph">
-                                    We design high-performing websites built to grow your business.
+                                    Fast, mobile-optimized websites built to rank on Google and convert visitors into real leads — no tech jargon, no fluff.
                                 </p>
 
-                                <a
-                                    className="btn"
-                                    href="/contact"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Get Started Now
+                                <a className="btn" href="/contact" target="_blank" rel="noopener noreferrer">
+                                    Get a Free Website Audit
                                 </a>
-                                <a href="#packages" className="btn text">
-                                    See Packages & Pricing{" "}
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 12H19" stroke="#1C2C5E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M12 5L19 12L12 19" stroke="#1C2C5E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </a>
-                                <div className="proof">
-                                    <div className="stars">
-                                        <img src="/media/img/icons/icon--rating.svg" alt="Star icon" />
-                                        <img src="/media/img/icons/icon--rating.svg" alt="Star icon" />
-                                        <img src="/media/img/icons/icon--rating.svg" alt="Star icon" />
-                                        <img src="/media/img/icons/icon--rating.svg" alt="Star icon" />
-                                        <img src="/media/img/icons/icon--rating.svg" alt="Star icon" />
-                                    </div>
-                                    <p>Jelly Development knocked it out of the park.</p>
-                                    <p>
-                                        - Josh Manders | <strong>CEO of Primcloud</strong>
-                                    </p>
-                                </div>
                             </div>
-                            <div className="col-lg-6 col-xl-5">
-                                <div className="hero__services">
-                                    <div className="row">
-                                        <div className="col-md-6 col-lg-12">
-                                            <div className="hero__service">
-                                                <img width={48} height={46} src="/media/img/icons/icon--design.svg" alt="Web Design icon" title="Web Design" />
-                                                <div className="hero__service-content">
-                                                    <h2 className="h4">Web Design</h2>
-                                                    <p>Beautiful, modern websites that help your business stand out online.</p>
-                                                </div>
+                            <div className="col-lg-6 col-xl-5 d-none d-lg-flex align-items-center">
+                                <div className="hero__visual">
+                                    {/* Google Business Profile card */}
+                                    <div className="hero__proof-card hero__proof-card--business">
+                                        <div className="hero__proof-card__header">
+                                            <div className="hero__proof-card__g">G</div>
+                                            <div>
+                                                <div className="hero__proof-card__biz-name">Jelly Development</div>
+                                                <div className="hero__proof-card__category">Web Design Agency · Orlando, FL</div>
                                             </div>
                                         </div>
-                                        <div className="col-md-6 col-lg-12">
-                                            <div className="hero__service">
-                                                <img
-                                                    width={48}
-                                                    height={48}
-                                                    src="/media/img/icons/icon--seo.svg"
-                                                    alt="Magnifying glass icon"
-                                                    title="SEO Services"
-                                                />
-                                                <div className="hero__service-content">
-                                                    <h2 className="h4">SEO Services</h2>
-                                                    <p>Get found by local customers searching for your services.</p>
-                                                </div>
-                                            </div>
+                                        <div className="hero__proof-card__rating">
+                                            <span className="hero__proof-card__stars">★★★★★</span>
+                                            <span className="hero__proof-card__score">5.0</span>
+                                            <span className="hero__proof-card__count">(1 review)</span>
                                         </div>
-                                        <div className="col-md-6 col-lg-12">
-                                            <div className="hero__service">
-                                                <img
-                                                    width={48}
-                                                    height={48}
-                                                    src="/media/img/icons/icon--hosting.svg"
-                                                    alt="Database icon"
-                                                    title="Website Hosting"
-                                                />
-                                                <div className="hero__service-content">
-                                                    <h2 className="h4">Website Hosting</h2>
-                                                    <p>Fast, secure hosting to keep your website running smoothly.</p>
-                                                </div>
-                                            </div>
+                                        <div className="hero__proof-card__maps-badge">
+                                            📍 Listed on Google Maps
                                         </div>
-                                        <div className="col-md-6 col-lg-12">
-                                            <div className="hero__service">
-                                                <img
-                                                    width={48}
-                                                    height={48}
-                                                    src="/media/img/icons/icon--maintenance.svg"
-                                                    alt="Tools icon"
-                                                    title="Website Maintenance"
-                                                />
-                                                <div className="hero__service-content">
-                                                    <h2 className="h4">Website Maintenance</h2>
-                                                    <p>Regular updates and support to maintain and improve your online presence.</p>
-                                                </div>
+                                    </div>
+                                    {/* Google Review card — replace quote + name with your actual review */}
+                                    <div className="hero__proof-card hero__proof-card--review">
+                                        <div className="hero__proof-card__review-top">
+                                            <div className="hero__proof-card__g">G</div>
+                                            <span className="hero__proof-card__stars">★★★★★</span>
+                                        </div>
+                                        <p className="hero__proof-card__quote">"I had hired Jelly Development to create a landing page for a new product of mine, I gave them minimal requirements and they knocked it out of the ballpark with needing minimal changes. Definitely recommend and will be using them more often."</p>
+                                        <div className="hero__proof-card__reviewer">
+                                            <div className="hero__proof-card__avatar">J</div>
+                                            <div>
+                                                <div className="hero__proof-card__reviewer-name">Josh M.</div>
+                                                {/* <div className="hero__proof-card__source">Review</div> */}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="col-12">
-                                <div className="technologies mt-5 mt-lg-5">
-                                    <div className="row">
-                                        <div className="col-3 technology">
-                                            <img width={54} height={54} src="/media/img/icons/icon--wordpress.svg" alt="WordPress icon" title="WordPress" />
-                                            <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
-                                                WordPress Development
-                                            </p>
-                                        </div>
-                                        <div className="col-3 technology">
-                                            <img
-                                                width={54}
-                                                height={54}
-                                                src="/media/img/icons/icon--squarespace.svg"
-                                                alt="Squarespace icon"
-                                                title="Squarespace"
-                                            />
-                                            <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
-                                                Squarespace Design
-                                            </p>
-                                        </div>
-                                        <div className="col-3 technology">
-                                            <img width={54} height={62} src="/media/img/icons/icon--shopify.svg" alt="Shopify icon" title="Shopify" />
-                                            <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
-                                                Shopify Stores
-                                            </p>
-                                        </div>
-                                        <div className="col-3 technology">
-                                            <img
-                                                width={54}
-                                                height={43}
-                                                src="/media/img/icons/icon--code.svg"
-                                                alt="Custom Development icon"
-                                                title="Custom Development"
-                                            />
-                                            <p className="d-none d-sm-block" style={{ fontSize: "12px", marginTop: "8px", width: "100%", textAlign: "center" }}>
-                                                Custom Solutions
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <img className="hero__background" src="/media/img/backgrounds/hero.svg" alt="Background image" />
-
-                    <img role="presentation" src="/media/img/backgrounds/wave.svg" alt="Background image" className="wave" />
                 </section>
+                <div className="industries-ticker">
+                    <div className="industries-ticker__track">
+                        {[
+                            "Plumbers", "Electricians", "Personal Trainers", "Landscapers", "Photographers",
+                            "Painters", "Roofers", "HVAC Technicians", "Dentists", "Chiropractors",
+                            "Attorneys", "Real Estate Agents", "General Contractors", "Pool Services",
+                            "Pest Control", "Auto Repair Shops", "House Cleaners", "Dog Groomers",
+                            "Wedding Planners", "Pressure Washers", "Yoga Studios", "Accountants",
+                            "Therapists", "Flooring Companies", "Fence Installers",
+                        ].flatMap((industry, i) => [
+                            <span key={industry} className="industries-ticker__item">{industry}</span>,
+                            <span key={`sep-${i}`} className="industries-ticker__sep" aria-hidden="true">·</span>,
+                        ]).concat(
+                            [
+                                "Plumbers", "Electricians", "Personal Trainers", "Landscapers", "Photographers",
+                                "Painters", "Roofers", "HVAC Technicians", "Dentists", "Chiropractors",
+                                "Attorneys", "Real Estate Agents", "General Contractors", "Pool Services",
+                                "Pest Control", "Auto Repair Shops", "House Cleaners", "Dog Groomers",
+                                "Wedding Planners", "Pressure Washers", "Yoga Studios", "Accountants",
+                                "Therapists", "Flooring Companies", "Fence Installers",
+                            ].flatMap((industry, i) => [
+                                <span key={`b-${industry}`} className="industries-ticker__item">{industry}</span>,
+                                <span key={`b-sep-${i}`} className="industries-ticker__sep" aria-hidden="true">·</span>,
+                            ])
+                        )}
+                    </div>
+                </div>
+                <img role="presentation" src="/media/img/backgrounds/wave.svg" alt="" className="hero-wave" />
                 <main>
-                    <section className="themes">
+                    <section className="pain-points-dark">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-12">
+                                    <span className="pill pill-dark">Sound Familiar?</span>
+                                    <h2>Is your website costing you customers?</h2>
+                                    <p className="section-description">Most Orlando small business websites have the same problems. Here's the honest truth:</p>
+                                </div>
+                            </div>
+                            <div className="row">
+                                {[
+                                    { icon: "💀", text: "Your website looks like it was built in 2009" },
+                                    { icon: "👻", text: "You don't show up anywhere on Google" },
+                                    { icon: "🐢", text: "It loads so slowly visitors leave before seeing anything" },
+                                    { icon: "📵", text: "It looks broken on mobile — where 70% of your customers are" },
+                                    { icon: "🔇", text: "You're not getting calls, leads, or new customers from it" },
+                                    { icon: "💸", text: "You paid for a website that isn't actually working for you" },
+                                ].map(({ icon, text }) => (
+                                    <div key={text} className="col-12 col-sm-6 col-lg-4">
+                                        <div className="pain-card card--sm">
+                                            <span className="pain-card__icon" aria-hidden="true">{icon}</span>
+                                            <p className="pain-card__text">{text}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                    {/* <section className="themes">
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-8 offset-lg-2 max-560">
                                     <p className="display">OUR WORK</p>
-                                    <h2 style={{textAlign: 'center'}}>Featured Website Designs</h2>
+                                    <h2 style={{ textAlign: "center" }}>Featured Website Designs</h2>
                                 </div>
                             </div>
                             <Carousel
@@ -176,73 +178,72 @@ const Home = () => {
                                     {
                                         name: "Chime Social",
                                         image: "/media/img/chime-work.webp",
-                                        link: "https://chime-staging.netlify.app"
+                                        link: "https://chime-staging.netlify.app",
                                     },
                                     {
                                         name: "Contenda",
                                         image: "/media/img/contenda-work.webp",
-                                        link: "https://contenda-staging.netlify.app/"
+                                        link: "https://contenda-staging.netlify.app/",
                                     },
                                     {
                                         name: "Glitter",
                                         image: "/media/img/glitter-work.webp",
-                                        link: "https://get-glitter.netlify.app"
+                                        link: "https://get-glitter.netlify.app",
                                     },
                                     {
                                         name: "Launch Outreach",
                                         image: "/media/img/launch-work.webp",
-                                        link: "https://launchoutreach.netlify.app"
+                                        link: "https://launchoutreach.netlify.app",
                                     },
                                     {
                                         name: "Dad's Den Media",
                                         image: "/media/img/media-work.webp",
-                                        link: "https://dadsdenmedia.com/"
+                                        link: "https://dadsdenmedia.com/",
                                     },
                                     {
                                         name: "Chime Social",
                                         image: "/media/img/chime-work.webp",
-                                        link: "https://chime-staging.netlify.app"
+                                        link: "https://chime-staging.netlify.app",
                                     },
                                     {
                                         name: "Contenda",
                                         image: "/media/img/contenda-work.webp",
-                                        link: "https://contenda-staging.netlify.app/"
+                                        link: "https://contenda-staging.netlify.app/",
                                     },
                                     {
                                         name: "Glitter",
                                         image: "/media/img/glitter-work.webp",
-                                        link: "https://get-glitter.netlify.app"
+                                        link: "https://get-glitter.netlify.app",
                                     },
                                     {
                                         name: "Launch Outreach",
                                         image: "/media/img/launch-work.webp",
-                                        link: "https://launchoutreach.netlify.app"
+                                        link: "https://launchoutreach.netlify.app",
                                     },
                                     {
                                         name: "Dad's Den Media",
                                         image: "/media/img/media-work.webp",
-                                        link: "https://dadsdenmedia.com/"
+                                        link: "https://dadsdenmedia.com/",
                                     },
                                     {
                                         name: "Chime Social",
                                         image: "/media/img/chime-work.webp",
-                                        link: "https://chime-staging.netlify.app"
+                                        link: "https://chime-staging.netlify.app",
                                     },
                                     {
                                         name: "Contenda",
                                         image: "/media/img/contenda-work.webp",
-                                        link: "https://contenda-staging.netlify.app/"
+                                        link: "https://contenda-staging.netlify.app/",
                                     },
                                     {
                                         name: "Glitter",
                                         image: "/media/img/glitter-work.webp",
-                                        link: "https://get-glitter.netlify.app"
+                                        link: "https://get-glitter.netlify.app",
                                     },
                                 ]}
                             />
                         </div>
-                        {/* <a href="/themes" className="btn">View all themes</a> */}
-                    </section>
+                    </section> */}
                     {/* <section className="pain-points">
                         <div className="container">
                             <p className="display" style={{ textAlign: "left" }}>
@@ -279,186 +280,271 @@ const Home = () => {
                     <section className="services" id="services">
                         <div className="container">
                             <div className="row">
-                                <div className="col-lg-8 offset-lg-2 max-560">
-                                    <p className="display">WHAT WE DO</p>
-                                    <h2>Websites Designed to Get You Noticed</h2>
-                                    <p className="section-description">
-                                        As your Orlando web design partner, we create beautiful, high-converting websites that help you grow your business
-                                        online with an all-in-one website solution that handles everything you need.
-                                    </p>
+                                <div className="col-12">
+                                    <span className="pill">The Solution</span>
+                                    <h2>We Build Websites That Turn<br /> <span className="color-primary">Traffic Into Customers</span></h2>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-sm-6 col-md-4">
-                                    <div className="feature">
-                                        <img width="83" height="64" src="/media/img/icons/icon--target.svg" alt="Target icon" />
-                                        <h3>Search Engine Optimization</h3>
-                                        <p>Show up in Google searches when potential customers are looking for your services.</p>
+                                    <div className="feature card">
+                                        <div className="feature__icon feature__icon--red"><img width="62" height="48" src="/media/img/icons/icon--target.svg" alt="Target icon" /></div>
+                                        <h3>Built To Convert</h3>
+                                        <p>Every page is designed with one goal — turning visitors into calls, bookings and real customers.</p>
                                     </div>
                                 </div>
                                 <div className="col-sm-6 col-md-4">
-                                    <div className="feature">
-                                        <img width="74" height="70" src="/media/img/icons/icon--bolt.svg" alt="Thundercloud icon" />
-                                        <h3>Lightning-Fast Performance</h3>
-                                        <p>Fast, mobile-friendly websites that are optimized for conversions.</p>
+                                    <div className="feature card">
+                                        <div className="feature__icon feature__icon--blue"><img width="56" height="53" src="/media/img/icons/icon--seo.svg" alt="Magnifying glass icon" /></div>
+                                        <h3>Local SEO Optimized</h3>
+                                        <p>Structured from day one to rank in Orlando Google searches so customers find you first.</p>
                                     </div>
                                 </div>
                                 <div className="col-sm-6 col-md-4">
-                                    <div className="feature">
-                                        <img width="86" height="65" src="/media/img/icons/icon--badge.svg" alt="Badge icon" />
-                                        <h3>Brand Identity</h3>
-                                        <p>Distinctive designs that showcase your unique value and help build lasting customer relationships.</p>
-                                    </div>
-                                </div>
-                                {/* <div className="col-sm-6 col-md-4">
-                  <div className="feature">
-                    <img width="86" height="65" src="/media/img/icons/icon--headset.svg" alt="Badge icon" />
-                    <h3>Hands-Free Support</h3>
-                    <p>Fully-managed websites, so you can stay focused on your clients and growing your business.</p>
-                  </div>
-                </div> */}
-                            </div>
-                        </div>
-                    </section>
-                    <section className="packages" id="packages">
-                        <div className="container">
-                            <p className="display" id="pricing" style={{ textAlign: "center" }}>
-                                PACKAGES & PRICING
-                            </p>
-                            <h2 style={{ textAlign: "center", marginBottom: "2rem" }}>Affordable Website Solutions</h2>
-                            <p className="section-description" style={{ textAlign: "center", marginBottom: "2rem", marginRight: "auto", marginLeft: "auto" }}>
-                                All packages include a fully-custom website, SEO and performance optimization, and free maintenance and support for a month
-                            </p>
-                            <div className="row">
-                                {/* Starter Package */}
-                                <div className="col-md-4">
-                                    <div className="card packages__card">
-                                        <h3 className="display">Starter</h3>
-                                        <p className="price">$500</p>
-                                        <ul>
-                                            <li>One page</li>
-                                            <li>Basic SEO integration</li>
-                                            <li>Website performance optimization</li>
-                                            <li>Responsive design</li>
-                                            <li>Hosting included</li>
-                                            <li style={{ borderBottom: "none" }}>2 rounds of revisions</li>
-                                        </ul>
-
-                                        <a href="/contact" className="btn">
-                                            Get Started
-                                        </a>
-                                    </div>
-                                </div>
-
-                                {/* Growth Package */}
-                                <div className="col-md-4">
-                                    <div className="card packages__card">
-                                        <h3 className="display">Growth</h3>
-                                        <p className="price">$1,500</p>
-                                        <ul>
-                                            <li>Everything in Starter</li>
-                                            <li>Up to 5 pages</li>
-                                            <li>Advanced SEO and analytics</li>
-                                            <li>Logo design</li>
-                                            <li style={{ borderBottom: "none" }}>3 rounds of revisions</li>
-                                        </ul>
-
-                                        <a href="/contact" className="btn">
-                                            Get Started
-                                        </a>
-                                    </div>
-                                </div>
-
-                                {/* Premium Package */}
-                                <div className="col-md-4">
-                                    <div className="card packages__card">
-                                        <h3 className="display">Premium</h3>
-                                        <p className="price">$2,750</p>
-
-                                        <ul>
-                                            <li>Everything in Growth</li>
-                                            <li>Up to 10 pages</li>
-                                            <li>Brand identity research</li>
-                                            <li>Free maintenance and support for 1 month</li>
-                                            <li style={{ borderBottom: "none" }}>Unlimited rounds of revisions</li>
-                                        </ul>
-
-                                        <a href="/contact" className="btn">
-                                            Get Started
-                                        </a>
+                                    <div className="feature card">
+                                        <div className="feature__icon feature__icon--amber"><img width="56" height="53" src="/media/img/icons/icon--bolt.svg" alt="Lightning bolt icon" /></div>
+                                        <h3>Fast &amp; Mobile-First</h3>
+                                        <p>Lightning fast on every device. Most of your customers are on their phones.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    {/* <section className="chat">
-            <img role="presentation" alt="" className="blobs" src="/media/img/backgrounds/blobs.svg" />
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-8 offset-lg-2 max-560">
-                  <h2>Ready to chat about your new website?</h2>
-                  <div className="d-flex">
-                    <a href="/contact" className="btn">
-                      Get a Free Website Consultation
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> */}
-                    <section className="testimonials">
+                    {/* <section className="results">
                         <div className="container">
-                            <div className="col-lg-8 offset-lg-2 max-560">
-                                <p className="display">WHAT PEOPLE SAY</p>
-                                <h2 className="section-heading">Don't settle for anything less than incredible.</h2>
-                                <p className="section-description">
-                                    At Jelly Development, we're proud to say we go all in to bring the best websites we can to our clients.
-                                </p>
+                            <div className="row">
+                                <div className="col-12">
+                                    <span className="pill">Results</span>
+                                    <h2>Real Results for Real Businesses</h2>
+                                </div>
+                            </div>
+                            <div className="row results__stats">
+                                {[
+                                    { metric: "14 Days", label: "Average Launch Time", icon: "🚀" },
+                                    { metric: "3x", label: "Average Lead Increase", icon: "📈" },
+                                    { metric: "100%", label: "Mobile Optimized", icon: "📱" },
+                                ].map((s, i) => (
+                                    <div key={i} className="col-sm-4">
+                                        <div className="stat-card card">
+                                            <div className="stat-card__icon">{s.icon}</div>
+                                            <div className="stat-card__metric">{s.metric}</div>
+                                            <div className="stat-card__label">{s.label}</div>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                             <div className="row">
-                                <div className="col-md-6">
-                                    <div className="testimonial">
-                                        <p>
-                                            I had hired Jelly Development to create a landing page for a new product of mine, I gave them minimal requirements
-                                            and they knocked it out of the ballpark with needing minimal changes. Definitely recommend and will be using them
-                                            more often.
-                                        </p>
-                                        <p>- Josh Manders | CEO of Primcloud</p>
+                                <div className="col-12">
+                                    <div className="proof-quote card">
+                                        <div className="proof-quote__icon">💬</div>
+                                        <div className="proof-quote__body">
+                                            <p className="proof-quote__text">
+                                                "We went from zero calls from our website to getting 3–5 leads a week within the first month. Jelly Development completely transformed our online presence."
+                                            </p>
+                                            <div className="proof-quote__author">
+                                                <div className="proof-quote__avatar">MR</div>
+                                                <div>
+                                                    <div className="proof-quote__name">Marcus R.</div>
+                                                    <div className="proof-quote__role">Orlando HVAC Business Owner</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                {/* <div className="col-md-6">
-                  <div className="testimonial">
-                    <p>Working with Jelly Development was awesome. Here's something about how amazing they were. Truly awesome!</p>
-                    <p>- Jarod Peachey | CEO of Jelly Development</p>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="testimonial">
-                    <p>Working with Jelly Development was awesome. Here's something about how amazing they were. Truly awesome!</p>
-                    <p>- Jarod Peachey | CEO of Jelly Development</p>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="testimonial">
-                    <p>Working with Jelly Development was awesome. Here's something about how amazing they were. Truly awesome!</p>
-                    <p>- Jarod Peachey | CEO of Jelly Development</p>
-                  </div>
-                </div> */}
+                            </div>
+                        </div>
+                    </section> */}
+
+                    {/* PROCESS */}
+                    <section className="process" id="process">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-12">
+                                    <span className="pill pill-dark">How It Works</span>
+                                    <h2>Simple 3-Step Process</h2>
+                                </div>
+                            </div>
+                            <div className="row">
+                                {PROCESS_STEPS.map((p, i) => (
+                                    <div key={i} className="col-sm-4">
+                                        <div className="process-card card">
+                                            <div className="process-card__step">{p.step}</div>
+                                            <h3>{p.title}</h3>
+                                            <p>{p.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </section>
-                    <section className="cta">
-                        <img role="presentation" src="/media/img/backgrounds/wave--dark.svg" alt="Background image" className="wave" />
-                        <img role="presentation" alt="Background image" className="blobs" src="/media/img/backgrounds/blobs--dark.svg" />
+
+                    {/* PRICING */}
+                    <section className="pricing" id="pricing">
                         <div className="container">
                             <div className="row">
-                                <div className="col-lg-8 offset-lg-2 max-560">
-                                    <p className="display">CONTACT US</p>
-                                    <h2 className="section-heading">Let's discuss your new website.</h2>
-                                    <div className="card">
-                                        <Form formName="homepage" />
+                                <div className="col-12">
+                                    <span className="pill">Transparent Pricing</span>
+                                    <h2>Simple, Honest Packages</h2>
+                                    <p className="pricing__subtitle">No hidden fees. No long-term contracts. Pick the package that fits where your business is today.</p>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-12">
+                                    <div className="pricing__note">
+                                        💡 All packages include a free strategy call before you commit
                                     </div>
+                                </div>
+                            </div>
+                            <div className="row pricing__cards">
+                                <div className="col-lg-4">
+                                    <div className="pricing-card card">
+                                        <span className="pricing-card__tier">Starter</span>
+                                        <div className="pricing-card__price">$1,200</div>
+                                        <p className="pricing-card__billing">One-time project fee</p>
+                                        <p className="pricing-card__desc">Perfect for new businesses that need a fast, professional online presence without the bloat.</p>
+                                        <ul className="pricing-card__features">
+                                            {[
+                                                "1-page high-converting website",
+                                                "Mobile-first responsive design",
+                                                "On-page SEO setup",
+                                                "Google PageSpeed optimized",
+                                                "Contact form & click-to-call",
+                                                "3 months free hosting",
+                                                "2 rounds of revisions",
+                                                "14-day delivery guarantee",
+                                                "2 weeks of maintenance & support",
+                                            ].map((item, i) => (
+                                                <li key={i}><span className="pricing-card__check">✓</span>{item}</li>
+                                            ))}
+                                        </ul>
+                                        <a href={JOTFORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--outline btn--full">Get Started →</a>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4">
+                                    <div className="pricing-card pricing-card--featured card card--dark">
+                                        <div className="pricing-card__badge">⭐ Best Value</div>
+                                        <span className="pricing-card__tier">Growth</span>
+                                        <div className="pricing-card__price">$2,800</div>
+                                        <p className="pricing-card__billing">One-time project fee</p>
+                                        <p className="pricing-card__desc">For established businesses ready to compete seriously in Orlando search results and convert more visitors into paying customers.</p>
+                                        <ul className="pricing-card__features">
+                                            {[
+                                                "Everything in Starter",
+                                                "6 months free hosting",
+                                                "Up to 5 pages",
+                                                "Advanced local SEO strategy",
+                                                "Google Business Profile optimization",
+                                                "Custom logo design",
+                                                "3 rounds of revisions",
+                                                "Priority 14-day delivery",
+                                                "1 month of maintenance & support",
+                                            ].map((item, i) => (
+                                                <li key={i}><span className="pricing-card__check">✓</span>{item}</li>
+                                            ))}
+                                        </ul>
+                                        <a href={JOTFORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--full">Get Started →</a>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4">
+                                    <div className="pricing-card card">
+                                        <span className="pricing-card__tier">Premium</span>
+                                        <div className="pricing-card__price">$4,500</div>
+                                        <p className="pricing-card__billing">One-time project fee</p>
+                                        <p className="pricing-card__desc">The full-service buildout for businesses serious about dominating their local market and building a brand that lasts.</p>
+                                        <ul className="pricing-card__features">
+                                            {[
+                                                "Everything in Growth",
+                                                "Up to 10 pages",
+                                                "Full brand identity package",
+                                                "Competitor & market research",
+                                                "Conversion rate optimization (CRO)",
+                                                "Lead capture & email integration",
+                                                "Unlimited revisions",
+                                                "3 months of maintenance & support",
+                                            ].map((item, i) => (
+                                                <li key={i}><span className="pricing-card__check">✓</span>{item}</li>
+                                            ))}
+                                        </ul>
+                                        <a href={JOTFORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--outline btn--full">Get Started →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-12">
+                                    <div className="pricing-addon">
+                                        <div className="pricing-addon__info">
+                                            <div className="pricing-addon__label pill">Add-On</div>
+                                            <h3>Monthly Care Plan — $199/mo</h3>
+                                            <p>Keep your site fast, secure, and ranking. Includes hosting, SSL, security monitoring, weekly backups, plugin/software updates, Google Analytics reporting, and up to 2 hours of content edits per month.</p>
+                                        </div>
+                                        <div className="pricing-addon__cta">
+                                            <a href={JOTFORM_URL} target="_blank" rel="noopener noreferrer" className="btn">Add to My Package →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-12">
+                                    <p className="pricing__trust">All packages include a free strategy call. No payment until you approve the plan. No long-term contracts.</p>
+                                    <p className="pricing__hosting-note">* Hosting is $19.99/mo after the free period — or included at no extra cost with our Monthly Care Plan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* FAQ */}
+                    <section className="faq" id="faq">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-12">
+                                    <span className="pill">FAQ</span>
+                                    <h2>Common Questions</h2>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-lg-8 offset-lg-2">
+                                    <div className="faq__list">
+                                        {FAQS.map((faq, i) => (
+                                            <details key={i} className="faq-item card card--sm">
+                                                <summary className="faq-item__question">{faq.q}</summary>
+                                                <p className="faq-item__answer">{faq.a}</p>
+                                            </details>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* LOCAL */}
+                    <section className="local" id="contact">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-12">
+                                    <span className="pill">📍 Local &amp; Proud</span>
+                                    <h2>Proudly Serving Central Florida</h2>
+                                    {/* <p className="local__description">We're embedded in the Orlando business community — we know the local market and know how to help you win it.</p> */}
+                                    <div className="local__areas">
+                                        {AREAS.map((area, i) => (
+                                            <span key={i} className="area-tag">📍 {area}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* FINAL CTA */}
+                    <section className="final-cta">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-12">
+                                    <h2>Ready to Get More Customers From Your Website?</h2>
+                                    <p className="final-cta__subtitle">Join Orlando businesses that are finally getting real results online. Your free audit is waiting.</p>
+                                    <a href={JOTFORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--white">
+                                        Book Your Free Website Strategy Call →
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -466,6 +552,26 @@ const Home = () => {
                 </main>
             </div>
             <Footer />
+
+            {showPopup && (
+                <div className="exit-popup" onClick={() => setShowPopup(false)}>
+                    <div className="exit-popup__card" onClick={e => e.stopPropagation()}>
+                        <button className="exit-popup__close" onClick={() => setShowPopup(false)}>×</button>
+                        <span className="pill exit-popup__pill">Wait — Before You Go!</span>
+                        <h2>Free Website Audit — No Strings Attached</h2>
+                        <p className="exit-popup__desc">We'll review your current website and show you exactly what's holding you back from more leads. No pressure, no commitment.</p>
+                        <div className="exit-popup__grid">
+                            {["Free Homepage Mockup", "14-Day Launch Guarantee", "No Long-Term Contracts", "Local SEO Roadmap Included"].map((item, i) => (
+                                <div key={i} className="exit-popup__item">
+                                    <span className="exit-popup__check">✓</span>
+                                    <span className="exit-popup__item-text">{item}</span>
+                                </div>
+                            ))}
+                        </div>
+                        <a href={JOTFORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--white">Claim My Free Website Audit</a>
+                    </div>
+                </div>
+            )}
         </>
     );
 };

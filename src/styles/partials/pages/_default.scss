@@ -1,6 +1,7 @@
 @use "../breakpoints" as *;
 @use "../shadows" as *;
 @use "../colors" as *;
+@use "../spacing" as *;
 
 .default {
   .btn {
@@ -10,11 +11,11 @@
 
   h1 {
     margin: 0 auto;
-    margin-bottom: 24px;
+    margin-bottom: $space--lg;
     text-align: center;
 
     @include media-breakpoint-up(md) {
-      margin-bottom: 32px;
+      margin-bottom: $space--xl;
     }
   }
 

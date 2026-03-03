@@ -1,6 +1,8 @@
 @use "partials/_typography" as *;
 @use "partials/_buttons" as *;
+@use "partials/_cards" as *;
 @use "partials/_colors" as *;
+@use "partials/_spacing" as *;
 @use "partials/_breakpoints" as *;
 @use "vendor/_grid" as *;
 @use "partials/_sections" as *;
@@ -99,8 +101,8 @@ html {
 .container-lg,
 .container-xl {
     width: 100%;
-    padding-right: 24px;
-    padding-left: 24px;
+    padding-right: $space--lg;
+    padding-left: $space--lg;
     margin-right: auto;
     margin-left: auto;
 }
@@ -168,4 +170,9 @@ p.hidden {
 
 input {
     line-height: 16px;
+}
+
+// Reusable color modifiers
+.color-primary {
+    color: $color--primary;
 }

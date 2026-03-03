@@ -45,7 +45,7 @@ const Footer = () => {
           </a>
         </div> */}
         <div className="d-flex">
-          <p>© 2025 Jelly Development LLC</p>
+          <p>© 2026 Jelly Development LLC</p>
         </div>
       </div>
     </footer>

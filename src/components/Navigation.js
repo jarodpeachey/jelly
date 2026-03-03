@@ -19,7 +19,7 @@ const Navigation = () => {
                             </svg>
                         </a>
                     </div>
-                    <div className="mobile-menu__toggle">
+                    {/* <div className="mobile-menu__toggle">
                         <div className="mobile-menu__toggle--mask">
                             <span className="mobile-menu__toggle--span"></span>
                             <span className="mobile-menu__toggle--span"></span>
@@ -49,7 +49,7 @@ const Navigation = () => {
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </nav>

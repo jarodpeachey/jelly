@@ -2,6 +2,7 @@
 @use "breakpoints" as *;
 @use "shadows" as *;
 @use "sass:math";
+@use "spacing" as *;
 
 $slideWidth: 250;
 $slideHeight: 200;
@@ -199,9 +200,9 @@ $slideHeight: 200;
     margin-right: auto !important;
     margin-left: auto !important;
     margin-bottom: 80px !important;
-    margin-top: 12px;
-    padding: 4px 12px;
-    padding-top: 5px;
+    margin-top: $space--md;
+    padding: $space--xs $space--md;
+    padding-top: $space--xs;
     font-size: 14px;
     cursor: pointer;
 
@@ -225,7 +226,7 @@ $slideHeight: 200;
 }
 
 .carousel__indicator {
-    padding: 5px 12px 4px;
+    padding: $space--xs $space--md $space--xs;
     border-radius: 999px;
     font-size: 16px;
     // text-transform: uppercase;
@@ -240,7 +241,7 @@ $slideHeight: 200;
     outline: none;
     background: transparent;
     border: none;
-    margin: 0px 12px;
+    margin: 0 $space--md;
     cursor: pointer;
     display: flex;
     align-items: center;

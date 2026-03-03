@@ -1,15 +1,16 @@
 @use "colors" as *;
+@use "spacing" as *;
 
 footer {
   background: $color--primary-dark;
   margin: 0;
-  padding: 64px 0 !important;
+  padding: $space--xxxl 0 !important;
   position: relative;
   z-index: 1;
 
   img {
     display: block;
-    margin-bottom: 24px;
+    margin-bottom: $space--lg;
   }
 
   p {
@@ -17,7 +18,7 @@ footer {
     font-size: 1.03rem;
     line-height: 28px;
     margin: 0;
-    margin-top: 8px;
+    margin-top: $space--sm;
   }
 
   .container {
@@ -45,7 +46,7 @@ footer {
 
     a:first-child {
       display: block;
-      margin-right: 32px;
+      margin-right: $space--xl;
     }
   }
 }

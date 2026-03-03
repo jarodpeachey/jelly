@@ -1,0 +1,26 @@
+@use "colors" as *;
+@use "spacing" as *;
+@use "breakpoints" as *;
+
+.card {
+    background: $color--background;
+    border: 1px solid #eef1ff;
+    border-radius: $radius--lg;
+    box-shadow: 2px 2px 40px 0px #44455510;
+    padding: $space--xl;
+
+    @include media-breakpoint-up(lg) {
+        padding: $space--xxl;
+    }
+}
+
+.card--sm {
+    border-radius: $radius--md;
+    padding: $space--md $space--lg;
+}
+
+.card--dark {
+    background: $color--primary-dark;
+    border: 2px solid $color--primary;
+    box-shadow: 0 20px 60px rgba(56, 93, 216, 0.3);
+}

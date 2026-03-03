@@ -1,6 +1,7 @@
 @use "../breakpoints" as *;
 @use "../shadows" as *;
 @use "../colors" as *;
+@use "../spacing" as *;
 
 .contact {
     .hero {
@@ -30,14 +31,14 @@
         }
 
         a.btn {
-            margin: 12px auto;
-            margin-top: 32px;
+            margin: $space--md auto;
+            margin-top: $space--xl;
         }
 
         p {
             font-size: 20px;
             line-height: 28px;
-            margin-bottom: 16px;
+            margin-bottom: $space--md;
             max-width: 769px;
             text-align: center;
             margin-left: auto;
@@ -50,11 +51,7 @@
         }
 
         h1 {
-            color: $color--heading;
-            font-size: 48px;
-            font-weight: 600;
-            line-height: 56px;
-            margin-bottom: 24px;
+            margin-bottom: $space--lg;
             margin-top: 0;
             text-align: center;
             max-width: 764px;
@@ -62,9 +59,7 @@
             margin-right: auto;
 
             @include media-breakpoint-up(md) {
-                font-size: 57px;
-                line-height: 66px;
-                margin-bottom: 32px;
+                margin-bottom: $space--xl;
             }
         }
 
@@ -161,12 +156,12 @@
 
         h2 {
             color: white;
-            margin-bottom: 48px;
+            margin-bottom: $space--xxl;
             margin-top: 0;
             text-align: center;
 
             @include media-breakpoint-up(md) {
-                margin-bottom: 64px;
+                margin-bottom: $space--xxxl;
             }
         }
 
@@ -176,16 +171,16 @@
 
         .card {
             background: white;
-            border-radius: 8px;
+            border-radius: $radius--sm;
             border: 1px solid #e6e6e6;
             box-shadow: 2px 2px 40px 0px #44455510;
             margin: 0 auto;
             margin-top: -18rem;
             max-width: 500px;
-            padding: 32px;
+            padding: $space--xl;
 
             @include media-breakpoint-up(md) {
-                padding: 64px;
+                padding: $space--xxxl;
             }
 
             @include media-breakpoint-up(xl) {
@@ -212,7 +207,7 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: 28px;
-                margin-bottom: 16px;
+                margin-bottom: $space--md;
                 width: 100%;
 
                 span {
@@ -220,7 +215,7 @@
                 }
 
                 &.mt {
-                    margin-top: 8px;
+                    margin-top: $space--sm;
                 }
             }
 
@@ -228,12 +223,12 @@
             input[type="email"],
             textarea {
                 border: 1px solid #e5eafa;
-                border-radius: 8px;
+                border-radius: $radius--sm;
                 box-sizing: border-box;
                 color: $color--text;
                 display: block;
-                margin-top: 8px;
-                padding: 10px 16px 13px;
+                margin-top: $space--sm;
+                padding: $space--sm $space--md $space--md;
                 width: 100%;
 
                 &::placeholder {
@@ -254,8 +249,8 @@
 
             .btn {
                 cursor: pointer !important;
-                margin-bottom: 12px;
-                margin-top: 16px !important;
+                margin-bottom: $space--md;
+                margin-top: $space--md !important;
                 width: 100% !important;
             }
 

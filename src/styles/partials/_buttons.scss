@@ -1,19 +1,20 @@
 // @use "breakpoints" as *;
 @use "colors" as *;
 @use "shadows" as *;
+@use "spacing" as *;
 // @use "utilities" as *;
 
 .btn {
   background: $color--primary;
   border: 1px solid $color--primary;
-  border-radius: 8px;
+  border-radius: 999px;
   box-shadow: 2px 2px 12px 0px #1c2c5e1a;
   color: white;
   display: block;
   font-size: 1.03rem;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 21px;
-  padding: 16px 32px 15px 32px;
+  padding: $space--md $space--xl $space--md $space--xl;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -53,7 +54,7 @@
 
     svg,
     img {
-      margin-left: 8px;
+      margin-left: $space--sm;
       transition: 0.2s ease;
     }
 
@@ -66,7 +67,7 @@
 
       svg,
       img {
-        margin-left: 12px;
+        margin-left: $space--md;
       }
     }
   }
@@ -85,4 +86,36 @@
     }
   }
 
+}
+
+.btn--outline {
+  background: transparent;
+  border: 2px solid $color--primary;
+  box-shadow: none;
+  color: $color--primary;
+
+  &:hover {
+    background: $color--primary;
+    border-color: $color--primary;
+    color: #fff;
+  }
+}
+
+.btn--white {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: $color--primary;
+  font-weight: 600;
+
+  &:hover {
+    background: #f0f4ff;
+    border-color: #f0f4ff;
+    box-shadow: 2px 2px 24px 0px rgba(0, 0, 0, 0.2);
+    color: $color--primary;
+  }
+}
+
+.btn--full {
+  display: block;
+  width: 100%;
 }
