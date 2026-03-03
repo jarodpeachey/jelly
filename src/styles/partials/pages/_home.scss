@@ -452,6 +452,7 @@
         text-align: center;
         position: relative;
         z-index: 9;
+        padding-top: 24px;
 
         @include media-breakpoint-up(md) {
             padding-top: 80px;

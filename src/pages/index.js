@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import SEO from "../components/SEO";
 import Navigation from "../components/Navigation";
 import "../styles/partials/pages/_home.scss";
@@ -32,17 +32,31 @@ const AREAS = [
 const HomeContent = () => {
     const { popupShown, setPopupShown } = usePopup();
     const [showPopup, setShowPopup] = useState(false);
+    const pricingRef = useRef(null);
 
     useEffect(() => {
         if (popupShown) return;
-        const handleMouseLeave = (e) => {
-            if (e.clientY <= 0) {
-                setShowPopup(true);
-                setPopupShown();
-            }
+
+        const trigger = () => {
+            setShowPopup(true);
+            setPopupShown();
         };
-        document.addEventListener("mouseleave", handleMouseLeave);
-        return () => document.removeEventListener("mouseleave", handleMouseLeave);
+
+        const isMobile = window.matchMedia("(max-width: 991px)").matches;
+
+        if (isMobile) {
+            if (!pricingRef.current) return;
+            const observer = new IntersectionObserver(
+                ([entry]) => { if (entry.isIntersecting) { trigger(); observer.disconnect(); } },
+                { threshold: 0.25 }
+            );
+            observer.observe(pricingRef.current);
+            return () => observer.disconnect();
+        } else {
+            const handleMouseLeave = (e) => { if (e.clientY <= 0) trigger(); };
+            document.addEventListener("mouseleave", handleMouseLeave);
+            return () => document.removeEventListener("mouseleave", handleMouseLeave);
+        }
     }, [popupShown, setPopupShown]);
 
     return (
@@ -382,7 +396,7 @@ const HomeContent = () => {
                     </section>
 
                     {/* PRICING */}
-                    <section className="pricing" id="pricing">
+                    <section className="pricing" id="pricing" ref={pricingRef}>
                         <div className="container">
                             <div className="row">
                                 <div className="col-12">
