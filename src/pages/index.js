@@ -408,7 +408,7 @@ const HomeContent = () => {
                             <div className="row">
                                 <div className="col-12">
                                     <div className="pricing__note">
-                                        💡 All packages include a free strategy call before you commit
+                                        💡 All packages include a free strategy call
                                     </div>
                                 </div>
                             </div>
@@ -502,7 +502,6 @@ const HomeContent = () => {
                             </div>
                             <div className="row">
                                 <div className="col-12">
-                                    <p className="pricing__trust">All packages include a free strategy call. No payment until you approve the plan. No long-term contracts.</p>
                                     <p className="pricing__hosting-note">* Hosting is $19.99/mo after the free period — or included at no extra cost with our Monthly Care Plan.</p>
                                 </div>
                             </div>

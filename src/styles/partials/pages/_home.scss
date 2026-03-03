@@ -1266,6 +1266,9 @@
             font-size: 0.8125rem;
             margin-bottom: 0;
             text-align: center;
+            line-height: 20px;
+            margin-top: $space--md;
+            // margin-top: $spacing--xl;
         }
 
         .pricing-card {
