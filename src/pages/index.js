@@ -5,6 +5,7 @@ import "../styles/partials/pages/_home.scss";
 import Footer from "../components/Footer";
 import Form from "../components/Form";
 import Carousel from "../components/Carousel";
+import { PopupProvider, usePopup } from "../context/PopupContext";
 
 const JOTFORM_URL = "https://form.jotform.com/260614887108058";
 
@@ -28,20 +29,21 @@ const AREAS = [
     "Lake Mary", "Oviedo", "Clermont", "Apopka", "Deltona",
 ];
 
-const Home = () => {
+const HomeContent = () => {
+    const { popupShown, setPopupShown } = usePopup();
     const [showPopup, setShowPopup] = useState(false);
 
     useEffect(() => {
-        if (localStorage.getItem("exit-popup-shown")) return;
+        if (popupShown) return;
         const handleMouseLeave = (e) => {
             if (e.clientY <= 0) {
                 setShowPopup(true);
-                localStorage.setItem("exit-popup-shown", "true");
+                setPopupShown();
             }
         };
         document.addEventListener("mouseleave", handleMouseLeave);
         return () => document.removeEventListener("mouseleave", handleMouseLeave);
-    }, []);
+    }, [popupShown, setPopupShown]);
 
     return (
         <>
@@ -575,5 +577,11 @@ const Home = () => {
         </>
     );
 };
+
+const Home = () => (
+    <PopupProvider>
+        <HomeContent />
+    </PopupProvider>
+);
 
 export default Home;
