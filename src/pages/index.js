@@ -520,7 +520,7 @@ const HomeContent = () => {
                         <div className="container">
                             <div className="row">
                                 <div className="col-12">
-                                    <span className="pill">FAQ</span>
+                                    <span className="pill pill-dark">FAQ</span>
                                     <h2>Common Questions</h2>
                                 </div>
                             </div>

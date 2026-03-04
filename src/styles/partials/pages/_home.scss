@@ -1416,11 +1416,29 @@
     }
 
     .faq {
-        background: $color--primary-lightest;
+        background: rgb(15, 21, 53);
+        position: relative;
+
+        &::before {
+            background-image:
+                linear-gradient(rgba(56, 93, 216, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 93, 216, 0.07) 1px, transparent 1px);
+            background-size: 80px 80px;
+            content: "";
+            height: calc(100% + 150px);
+            left: 0;
+            pointer-events: none;
+            position: absolute;
+            right: 0;
+            top: -150px;
+            z-index: 0;
+        }
 
         .col-12 {
             text-align: center;
             margin-bottom: $space--xxl;
+            position: relative;
+            z-index: 1;
         }
 
         .pill {
@@ -1428,6 +1446,7 @@
         }
 
         h2 {
+            color: #ffffff;
             margin-bottom: 0;
             margin-left: auto;
             margin-right: auto;
@@ -1440,6 +1459,8 @@
             display: flex;
             flex-direction: column;
             gap: $space--md;
+            position: relative;
+            z-index: 1;
         }
 
         .faq-item {
@@ -1454,7 +1475,6 @@
                 font-weight: 600;
                 justify-content: space-between;
                 list-style: none;
-                // padding: $space--lg $space--xl;
 
                 &::-webkit-details-marker {
                     display: none;
@@ -1474,7 +1494,6 @@
                 color: $color--text;
                 line-height: 1.6;
                 margin: 0;
-                // padding: 0 $space--xl $space--lg;
                 padding-top: $space--md;
             }
 
