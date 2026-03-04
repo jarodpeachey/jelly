@@ -2,51 +2,31 @@
 @use "spacing" as *;
 
 footer {
-  background: $color--primary-dark;
+  background: rgb(15, 21, 53);
+  border-top: 1px solid rgba(56, 93, 216, 0.25);
   margin: 0;
-  padding: $space--xxxl 0 !important;
+  padding: $space--lg 0;
   position: relative;
   z-index: 1;
 
-  img {
-    display: block;
-    margin-bottom: $space--lg;
-  }
-
-  p {
-    color: #ffffffaa;
-    font-size: 1.03rem;
-    line-height: 28px;
-    margin: 0;
-    margin-top: $space--sm;
-  }
-
   .container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
     padding-bottom: 0 !important;
     padding-top: 0 !important;
   }
 
-  .d-flex {
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  img {
+    display: block;
+    height: 36px;
+    width: auto;
+  }
 
-    a {
-      path {
-        stroke: #ffffffaa;
-        transition: .2s ease;
-      }
-
-      &:hover {
-        path {
-          stroke: #ffffff;
-        }
-      }
-    }
-
-    a:first-child {
-      display: block;
-      margin-right: $space--xl;
-    }
+  p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.875rem;
+    line-height: 1;
+    margin: 0;
   }
 }

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920" />
+  <title>Jelly Development — Ad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      background-color: rgb(15, 21, 53);
+      position: relative;
+    }
+
+    /* ── Background decorative blobs ── */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .blob--blue {
+      width: 900px;
+      height: 900px;
+      background: #385dd8;
+      top: -200px;
+      right: -100px;
+    }
+    .blob--accent {
+      width: 600px;
+      height: 600px;
+      background: #5b8dee;
+      bottom: -200px;
+      left: 200px;
+      opacity: 0.12;
+    }
+
+    /* ── Grid lines (subtle) ── */
+    .grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(56, 93, 216, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 93, 216, 0.07) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+    }
+
+    /* ── Layout ── */
+    .ad {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      width: 1920px;
+      height: 1080px;
+      align-items: center;
+    }
+
+    /* ── Left column ── */
+    .ad__left {
+      flex: 0 0 auto;
+      width: 960px;
+      padding: 100px 110px 100px 130px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .ad__pill {
+      display: inline-block;
+      background: rgba(56, 93, 216, 0.25);
+      color: #7ba0f5;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 26px;
+      border-radius: 999px;
+      margin-bottom: 42px;
+      width: fit-content;
+      border: 1px solid rgba(56, 93, 216, 0.4);
+    }
+
+    .ad__headline {
+      font-size: 92px;
+      font-weight: 900;
+      line-height: 1.05;
+      color: #ffffff;
+      margin-bottom: 36px;
+      letter-spacing: -0.02em;
+    }
+
+    .ad__headline .gradient {
+      background: linear-gradient(135deg, #5b8dee 0%, #385dd8 50%, #7ba0f5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ad__sub {
+      font-size: 24px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.6;
+      margin-bottom: 64px;
+      max-width: 680px;
+    }
+
+    .ad__sub strong {
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 600;
+    }
+
+    .ad__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .btn-primary {
+      background: #385dd8;
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 600;
+      padding: 22px 52px;
+      border-radius: 12px;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      border: 2px solid transparent;
+      transition: background 0.2s;
+    }
+
+    .ad__url {
+      font-size: 20px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Divider ── */
+    .ad__divider {
+      width: 1px;
+      height: 700px;
+      background: linear-gradient(to bottom, transparent, rgba(56, 93, 216, 0.4) 30%, rgba(56, 93, 216, 0.4) 70%, transparent);
+      flex-shrink: 0;
+    }
+
+    /* ── Right column ── */
+    .ad__right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      padding: 80px 80px 80px 80px;
+    }
+
+    /* ── Stat cards ── */
+    .stat-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 36px 44px;
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-card__icon {
+      font-size: 44px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .stat-card__text {}
+
+    .stat-card__number {
+      font-size: 40px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-card__number .unit {
+      font-size: 24px;
+      font-weight: 600;
+      color: #7ba0f5;
+    }
+
+    .stat-card__label {
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.4;
+    }
+
+    /* ── Bottom strip ── */
+    .ad__strip {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(56, 93, 216, 0.15);
+      border-top: 1px solid rgba(56, 93, 216, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 80px;
+      z-index: 2;
+    }
+
+    .strip__item {
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .strip__dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #385dd8;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blob blob--blue"></div>
+  <div class="blob blob--accent"></div>
+  <div class="grid-lines"></div>
+
+  <div class="ad">
+
+    <!-- Left: Main Message -->
+    <div class="ad__left">
+      <span class="ad__pill">Orlando Web Design</span>
+
+      <h1 class="ad__headline">
+        More Customers.<br>
+        <span class="gradient">Starting at $1,500.</span>
+      </h1>
+
+      <p class="ad__sub">
+        We build fast, beautiful websites for local Orlando businesses.<br>
+        <strong>No templates. No fluff. Just results.</strong>
+      </p>
+
+      <div class="ad__cta">
+        <a class="btn-primary" href="#">Get a Free Quote</a>
+        <span class="ad__url">jellydevelopment.com</span>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="ad__divider"></div>
+
+    <!-- Right: Social proof stats -->
+    <div class="ad__right">
+
+      <div class="stat-card">
+        <div class="stat-card__icon">⚡</div>
+        <div class="stat-card__text">
+          <div class="stat-card__number">2–4 <span class="unit">wks</span></div>
+          <div class="stat-card__label">Average turnaround from kickoff to launch</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-card__icon">📍</div>
+        <div class="stat-card__text">
+          <div class="stat-card__number">100<span class="unit">%</span></div>
+          <div class="stat-card__label">Local — based right here in Orlando, FL</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-card__icon">🔍</div>
+        <div class="stat-card__text">
+          <div class="stat-card__number">SEO <span class="unit">Ready</span></div>
+          <div class="stat-card__label">Every site built to rank on Google from day one</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom strip -->
+  <div class="ad__strip">
+    <span class="strip__item"><span class="strip__dot"></span> Custom Design</span>
+    <span class="strip__item"><span class="strip__dot"></span> SEO Included</span>
+    <span class="strip__item"><span class="strip__dot"></span> Mobile-First</span>
+    <span class="strip__item"><span class="strip__dot"></span> Fast Delivery</span>
+    <span class="strip__item"><span class="strip__dot"></span> Orlando, FL</span>
+  </div>
+
+</body>
+</html>

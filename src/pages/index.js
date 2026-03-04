@@ -68,23 +68,27 @@ const HomeContent = () => {
             </header>
             <div id="wrapper" className="wrapper">
                 <section className="hero">
+                    <div className="hero__blob hero__blob--tr"></div>
+                    <div className="hero__blob hero__blob--bl"></div>
+                    <div className="hero__grid-lines"></div>
                     <div className="container">
-                        <div className="row">
-                            <div className="col-md-10 col-lg-6 col-xl-7">
+                        <div className="row align-items-center">
+                            <div className="col-12 col-lg-6 hero__left">
+                                <span className="pill pill-dark">Orlando Web Design</span>
                                 <h1>
-                                    Websites That Bring More Customers to <span className="color-primary">Orlando Small Businesses</span>
+                                    Websites That Bring More Customers to <span>Orlando Small Businesses</span>
                                 </h1>
                                 <p className="section-description hero__paragraph">
                                     Fast, mobile-optimized websites built to rank on Google and convert visitors into real leads — no tech jargon, no fluff.
                                 </p>
-
-                                <a className="btn" href="/contact" target="_blank" rel="noopener noreferrer">
-                                    Get a Free Website Audit
-                                </a>
+                                <div className="hero__cta-row">
+                                    <a className="btn" href="/contact" target="_blank" rel="noopener noreferrer">
+                                        Get a Free Website Audit
+                                    </a>
+                                </div>
                             </div>
-                            <div className="col-lg-6 col-xl-5 d-none d-lg-flex align-items-center">
+                            <div className="col-lg-6 d-none d-lg-flex align-items-center hero__right">
                                 <div className="hero__visual">
-                                    {/* Google Business Profile card */}
                                     <div className="hero__proof-card hero__proof-card--business">
                                         <div className="hero__proof-card__header">
                                             <div className="hero__proof-card__g">G</div>
@@ -102,7 +106,6 @@ const HomeContent = () => {
                                             📍 Listed on Google Maps
                                         </div>
                                     </div>
-                                    {/* Google Review card — replace quote + name with your actual review */}
                                     <div className="hero__proof-card hero__proof-card--review">
                                         <div className="hero__proof-card__review-top">
                                             <div className="hero__proof-card__g">G</div>
@@ -113,16 +116,20 @@ const HomeContent = () => {
                                             <div className="hero__proof-card__avatar">J</div>
                                             <div>
                                                 <div className="hero__proof-card__reviewer-name">Josh M.</div>
-                                                {/* <div className="hero__proof-card__source">Review</div> */}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-                    <img className="hero__background" src="/media/img/backgrounds/hero.svg" alt="Background image" />
+                    {/* <div className="hero__strip">
+                        <span className="hero__strip__item"><span className="hero__strip__dot"></span>Custom Design</span>
+                        <span className="hero__strip__item"><span className="hero__strip__dot"></span>SEO Included</span>
+                        <span className="hero__strip__item"><span className="hero__strip__dot"></span>Mobile-First</span>
+                        <span className="hero__strip__item"><span className="hero__strip__dot"></span>Fast Delivery</span>
+                        <span className="hero__strip__item"><span className="hero__strip__dot"></span>Orlando, FL</span>
+                    </div> */}
                 </section>
                 <div className="industries-ticker">
                     <div className="industries-ticker__track">
