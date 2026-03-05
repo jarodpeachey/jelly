@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Card Background Export</title>
+  <script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #c8cdd8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      min-height: 100vh;
+      font-family: sans-serif;
+    }
+
+    /* Card background — 1.75:1 aspect ratio (448 × 256px at 16px base) */
+    #bg {
+      width: 448px;
+      height: 256px;
+      position: relative;
+      background: rgb(15, 21, 53);
+      overflow: hidden;
+    }
+
+    /* Grid */
+    #bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(56, 93, 216, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 93, 216, 0.1) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    /* Blob */
+    #bg::after {
+      content: "";
+      position: absolute;
+      width: 224px;
+      height: 224px;
+      border-radius: 50%;
+      background: #385dd8;
+      filter: blur(64px);
+      opacity: 0.2;
+      top: -64px;
+      right: -48px;
+      pointer-events: none;
+    }
+
+    .download-btn {
+      background: #385dd8;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 0.6rem 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .download-btn:hover { background: #2b48a9; }
+  </style>
+</head>
+<body>
+
+  <div id="bg"></div>
+  <button class="download-btn" onclick="exportBg()">Download PNG (2×)</button>
+
+  <script>
+    function exportBg() {
+      const el = document.getElementById('bg');
+      htmlToImage.toPng(el, { pixelRatio: 2, skipFonts: true })
+        .then(function (dataUrl) {
+          const link = document.createElement('a');
+          link.download = 'jelly-card-bg-dark.png';
+          link.href = dataUrl;
+          link.click();
+        });
+    }
+  </script>
+
+</body>
+</html>

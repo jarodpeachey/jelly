@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Business Card — Jelly Development</title>
+  <style>
+    @font-face {
+      font-family: "Poppins";
+      src: url("media/fonts/poppins/poppins-semibold-webfont.woff2") format("woff2"),
+           url("media/fonts/poppins/poppins-semibold-webfont.woff") format("woff");
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Poppins";
+      src: url("media/fonts/poppins/poppins-bold-webfont.woff2") format("woff2"),
+           url("media/fonts/poppins/poppins-bold-webfont.woff") format("woff");
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Poppins";
+      src: url("media/fonts/poppins/poppins-extrabold-webfont.woff2") format("woff2"),
+           url("media/fonts/poppins/poppins-extrabold-webfont.woff") format("woff");
+      font-weight: 800;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Poppins";
+      src: url("media/fonts/poppins/poppins-black-webfont.woff2") format("woff2"),
+           url("media/fonts/poppins/poppins-black-webfont.woff") format("woff");
+      font-weight: 900;
+      font-style: normal;
+    }
+  </style>
+  <script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #e8edf5;
+      display: grid;
+      grid-template-columns: max-content;
+      gap: 3.125rem;
+      padding: 3.125rem;
+      font-family: 'Poppins', sans-serif;
+      justify-content: center;
+    }
+
+    /* ── Shared card shell ── */
+    .card {
+      width: 28rem;
+      height: 16rem;
+      border-radius: 0;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── Layout columns ── */
+    /* ── Layout ── */
+    .card__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.75rem 2rem;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      flex: 1;
+      width: 100%;
+      padding-top: 32px;
+    }
+
+    .card__logo {
+      height: 2.21rem;
+      width: auto;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .card__headline {
+      font-size: 1.57rem;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin: 0;
+    }
+
+    .card__bullets {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card__bullets li {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0 0.75rem;
+    }
+
+    .card__bullets li:not(:first-child) {
+      position: relative;
+    }
+
+    .card__bullets li:not(:first-child)::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 0.7em;
+      width: 1px;
+      background: currentColor;
+      opacity: 0.35;
+    }
+
+    .card__url {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+
+    /* ════════════════════════════════
+       DARK VARIANT
+    ════════════════════════════════ */
+    .card--dark {
+      background: rgb(15, 21, 53);
+    }
+
+    /* Grid overlay */
+    .card--dark::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(56, 93, 216, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 93, 216, 0.1) 1px, transparent 1px);
+      background-size: 1.5rem 1.5rem;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Blob */
+    .card--dark::after {
+      content: "";
+      position: absolute;
+      width: 14rem;
+      height: 14rem;
+      border-radius: 50%;
+      background: #385dd8;
+      filter: blur(4rem);
+      opacity: 0.2;
+      top: -4rem;
+      right: -3rem;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .card--dark .card__url {
+      color: #ffffff;
+    }
+
+    .card--dark .card__headline {
+      color: #ffffff;
+    }
+
+    .card--dark .card__headline span {
+      color: #385dd8;
+    }
+
+    .card--dark .card__bullets li {
+      color: #ffffff;
+    }
+
+    .card--dark .card__bullets li::before {
+      color: #7ba0f5;
+    }
+
+    /* ════════════════════════════════
+       LIGHT VARIANT
+    ════════════════════════════════ */
+    .card--light {
+      background: #ffffff;
+    }
+
+    .card--light::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(56, 93, 216, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 93, 216, 0.05) 1px, transparent 1px);
+      background-size: 1.5rem 1.5rem;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .card--light::after {
+      content: "";
+      position: absolute;
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+      background: #385dd8;
+      filter: blur(3.5rem);
+      opacity: 0.06;
+      top: -3rem;
+      right: -2rem;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .card--light .card__url {
+      color: #385dd8;
+    }
+
+    .card--light .card__headline {
+      color: rgb(15, 21, 53);
+    }
+
+    .card--light .card__headline span {
+      color: #385dd8;
+    }
+
+    .card--light .card__bullets li {
+      color: #48484b;
+    }
+
+    .card--light .card__bullets li::before {
+      color: #385dd8;
+    }
+
+    /* ════════════════════════════════
+       LEFT-ALIGNED VARIANT
+    ════════════════════════════════ */
+    .card--left .card__inner {
+      align-items: flex-start;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .card--left .card__body {
+      align-items: flex-start;
+      flex: 0 0 auto;
+      padding-top: 0;
+    }
+
+    .card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-top: 25px;
+    }
+
+    .card--left .card__url {
+      margin-top: 0;
+    }
+
+    /* Vertical checkmark bullets */
+    .card__bullets--vertical {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+
+    .card__bullets--vertical li,
+    .card__bullets--vertical li:not(:first-child) {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0;
+      position: static;
+    }
+
+    .card__bullets--vertical li::before,
+    .card__bullets--vertical li:not(:first-child)::before {
+      background: none;
+      content: "✓";
+      font-size: 0.75rem;
+      font-weight: 700;
+      height: auto;
+      opacity: 1;
+      position: static;
+      transform: none;
+      width: auto;
+    }
+
+    .card--dark .card__bullets--vertical li::before {
+      color: #7ba0f5;
+    }
+
+    .card--light .card__bullets--vertical li::before {
+      color: #385dd8;
+    }
+
+    .card-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+    }
+
+    .download-btn {
+      background: #385dd8;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 0.5rem 1rem;
+      text-transform: uppercase;
+      transition: background 0.2s;
+      width: 100%;
+    }
+
+    .download-btn:hover {
+      background: #2b48a9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DARK VARIANT -->
+  <div class="card-wrap">
+    <div class="card card--dark" id="card-dark-centered">
+      <div class="card__inner">
+        <div class="card__body">
+          <img class="card__logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAABACAYAAABm8Es1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARgSURBVHgB7ZzvUdtAEMWfmXyHEpQOoIKICmIqQFSAqQCnAkMF0AGkAjsV4FRgdQAdbPZxpyCELevPnXSy/ZvZQZlczPGyt3u3twIYGCJyopaoneJAfayAt2pz+SBBYHxDwKhgsX65VBurnSBwghTTinirFmNAHCEgVMSIS1kfaTEcop875efDI0GIaUV80McV/HljpDb3KWivYmaJRR9f1BL4J4IR1Ev87SVm2m0NE0uC7hNLpPakdg7HdOqZTCw2JtITJ+gvQ3MeEzjGu5hWwJnaKzwklhbcuo6fXpa53dr8QL/etw3Oi0nP2XJ3JmZOwAQmLg2B9+U+Go3u4IBWYtqseA2zdGMMEy73RxX0DS1pFDNziYRxcIrhCknoELdwQGUxc8UGbqxDSiQumNgw1YpKYtoKDUWcYjjxsC6tvbNUzNxZmVkv+KpNS1rvPTeKqR/MxMLNdYz9odXec62Y9rzM7cKue2ORbO/ZiC9iWiGn2F8aL/dPYtpEM8WBWZPs/l9MGyuc7LcKLNVu1L5bO7N/ThE2D43jJ4uz4p67ku/HncKTNCdBDXT8o9TnRWrUPo+yHwzui7P3ekTbGHv071K1C31cIFxYd628WrNlHsMtKcxuoAq/EDY8HVUSNBPzEm5Z0POqDNRxC5i4GjK8jIu3DfLlmX9Rj7rj++BJtiSkI/HTZtK6nBUgTETzsoREz4xwoCoRSk5IBzHrM5YNJySKuW/nbxfM1oXHoNpjBsZTMX4exGxOhMKGnmKGkHmb7DNDmPckv9yDENNetdY5CV3pv3lGGMyyB4oZxOlDxZliu6D8j7/QsY8Ihzg7HfHePEUgUFCdWIrN27VnHRPi0XOMrGCjP8BK3OKkQ8Il8rkf3jWvaidZNv8Nt7gunLRCzJk6hj+4RTrNxHQdzNmw4LxlrwU+bhCKjDMxGYdcZ3WeEnr3UDG1yAT+OX4X0zYtLeCeR6lYWPWBdHvTGuW/cSz+6FxQ8XOnVcZzcQIr8UcngoppMHuQ7rkrns3v4Y+pb0HFFB7YG5Wge5ZfJiN+vZM0bj8pQ8zV8Yv0R7RuUon4Zy4O38URI+RK+uOhbHJz8c9KHLztICZxrqRf3itHo00ThIk9XbBQ+4P6HMM0CcToF/bDX/FhtGmEmPP1NQ6UkaqdZz0Co7KRKiibXX1cBe8CKXJCkm3XFuwF2sU78LakKAhJSsW0g69wIA/34mfr2n+2XqjZ64EbHFjAeONk0wtYI1RE4+cU3ZSyQiIrAN3bBrNSKotJ9kTQTEAWzJ/rvAZYS0yyg4KmMOKxE29ZxQM3UVtMIqaKPsOwoIelMAcEfmVhYuniBdSMRmISe4Tir2eIEB5La/S2FKb51vsWr7GYRMzZmh46Rn9kMY4e59zbOkdMpWkl3cBr1TlDjQT2++BaeWYe+Xhjg5doEdzxyfPaJAjfOBMzj5h3dH7CVHTq1C3zSYJLtvKLBiHgRcw8dilG1orCvuFDwHRIwq3jH3f9GupzQjAqAAAAAElFTkSuQmCC" alt="Jelly Development" />
+          <div class="card__headline">Websites That <span>Actually Work.</span></div>
+          <ul class="card__bullets">
+            <li>Web Design</li>
+            <li>Local SEO</li>
+            <li>Hosting & Maintenance</li>
+          </ul>
+        </div>
+        <span class="card__url">jellydevelopment.com</span>
+      </div>
+    </div>
+    <button class="download-btn" onclick="downloadCard('card-dark-centered', 'dark-centered')">Download PNG</button>
+  </div>
+
+  <!-- LIGHT VARIANT -->
+  <div class="card-wrap">
+    <div class="card card--light" id="card-light-centered">
+      <div class="card__inner">
+        <div class="card__body">
+          <img class="card__logo" src="data:image/png;base64,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" alt="Jelly Development" />
+          <div class="card__headline">Websites That <span>Actually Work.</span></div>
+          <ul class="card__bullets">
+            <li>Web Design</li>
+            <li>Local SEO</li>
+            <li>Hosting & Maintenance</li>
+          </ul>
+        </div>
+        <span class="card__url">jellydevelopment.com</span>
+      </div>
+    </div>
+    <button class="download-btn" onclick="downloadCard('card-light-centered', 'light-centered')">Download PNG</button>
+  </div>
+
+  <!-- DARK LEFT VARIANT -->
+  <div class="card-wrap">
+    <div class="card card--dark card--left" id="card-dark-left">
+      <div class="card__inner">
+        <div class="card__body">
+          <div class="card__headline">Custom Websites That <br /><span>Actually Work.</span></div>
+          <ul class="card__bullets card__bullets--vertical">
+            <li>Web Design</li>
+            <li>Local SEO</li>
+            <li>Hosting & Maintenance</li>
+          </ul>
+        </div>
+        <div class="card__footer">
+          <img class="card__logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAABACAYAAABm8Es1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARgSURBVHgB7ZzvUdtAEMWfmXyHEpQOoIKICmIqQFSAqQCnAkMF0AGkAjsV4FRgdQAdbPZxpyCELevPnXSy/ZvZQZlczPGyt3u3twIYGCJyopaoneJAfayAt2pz+SBBYHxDwKhgsX65VBurnSBwghTTinirFmNAHCEgVMSIS1kfaTEcop875efDI0GIaUV80McV/HljpDb3KWivYmaJRR9f1BL4J4IR1Ev87SVm2m0NE0uC7hNLpPakdg7HdOqZTCw2JtITJ+gvQ3MeEzjGu5hWwJnaKzwklhbcuo6fXpa53dr8QL/etw3Oi0nP2XJ3JmZOwAQmLg2B9+U+Go3u4IBWYtqseA2zdGMMEy73RxX0DS1pFDNziYRxcIrhCknoELdwQGUxc8UGbqxDSiQumNgw1YpKYtoKDUWcYjjxsC6tvbNUzNxZmVkv+KpNS1rvPTeKqR/MxMLNdYz9odXec62Y9rzM7cKue2ORbO/ZiC9iWiGn2F8aL/dPYtpEM8WBWZPs/l9MGyuc7LcKLNVu1L5bO7N/ThE2D43jJ4uz4p67ku/HncKTNCdBDXT8o9TnRWrUPo+yHwzui7P3ekTbGHv071K1C31cIFxYd628WrNlHsMtKcxuoAq/EDY8HVUSNBPzEm5Z0POqDNRxC5i4GjK8jIu3DfLlmX9Rj7rj++BJtiSkI/HTZtK6nBUgTETzsoREz4xwoCoRSk5IBzHrM5YNJySKuW/nbxfM1oXHoNpjBsZTMX4exGxOhMKGnmKGkHmb7DNDmPckv9yDENNetdY5CV3pv3lGGMyyB4oZxOlDxZliu6D8j7/QsY8Ihzg7HfHePEUgUFCdWIrN27VnHRPi0XOMrGCjP8BK3OKkQ8Il8rkf3jWvaidZNv8Nt7gunLRCzJk6hj+4RTrNxHQdzNmw4LxlrwU+bhCKjDMxGYdcZ3WeEnr3UDG1yAT+OX4X0zYtLeCeR6lYWPWBdHvTGuW/cSz+6FxQ8XOnVcZzcQIr8UcngoppMHuQ7rkrns3v4Y+pb0HFFB7YG5Wge5ZfJiN+vZM0bj8pQ8zV8Yv0R7RuUon4Zy4O38URI+RK+uOhbHJz8c9KHLztICZxrqRf3itHo00ThIk9XbBQ+4P6HMM0CcToF/bDX/FhtGmEmPP1NQ6UkaqdZz0Co7KRKiibXX1cBe8CKXJCkm3XFuwF2sU78LakKAhJSsW0g69wIA/34mfr2n+2XqjZ64EbHFjAeONk0wtYI1RE4+cU3ZSyQiIrAN3bBrNSKotJ9kTQTEAWzJ/rvAZYS0yyg4KmMOKxE29ZxQM3UVtMIqaKPsOwoIelMAcEfmVhYuniBdSMRmISe4Tir2eIEB5La/S2FKb51vsWr7GYRMzZmh46Rn9kMY4e59zbOkdMpWkl3cBr1TlDjQT2++BaeWYe+Xhjg5doEdzxyfPaJAjfOBMzj5h3dH7CVHTq1C3zSYJLtvKLBiHgRcw8dilG1orCvuFDwHRIwq3jH3f9GupzQjAqAAAAAElFTkSuQmCC" alt="Jelly Development" />
+          <span class="card__url">jellydevelopment.com</span>
+        </div>
+      </div>
+    </div>
+    <button class="download-btn" onclick="downloadCard('card-dark-left', 'dark-left')">Download PNG</button>
+  </div>
+
+  <!-- LIGHT LEFT VARIANT -->
+  <div class="card-wrap">
+    <div class="card card--light card--left" id="card-light-left">
+      <div class="card__inner">
+        <div class="card__body">
+          <div class="card__headline">Custom Websites That <br /><span>Actually Work.</span></div>
+          <ul class="card__bullets card__bullets--vertical">
+            <li>Web Design</li>
+            <li>Local SEO</li>
+            <li>Hosting & Maintenance</li>
+          </ul>
+        </div>
+        <div class="card__footer">
+          <img class="card__logo" src="data:image/png;base64,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" alt="Jelly Development" />
+          <span class="card__url">jellydevelopment.com</span>
+        </div>
+      </div>
+    </div>
+    <button class="download-btn" onclick="downloadCard('card-light-left', 'light-left')">Download PNG</button>
+  </div>
+
+  <script>
+    function imgToDataUrl(img) {
+      return new Promise(function (resolve) {
+        // Swap .svg → .png for local export compatibility
+        const src = img.src.replace(/\.svg$/i, '.png');
+        const image = new Image();
+        image.onload = function () {
+          const canvas = document.createElement('canvas');
+          canvas.width = image.naturalWidth;
+          canvas.height = image.naturalHeight;
+          canvas.getContext('2d').drawImage(image, 0, 0);
+          resolve(canvas.toDataURL('image/png'));
+        };
+        image.onerror = function () { resolve(img.src); };
+        image.src = src;
+      });
+    }
+
+    async function downloadCard(id, filename) {
+      const card = document.getElementById(id);
+      const images = Array.from(card.querySelectorAll('img'));
+      const origSrcs = images.map(function (img) { return img.src; });
+
+      // Replace srcs with inlined data URLs
+      for (let i = 0; i < images.length; i++) {
+        images[i].src = await imgToDataUrl(images[i]);
+      }
+
+      await new Promise(function (r) { setTimeout(r, 50); });
+
+      try {
+        const dataUrl = await htmlToImage.toPng(card, { pixelRatio: 2, skipFonts: true });
+        const link = document.createElement('a');
+        link.download = 'jelly-' + filename + '.png';
+        link.href = dataUrl;
+        link.click();
+      } finally {
+        images.forEach(function (img, i) { img.src = origSrcs[i]; });
+      }
+    }
+  </script>
+
+</body>
+</html>
