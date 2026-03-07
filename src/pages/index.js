@@ -19,7 +19,7 @@ const FAQS = [
     { q: "How long does it take to build my website?", a: "Your website will be live within 2-4 weeks of receiving your content and design approval." },
     { q: "Do I need to sign a long-term contract?", a: "Never. All packages are one-time fees, split 50/50 at the start and end of the project. The optional care plan is month-to-month — cancel anytime." },
     { q: "What if I already have a website?", a: "We'll audit it for free. If it needs a full rebuild, we'll handle it. If parts are salvageable, we'll tell you." },
-    { q: "Do you handle hosting?", a: "Yes. Starter includes 3 months of free hosting; Growth and Premium include 6 months. After that, hosting is $19.99/mo — or included at no extra cost if you're on our monthly care plan." },
+    { q: "Do you handle hosting?", a: "Yes. Starter includes 1 month of free hosting, Growth includes 3 months, and Premium includes 6 months. After that, hosting is $19.99/mo — or included at no extra cost if you're on our monthly care plan." },
     { q: "Do you provide the domain name?", a: "No — you'll need to purchase and own your own domain. We'll guide you through the process if needed, but keeping the domain in your name ensures you always have full ownership of your online presence." },
     { q: "Will my site rank on Google?", a: "Every site we build includes on-page SEO setup. Rankings depend on your market and competition, but we give you the best possible foundation." },
 ];
@@ -390,7 +390,7 @@ const HomeContent = () => {
                             </div>
                             <div className="row">
                                 {PROCESS_STEPS.map((p, i) => (
-                                    <div key={i} className="col-sm-4">
+                                    <div key={i} className="col-md-4">
                                         <div className="process-card card">
                                             <div className="process-card__step">{p.step}</div>
                                             <h3>{p.title}</h3>
@@ -428,15 +428,13 @@ const HomeContent = () => {
                                         <p className="pricing-card__desc">Perfect for new businesses that need a fast, professional online presence without the bloat.</p>
                                         <ul className="pricing-card__features">
                                             {[
-                                                "1-page high-converting website",
-                                                "Mobile-first responsive design",
+                                                "1-page website",
                                                 "On-page SEO setup",
-                                                "Google PageSpeed optimized",
-                                                "Contact form & click-to-call",
-                                                "3 months free hosting",
-                                                "2 rounds of revisions",
+                                                "Performance optimization",
+                                                "Mobile-first design",
+                                                "2 revision rounds",
                                                 "14-day delivery guarantee",
-                                                "2 weeks of maintenance & support",
+                                                "1 month free hosting & support",
                                             ].map((item, i) => (
                                                 <li key={i}><span className="pricing-card__check">✓</span>{item}</li>
                                             ))}
@@ -454,14 +452,12 @@ const HomeContent = () => {
                                         <ul className="pricing-card__features">
                                             {[
                                                 "Everything in Starter",
-                                                "6 months free hosting",
                                                 "Up to 5 pages",
-                                                "Advanced local SEO strategy",
-                                                "Google Business Profile optimization",
+                                                "Advanced local SEO",
                                                 "Custom logo design",
-                                                "3 rounds of revisions",
+                                                "3 revision rounds",
                                                 "Priority 14-day delivery",
-                                                "1 month of maintenance & support",
+                                                "3 months free hosting & support",
                                             ].map((item, i) => (
                                                 <li key={i}><span className="pricing-card__check">✓</span>{item}</li>
                                             ))}
@@ -479,12 +475,11 @@ const HomeContent = () => {
                                             {[
                                                 "Everything in Growth",
                                                 "Up to 10 pages",
-                                                "Full brand identity package",
+                                                "Keyword + competitor research SEO",
+                                                "Full brand identity",
                                                 "Competitor & market research",
-                                                "Conversion rate optimization (CRO)",
-                                                "Lead capture & email integration",
                                                 "Unlimited revisions",
-                                                "3 months of maintenance & support",
+                                                "6 months free hosting & support",
                                             ].map((item, i) => (
                                                 <li key={i}><span className="pricing-card__check">✓</span>{item}</li>
                                             ))}
