@@ -82,7 +82,7 @@ const HomeContent = () => {
                                     Fast, mobile-optimized websites built to rank on Google and convert visitors into real leads — no tech jargon, no fluff.
                                 </p>
                                 <div className="hero__cta-row">
-                                    <a className="btn" href="/contact" target="_blank" rel="noopener noreferrer">
+                                    <a className="btn" href={JOTFORM_URL} target="_blank" rel="noopener noreferrer">
                                         Get a Free Website Audit
                                     </a>
                                 </div>

@@ -7,10 +7,41 @@ import "../styles/partials/pages/_free-audit.scss";
 // ─────────────────────────────────────────────────────────────
 // STEP CONSTANTS
 // ─────────────────────────────────────────────────────────────
-const STEP_URL     = 1;
-const STEP_INFO    = 2;
-const STEP_LOADING = 3;
-const STEP_RESULTS = 4;
+const STEP_URL       = 1;
+const STEP_SITE_TYPE = 2;
+const STEP_INFO      = 3;
+const STEP_LOADING   = 4;
+const STEP_RESULTS   = 5;
+
+// ─────────────────────────────────────────────────────────────
+// SITE TYPE OPTIONS
+// ─────────────────────────────────────────────────────────────
+const SITE_TYPES = [
+    {
+        id: "local",
+        icon: "📍",
+        label: "Local Business",
+        desc: "Attract customers in my area",
+    },
+    {
+        id: "ecommerce",
+        icon: "🛒",
+        label: "Online Store",
+        desc: "Sell products or services online",
+    },
+    {
+        id: "portfolio",
+        icon: "🎨",
+        label: "Portfolio / Freelancer",
+        desc: "Showcase my work and get hired",
+    },
+    {
+        id: "startup",
+        icon: "🚀",
+        label: "Startup / SaaS",
+        desc: "Grow my product or brand",
+    },
+];
 
 // ─────────────────────────────────────────────────────────────
 // SCORE RING — circular progress indicator
@@ -35,7 +66,7 @@ const ScoreRing = ({ score, label, color }) => {
                     strokeLinecap="round"
                     transform="rotate(-90 50 50)"
                 />
-                <text x="50" y="54" textAnchor="middle" fontSize="20" fontWeight="700" fill="#191a1c">
+                <text x="50" y="57" textAnchor="middle" fontSize="26" fontWeight="800" fill="#191a1c">
                     {score}
                 </text>
             </svg>
@@ -48,26 +79,30 @@ const ScoreRing = ({ score, label, color }) => {
 // MAIN PAGE
 // ─────────────────────────────────────────────────────────────
 const FreeAudit = () => {
-    const [step, setStep]       = useState(STEP_URL);
-    const [url, setUrl]         = useState("");
-    const [name, setName]       = useState("");
-    const [email, setEmail]     = useState("");
-    const [results, setResults] = useState(null);
-    const [error, setError]     = useState(null);
+    const [step, setStep]           = useState(STEP_URL);
+    const [url, setUrl]             = useState("");
+    const [siteType, setSiteType]   = useState(null);
+    const [name, setName]           = useState("");
+    const [email, setEmail]         = useState("");
+    const [results, setResults]     = useState(null);
+    const [error, setError]         = useState(null);
 
     // ── Step 1 → 2 ──────────────────────────────────────────
     const handleUrlSubmit = (e) => {
         e.preventDefault();
         const trimmed = url.trim();
         if (!trimmed) return;
-        // Normalize: add https:// if no protocol present
-        if (!/^https?:\/\//i.test(trimmed)) {
-            setUrl("https://" + trimmed);
-        }
+        if (!/^https?:\/\//i.test(trimmed)) setUrl("https://" + trimmed);
+        setStep(STEP_SITE_TYPE);
+    };
+
+    // ── Step 2 → 3 ──────────────────────────────────────────
+    const handleSiteTypeSelect = (typeId) => {
+        setSiteType(typeId);
         setStep(STEP_INFO);
     };
 
-    // ── Step 2 → 3 → 4 ──────────────────────────────────────
+    // ── Step 3 → 4 → 5 ──────────────────────────────────────
     const handleInfoSubmit = async (e) => {
         e.preventDefault();
         setStep(STEP_LOADING);
@@ -76,40 +111,26 @@ const FreeAudit = () => {
         try {
             // ─────────────────────────────────────────────────────────────
             // AI CONNECTIVITY POINT
-            // This fetch call hits the serverless function that:
-            //   1. Calls Google PageSpeed Insights API with `url`
-            //   2. Fetches + scrapes basic SEO data from `url`
-            //   3. Sends all data to Claude API and gets recommendations
-            //   4. Returns a structured JSON payload (see shape below)
-            //
-            // Endpoint to build: POST /.netlify/functions/audit
-            // Request body:  { url, name, email }
-            // Response shape:
-            // {
-            //   performance: number (0–100),
-            //   seo: number (0–100),
-            //   mobile: number (0–100),
-            //   coreWebVitals: {
-            //     lcp: string,   // e.g. "2.4s"
-            //     cls: string,   // e.g. "0.08"
-            //     fid: string,   // e.g. "45ms"
-            //   },
-            //   recommendations: string[]  // 4–6 plain-English tips from Claude
-            // }
+            // POST /.netlify/functions/audit
+            // Body: { url, name, email, siteType }
+            // Response: { performance, seo, mobile, coreWebVitals, recommendations }
             // ─────────────────────────────────────────────────────────────
-            const res = await fetch("/.netlify/functions/audit", {
+            const apiBase = process.env.NODE_ENV === "development"
+                ? "http://localhost:9999"
+                : "";
+            const res = await fetch(`${apiBase}/.netlify/functions/audit`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ url, name, email }),
+                body: JSON.stringify({ url, name, email, siteType }),
             });
 
-            if (!res.ok) throw new Error(`Server error: ${res.status}`);
-
             const data = await res.json();
+            if (!res.ok) throw new Error(data.error || `Server error: ${res.status}`);
+
             setResults(data);
             setStep(STEP_RESULTS);
         } catch (err) {
-            setError("Something went wrong running your audit. Please try again.");
+            setError(err.message || "Something went wrong running your audit. Please try again.");
             setStep(STEP_INFO);
         }
     };
@@ -117,18 +138,24 @@ const FreeAudit = () => {
     const restart = () => {
         setStep(STEP_URL);
         setUrl("");
+        setSiteType(null);
         setName("");
         setEmail("");
         setResults(null);
         setError(null);
     };
 
-    // ── Score color helper ───────────────────────────────────
+    // Lighthouse exact colors
     const scoreColor = (n) => {
-        if (n >= 80) return "#22c55e";
-        if (n >= 50) return "#f59e0b";
-        return "#ef4444";
+        if (n >= 90) return "#0cce6b";
+        if (n >= 50) return "#ffa400";
+        return "#ff4e42";
     };
+
+    const contactUrl = `https://form.jotform.com/260614887108058` +
+        `?name=${encodeURIComponent(name)}` +
+        `&email=${encodeURIComponent(email)}` +
+        `&websiteUrl=${encodeURIComponent(url)}`;
 
     return (
         <>
@@ -194,19 +221,52 @@ const FreeAudit = () => {
                     </section>
                 )}
 
-                {/* ── STEP 2 — Name + Email ──────────────────────────── */}
+                {/* ── STEP 2 — Site Type ─────────────────────────────── */}
+                {step === STEP_SITE_TYPE && (
+                    <section className="audit-hero audit-hero--type">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-8 offset-lg-2">
+                                    <button className="audit-back" onClick={() => setStep(STEP_URL)}>
+                                        ← Back
+                                    </button>
+                                    <p className="audit-card__url">{url}</p>
+                                    <h2>What kind of website is it?</h2>
+                                    <p className="audit-hero__sub">
+                                        This helps us tailor your recommendations to what actually matters for your goals.
+                                    </p>
+                                    <div className="audit-type-grid">
+                                        {SITE_TYPES.map((type) => (
+                                            <button
+                                                key={type.id}
+                                                className="audit-type-card"
+                                                onClick={() => handleSiteTypeSelect(type.id)}
+                                            >
+                                                <span className="audit-type-card__icon">{type.icon}</span>
+                                                <span className="audit-type-card__label">{type.label}</span>
+                                                <span className="audit-type-card__desc">{type.desc}</span>
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {/* ── STEP 3 — Name + Email ──────────────────────────── */}
                 {step === STEP_INFO && (
                     <section className="audit-hero audit-hero--info">
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-6 offset-lg-3">
-                                    <button className="audit-back" onClick={() => setStep(STEP_URL)}>
+                                    <button className="audit-back" onClick={() => setStep(STEP_SITE_TYPE)}>
                                         ← Back
                                     </button>
                                     <div className="audit-card">
                                         <p className="audit-card__url">{url}</p>
-                                        <h2>Where should we send your results?</h2>
-                                        <p>We'll also email you a full copy of your report.</p>
+                                        <h2>Almost there — where should we send your results?</h2>
+                                        <p>We'll email you a full copy of your personalized report.</p>
 
                                         {error && <p className="audit-error">{error}</p>}
 
@@ -247,7 +307,7 @@ const FreeAudit = () => {
                     </section>
                 )}
 
-                {/* ── STEP 3 — Loading ───────────────────────────────── */}
+                {/* ── STEP 4 — Loading ───────────────────────────────── */}
                 {step === STEP_LOADING && (
                     <section className="audit-hero audit-hero--loading">
                         <div className="container">
@@ -255,7 +315,7 @@ const FreeAudit = () => {
                                 <div className="col-lg-8 offset-lg-2 audit-loading">
                                     <div className="audit-spinner" aria-hidden="true" />
                                     <h2>Analyzing your website…</h2>
-                                    <p>Running performance tests, checking SEO, and generating your AI report. This takes about 15 seconds.</p>
+                                    <p>Running performance tests, checking SEO, and generating your personalized report. This takes about 15 seconds.</p>
                                     <div className="audit-loading__steps">
                                         <div className="audit-loading__step audit-loading__step--done">Fetching page data</div>
                                         <div className="audit-loading__step audit-loading__step--active">Running Lighthouse audit</div>
@@ -268,12 +328,12 @@ const FreeAudit = () => {
                     </section>
                 )}
 
-                {/* ── STEP 4 — Results ───────────────────────────────── */}
+                {/* ── STEP 5 — Results ───────────────────────────────── */}
                 {step === STEP_RESULTS && results && (
                     <section className="audit-results">
                         <div className="audit-results__header">
                             <div className="container">
-                                <p className="display">YOUR RESULTS</p>
+                                <p className="pill pill-dark">Your Results</p>
                                 <h1>Website Audit Report</h1>
                                 <p className="audit-results__url">{url}</p>
                             </div>
@@ -281,49 +341,40 @@ const FreeAudit = () => {
 
                         <div className="container">
 
-                            {/* Scores */}
-                            <div className="audit-scores">
-                                <ScoreRing score={results.performance} label="Performance" color={scoreColor(results.performance)} />
-                                <ScoreRing score={results.seo}         label="SEO"         color={scoreColor(results.seo)} />
-                                <ScoreRing score={results.mobile}      label="Mobile"      color={scoreColor(results.mobile)} />
-                            </div>
-
-                            {/* Core Web Vitals */}
-                            <div className="audit-vitals">
-                                <h3>Core Web Vitals</h3>
-                                <div className="audit-vitals__grid">
-                                    <div className="audit-vitals__item">
-                                        <span className="audit-vitals__val">{results.coreWebVitals.lcp}</span>
-                                        <span className="audit-vitals__key">Largest Contentful Paint</span>
-                                    </div>
-                                    <div className="audit-vitals__item">
-                                        <span className="audit-vitals__val">{results.coreWebVitals.cls}</span>
-                                        <span className="audit-vitals__key">Cumulative Layout Shift</span>
-                                    </div>
-                                    <div className="audit-vitals__item">
-                                        <span className="audit-vitals__val">{results.coreWebVitals.fid}</span>
-                                        <span className="audit-vitals__key">First Input Delay</span>
-                                    </div>
+                            {/* Scores + issue count */}
+                            <div className="audit-scores-row">
+                                <div className="audit-scores">
+                                    <ScoreRing score={results.performance} label="Performance" color={scoreColor(results.performance)} />
+                                    <ScoreRing score={results.seo}         label="SEO"         color={scoreColor(results.seo)} />
+                                    <ScoreRing score={results.mobile}      label="Mobile"      color={scoreColor(results.mobile)} />
+                                </div>
+                                <div className="audit-issue-count">
+                                    <span className="audit-issue-count__num">{results.issueCount}</span>
+                                    <span className="audit-issue-count__label">issues found</span>
                                 </div>
                             </div>
 
                             {/* AI Recommendations */}
                             {/* ─────────────────────────────────────────────────────
                                 AI CONNECTIVITY POINT
-                                `results.recommendations` is an array of plain-English
-                                strings returned by Claude. Each item is one prioritized
-                                fix generated by the serverless function.
+                                `results.recommendations` is [{fix, explanation}] from Claude,
+                                tailored to the user's siteType and actual audit data.
                                 ───────────────────────────────────────────────────── */}
                             <div className="audit-recs">
                                 <h3>Top Recommendations</h3>
                                 <p className="audit-recs__sub">
-                                    AI-powered suggestions based on your audit results, prioritized by impact.
+                                    Personalized fixes based on your site type and audit results, prioritized by impact.
                                 </p>
                                 <ol className="audit-recs__list">
                                     {results.recommendations.map((rec, i) => (
                                         <li key={i} className="audit-recs__item">
                                             <span className="audit-recs__num">{i + 1}</span>
-                                            <p>{rec}</p>
+                                            <div className="audit-recs__content">
+                                                <p className="audit-recs__fix">{rec.fix}</p>
+                                                {rec.explanation && (
+                                                    <p className="audit-recs__explanation">{rec.explanation}</p>
+                                                )}
+                                            </div>
                                         </li>
                                     ))}
                                 </ol>
@@ -331,14 +382,20 @@ const FreeAudit = () => {
 
                             {/* CTA */}
                             <div className="audit-cta">
-                                <h2>Ready to fix these issues?</h2>
-                                <p>Jelly Development builds fast, SEO-friendly websites that convert. Let's talk.</p>
+                                <p className="pill pill-dark">Want these fixed?</p>
+                                <h2>We build websites that actually perform.</h2>
+                                <p>
+                                    Jelly Development specializes in fast, SEO-optimized websites built to convert.
+                                    Schedule a free call and we'll walk through exactly what your site needs.
+                                </p>
                                 <div className="audit-cta__buttons">
-                                    <a href="/contact" className="btn">Get a Free Quote</a>
-                                    <button className="btn btn--outline" onClick={restart}>
-                                        Audit Another Site
-                                    </button>
+                                    <a href={contactUrl} className="btn" target="_blank" rel="noopener noreferrer">
+                                        Get a Free Quote →
+                                    </a>
                                 </div>
+                                <p className="audit-cta__note">
+                                    No commitment. Just an honest conversation about your website.
+                                </p>
                             </div>
 
                         </div>

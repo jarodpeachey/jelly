@@ -82,11 +82,24 @@ async function scrapeSEO(url) {
     };
 }
 
+// ── Site type context for Claude ─────────────────────────────
+const SITE_TYPE_CONTEXT = {
+    local:     "a local business website trying to attract nearby customers and rank in local search results",
+    ecommerce: "an e-commerce store trying to drive product sales and reduce cart abandonment",
+    portfolio: "a portfolio or freelancer site trying to attract clients and showcase work credibly",
+    startup:   "a startup or SaaS site trying to grow brand awareness, generate leads, and convert visitors",
+};
+
 // ── Claude recommendations ────────────────────────────────────
-async function getRecommendations(url, pageSpeed, seo) {
-    const prompt = `You are a professional web performance and SEO consultant. Analyze this website audit data and return exactly 5 prioritized, actionable recommendations. Be specific, practical, and avoid generic advice. Do not use markdown — plain sentences only. Number each recommendation on its own line like: 1. Your recommendation here
+async function getRecommendations(url, pageSpeed, seo, siteType) {
+    const siteContext = SITE_TYPE_CONTEXT[siteType] || "a business website trying to attract and convert visitors";
+
+    const prompt = `You are a professional web performance and SEO consultant. Analyze this website audit data and return exactly 5 prioritized, actionable recommendations tailored to this site type.
+
+This is ${siteContext}. Frame every recommendation in terms of how it directly impacts their specific goal. Be specific and practical.
 
 Website: ${url}
+Site type: ${siteType ?? "general"}
 
 PERFORMANCE SCORES:
 - Performance: ${pageSpeed.performance}/100
@@ -94,9 +107,9 @@ PERFORMANCE SCORES:
 - Mobile/Accessibility: ${pageSpeed.mobile}/100
 
 CORE WEB VITALS:
-- LCP (Largest Contentful Paint): ${pageSpeed.coreWebVitals.lcp}
-- CLS (Cumulative Layout Shift): ${pageSpeed.coreWebVitals.cls}
-- TBT (Total Blocking Time): ${pageSpeed.coreWebVitals.fid}
+- LCP: ${pageSpeed.coreWebVitals.lcp}
+- CLS: ${pageSpeed.coreWebVitals.cls}
+- TBT: ${pageSpeed.coreWebVitals.fid}
 
 TOP PERFORMANCE ISSUES:
 ${pageSpeed.failedAudits.join("\n") || "None detected"}
@@ -108,30 +121,41 @@ SEO DATA:
 - Title tag: "${seo.title ?? "Missing"}" (${seo.titleLength} chars — ideal is 50–60)
 - Meta description: "${seo.description ?? "Missing"}" (${seo.descriptionLength} chars — ideal is 120–160)
 - H1 tag: "${seo.h1 ?? "Missing"}"
-- Canonical URL: ${seo.canonical ?? "Not set"}
 - Open Graph image: ${seo.ogImage ? "Present" : "Missing"}
 - HTTPS: ${seo.hasHttps ? "Yes" : "NO — critical issue"}
 - Viewport meta tag: ${seo.hasViewport ? "Present" : "Missing"}
 - Images without alt text: ${seo.imgMissingAlt} of ${seo.imgTotal} total images
-- Robots meta: ${seo.robots ?? "Not set"}
 
-Return only the 5 numbered recommendations, nothing else.`;
+Return a JSON array of exactly 5 objects. No markdown, no code fences, just raw JSON.
+Each object must have exactly two fields:
+- "fix": one bold, direct action sentence (max 15 words, starts with a verb)
+- "explanation": 2-3 sentences explaining why this matters for their specific goal and what impact fixing it will have
+
+Example format:
+[{"fix":"Add location keywords to your page titles and meta descriptions.","explanation":"..."},...]`;
 
     const message = await anthropic.messages.create({
         model: "claude-haiku-4-5-20251001",
-        max_tokens: 600,
+        max_tokens: 900,
         messages: [{ role: "user", content: prompt }],
     });
 
-    const text = message.content[0].text;
+    const text = message.content[0].text.trim();
 
-    // Parse numbered list into array
-    const recs = text
-        .split(/\n/)
-        .map(line => line.replace(/^\d+\.\s*/, "").trim())
-        .filter(line => line.length > 20);
+    // Strip any accidental markdown fences
+    const cleaned = text.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "").trim();
 
-    return recs.slice(0, 5);
+    try {
+        const parsed = JSON.parse(cleaned);
+        return parsed.slice(0, 5);
+    } catch {
+        // Fallback: return raw text split as before
+        return text
+            .split(/\n/)
+            .map(line => ({ fix: line.replace(/^\d+\.\s*/, "").trim(), explanation: "" }))
+            .filter(r => r.fix.length > 10)
+            .slice(0, 5);
+    }
 }
 
 // ── Lambda handler ────────────────────────────────────────────
@@ -150,44 +174,73 @@ exports.handler = async (event) => {
         return { statusCode: 405, headers, body: JSON.stringify({ error: "Method not allowed" }) };
     }
 
-    let url, name, email;
+    let url, name, email, siteType;
     try {
-        ({ url, name, email } = JSON.parse(event.body));
+        ({ url, name, email, siteType } = JSON.parse(event.body));
         if (!url) throw new Error("Missing url");
-        // Ensure URL has a protocol
         if (!/^https?:\/\//i.test(url)) url = "https://" + url;
     } catch {
         return { statusCode: 400, headers, body: JSON.stringify({ error: "Invalid request body" }) };
     }
 
     try {
+        console.log(`[audit] Starting audit for: ${url}`);
+
         // Run PageSpeed and SEO scrape in parallel
-        const [psRaw, seo] = await Promise.all([
-            runPageSpeed(url),
-            scrapeSEO(url),
-        ]);
+        let psRaw, seo;
+        try {
+            [psRaw, seo] = await Promise.all([
+                runPageSpeed(url),
+                scrapeSEO(url),
+            ]);
+            console.log(`[audit] PageSpeed + SEO complete`);
+        } catch (err) {
+            console.error(`[audit] PageSpeed/SEO error:`, err.message);
+            throw new Error(`Failed to fetch site data: ${err.message}`);
+        }
 
         const pageSpeed = extractPageSpeedData(psRaw);
 
         // Claude call (runs after we have all data)
-        const recommendations = await getRecommendations(url, pageSpeed, seo);
+        let recommendations;
+        try {
+            recommendations = await getRecommendations(url, pageSpeed, seo, siteType);
+            console.log(`[audit] Claude recommendations complete`);
+        } catch (err) {
+            console.error(`[audit] Claude error:`, err.message);
+            throw new Error(`AI recommendations failed: ${err.message}`);
+        }
+
+        // Count distinct issues: failed audits + SEO problems
+        const seoIssues = [
+            !seo.title,
+            seo.titleLength > 60 || seo.titleLength < 10,
+            !seo.description,
+            seo.descriptionLength > 160 || seo.descriptionLength < 50,
+            !seo.h1,
+            !seo.hasHttps,
+            !seo.hasViewport,
+            !seo.ogImage,
+            seo.imgMissingAlt > 0,
+        ].filter(Boolean).length;
+        const issueCount = pageSpeed.failedAudits.length + seoIssues;
 
         const response = {
             performance:    pageSpeed.performance,
             seo:            pageSpeed.seo,
             mobile:         pageSpeed.mobile,
-            coreWebVitals:  pageSpeed.coreWebVitals,
+            issueCount,
             recommendations,
         };
 
         return { statusCode: 200, headers, body: JSON.stringify(response) };
 
     } catch (err) {
-        console.error("Audit error:", err);
+        console.error("[audit] Fatal error:", err.message);
         return {
             statusCode: 500,
             headers,
-            body: JSON.stringify({ error: "Audit failed. Please try again." }),
+            body: JSON.stringify({ error: err.message || "Audit failed. Please try again." }),
         };
     }
 };

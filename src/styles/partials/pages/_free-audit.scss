@@ -8,15 +8,27 @@
 // ─────────────────────────────────────────────────────────────
 .free-audit {
 
+    button, .btn {
+        cursor: pointer !important;
+    }
+
+    header {
+        height: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
     .audit-hero {
         background: $color--primary-lightest;
         min-height: 100vh;
         padding-bottom: $space--xxxl;
-        padding-top: 140px;
+        padding-top: 90px;
         text-align: center;
 
         @include media-breakpoint-up(md) {
-            padding-top: 180px;
+            padding-top: 110px;
         }
 
         .display {
@@ -51,7 +63,7 @@
         max-width: 620px;
 
         &__url-row {
-            align-items: stretch;
+            align-items: center;
             display: flex;
             gap: $space--md;
 
@@ -59,15 +71,19 @@
                 flex-direction: column;
             }
 
-            input[type="url"] {
+            input[type="text"] {
                 background: white;
                 border-radius: 999px;
-                border: 1.5px solid $color--gray-two;
+                margin-top: 0;
+                border: 1px solid $color--gray-two;
+                box-sizing: border-box;
                 color: $color--heading;
                 flex: 1;
                 font-family: "Poppins";
-                font-size: 1rem;
-                padding: $space--md $space--lg;
+                font-size: 1.03rem;
+                font-weight: 300;
+                line-height: 21px;
+                padding: $space--md $space--xl;
                 transition: border-color 0.2s ease;
 
                 &:focus {
@@ -77,6 +93,7 @@
 
                 &::placeholder {
                     color: $color--gray-three;
+                    opacity: 0.7;
                 }
             }
 
@@ -118,7 +135,76 @@
     }
 
     // ─────────────────────────────────────────────────────────
-    // STEP 2 — Info card
+    // STEP 2 — Site type selection
+    // ─────────────────────────────────────────────────────────
+    .audit-hero--type {
+        text-align: center;
+
+        .audit-back {
+            display: block;
+            text-align: left;
+            margin-bottom: $space--lg;
+        }
+
+        .audit-card__url {
+            margin-bottom: $space--lg;
+        }
+
+        h2 {
+            margin-bottom: $space--sm;
+        }
+    }
+
+    .audit-type-grid {
+        display: grid;
+        gap: $space--md;
+        grid-template-columns: 1fr 1fr;
+        margin-top: $space--xl;
+
+        @include media-breakpoint-down(sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .audit-type-card {
+        align-items: center;
+        background: white;
+        border-radius: $radius--lg;
+        border: 2px solid $color--gray-two;
+        cursor: pointer !important;
+        display: flex;
+        flex-direction: column;
+        gap: $space--sm;
+        padding: $space--xl;
+        text-align: center;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+
+        &:hover {
+            border-color: $color--primary;
+            box-shadow: 0 4px 24px rgba(56, 93, 216, 0.12);
+            transform: translateY(-2px);
+        }
+
+        &__icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        &__label {
+            color: $color--heading;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        &__desc {
+            color: $color--gray-three;
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+    }
+
+    // ─────────────────────────────────────────────────────────
+    // STEP 3 — Info card
     // ─────────────────────────────────────────────────────────
     .audit-hero--info {
         text-align: left;
@@ -128,7 +214,7 @@
         background: none;
         border: none;
         color: $color--primary;
-        cursor: pointer;
+        cursor: pointer !important;
         font-family: "Poppins";
         font-size: 0.9rem;
         font-weight: 500;
@@ -198,10 +284,6 @@
                     font-weight: 300;
                 }
             }
-        }
-
-        .btn {
-            margin-top: $space--md;
         }
 
         .audit-form__note {
@@ -319,11 +401,16 @@
         &__header {
             background: $color--primary-dark;
             padding-bottom: $space--xxxl;
-            padding-top: 140px;
+            padding-top: 90px;
             text-align: center;
 
             @include media-breakpoint-up(md) {
-                padding-top: 180px;
+                padding-top: 110px;
+            }
+
+            .pill-dark {
+                border: 1px solid rgba(56, 93, 216, 0.4);
+                margin-bottom: $space--lg;
             }
 
             .display {
@@ -342,7 +429,8 @@
             border-radius: 999px;
             color: rgba(255, 255, 255, 0.7);
             display: inline-block;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            font-weight: 300;
             padding: $space--xs $space--lg;
         }
 
@@ -352,13 +440,48 @@
         }
     }
 
-    // Scores row
-    .audit-scores {
+    // Scores + issue count row
+    .audit-scores-row {
+        align-items: center;
         display: flex;
+        flex-wrap: wrap;
         gap: $space--xl;
         justify-content: center;
         margin-bottom: $space--xxxl;
+    }
+
+    .audit-scores {
+        display: flex;
+        gap: $space--xl;
         flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .audit-issue-count {
+        align-items: center;
+        background: #fff5f5;
+        border-radius: $radius--lg;
+        border: 1px solid #fecaca;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        padding: $space--lg $space--xl;
+        text-align: center;
+
+        &__num {
+            color: #ff4e42;
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        &__label {
+            color: #dc2626;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
     }
 
     .score-ring {
@@ -369,9 +492,11 @@
 
         &__label {
             color: $color--heading;
-            font-size: 0.9rem;
+            font-size: 0.875rem;
             font-weight: 600;
+            letter-spacing: 0.02em;
             margin: 0;
+            text-transform: uppercase;
         }
     }
 
@@ -421,12 +546,17 @@
         margin-bottom: $space--xxxl;
 
         h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.925rem;
             margin-bottom: $space--sm;
             margin-top: 0;
         }
 
         &__sub {
             color: $color--text;
+            font-size: 1.125rem;
+            line-height: 1.7;
             margin-bottom: $space--xl;
         }
 
@@ -442,17 +572,34 @@
         &__item {
             align-items: flex-start;
             background: white;
-            border-radius: $radius--md;
-            border: 1px solid $color--gray-two;
+            border-radius: $radius--lg;
+            border: 1px solid #e6e6e6;
+            box-shadow: 2px 2px 40px 0px #44455510;
             display: flex;
             gap: $space--lg;
-            padding: $space--lg;
+            padding: $space--xl;
+        }
 
-            p {
-                color: $color--text;
-                line-height: 1.7;
-                margin: 0;
-            }
+        &__content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            gap: $space--sm;
+        }
+
+        &__fix {
+            color: $color--heading;
+            font-size: 1.125rem;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        &__explanation {
+            color: $color--text;
+            font-size: 17px;
+            line-height: 32px;
+            margin: 0;
         }
 
         &__num {
@@ -472,20 +619,52 @@
 
     // CTA
     .audit-cta {
-        background: $color--primary-lightest;
+        background: $color--primary-dark;
         border-radius: $radius--lg;
-        border: 1px solid $color--primary-light;
+        overflow: hidden;
         padding: $space--xxxl;
+        position: relative;
         text-align: center;
 
-        h2 {
-            margin-bottom: $space--md;
-            margin-top: 0;
+        // Homepage-style grid lines
+        &::before {
+            background-image:
+                linear-gradient(rgba(56, 93, 216, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 93, 216, 0.07) 1px, transparent 1px);
+            background-size: 80px 80px;
+            content: "";
+            inset: 0;
+            pointer-events: none;
+            position: absolute;
         }
 
-        p {
-            color: $color--text;
+        > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .pill-dark {
+            border: 1px solid rgba(56, 93, 216, 0.4);
+            margin-bottom: $space--lg;
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: $space--md;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+            max-width: 560px;
+        }
+
+        p:not(.pill-dark) {
+            color: rgba(255,255,255,0.75);
+            font-size: 1.125rem;
+            line-height: 1.7;
             margin-bottom: $space--xl;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 520px;
         }
 
         &__buttons {
@@ -494,6 +673,13 @@
             flex-wrap: wrap;
             gap: $space--md;
             justify-content: center;
+            margin-bottom: $space--lg;
+        }
+
+        &__note {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.8rem;
+            margin: 0;
         }
     }
 }

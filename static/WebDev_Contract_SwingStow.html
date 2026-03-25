@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development Services Agreement — SwingStow LLC</title>
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-light-webfont.woff2') format('woff2'),
+           url('media/fonts/poppins/poppins-light-webfont.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-regular-webfont.woff2') format('woff2'),
+           url('media/fonts/poppins/poppins-regular-webfont.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-medium-webfont.woff2') format('woff2'),
+           url('media/fonts/poppins/poppins-medium-webfont.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-semibold-webfont.woff2') format('woff2'),
+           url('media/fonts/poppins/poppins-semibold-webfont.woff') format('woff');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-bold-webfont.woff2') format('woff2'),
+           url('media/fonts/poppins/poppins-bold-webfont.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-extrabold-webfont.woff2') format('woff2'),
+           url('media/fonts/poppins/poppins-extrabold-webfont.woff') format('woff');
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #48484b;
+      background: #ffffff;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 64px 72px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 2px solid #000;
+    }
+
+    .header-logo img {
+      height: 44px;
+      width: auto;
+    }
+
+    .header-meta {
+      text-align: right;
+      font-size: 12px;
+      font-weight: 400;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .header-meta strong {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 2px;
+    }
+
+    /* Title */
+    .contract-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #000;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .contract-intro {
+      font-size: 14px;
+      font-weight: 300;
+      color: #333;
+      line-height: 1.85;
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .contract-intro strong {
+      font-weight: 600;
+      color: #000;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #000;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 14px;
+      background: #000;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .section p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section p strong {
+      font-weight: 600;
+      color: #000;
+    }
+
+    ul.deliverables {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 12px;
+    }
+
+    ul.deliverables li {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #333;
+      padding: 4px 0 4px 20px;
+      position: relative;
+    }
+
+    ul.deliverables li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 6px;
+      height: 6px;
+      background: #000;
+      border-radius: 50%;
+    }
+
+    /* Timeline grid */
+    .timeline {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 0;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .timeline-row {
+      display: contents;
+    }
+
+    .timeline-week {
+      background: #f0f0f0;
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #000;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .timeline-desc {
+      background: #fff;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 300;
+      color: #333;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+    }
+
+    .timeline-row:last-child .timeline-week,
+    .timeline-row:last-child .timeline-desc {
+      border-bottom: none;
+    }
+
+    /* Payment list */
+    .payment-list {
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .payment-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 16px;
+      font-size: 13px;
+      border-bottom: 1px solid #ccc;
+      gap: 16px;
+    }
+
+    .payment-item:last-child {
+      border-bottom: none;
+      background: #f0f0f0;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .payment-item-label {
+      font-weight: 300;
+      color: #333;
+      flex: 1;
+    }
+
+    .payment-item:last-child .payment-item-label {
+      font-weight: 700;
+      color: #000;
+    }
+
+    .payment-item-amount {
+      font-weight: 700;
+      color: #000;
+      white-space: nowrap;
+    }
+
+    .payment-item-due {
+      font-weight: 300;
+      color: #555;
+      font-size: 12px;
+      flex: 1;
+      text-align: right;
+    }
+
+    .payment-item:last-child .payment-item-due {
+      visibility: hidden;
+    }
+
+    /* Signature section */
+    .signatures {
+      margin-top: 48px;
+      padding-top: 36px;
+      border-top: 2px solid #000;
+    }
+
+    .signatures-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .signatures-subtitle {
+      font-size: 12px;
+      font-weight: 300;
+      color: #555;
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 40px;
+    }
+
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .sig-block {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sig-party {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: -4px;
+    }
+
+    .sig-name {
+      font-size: 13px;
+      font-weight: 400;
+      color: #333;
+    }
+
+    .sig-line-group {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .sig-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sig-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    .sig-line {
+      border: none;
+      border-bottom: 1.5px solid #aaa;
+      height: 32px;
+      width: 100%;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { padding: 40px 48px; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="header-logo">
+        <img src="media/img/Logo Solid.svg" alt="Jelly Development" />
+      </div>
+      <div class="header-meta">
+        <strong>Contract Date</strong>
+        March 11, 2026<br />
+        Growth Plan — $2,800.00
+      </div>
+    </div>
+
+    <!-- Title -->
+    <h1 class="contract-title">Web Development Services Agreement</h1>
+    <p class="contract-intro">
+      This Web Development Services Agreement ("Agreement") is entered into as of <strong>March 11, 2026</strong> between
+      <strong>Jelly Development LLC</strong> ("Developer"), represented by Jarod Peachey, and <strong>SwingStow LLC</strong> ("Client"),
+      represented by Michael McCuistion. Both parties agree to the following terms.
+    </p>
+
+    <!-- 1. Scope of Work -->
+    <div class="section">
+      <div class="section-title">1. Scope of Work</div>
+      <p>Developer will design and build a professional website for Client under the Growth Plan. Deliverables include:</p>
+      <ul class="deliverables">
+        <li>Up to 5 website pages</li>
+        <li>Responsive design (mobile, tablet, and desktop)</li>
+        <li>Performance optimization</li>
+        <li>Local SEO setup</li>
+        <li>3 months of complimentary hosting after launch</li>
+        <li>Integration of Client-provided domain, logo, and branding</li>
+      </ul>
+      <p><strong>Client responsibilities:</strong> Client shall provide the domain name, logo files, brand guidelines, and any written content before or at the start of the project. Delays in providing these materials may extend the project timeline.</p>
+    </div>
+
+    <!-- 2. Project Timeline -->
+    <div class="section">
+      <div class="section-title">2. Project Timeline</div>
+      <p>The project is estimated to be completed within <strong>4 weeks</strong> from the date of this Agreement and receipt of the initial payment.</p>
+      <div class="timeline">
+        <div class="timeline-row">
+          <div class="timeline-week">Week 1</div>
+          <div class="timeline-desc">Define scope, confirm page list, and gather project requirements</div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-week">Week 2</div>
+          <div class="timeline-desc">Design mockups and receive Client approval</div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-week">Week 3</div>
+          <div class="timeline-desc">Copywriting and content finalization</div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-week">Week 4</div>
+          <div class="timeline-desc">Development, QA testing, and site deployment</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Payment Terms -->
+    <div class="section">
+      <div class="section-title">3. Payment Terms</div>
+      <p>The total project fee is <strong>$2,800.00</strong>, payable in two installments:</p>
+      <div class="payment-list">
+        <div class="payment-item">
+          <span class="payment-item-label">Deposit (50%)</span>
+          <span class="payment-item-amount">$1,400.00</span>
+          <span class="payment-item-due">Due upon signing</span>
+        </div>
+        <div class="payment-item">
+          <span class="payment-item-label">Final Payment (50%)</span>
+          <span class="payment-item-amount">$1,400.00</span>
+          <span class="payment-item-due">Due upon completion, prior to launch</span>
+        </div>
+        <div class="payment-item">
+          <span class="payment-item-label">Total</span>
+          <span class="payment-item-amount">$2,800.00</span>
+          <span class="payment-item-due"></span>
+        </div>
+      </div>
+      <p>Invoices are due upon receipt. A late fee of 5% may be applied to any payment not received within 7 days of its due date.</p>
+    </div>
+
+    <!-- 4. IP & Payment Protection -->
+    <div class="section">
+      <div class="section-title">4. Intellectual Property &amp; Failed Payment Protection</div>
+      <p>All work product, source code, design files, and the website itself (the "Work") remain the sole property of <strong>Jelly Development LLC</strong> until the final payment is received in full. Client acquires no ownership rights during this period.</p>
+      <p>Upon receipt of the final payment, Developer will transfer full ownership of the Work to SwingStow LLC and deliver all source files and credentials within 5 business days.</p>
+      <p>If the final payment is not received within <strong>14 days</strong> of the project completion notice, Developer reserves the right to suspend the website and retain all work product until payment is made. Developer will provide written notice before taking any such action.</p>
+      <p>The initial deposit of $1,400.00 is non-refundable once work has begun.</p>
+    </div>
+
+    <!-- 5. Hosting -->
+    <div class="section">
+      <div class="section-title">5. Hosting</div>
+      <p>Developer will provide <strong>3 months of complimentary hosting</strong> starting on the launch date. After that period, Client may continue hosting through Developer at the then-current rate or migrate to a provider of their choice. Developer will assist with a one-time migration at no additional cost.</p>
+    </div>
+
+    <!-- 6. Post-Launch Content Edits -->
+    <div class="section">
+      <div class="section-title">6. Post-Launch Content Edits</div>
+      <p>Content edits or updates requested after launch are billed at <strong>$30.00 per hour</strong>. Developer will provide an estimate before beginning any work expected to exceed 2 hours.</p>
+    </div>
+
+    <!-- 7. Revisions During Development -->
+    <div class="section">
+      <div class="section-title">7. Revisions During Development</div>
+      <p>This Agreement includes up to <strong>three rounds of revisions</strong> per page during development at no additional cost. Additional revisions or scope changes will be quoted separately and require written approval.</p>
+    </div>
+
+    <!-- 8. Confidentiality -->
+    <div class="section">
+      <div class="section-title">8. Confidentiality</div>
+      <p>Both parties agree to keep confidential any proprietary information or business data shared during this project and not to disclose it to third parties without prior written consent.</p>
+    </div>
+
+    <!-- 9. Warranties & Liability -->
+    <div class="section">
+      <div class="section-title">9. Warranties &amp; Liability</div>
+      <p>Developer will complete the Work in a professional manner consistent with industry standards. Developer does not warrant uninterrupted operation of third-party platforms or hosting services. Developer's total liability shall not exceed the total amount paid under this Agreement.</p>
+    </div>
+
+    <!-- 10. Termination -->
+    <div class="section">
+      <div class="section-title">10. Termination</div>
+      <p>Either party may terminate this Agreement with 14 days written notice. Client will be invoiced for all work completed to date. The deposit is non-refundable. Ownership of all work product remains with Developer until any outstanding balance is paid in full.</p>
+    </div>
+
+    <!-- 11. Governing Law -->
+    <div class="section">
+      <div class="section-title">11. Governing Law</div>
+      <p>This Agreement is governed by the laws of the state in which Jelly Development LLC is registered. Both parties agree to first attempt to resolve any disputes through good-faith negotiation.</p>
+    </div>
+
+    <!-- 12. Entire Agreement -->
+    <div class="section">
+      <div class="section-title">12. Entire Agreement</div>
+      <p>This Agreement represents the full understanding between both parties and supersedes any prior discussions or agreements. Any modifications must be made in writing and signed by both parties.</p>
+    </div>
+
+    <!-- Signatures -->
+    <div class="signatures">
+      <div class="signatures-title">Signatures</div>
+      <div class="signatures-subtitle">By signing below, both parties confirm they have read and agree to all terms of this Agreement.</div>
+      <div class="sig-grid">
+        <div class="sig-block">
+          <div>
+            <div class="sig-party">Jelly Development LLC</div>
+            <div class="sig-name">Printed Name: Jarod Peachey</div>
+          </div>
+          <div class="sig-line-group">
+            <div class="sig-field">
+              <div class="sig-label">Signature</div>
+              <div class="sig-line"></div>
+            </div>
+            <div class="sig-field">
+              <div class="sig-label">Date</div>
+              <div class="sig-line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="sig-block">
+          <div>
+            <div class="sig-party">SwingStow LLC</div>
+            <div class="sig-name">Printed Name: Michael McCuistion</div>
+          </div>
+          <div class="sig-line-group">
+            <div class="sig-field">
+              <div class="sig-label">Signature</div>
+              <div class="sig-line"></div>
+            </div>
+            <div class="sig-field">
+              <div class="sig-label">Date</div>
+              <div class="sig-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
