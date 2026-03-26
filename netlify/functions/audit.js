@@ -94,9 +94,18 @@ const SITE_TYPE_CONTEXT = {
 async function getRecommendations(url, pageSpeed, seo, siteType) {
     const siteContext = SITE_TYPE_CONTEXT[siteType] || "a business website trying to attract and convert visitors";
 
-    const prompt = `You are a professional web performance and SEO consultant. Analyze this website audit data and return exactly 5 prioritized, actionable recommendations tailored to this site type.
+    const prompt = `You are a friendly website advisor helping a non-technical business owner understand how to improve their website. Analyze this audit data and return exactly 5 prioritized recommendations written in plain, everyday language.
 
-This is ${siteContext}. Frame every recommendation in terms of how it directly impacts their specific goal. Be specific and practical.
+This website is ${siteContext}.
+
+IMPORTANT TONE AND LANGUAGE RULES:
+- Write as if you're explaining to a small business owner who has never coded before
+- Never use technical terms like LCP, CLS, TBT, render-blocking, minification, CDN, caching, alt attributes, meta tags, canonical, or similar developer jargon
+- Instead of "your LCP is slow", say "your page takes too long to load"
+- Instead of "add alt attributes to images", say "add descriptions to your images so search engines know what they show"
+- Instead of "meta description is missing", say "your page is missing a short preview blurb that shows up in Google search results"
+- Focus on WHAT to fix and WHY it helps their business — more customers, better Google ranking, more sales, etc.
+- Keep it conversational, encouraging, and specific to their goals
 
 Website: ${url}
 Site type: ${siteType ?? "general"}
@@ -106,12 +115,7 @@ PERFORMANCE SCORES:
 - SEO: ${pageSpeed.seo}/100
 - Mobile/Accessibility: ${pageSpeed.mobile}/100
 
-CORE WEB VITALS:
-- LCP: ${pageSpeed.coreWebVitals.lcp}
-- CLS: ${pageSpeed.coreWebVitals.cls}
-- TBT: ${pageSpeed.coreWebVitals.fid}
-
-TOP PERFORMANCE ISSUES:
+TOP ISSUES DETECTED:
 ${pageSpeed.failedAudits.join("\n") || "None detected"}
 
 PERFORMANCE OPPORTUNITIES:
@@ -128,11 +132,11 @@ SEO DATA:
 
 Return a JSON array of exactly 5 objects. No markdown, no code fences, just raw JSON.
 Each object must have exactly two fields:
-- "fix": one bold, direct action sentence (max 15 words, starts with a verb)
-- "explanation": 2-3 sentences explaining why this matters for their specific goal and what impact fixing it will have
+- "fix": one clear, direct action sentence in plain English (max 15 words, starts with a verb, no jargon)
+- "explanation": 2-3 sentences in plain language explaining what this means for their business — more customers, better Google ranking, more sales, etc. No technical terms.
 
 Example format:
-[{"fix":"Add location keywords to your page titles and meta descriptions.","explanation":"..."},...]`;
+[{"fix":"Speed up your website so visitors don't leave before it loads.","explanation":"..."},...]`;
 
     const message = await anthropic.messages.create({
         model: "claude-haiku-4-5-20251001",
