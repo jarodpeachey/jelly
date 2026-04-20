@@ -331,9 +331,11 @@ exports.handler = async (event) => {
         };
 
         // Send results email (fire-and-forget — don't block the response)
-        sendResultsEmail({ name, email, url, ...response }).catch((err) =>
-            console.error("[audit] Email send failed:", err.message)
-        );
+        console.log(`[audit] Attempting to send email to: ${email}`);
+        console.log(`[audit] RESEND_API_KEY present: ${!!process.env.RESEND_API_KEY}`);
+        sendResultsEmail({ name, email, url, ...response })
+            .then(() => console.log(`[audit] Email sent successfully to: ${email}`))
+            .catch((err) => console.error("[audit] Email send failed:", err.message, err.stack));
 
         return { statusCode: 200, headers, body: JSON.stringify(response) };
 
