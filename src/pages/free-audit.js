@@ -355,67 +355,37 @@ const FreeAudit = () => {
                         <div className="audit-results__header">
                             <div className="container">
                                 <p className="pill pill-dark">Your Results</p>
-                                <h1>Website Audit Report</h1>
+                                <h1>Audit Complete</h1>
                                 <p className="audit-results__url">{url}</p>
                             </div>
                         </div>
 
                         <div className="container">
 
-                            {/* Scores + issue count */}
+                            {/* Scores */}
                             <div className="audit-scores-row">
                                 <div className="audit-scores">
                                     <ScoreRing score={results.performance} label="Performance" color={scoreColor(results.performance)} />
                                     <ScoreRing score={results.seo}         label="SEO"         color={scoreColor(results.seo)} />
                                     <ScoreRing score={results.mobile}      label="Mobile"      color={scoreColor(results.mobile)} />
                                 </div>
-                                <div className="audit-issue-count">
-                                    <span className="audit-issue-count__num">{results.issueCount}</span>
-                                    <span className="audit-issue-count__label">issues found</span>
-                                </div>
                             </div>
 
-                            {/* AI Recommendations */}
-                            {/* ─────────────────────────────────────────────────────
-                                AI CONNECTIVITY POINT
-                                `results.recommendations` is [{fix, explanation}] from Claude,
-                                tailored to the user's siteType and actual audit data.
-                                ───────────────────────────────────────────────────── */}
-                            <div className="audit-recs">
-                                <h3>Top Recommendations</h3>
-                                <p className="audit-recs__sub">
-                                    Personalized fixes based on your site type and audit results, prioritized by impact.
-                                </p>
-                                <ol className="audit-recs__list">
-                                    {results.recommendations.map((rec, i) => (
-                                        <li key={i} className="audit-recs__item">
-                                            <span className="audit-recs__num">{i + 1}</span>
-                                            <div className="audit-recs__content">
-                                                <p className="audit-recs__fix">{rec.fix}</p>
-                                                {rec.explanation && (
-                                                    <p className="audit-recs__explanation">{rec.explanation}</p>
-                                                )}
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ol>
-                            </div>
-
-                            {/* CTA */}
+                            {/* Email notice + CTA */}
                             <div className="audit-cta">
-                                <p className="pill pill-dark">Want these fixed?</p>
-                                <h2>We build websites that actually perform.</h2>
+                                <p className="pill pill-dark">Check your inbox</p>
+                                <h2>Your full report is on its way.</h2>
                                 <p>
-                                    Jelly Development specializes in fast, SEO-optimized websites built to convert.
-                                    Schedule a free call and we'll walk through exactly what your site needs.
+                                    We've emailed your personalized recommendations to <strong>{email}</strong>.
+                                    Want to talk through what needs to be fixed? Book a free call.
                                 </p>
                                 <div className="audit-cta__buttons">
-                                    <a href={contactUrl} className="btn" target="_blank" rel="noopener noreferrer">
-                                        Get a Free Quote →
+                                    <a href="https://calendly.com/jarod-peachey/30min" className="btn" target="_blank" rel="noopener noreferrer">
+                                        Book a Free Call →
                                     </a>
                                 </div>
                                 <p className="audit-cta__note">
-                                    No commitment. Just an honest conversation about your website.
+                                    30 minutes. Free. No commitment.
                                 </p>
                             </div>
 

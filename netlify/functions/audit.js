@@ -173,7 +173,7 @@ const scoreColor = (n) => n >= 90 ? "#0cce6b" : n >= 50 ? "#ffa400" : "#ff4e42";
 async function sendResultsEmail({ name, email, url, performance, seo, mobile, issueCount, recommendations }) {
     const recsHtml = recommendations.map((rec, i) => `
         <div style="display:flex;gap:16px;margin-bottom:20px;align-items:flex-start;">
-            <div style="min-width:32px;height:32px;background:#385dd8;color:#fff;border-radius:2px;font-weight:700;font-size:14px;line-height:32px;text-align:center;">${i + 1}</div>
+            <div style="min-width:32px;height:32px;background:#385dd8;color:#fff;border-radius:2px;font-weight:700;font-size:14px;line-height:32px;text-align:center;margin-right:10px;">${i + 1}</div>
             <div>
                 <p style="margin:0 0 4px;font-weight:600;color:#191a1c;font-size:15px;">${rec.fix}</p>
                 ${rec.explanation ? `<p style="margin:0;color:#555;font-size:14px;line-height:1.5;">${rec.explanation}</p>` : ""}
@@ -181,13 +181,11 @@ async function sendResultsEmail({ name, email, url, performance, seo, mobile, is
         </div>
     `).join("");
 
-    const scoreCard = (label, score) => `
-        <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid #eee;">
-            <div style="font-size:28px;font-weight:800;color:${scoreColor(score)};min-width:52px;">${score}<span style="font-size:14px;font-weight:400;color:#aaa;">/100</span></div>
-            <div>
-                <div style="font-size:15px;font-weight:600;color:#191a1c;">${label}</div>
-                <div style="font-size:12px;color:${scoreColor(score)};font-weight:600;margin-top:2px;">${scoreLabel(score)}</div>
-            </div>
+    const scoreCard = (label, score, borderBottom = true) => `
+        <div style="padding:14px 0;${borderBottom ? "border-bottom:1px solid #eee;" : ""}">
+            <div style="font-size:13px;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">${label}</div>
+            <div style="font-size:28px;font-weight:800;color:${scoreColor(score)};margin-bottom:4px;">${score}<span style="font-size:14px;font-weight:400;color:#aaa;">/100</span></div>
+            <div style="font-size:12px;color:${scoreColor(score)};font-weight:700;text-transform:uppercase;letter-spacing:.05em;">${scoreLabel(score)}</div>
         </div>
     `;
 
@@ -219,13 +217,7 @@ async function sendResultsEmail({ name, email, url, performance, seo, mobile, is
             <div style="background:#f4f6fb;border-radius:10px;padding:8px 24px;margin-bottom:32px;">
                 ${scoreCard("Performance", performance)}
                 ${scoreCard("SEO", seo)}
-                <div style="display:flex;align-items:center;gap:16px;padding:14px 0;">
-                    <div style="font-size:28px;font-weight:800;color:${scoreColor(mobile)};min-width:52px;">${mobile}<span style="font-size:14px;font-weight:400;color:#aaa;">/100</span></div>
-                    <div>
-                        <div style="font-size:15px;font-weight:600;color:#191a1c;">Mobile</div>
-                        <div style="font-size:12px;color:${scoreColor(mobile)};font-weight:600;margin-top:2px;">${scoreLabel(mobile)}</div>
-                    </div>
-                </div>
+                ${scoreCard("Mobile", mobile, false)}
             </div>
 
             <!-- Recommendations -->
