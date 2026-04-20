@@ -398,6 +398,7 @@
     // STEP 4 — Results
     // ─────────────────────────────────────────────────────────
     .audit-results {
+        padding-top: 0 !important;
         &__header {
             background: $color--primary-dark;
             padding-bottom: $space--xxxl;

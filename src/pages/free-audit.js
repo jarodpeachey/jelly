@@ -108,6 +108,19 @@ const FreeAudit = () => {
         setStep(STEP_LOADING);
         setError(null);
 
+        // Submit lead to Netlify forms (fire-and-forget)
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({
+                "form-name": "free-audit",
+                name,
+                email,
+                url,
+                siteType,
+            }).toString(),
+        }).catch(() => {});
+
         try {
             // ─────────────────────────────────────────────────────────────
             // AI CONNECTIVITY POINT
@@ -163,6 +176,14 @@ const FreeAudit = () => {
             <header>
                 <Navigation />
             </header>
+
+            {/* Hidden form so Netlify detects it at build time */}
+            <form name="free-audit" data-netlify="true" hidden>
+                <input name="name" />
+                <input name="email" />
+                <input name="url" />
+                <input name="siteType" />
+            </form>
 
             <div id="wrapper" className="wrapper">
 
