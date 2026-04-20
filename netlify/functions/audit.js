@@ -1,12 +1,15 @@
 const Anthropic = require("@anthropic-ai/sdk");
+const { Resend } = require("resend");
 
 // ─────────────────────────────────────────────────────────────
 // ENV VARS NEEDED (set in Netlify dashboard → Site settings → Environment variables):
 //   ANTHROPIC_API_KEY   — your Claude API key
 //   PAGESPEED_API_KEY   — Google PageSpeed Insights API key (free at console.cloud.google.com)
+//   RESEND_API_KEY      — your Resend API key (resend.com)
 // ─────────────────────────────────────────────────────────────
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // ── PageSpeed Insights ────────────────────────────────────────
 async function runPageSpeed(url) {
@@ -162,6 +165,96 @@ Example format:
     }
 }
 
+// ── Score label helpers ───────────────────────────────────────
+const scoreLabel = (n) => n >= 90 ? "Great" : n >= 50 ? "Needs Work" : "Poor";
+const scoreColor = (n) => n >= 90 ? "#0cce6b" : n >= 50 ? "#ffa400" : "#ff4e42";
+
+// ── Send results email ────────────────────────────────────────
+async function sendResultsEmail({ name, email, url, performance, seo, mobile, issueCount, recommendations }) {
+    const recsHtml = recommendations.map((rec, i) => `
+        <div style="display:flex;gap:16px;margin-bottom:20px;align-items:flex-start;">
+            <div style="min-width:32px;height:32px;background:#385dd8;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;line-height:32px;text-align:center;">${i + 1}</div>
+            <div>
+                <p style="margin:0 0 4px;font-weight:600;color:#191a1c;font-size:15px;">${rec.fix}</p>
+                ${rec.explanation ? `<p style="margin:0;color:#555;font-size:14px;line-height:1.5;">${rec.explanation}</p>` : ""}
+            </div>
+        </div>
+    `).join("");
+
+    const scoreCard = (label, score) => `
+        <div style="text-align:center;flex:1;">
+            <div style="font-size:32px;font-weight:800;color:${scoreColor(score)};">${score}</div>
+            <div style="font-size:12px;color:#555;margin-top:2px;">${label}</div>
+            <div style="font-size:11px;color:${scoreColor(score)};font-weight:600;">${scoreLabel(score)}</div>
+        </div>
+    `;
+
+    const html = `
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f4f6fb;font-family:'Helvetica Neue',Arial,sans-serif;">
+    <div style="max-width:600px;margin:40px auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+
+        <!-- Header -->
+        <div style="background:#385dd8;padding:32px 40px;">
+            <p style="margin:0;color:rgba(255,255,255,.7);font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;">Jelly Development</p>
+            <h1 style="margin:8px 0 0;color:#fff;font-size:26px;font-weight:800;">Your Free Website Audit</h1>
+            <p style="margin:8px 0 0;color:rgba(255,255,255,.8);font-size:14px;">${url}</p>
+        </div>
+
+        <!-- Body -->
+        <div style="padding:36px 40px;">
+            <p style="margin:0 0 24px;color:#191a1c;font-size:16px;">Hey ${name},</p>
+            <p style="margin:0 0 24px;color:#555;font-size:15px;line-height:1.6;">
+                Here are the results from your free website audit. We found <strong>${issueCount} issues</strong> across your site — below are the scores and our top recommendations to help you fix them.
+            </p>
+
+            <!-- Scores -->
+            <div style="background:#f4f6fb;border-radius:10px;padding:24px;margin-bottom:32px;display:flex;gap:16px;">
+                ${scoreCard("Performance", performance)}
+                ${scoreCard("SEO", seo)}
+                ${scoreCard("Mobile", mobile)}
+            </div>
+
+            <!-- Recommendations -->
+            <h2 style="margin:0 0 20px;color:#191a1c;font-size:18px;font-weight:700;">Your Top 5 Recommendations</h2>
+            ${recsHtml}
+
+            <!-- CTA -->
+            <div style="background:#f4f6fb;border-radius:10px;padding:28px;margin-top:32px;text-align:center;">
+                <p style="margin:0 0 8px;color:#191a1c;font-size:17px;font-weight:700;">Want these issues fixed?</p>
+                <p style="margin:0 0 20px;color:#555;font-size:14px;line-height:1.6;">
+                    I'd love to hop on a free 30-minute call to walk through your results and talk about what your site needs. No pressure — just an honest conversation.
+                </p>
+                <a href="https://calendly.com/jarod-peachey/30min" style="display:inline-block;background:#385dd8;color:#fff;text-decoration:none;padding:14px 28px;border-radius:8px;font-weight:700;font-size:15px;">
+                    Book a Free Call →
+                </a>
+                <p style="margin:16px 0 0;color:#999;font-size:12px;">30 minutes. Free. No commitment.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="padding:20px 40px;border-top:1px solid #eee;text-align:center;">
+            <p style="margin:0;color:#aaa;font-size:12px;">
+                Jelly Development · <a href="https://jellydevelopment.com" style="color:#aaa;">jellydevelopment.com</a><br>
+                You're receiving this because you requested a free audit at jellydevelopment.com.<br>
+                <a href="mailto:jarod@jellydevelopment.com?subject=Unsubscribe" style="color:#aaa;">Unsubscribe</a>
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>`;
+
+    await resend.emails.send({
+        from: "Jarod at Jelly Development <jarod@jellydevelopment.com>",
+        to: email,
+        subject: `Your website audit results for ${url}`,
+        html,
+    });
+}
+
 // ── Lambda handler ────────────────────────────────────────────
 exports.handler = async (event) => {
     const headers = {
@@ -236,6 +329,11 @@ exports.handler = async (event) => {
             issueCount,
             recommendations,
         };
+
+        // Send results email (fire-and-forget — don't block the response)
+        sendResultsEmail({ name, email, url, ...response }).catch((err) =>
+            console.error("[audit] Email send failed:", err.message)
+        );
 
         return { statusCode: 200, headers, body: JSON.stringify(response) };
 
