@@ -136,7 +136,7 @@ SEO DATA:
 Return a JSON array of exactly 5 objects. No markdown, no code fences, just raw JSON.
 Each object must have exactly two fields:
 - "fix": one clear, direct action sentence in plain English (max 15 words, starts with a verb, no jargon)
-- "explanation": 2-3 sentences in plain language explaining what this means for their business — more customers, better Google ranking, more sales, etc. No technical terms.
+- "explanation": exactly 2 sentences in plain language explaining what this means for their business — more customers, better Google ranking, more sales, etc. No technical terms.
 
 Example format:
 [{"fix":"Speed up your website so visitors don't leave before it loads.","explanation":"..."},...]`;
@@ -173,7 +173,7 @@ const scoreColor = (n) => n >= 90 ? "#0cce6b" : n >= 50 ? "#ffa400" : "#ff4e42";
 async function sendResultsEmail({ name, email, url, performance, seo, mobile, issueCount, recommendations }) {
     const recsHtml = recommendations.map((rec, i) => `
         <div style="display:flex;gap:16px;margin-bottom:20px;align-items:flex-start;">
-            <div style="min-width:32px;height:32px;background:#385dd8;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;line-height:32px;text-align:center;">${i + 1}</div>
+            <div style="min-width:32px;height:32px;background:#385dd8;color:#fff;border-radius:2px;font-weight:700;font-size:14px;line-height:32px;text-align:center;">${i + 1}</div>
             <div>
                 <p style="margin:0 0 4px;font-weight:600;color:#191a1c;font-size:15px;">${rec.fix}</p>
                 ${rec.explanation ? `<p style="margin:0;color:#555;font-size:14px;line-height:1.5;">${rec.explanation}</p>` : ""}
@@ -182,10 +182,12 @@ async function sendResultsEmail({ name, email, url, performance, seo, mobile, is
     `).join("");
 
     const scoreCard = (label, score) => `
-        <div style="text-align:center;flex:1;">
-            <div style="font-size:32px;font-weight:800;color:${scoreColor(score)};">${score}</div>
-            <div style="font-size:12px;color:#555;margin-top:2px;">${label}</div>
-            <div style="font-size:11px;color:${scoreColor(score)};font-weight:600;">${scoreLabel(score)}</div>
+        <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid #eee;">
+            <div style="font-size:28px;font-weight:800;color:${scoreColor(score)};min-width:52px;">${score}<span style="font-size:14px;font-weight:400;color:#aaa;">/100</span></div>
+            <div>
+                <div style="font-size:15px;font-weight:600;color:#191a1c;">${label}</div>
+                <div style="font-size:12px;color:${scoreColor(score)};font-weight:600;margin-top:2px;">${scoreLabel(score)}</div>
+            </div>
         </div>
     `;
 
@@ -209,12 +211,21 @@ async function sendResultsEmail({ name, email, url, performance, seo, mobile, is
             <p style="margin:0 0 24px;color:#555;font-size:15px;line-height:1.6;">
                 Here are the results from your free website audit. We found <strong>${issueCount} issues</strong> across your site — below are the scores and our top recommendations to help you fix them.
             </p>
+            <p style="margin:0 0 32px;color:#555;font-size:15px;line-height:1.6;">
+                Want to talk through what these mean for your site? <a href="https://calendly.com/jarod-peachey/30min" style="color:#385dd8;font-weight:600;">Book a free 30-minute call</a> and I'll walk you through exactly what needs to be done.
+            </p>
 
             <!-- Scores -->
-            <div style="background:#f4f6fb;border-radius:10px;padding:24px;margin-bottom:32px;display:flex;gap:16px;">
+            <div style="background:#f4f6fb;border-radius:10px;padding:8px 24px;margin-bottom:32px;">
                 ${scoreCard("Performance", performance)}
                 ${scoreCard("SEO", seo)}
-                ${scoreCard("Mobile", mobile)}
+                <div style="display:flex;align-items:center;gap:16px;padding:14px 0;">
+                    <div style="font-size:28px;font-weight:800;color:${scoreColor(mobile)};min-width:52px;">${mobile}<span style="font-size:14px;font-weight:400;color:#aaa;">/100</span></div>
+                    <div>
+                        <div style="font-size:15px;font-weight:600;color:#191a1c;">Mobile</div>
+                        <div style="font-size:12px;color:${scoreColor(mobile)};font-weight:600;margin-top:2px;">${scoreLabel(mobile)}</div>
+                    </div>
+                </div>
             </div>
 
             <!-- Recommendations -->
