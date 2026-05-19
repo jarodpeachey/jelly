@@ -1,0 +1,353 @@
+@use "../breakpoints" as *;
+@use "../shadows" as *;
+@use "../colors" as *;
+@use "../spacing" as *;
+
+// ── /work index ───────────────────────────────────────────────
+.work {
+    .work-hero {
+        background: $color--primary-lightest;
+        padding-top: 123px;
+        padding-bottom: $space--xxl;
+
+        h1 {
+            margin-top: $space--sm;
+            margin-bottom: $space--sm;
+        }
+
+        p {
+            color: $color--text;
+            font-size: 1.1rem;
+            max-width: 520px;
+        }
+    }
+
+    .work-grid {
+        padding: $space--xxl 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $space--xl;
+
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .work-card {
+        border: 1px solid $color--gray-two;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 2px 16px rgba(0,0,0,.06);
+        transition: box-shadow 0.2s;
+        text-decoration: none;
+        display: block;
+        color: inherit;
+
+        &:hover {
+            box-shadow: 0 8px 40px rgba(56, 93, 216, 0.12);
+        }
+
+        &__image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+            background: $color--gray-one;
+        }
+
+        &__image--placeholder {
+            aspect-ratio: 16 / 9;
+            background: $color--gray-one;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: $color--gray-three;
+        }
+
+        &__body {
+            padding: $space--lg $space--xl;
+        }
+
+        &__category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: $color--primary;
+            margin-bottom: $space--xs;
+        }
+
+        &__title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: $color--heading;
+            margin-bottom: $space--sm;
+        }
+
+        &__desc {
+            font-size: 0.9rem;
+            color: $color--text;
+            line-height: 1.6;
+            margin-bottom: $space--md;
+        }
+
+        &__link {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: $color--primary;
+        }
+    }
+}
+
+// ── Case study page ───────────────────────────────────────────
+.case-study {
+    .case-hero {
+        background: $color--primary-dark;
+        padding-top: 123px;
+        padding-bottom: $space--xxl;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(56, 93, 216, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 93, 216, 0.07) 1px, transparent 1px);
+            background-size: 80px 80px;
+            pointer-events: none;
+        }
+
+        > * { position: relative; z-index: 1; }
+
+        .pill { margin-bottom: $space--sm; }
+
+        h1 {
+            color: #fff;
+            margin-top: $space--sm;
+            margin-bottom: $space--sm;
+        }
+
+        &__sub {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.05rem;
+            max-width: 560px;
+            margin-bottom: $space--xl;
+        }
+
+        &__meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: $space--md;
+        }
+
+        &__meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        &__meta-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+        }
+
+        &__meta-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        &__meta-value a {
+            color: #7ba0f5;
+            text-decoration: none;
+
+            &:hover { text-decoration: underline; }
+        }
+    }
+
+    .case-preview {
+        margin-top: -48px;
+        padding-top: 32px;
+        margin-bottom: $space--xxl;
+
+        &__img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 24px 80px rgba(0,0,0,.18);
+            display: block;
+            border: 1px solid $color--gray-two;
+        }
+
+        &__placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 16px;
+            background: $color--gray-one;
+            border: 1px solid $color--gray-two;
+            box-shadow: 0 24px 80px rgba(0,0,0,.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: $color--gray-three;
+        }
+    }
+
+    .case-section {
+        padding: $space--xxl 0;
+        border-top: 1px solid $color--gray-two;
+
+        &:first-of-type { border-top: none; }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: $color--heading;
+            margin-bottom: $space--lg;
+        }
+
+        p {
+            color: $color--text;
+            line-height: 1.75;
+            margin-bottom: $space--md;
+            font-size: 1rem;
+
+            &:last-child { margin-bottom: 0; }
+        }
+    }
+
+    .case-results {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $space--md;
+        margin-top: $space--lg;
+
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        &__item {
+            background: $color--primary-lightest;
+            border: 1px solid $color--primary-light;
+            border-radius: 12px;
+            padding: $space--lg;
+        }
+
+        &__value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: $color--primary;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        &__label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: $color--text;
+            line-height: 1.4;
+        }
+    }
+
+    .case-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $space--sm;
+        margin-top: $space--lg;
+
+        &__tag {
+            background: $color--gray-one;
+            border: 1px solid $color--gray-two;
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: $color--heading;
+        }
+    }
+
+    .case-photos {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $space--lg;
+        margin-top: $space--lg;
+
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__wrap {
+            border-radius: 12px;
+            border: 1px solid $color--gray-two;
+            overflow: hidden;
+            height: 320px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        &__placeholder {
+            aspect-ratio: 4 / 3;
+            border-radius: 12px;
+            background: $color--gray-one;
+            border: 1px solid $color--gray-two;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: $color--gray-three;
+        }
+    }
+
+    .case-cta {
+        background: $color--primary-dark;
+        border-radius: 20px;
+        padding: $space--xxl;
+        text-align: center;
+        margin: $space--xxl 0;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(56, 93, 216, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 93, 216, 0.07) 1px, transparent 1px);
+            background-size: 80px 80px;
+            pointer-events: none;
+        }
+
+        > * { position: relative; z-index: 1; }
+
+        h2 {
+            color: #fff;
+            margin-bottom: $space--sm;
+        }
+
+        p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: $space--xl;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+        }
+    }
+}

@@ -19,7 +19,7 @@ const Navigation = () => {
                             </svg>
                         </a>
                     </div>
-                    {/* <div className="mobile-menu__toggle">
+                    <div className="mobile-menu__toggle">
                         <div className="mobile-menu__toggle--mask">
                             <span className="mobile-menu__toggle--span"></span>
                             <span className="mobile-menu__toggle--span"></span>
@@ -29,27 +29,17 @@ const Navigation = () => {
                     <div className="navigation-menu">
                         <ul className="menu__main">
                             <li>
+                                <Link to="/work" className="menu__item">
+                                    Our Work
+                                </Link>
+                            </li>
+                            <li>
                                 <a href="/#pricing" className="menu__item">
                                     Pricing
                                 </a>
                             </li>
-                            <li>
-                                <a href="/blog" className="menu__item">
-                                    Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/contact" className="menu__item mr-4">
-                                    Contact
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/contact" className="btn">
-                                    Get started
-                                </a>
-                            </li>
                         </ul>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </nav>
