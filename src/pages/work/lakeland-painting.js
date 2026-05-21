@@ -105,7 +105,7 @@ const LakelandPainting = () => (
                                 <h2>Results</h2>
                                 <div className="case-results">
                                     <div className="case-results__item">
-                                        <div className="case-results__value">50%</div>
+                                        <div className="case-results__value">Over 50%</div>
                                         <div className="case-results__label">Reduction in monthly costs</div>
                                     </div>
                                     <div className="case-results__item">

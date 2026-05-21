@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Lakeland Painting — Instagram Slides</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap");
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background: #1a1a2e;
+                font-family: "Poppins", sans-serif;
+                padding: 10px;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: flex-start;
+            }
+
+            .slide-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                flex-shrink: 0;
+            }
+
+            .label {
+                color: #888;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                font-family: "Poppins", sans-serif;
+            }
+
+            /* ── Each slide is 1080×1350 ── */
+            .slide {
+                width: 1080px;
+                height: 1350px;
+                position: relative;
+                overflow: hidden;
+                flex-shrink: 0;
+            }
+
+            /* ── Shared grid overlay ── */
+            .grid {
+                position: absolute;
+                inset: 0;
+                background-image: linear-gradient(rgba(56, 93, 216, 0.08) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(56, 93, 216, 0.08) 1px, transparent 1px);
+                background-size: 90px 90px;
+                pointer-events: none;
+            }
+
+            /* ── Logo mark ── */
+            .logo-mark {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .logo-mark svg {
+                width: 36px;
+                height: 36px;
+            }
+
+            .logo-mark span {
+                font-size: 23px;
+                font-weight: 700;
+                letter-spacing: 0.02em;
+            }
+
+            /* ────────────────────────────────────────────────────
+           SLIDE 1 — INTRO
+        ──────────────────────────────────────────────────── */
+            .slide-1 {
+                background: rgb(15, 21, 53);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 72px 80px;
+            }
+
+            .slide-1 .top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .slide-1 .pill {
+                background: rgba(56, 93, 216, 0.25);
+                border: 1px solid rgba(56, 93, 216, 0.5);
+                color: #7ba0f5;
+                font-size: 16px;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                padding: 8px 24px;
+                border-radius: 999px;
+            }
+
+            .slide-1 .eyebrow {
+                font-size: 20px;
+                font-weight: 600;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #385dd8;
+                margin-bottom: 24px;
+            }
+
+            .slide-1 h1 {
+                font-size: 90px;
+                font-weight: 900;
+                line-height: 1.05;
+                color: #fff;
+                letter-spacing: -2px;
+                margin-bottom: 64px;
+            }
+
+            .slide-1 h1 span {
+                color: #385dd8;
+            }
+
+            .slide-1 .image-frame {
+                background: #fff;
+                border-radius: 18px;
+                padding: 18px;
+                box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+            }
+
+            .slide-1 .image-frame img {
+                width: 100%;
+                display: block;
+                border-radius: 8px;
+            }
+
+            .slide-1 .stat-row {
+                display: flex;
+                gap: 0;
+                justify-content: center;
+            }
+
+            .slide-1 .stat {
+                text-align: center;
+                flex: 1;
+            }
+
+            .slide-1 .stat__val {
+                font-size: 60px;
+                font-weight: 900;
+                color: #385dd8;
+                line-height: 1;
+                margin-bottom: 16px;
+            }
+
+            .slide-1 .stat__label {
+                font-size: 18px;
+                color: rgba(255, 255, 255, 0.5);
+                font-weight: 500;
+            }
+
+            /* ────────────────────────────────────────────────────
+           SLIDE 2 — PROBLEM
+        ──────────────────────────────────────────────────── */
+            .slide-2 {
+                background: #f4f6fb;
+                display: flex;
+                flex-direction: column;
+                padding: 72px 80px;
+                justify-content: space-between;
+            }
+
+            .slide-2 .top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .slide-2 .slide-num {
+                font-size: 20px;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                color: #aab0c0;
+                text-transform: uppercase;
+            }
+
+            .slide-2 .logo-mark {
+                color: #191a1c;
+            }
+
+            .slide-2 .section-tag {
+                font-size: 23px;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #385dd8;
+                margin-bottom: 32px;
+            }
+
+            .slide-2 h2 {
+                font-size: 76px;
+                font-weight: 900;
+                color: #191a1c;
+                line-height: 1.05;
+                letter-spacing: -1px;
+                margin-bottom: 64px;
+            }
+
+            .slide-2 .problems {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                flex: 1;
+                justify-content: center;
+            }
+
+            .slide-2 .problem-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 24px;
+                background: #fff;
+                border-radius: 16px;
+                padding: 28px 32px;
+                border: 1px solid #e4e9ef;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            }
+
+            .slide-2 .problem-item__icon {
+                font-size: 36px;
+                flex-shrink: 0;
+                margin-top: 2px;
+            }
+
+            .slide-2 .problem-item__text {
+                font-size: 26px;
+                font-weight: 600;
+                color: #191a1c;
+                line-height: 1.4;
+            }
+
+            .slide-2 .problem-item__text span {
+                color: #385dd8;
+            }
+
+            .slide-2 .bottom {
+                padding-top: 40px;
+                font-size: 21px;
+                color: #aab0c0;
+                font-weight: 500;
+            }
+
+            /* ────────────────────────────────────────────────────
+           SLIDE 3 — SOLUTION
+        ──────────────────────────────────────────────────── */
+            .slide-3 {
+                background: #385dd8;
+                display: flex;
+                flex-direction: column;
+                padding: 72px 80px;
+                justify-content: space-between;
+            }
+
+            .slide-3 .top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .slide-3 .slide-num {
+                font-size: 16px;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                color: rgba(255, 255, 255, 0.4);
+                text-transform: uppercase;
+            }
+
+            .slide-3 .logo-mark {
+                color: #fff;
+            }
+
+            .slide-3 .section-tag {
+                font-size: 23px;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.55);
+                margin-bottom: 20px;
+            }
+
+            .slide-3 h2 {
+                font-size: 76px;
+                font-weight: 900;
+                color: #fff;
+                line-height: 1.05;
+                letter-spacing: -1px;
+                margin-bottom: 64px;
+            }
+
+            .slide-3 .solutions {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                flex: 1;
+                justify-content: center;
+            }
+
+            .slide-3 .solution-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 24px;
+                background: rgba(255, 255, 255, 0.12);
+                border-radius: 16px;
+                padding: 28px 32px;
+                border: 1px solid rgba(255, 255, 255, 0.15);
+            }
+
+            .slide-3 .solution-item__num {
+                font-size: 16px;
+                font-weight: 800;
+                color: rgba(255, 255, 255, 0.4);
+                flex-shrink: 0;
+                margin-top: 4px;
+                letter-spacing: 0.05em;
+            }
+
+            .slide-3 .solution-item__text {
+                font-size: 26px;
+                font-weight: 600;
+                color: #fff;
+                line-height: 1.4;
+            }
+
+            .slide-3 .solution-item__text span {
+                color: #e8eeff;
+                font-weight: 800;
+            }
+
+            .slide-3 .bottom {
+                padding-top: 40px;
+                font-size: 21px;
+                color: rgba(255, 255, 255, 0.35);
+                font-weight: 500;
+            }
+
+            /* ────────────────────────────────────────────────────
+           SLIDE 4 — RESULTS
+        ──────────────────────────────────────────────────── */
+            .slide-4 {
+                background: rgb(15, 21, 53);
+                display: flex;
+                flex-direction: column;
+                padding: 72px 80px;
+                justify-content: space-between;
+            }
+
+            .slide-4 .top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .slide-4 .slide-num {
+                font-size: 16px;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                color: rgba(255, 255, 255, 0.3);
+                text-transform: uppercase;
+            }
+
+            .slide-4 .logo-mark {
+                color: #fff;
+            }
+
+            .slide-4 .section-tag {
+                font-size: 23px;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #385dd8;
+                margin-bottom: 20px;
+            }
+
+            .slide-4 h2 {
+                font-size: 76px;
+                font-weight: 900;
+                color: #fff;
+                line-height: 1.05;
+                letter-spacing: -1px;
+                margin-bottom: 56px;
+            }
+
+            .slide-4 .results {
+                display: flex;
+                flex-direction: column;
+                gap: 36px;
+                flex: 1;
+                justify-content: center;
+            }
+
+            .slide-4 .result-item {
+                background: rgba(56, 93, 216, 0.15);
+                border: 1px solid rgba(56, 93, 216, 0.3);
+                border-radius: 20px;
+                padding: 36px 40px;
+                display: flex;
+                align-items: center;
+                gap: 36px;
+            }
+
+            .slide-4 .result-item__val {
+                font-size: 68px;
+                font-weight: 900;
+                color: #385dd8;
+                line-height: 1;
+                min-width: 240px;
+                letter-spacing: -1px;
+                padding-bottom: 4px;
+            }
+
+            .slide-4 .result-item__label {
+                font-size: 26px;
+                font-weight: 500;
+                color: rgba(255, 255, 255, 0.7);
+                line-height: 1.4;
+            }
+
+            .slide-4 .bottom {
+                padding-top: 40px;
+                font-size: 21px;
+                color: rgba(255, 255, 255, 0.25);
+                font-weight: 500;
+            }
+
+            /* ────────────────────────────────────────────────────
+           SLIDE 5 — CTA
+        ──────────────────────────────────────────────────── */
+            .slide-5 {
+                background: #385dd8;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 72px 80px;
+                text-align: center;
+                gap: 0;
+            }
+
+            .slide-5 .eyebrow {
+                font-size: 23px;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.5);
+                margin-bottom: 32px;
+            }
+
+            .slide-5 h2 {
+                font-size: 88px;
+                font-weight: 900;
+                color: #fff;
+                line-height: 1.05;
+                letter-spacing: -2px;
+                margin-bottom: 32px;
+            }
+
+            .slide-5 h2 span {
+                color: #e8eeff;
+            }
+
+            .slide-5 .sub {
+                font-size: 28px;
+                font-weight: 300;
+                color: rgba(255, 255, 255, 0.7);
+                line-height: 1.55;
+                max-width: 800px;
+                margin-bottom: 72px;
+            }
+
+            .slide-5 .cta-box {
+                background: #fff;
+                border-radius: 24px;
+                padding: 48px 64px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                width: 100%;
+            }
+
+            .slide-5 .cta-box__label {
+                font-size: 18px;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: #aab0c0;
+            }
+
+            .slide-5 .cta-box__url {
+                font-size: 44px;
+                font-weight: 800;
+                color: #385dd8;
+                letter-spacing: -0.5px;
+            }
+
+            .slide-5 .cta-box__sub {
+                font-size: 21px;
+                color: #878e94;
+                font-weight: 400;
+            }
+
+            .slide-5 .bottom-logo {
+                position: absolute;
+                bottom: 56px;
+                left: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+            }
+
+            .slide-5 .bottom-logo .logo-mark {
+                color: rgba(255, 255, 255, 0.4);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- ── SLIDE 1 — INTRO ── -->
+        <div class="slide-wrapper">
+            <div class="label">Slide 1 — Intro</div>
+            <div class="slide slide-1">
+                <div class="grid"></div>
+                <div class="top">
+                    <div class="pill">Case Study</div>
+                    <div class="logo-mark" style="color: rgba(255, 255, 255, 0.5)">
+                        <svg viewBox="0 0 83 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M46.4023 0.35812C42.5626 1.0163 38.8567 2.97892 35.1308 4.95209C33.7656 5.67507 32.3978 6.39946 31.0197 7.06162C27.9587 8.53244 24.543 9.67997 21.1395 10.8234C12.2769 13.8009 3.49618 16.7509 1.27146 25.3095C-2.10756 38.3086 6.05018 52.6767 17.226 60.1263C25.5763 65.6925 35.6601 63.1163 45.6038 60.5759C47.7086 60.0382 49.8071 59.5021 51.8816 59.0452C54.1045 58.5555 56.4632 58.1647 58.8486 57.7694C68.5139 56.168 78.6187 54.4937 81.9091 45.8783C84.8411 38.2013 79.2269 31.3971 73.6206 24.6023C71.572 22.1195 69.5245 19.6379 67.8953 17.1155C67.1443 15.9527 66.4217 14.7527 65.6994 13.5533C63.5205 9.93517 61.3447 6.32208 58.4023 3.75063V26.989V36.0153C58.4023 37.6839 57.7075 39.2771 56.4847 40.4124L49.5403 46.8597C48.4305 47.8901 46.9722 48.4626 45.4579 48.4626H34.3468C32.8325 48.4626 31.3742 47.8901 30.2644 46.8597L23.32 40.4124C22.0972 39.2771 21.4023 37.6839 21.4023 36.0153V26.989C21.4023 23.6753 24.0886 20.989 27.4023 20.989C30.7161 20.989 33.4023 23.6753 33.4023 26.989V33.3986L36.7027 36.4626H43.102L46.4023 33.3986V26.989V0.35812Z"
+                                fill="#385DD8"
+                            />
+                        </svg>
+                        <span>Jelly Development</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="eyebrow">Lakeland Painting · Lakeland, FL</div>
+                    <h1>Here's how we fixed their <span>website.</span></h1>
+                </div>
+                <div class="image-frame">
+                    <img src="media/img/work/lakeland-painting/preview.png" alt="Lakeland Painting website" />
+                </div>
+                <div class="stat-row">
+                    <div class="stat">
+                        <div class="stat__val">50%+</div>
+                        <div class="stat__label">Cost reduction</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat__val">↑ SEO</div>
+                        <div class="stat__label">Google rankings</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat__val">100%</div>
+                        <div class="stat__label">Mobile ready</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── SLIDE 2 — PROBLEM ── -->
+        <div class="slide-wrapper">
+            <div class="label">Slide 2 — The Problem</div>
+            <div class="slide slide-2">
+                <div class="top">
+                    <div class="slide-num">01 / 03</div>
+                    <div class="logo-mark">
+                        <svg viewBox="0 0 83 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M46.4023 0.35812C42.5626 1.0163 38.8567 2.97892 35.1308 4.95209C33.7656 5.67507 32.3978 6.39946 31.0197 7.06162C27.9587 8.53244 24.543 9.67997 21.1395 10.8234C12.2769 13.8009 3.49618 16.7509 1.27146 25.3095C-2.10756 38.3086 6.05018 52.6767 17.226 60.1263C25.5763 65.6925 35.6601 63.1163 45.6038 60.5759C47.7086 60.0382 49.8071 59.5021 51.8816 59.0452C54.1045 58.5555 56.4632 58.1647 58.8486 57.7694C68.5139 56.168 78.6187 54.4937 81.9091 45.8783C84.8411 38.2013 79.2269 31.3971 73.6206 24.6023C71.572 22.1195 69.5245 19.6379 67.8953 17.1155C67.1443 15.9527 66.4217 14.7527 65.6994 13.5533C63.5205 9.93517 61.3447 6.32208 58.4023 3.75063V26.989V36.0153C58.4023 37.6839 57.7075 39.2771 56.4847 40.4124L49.5403 46.8597C48.4305 47.8901 46.9722 48.4626 45.4579 48.4626H34.3468C32.8325 48.4626 31.3742 47.8901 30.2644 46.8597L23.32 40.4124C22.0972 39.2771 21.4023 37.6839 21.4023 36.0153V26.989C21.4023 23.6753 24.0886 20.989 27.4023 20.989C30.7161 20.989 33.4023 23.6753 33.4023 26.989V33.3986L36.7027 36.4626H43.102L46.4023 33.3986V26.989V0.35812Z"
+                                fill="#385DD8"
+                            />
+                        </svg>
+                        <span>Jelly Development</span>
+                    </div>
+                </div>
+                <div style="flex: 1; display: flex; flex-direction: column; justify-content: center">
+                    <div class="section-tag">The Problem</div>
+                    <h2>Their old site was hurting them.</h2>
+                    <div class="problems">
+                        <div class="problem-item">
+                            <div class="problem-item__icon">💀</div>
+                            <div class="problem-item__text">Website <span>hadn't been updated</span> in years and looked outdated and unprofessional</div>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-item__icon">📵</div>
+                            <div class="problem-item__text"><span>Broken on mobile</span>, where most of their customers search</div>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-item__icon">💸</div>
+                            <div class="problem-item__text"><span>Overcharged</span> by their previous provider for hosting that wasn't working</div>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-item__icon">👻</div>
+                            <div class="problem-item__text"><span>Invisible on Google</span> no local SEO, no leads coming in</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">jellydevelopment.com · Lakeland Painting Case Study</div>
+            </div>
+        </div>
+
+        <!-- ── SLIDE 3 — SOLUTION ── -->
+        <div class="slide-wrapper">
+            <div class="label">Slide 3 — What We Built</div>
+            <div class="slide slide-3">
+                <div class="grid"></div>
+                <div class="top">
+                    <div class="slide-num">02 / 03</div>
+                    <div class="logo-mark">
+                        <svg viewBox="0 0 83 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M46.4023 0.35812C42.5626 1.0163 38.8567 2.97892 35.1308 4.95209C33.7656 5.67507 32.3978 6.39946 31.0197 7.06162C27.9587 8.53244 24.543 9.67997 21.1395 10.8234C12.2769 13.8009 3.49618 16.7509 1.27146 25.3095C-2.10756 38.3086 6.05018 52.6767 17.226 60.1263C25.5763 65.6925 35.6601 63.1163 45.6038 60.5759C47.7086 60.0382 49.8071 59.5021 51.8816 59.0452C54.1045 58.5555 56.4632 58.1647 58.8486 57.7694C68.5139 56.168 78.6187 54.4937 81.9091 45.8783C84.8411 38.2013 79.2269 31.3971 73.6206 24.6023C71.572 22.1195 69.5245 19.6379 67.8953 17.1155C67.1443 15.9527 66.4217 14.7527 65.6994 13.5533C63.5205 9.93517 61.3447 6.32208 58.4023 3.75063V26.989V36.0153C58.4023 37.6839 57.7075 39.2771 56.4847 40.4124L49.5403 46.8597C48.4305 47.8901 46.9722 48.4626 45.4579 48.4626H34.3468C32.8325 48.4626 31.3742 47.8901 30.2644 46.8597L23.32 40.4124C22.0972 39.2771 21.4023 37.6839 21.4023 36.0153V26.989C21.4023 23.6753 24.0886 20.989 27.4023 20.989C30.7161 20.989 33.4023 23.6753 33.4023 26.989V33.3986L36.7027 36.4626H43.102L46.4023 33.3986V26.989V0.35812Z"
+                                fill="#fff"
+                            />
+                        </svg>
+                        <span>Jelly Development</span>
+                    </div>
+                </div>
+                <div style="flex: 1; display: flex; flex-direction: column; justify-content: center">
+                    <div class="section-tag">What We Built</div>
+                    <h2>A full rebuild, done right.</h2>
+                    <div class="solutions">
+                        <div class="solution-item">
+                            <div class="solution-item__num">01</div>
+                            <div class="solution-item__text">Built a <span>fast, modern website</span> with React that works on mobile and desktop</div>
+                        </div>
+                        <div class="solution-item">
+                            <div class="solution-item__num">02</div>
+                            <div class="solution-item__text">Structured every page for <span>local SEO</span> to rank in Lakeland search results</div>
+                        </div>
+                        <div class="solution-item">
+                            <div class="solution-item__num">03</div>
+                            <div class="solution-item__text">Moved to <span>custom hosting</span> with a simple analytics dashboard they can actually read</div>
+                        </div>
+                        <div class="solution-item">
+                            <div class="solution-item__num">04</div>
+                            <div class="solution-item__text">Cut their <span>monthly costs in half</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">jellydevelopment.com · Lakeland Painting Case Study</div>
+            </div>
+        </div>
+
+        <!-- ── SLIDE 4 — RESULTS ── -->
+        <div class="slide-wrapper">
+            <div class="label">Slide 4 — Results</div>
+            <div class="slide slide-4">
+                <div class="grid"></div>
+                <div class="top">
+                    <div class="slide-num">03 / 03</div>
+                    <div class="logo-mark">
+                        <svg viewBox="0 0 83 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M46.4023 0.35812C42.5626 1.0163 38.8567 2.97892 35.1308 4.95209C33.7656 5.67507 32.3978 6.39946 31.0197 7.06162C27.9587 8.53244 24.543 9.67997 21.1395 10.8234C12.2769 13.8009 3.49618 16.7509 1.27146 25.3095C-2.10756 38.3086 6.05018 52.6767 17.226 60.1263C25.5763 65.6925 35.6601 63.1163 45.6038 60.5759C47.7086 60.0382 49.8071 59.5021 51.8816 59.0452C54.1045 58.5555 56.4632 58.1647 58.8486 57.7694C68.5139 56.168 78.6187 54.4937 81.9091 45.8783C84.8411 38.2013 79.2269 31.3971 73.6206 24.6023C71.572 22.1195 69.5245 19.6379 67.8953 17.1155C67.1443 15.9527 66.4217 14.7527 65.6994 13.5533C63.5205 9.93517 61.3447 6.32208 58.4023 3.75063V26.989V36.0153C58.4023 37.6839 57.7075 39.2771 56.4847 40.4124L49.5403 46.8597C48.4305 47.8901 46.9722 48.4626 45.4579 48.4626H34.3468C32.8325 48.4626 31.3742 47.8901 30.2644 46.8597L23.32 40.4124C22.0972 39.2771 21.4023 37.6839 21.4023 36.0153V26.989C21.4023 23.6753 24.0886 20.989 27.4023 20.989C30.7161 20.989 33.4023 23.6753 33.4023 26.989V33.3986L36.7027 36.4626H43.102L46.4023 33.3986V26.989V0.35812Z"
+                                fill="#385DD8"
+                            />
+                        </svg>
+                        <span style="color: #fff">Jelly Development</span>
+                    </div>
+                </div>
+                <div style="flex: 1; display: flex; flex-direction: column; justify-content: center">
+                    <div class="section-tag">The Results</div>
+                    <h2>The numbers speak for themselves.</h2>
+                    <div class="results">
+                        <div class="result-item">
+                            <div class="result-item__val">50%+</div>
+                            <div class="result-item__label">Reduction in monthly hosting & maintenance costs</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item__val">100%</div>
+                            <div class="result-item__label">Mobile responsiveness on every device</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item__val">↑ SEO</div>
+                            <div class="result-item__label">Improved local Google rankings in Lakeland</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">jellydevelopment.com · Lakeland Painting Case Study</div>
+            </div>
+        </div>
+
+        <!-- ── SLIDE 5 — CTA ── -->
+        <div class="slide-wrapper">
+            <div class="label">Slide 5 — CTA</div>
+            <div class="slide slide-5">
+                <div class="grid"></div>
+                <div class="eyebrow">Jelly Development · Central Florida</div>
+                <h2>Want results<br /><span>like this?</span></h2>
+                <p class="sub">We build fast, modern websites for small businesses across Central Florida.</p>
+                <div class="cta-box">
+                    <div class="cta-box__label">Book a free strategy call</div>
+                    <div class="cta-box__url">jellydevelopment.com</div>
+                    <div class="cta-box__sub">No commitment. Just an honest conversation.</div>
+                </div>
+                <div class="bottom-logo">
+                    <div class="logo-mark" style="color: rgba(255, 255, 255, 0.35)">
+                        <svg viewBox="0 0 83 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M46.4023 0.35812C42.5626 1.0163 38.8567 2.97892 35.1308 4.95209C33.7656 5.67507 32.3978 6.39946 31.0197 7.06162C27.9587 8.53244 24.543 9.67997 21.1395 10.8234C12.2769 13.8009 3.49618 16.7509 1.27146 25.3095C-2.10756 38.3086 6.05018 52.6767 17.226 60.1263C25.5763 65.6925 35.6601 63.1163 45.6038 60.5759C47.7086 60.0382 49.8071 59.5021 51.8816 59.0452C54.1045 58.5555 56.4632 58.1647 58.8486 57.7694C68.5139 56.168 78.6187 54.4937 81.9091 45.8783C84.8411 38.2013 79.2269 31.3971 73.6206 24.6023C71.572 22.1195 69.5245 19.6379 67.8953 17.1155C67.1443 15.9527 66.4217 14.7527 65.6994 13.5533C63.5205 9.93517 61.3447 6.32208 58.4023 3.75063V26.989V36.0153C58.4023 37.6839 57.7075 39.2771 56.4847 40.4124L49.5403 46.8597C48.4305 47.8901 46.9722 48.4626 45.4579 48.4626H34.3468C32.8325 48.4626 31.3742 47.8901 30.2644 46.8597L23.32 40.4124C22.0972 39.2771 21.4023 37.6839 21.4023 36.0153V26.989C21.4023 23.6753 24.0886 20.989 27.4023 20.989C30.7161 20.989 33.4023 23.6753 33.4023 26.989V33.3986L36.7027 36.4626H43.102L46.4023 33.3986V26.989V0.35812Z"
+                                fill="rgba(255,255,255,0.35)"
+                            />
+                        </svg>
+                        <span>Jelly Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
