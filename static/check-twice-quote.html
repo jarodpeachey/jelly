@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Quote — Check Twice Home Inspections | Jelly Development</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+            *, *::before, *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            html, body {
+                font-family: 'Poppins', sans-serif;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 1.65;
+                color: #2a2a2a;
+                background: #fff;
+            }
+
+            .page {
+                max-width: 760px;
+                margin: 0 auto;
+                padding: 52px 40px;
+            }
+
+            /* ── Header ── */
+            .doc-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 36px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #d0d0d0;
+            }
+
+            .doc-header__logo {
+                height: 26px;
+                opacity: 0.75;
+            }
+
+            .doc-header__meta {
+                text-align: right;
+                font-size: 0.75rem;
+                font-weight: 500;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+                color: #888;
+                line-height: 1.7;
+            }
+
+            /* ── Client block ── */
+            .client-block {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 36px;
+                gap: 32px;
+            }
+
+            .client-block__left { flex: 1; }
+
+            h1 {
+                font-size: 1.6rem;
+                font-weight: 700;
+                line-height: 1.25;
+                color: #111;
+                margin-bottom: 4px;
+            }
+
+            .client-name {
+                font-size: 0.92rem;
+                font-weight: 500;
+                color: #555;
+            }
+
+            .client-block__right { flex-shrink: 0; }
+
+            /* ── Price card ── */
+            .price-card {
+                border: 1.5px solid #bbb;
+                border-radius: 6px;
+                padding: 20px 32px;
+                text-align: center;
+                min-width: 190px;
+            }
+
+            .price-card__label {
+                font-size: 0.68rem;
+                font-weight: 600;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #888;
+                margin-bottom: 6px;
+            }
+
+            .price-card__amount {
+                font-size: 2.2rem;
+                font-weight: 800;
+                color: #111;
+                line-height: 1;
+            }
+
+            /* ── Section titles ── */
+            .section-title {
+                font-size: 0.72rem;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #888;
+                margin-bottom: 16px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid #d0d0d0;
+            }
+
+            /* ── Deliverables ── */
+            .deliverables { margin-bottom: 32px; }
+
+            .deliverable-group { margin-bottom: 22px; }
+
+            .deliverable-group__title {
+                font-size: 0.72rem;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: #444;
+                margin-bottom: 10px;
+            }
+
+            .deliverable-list {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 7px;
+            }
+
+            .deliverable-list li {
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                font-size: 0.88rem;
+                color: #333;
+                font-weight: 400;
+                line-height: 1.5;
+            }
+
+            .check {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                border: 1.5px solid #999;
+                color: #444;
+                font-size: 0.6rem;
+                font-weight: 700;
+                flex-shrink: 0;
+                margin-top: 3px;
+            }
+
+            /* ── Timeline + terms row ── */
+            .meta-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+                margin-bottom: 0;
+                border-top: 1px solid #d0d0d0;
+                padding-top: 24px;
+            }
+
+            .meta-card {
+                border: 1px solid #d8d8d8;
+                border-radius: 4px;
+                padding: 18px 20px;
+            }
+
+            .meta-card__icon { display: none; }
+
+            .meta-card__title {
+                font-size: 0.72rem;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: #888;
+                margin-bottom: 6px;
+            }
+
+            .meta-card__body {
+                font-size: 0.88rem;
+                color: #333;
+                line-height: 1.55;
+            }
+
+            @media print {
+                body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+                .page { padding: 0; max-width: 100%; }
+                @page { margin: 16mm 14mm; size: A4; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page">
+
+            <!-- Header -->
+            <div class="doc-header">
+                <img class="doc-header__logo" src="media/img/Logo Solid.png" alt="Jelly Development" />
+                <div class="doc-header__meta">
+                    Project Quote<br />
+                    July 3, 2026
+                </div>
+            </div>
+
+            <!-- Client + Price -->
+            <div class="client-block">
+                <div class="client-block__left">
+                    <h1>Check Twice Home Inspections</h1>
+                    <p class="client-name">Premium Website + Brand Package</p>
+                </div>
+                <div class="client-block__right">
+                    <div class="price-card">
+                        <div class="price-card__label">Total Price</div>
+                        <div class="price-card__amount">$5,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deliverables -->
+            <div class="deliverables">
+                <div class="section-title">What's Included</div>
+
+                <div class="deliverable-group">
+                    <div class="deliverable-group__title">Brand Kit</div>
+                    <ul class="deliverable-list">
+                        <li><span class="check">✓</span> Custom logo design — primary mark + variations</li>
+                        <li><span class="check">✓</span> Full color scheme with hex codes and usage guidelines</li>
+                        <li><span class="check">✓</span> Typography selection — heading and body font pairing</li>
+                        <li><span class="check">✓</span> Facebook profile image + cover banner</li>
+                        <li><span class="check">✓</span> Instagram profile image + story/post banner</li>
+                    </ul>
+                </div>
+
+                <div class="deliverable-group">
+                    <div class="deliverable-group__title">Website</div>
+                    <ul class="deliverable-list">
+                        <li><span class="check">✓</span> Up to 10 custom-designed pages, built mobile-first</li>
+                        <li><span class="check">✓</span> Performance optimization</li>
+                        <li><span class="check">✓</span> Keyword &amp; competitor research for your market</li>
+                        <li><span class="check">✓</span> On-page SEO setup — titles, meta descriptions, structured data</li>
+                        <li><span class="check">✓</span> Unlimited revisions</li>
+                    </ul>
+                </div>
+
+                <div class="deliverable-group">
+                    <div class="deliverable-group__title">After Launch</div>
+                    <ul class="deliverable-list">
+                        <li><span class="check">✓</span> 6 months free hosting</li>
+                        <li><span class="check">✓</span> 6 months free support — up to 2 hours of edits per month</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Timeline + Terms -->
+            <div class="meta-row">
+                <div class="meta-card">
+                    <div class="meta-card__icon">📅</div>
+                    <div class="meta-card__title">Timeline</div>
+                    <div class="meta-card__body">
+                        Website delivered within <strong>1 month</strong> of project kickoff.
+                    </div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card__icon">💳</div>
+                    <div class="meta-card__title">Payment</div>
+                    <div class="meta-card__body">
+                        <strong>$2,500 upfront</strong> to begin, <strong>$2,500 on completion</strong>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
