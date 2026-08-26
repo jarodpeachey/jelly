@@ -68,13 +68,11 @@ const HomeContent = () => {
             </header>
             <div id="wrapper" className="wrapper">
                 <section className="hero">
-                    <div className="hero__blob hero__blob--tr"></div>
-                    <div className="hero__blob hero__blob--bl"></div>
                     <div className="hero__grid-lines"></div>
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-12 col-lg-6 hero__left">
-                                <span className="pill pill-dark">Orlando Web Design</span>
+                                <span className="pill">Orlando Web Design</span>
                                 <h1>
                                     Websites That Bring More Customers to <span>Orlando Small Businesses</span>
                                 </h1>
@@ -171,16 +169,16 @@ const HomeContent = () => {
                             </div>
                             <div className="row">
                                 {[
-                                    { icon: "💀", text: "Your website looks like it was built in 2009" },
-                                    { icon: "👻", text: "You don't show up anywhere on Google" },
-                                    { icon: "🐢", text: "It loads so slowly visitors leave before seeing anything" },
-                                    { icon: "📵", text: "It looks broken on mobile — where 70% of your customers are" },
-                                    { icon: "🔇", text: "You're not getting calls, leads, or new customers from it" },
-                                    { icon: "💸", text: "You paid for a website that isn't actually working for you" },
-                                ].map(({ icon, text }) => (
+                                    "Your website looks like it was built in 2009",
+                                    "You don't show up anywhere on Google",
+                                    "It loads so slowly visitors leave before seeing anything",
+                                    "It looks broken on mobile — where 70% of your customers are",
+                                    "You're not getting calls, leads, or new customers from it",
+                                    "You paid for a website that isn't actually working for you",
+                                ].map((text) => (
                                     <div key={text} className="col-12 col-sm-6 col-lg-4">
                                         <div className="pain-card card--sm">
-                                            <span className="pain-card__icon" aria-hidden="true">{icon}</span>
+                                            <img className="pain-card__icon" width="20" height="20" src="/media/img/icons/icon--x.svg" alt="" aria-hidden="true" />
                                             <p className="pain-card__text">{text}</p>
                                         </div>
                                     </div>
@@ -415,7 +413,7 @@ const HomeContent = () => {
                             <div className="row">
                                 <div className="col-12">
                                     <div className="pricing__note">
-                                        💡 All packages include a free strategy call
+                                        All packages include a free strategy call
                                     </div>
                                 </div>
                             </div>
@@ -444,7 +442,7 @@ const HomeContent = () => {
                                 </div>
                                 <div className="col-lg-4">
                                     <div className="pricing-card pricing-card--featured card card--dark">
-                                        <div className="pricing-card__badge">⭐ Best Value</div>
+                                        <div className="pricing-card__badge">Best Value</div>
                                         <span className="pricing-card__tier">Growth</span>
                                         <div className="pricing-card__price">$2,800</div>
                                         <p className="pricing-card__billing">One-time project fee</p>
@@ -539,12 +537,12 @@ const HomeContent = () => {
                         <div className="container">
                             <div className="row">
                                 <div className="col-12">
-                                    <span className="pill">📍 Local &amp; Proud</span>
+                                    <span className="pill">Local &amp; Proud</span>
                                     <h2>Proudly Serving Central Florida</h2>
                                     {/* <p className="local__description">We're embedded in the Orlando business community — we know the local market and know how to help you win it.</p> */}
                                     <div className="local__areas">
                                         {AREAS.map((area, i) => (
-                                            <span key={i} className="area-tag">📍 {area}</span>
+                                            <span key={i} className="area-tag">{area}</span>
                                         ))}
                                     </div>
                                 </div>
