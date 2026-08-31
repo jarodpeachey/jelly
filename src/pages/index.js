@@ -77,7 +77,7 @@ const HomeContent = () => {
                                     Websites That Bring More Customers to <span>Orlando Small Businesses</span>
                                 </h1>
                                 <p className="section-description hero__paragraph">
-                                    Fast, mobile-optimized websites built to rank on Google and convert visitors into real leads — no tech jargon, no fluff.
+                                    Fast, mobile-optimized websites built to rank on Google and convert visitors into real leads - starting at just $500
                                 </p>
                                 <div className="hero__cta-row">
                                     <a className="btn" href={JOTFORM_URL} target="_blank" rel="noopener noreferrer">
