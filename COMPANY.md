@@ -99,7 +99,7 @@ All packages include a **free strategy call**.
 
 ---
 
-### Starter — $1,200 (one-time)
+### Starter — $500 (one-time)
 - 1 page
 - 1 month free hosting
 - On-page SEO setup
@@ -111,7 +111,7 @@ All packages include a **free strategy call**.
 
 ---
 
-### Growth — $2,800 (one-time) *(Most Popular)*
+### Growth — $1,400 (one-time) *(Most Popular)*
 - Up to 5 pages
 - 3 months free hosting
 - Advanced local SEO
@@ -124,7 +124,7 @@ All packages include a **free strategy call**.
 
 ---
 
-### Premium — $4,500 (one-time)
+### Premium — $3,000 (one-time)
 - Up to 10 pages
 - 6 months free hosting
 - Keyword + competitor research SEO

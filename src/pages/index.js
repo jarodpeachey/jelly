@@ -421,7 +421,7 @@ const HomeContent = () => {
                                 <div className="col-lg-4">
                                     <div className="pricing-card card">
                                         <span className="pricing-card__tier">Starter</span>
-                                        <div className="pricing-card__price">$1,200</div>
+                                        <div className="pricing-card__price">$500</div>
                                         <p className="pricing-card__billing">One-time project fee</p>
                                         <p className="pricing-card__desc">Perfect for new businesses that need a fast, professional online presence without the bloat.</p>
                                         <ul className="pricing-card__features">
@@ -444,7 +444,7 @@ const HomeContent = () => {
                                     <div className="pricing-card pricing-card--featured card card--dark">
                                         <div className="pricing-card__badge">Best Value</div>
                                         <span className="pricing-card__tier">Growth</span>
-                                        <div className="pricing-card__price">$2,800</div>
+                                        <div className="pricing-card__price">$1,400</div>
                                         <p className="pricing-card__billing">One-time project fee</p>
                                         <p className="pricing-card__desc">For established businesses ready to compete seriously in Orlando search results and convert more visitors into paying customers.</p>
                                         <ul className="pricing-card__features">
@@ -466,7 +466,7 @@ const HomeContent = () => {
                                 <div className="col-lg-4">
                                     <div className="pricing-card card">
                                         <span className="pricing-card__tier">Premium</span>
-                                        <div className="pricing-card__price">$4,500</div>
+                                        <div className="pricing-card__price">$3,000</div>
                                         <p className="pricing-card__billing">One-time project fee</p>
                                         <p className="pricing-card__desc">The full-service buildout for businesses serious about dominating their local market and building a brand that lasts.</p>
                                         <ul className="pricing-card__features">
