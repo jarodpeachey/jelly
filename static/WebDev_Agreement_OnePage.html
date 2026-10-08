@@ -1,0 +1,225 @@
+<!--
+  ATTORNEY REVIEW REQUIRED: This one-page agreement is a plain-English summary drafted by Jelly Development, not by a lawyer.
+  Before it is used with a client for the first time, have a Florida-licensed attorney review it, especially the refund,
+  ownership, takedown, and liability terms. The full version is static/WebDev_Contract_Template.html.
+
+  PLACEHOLDERS (same meaning as in the full template; replace every {{...}} before sending):
+    {{EFFECTIVE_DATE}}         Date the agreement is signed, e.g. October 8, 2026
+    {{CLIENT_NAME}}            Full name of the person signing for the client
+    {{CLIENT_BUSINESS}}        Client's legal business name
+    {{CLIENT_ADDRESS}}         Client's mailing address
+    {{CLIENT_EMAIL}}           Client's email address for notices and refund requests
+    {{PACKAGE_NAME}}           Starter, Growth, or Premium
+    {{PRICE}}                  Total build fee, e.g. $500.00
+    {{DEPOSIT}}                Half of {{PRICE}}, due at signing, e.g. $250.00
+    {{FINAL_PAYMENT}}          The other half of {{PRICE}}, due at launch, e.g. $250.00
+    {{PAGES_INCLUDED}}         Pages in the package, e.g. 1, up to 5, up to 10
+    {{REVISIONS_INCLUDED}}     Revision rounds, e.g. 2, 3, unlimited
+    {{HOSTING_MONTHS}}         Months of free hosting and support, e.g. 1, 3, 6
+    {{CONTENT_RECEIVED_DATE}}  Date the completed intake form and content arrived, or "the date all content is received"
+    {{DELIVERY_DATE}}          14 days after {{CONTENT_RECEIVED_DATE}}, or "14 days after all content is received"
+
+  Send this with static/Client_Intake_Form.html. It must print on one letter-size page; keep added text short.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Agreement | {{CLIENT_BUSINESS}}</title>
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-latin-300.woff2') format('woff2');
+      font-weight: 300;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-latin-600.woff2') format('woff2');
+      font-weight: 600;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-latin-700.woff2') format('woff2');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-latin-800.woff2') format('woff2');
+      font-weight: 800;
+    }
+
+    @page { size: letter; margin: 0.45in 0.55in; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #333;
+      background: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page { max-width: 820px; margin: 0 auto; padding: 40px 48px; }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #000;
+    }
+    .header img { height: 32px; width: auto; }
+    .header-meta { text-align: right; font-size: 10px; font-weight: 300; color: #555; line-height: 1.5; }
+    .header-meta strong { font-weight: 600; color: #000; }
+
+    h1 { font-size: 19px; font-weight: 800; color: #000; line-height: 1.2; margin-bottom: 6px; }
+
+    .intro { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #ccc; }
+    .intro strong, .term strong { font-weight: 600; color: #000; }
+
+    .terms { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 24px; }
+    .term { padding-bottom: 9px; border-bottom: 1px solid #e2e2e2; }
+    .term--wide { grid-column: 1 / -1; }
+
+    .term-title {
+      font-size: 10px;
+      font-weight: 700;
+      color: #000;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .term-title::before {
+      content: '';
+      width: 3px;
+      height: 11px;
+      background: #000;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .pay { display: flex; gap: 8px; margin-top: 4px; }
+    .pay div { flex: 1; border: 1px solid #ccc; border-radius: 6px; padding: 4px 8px; font-size: 10px; }
+    .pay b { display: block; font-size: 12px; font-weight: 700; color: #000; }
+
+    .signatures { margin-top: 14px; padding-top: 10px; border-top: 2px solid #000; }
+    .sig-note { font-size: 10px; font-style: italic; color: #555; text-align: center; margin-bottom: 10px; }
+    .sig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .sig-party { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #000; }
+    .sig-name { font-size: 10px; margin-bottom: 4px; }
+    .sig-row { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; }
+    .sig-label { font-size: 9px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #555; }
+    .sig-line { border-bottom: 1.5px solid #aaa; height: 26px; }
+
+    @media print {
+      .page { padding: 0; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="header">
+      <img src="media/img/Logo Solid.svg" alt="Jelly Development" />
+      <div class="header-meta">
+        <strong>Date:</strong> {{EFFECTIVE_DATE}}<br />
+        <strong>{{PACKAGE_NAME}} Package:</strong> {{PRICE}}
+      </div>
+    </div>
+
+    <h1>Website Agreement</h1>
+    <p class="intro">
+      Between <strong>Jelly Development LLC</strong> ("we"), represented by Jarod Peachey, and <strong>{{CLIENT_BUSINESS}}</strong> ("you"),
+      represented by {{CLIENT_NAME}}, {{CLIENT_ADDRESS}}, {{CLIENT_EMAIL}}.
+    </p>
+
+    <div class="terms">
+      <div class="term">
+        <div class="term-title">1. What You Get</div>
+        <p>A <strong>{{PACKAGE_NAME}}</strong> website: {{PAGES_INCLUDED}} page(s), mobile-first design, on-page SEO setup, performance optimization, {{REVISIONS_INCLUDED}} revision round(s), and {{HOSTING_MONTHS}} month(s) of free hosting and support from launch. Anything else is quoted separately.</p>
+      </div>
+
+      <div class="term">
+        <div class="term-title">2. Your Content and Timeline</div>
+        <p>You send the items on the <strong>Client Intake Form</strong>. Your site launches <strong>14 days from the day we receive your content</strong>. Content received: {{CONTENT_RECEIVED_DATE}}. Target launch: {{DELIVERY_DATE}}. The clock pauses while we wait on you.</p>
+      </div>
+
+      <div class="term term--wide">
+        <div class="term-title">3. Payment: Half Up Front, Half at Launch</div>
+        <div class="pay">
+          <div>Deposit (50%), due at signing<b>{{DEPOSIT}}</b></div>
+          <div>Final payment (50%), due at launch<b>{{FINAL_PAYMENT}}</b></div>
+          <div>Total build fee<b>{{PRICE}}</b></div>
+        </div>
+      </div>
+
+      <div class="term">
+        <div class="term-title">4. Design Preview Refund</div>
+        <p>After you see the initial design preview, you can decline it and get a <strong>full refund of your deposit</strong>. Just tell us in writing (email is fine). The project ends and no final payment is owed.</p>
+      </div>
+
+      <div class="term">
+        <div class="term-title">5. 14-Day Refund After Launch</div>
+        <p>You can ask for a refund in writing for up to <strong>14 days after the launch date</strong>, and we refund the build fees you paid. After 14 days, the build fee is not refundable.</p>
+      </div>
+
+      <div class="term">
+        <div class="term-title">6. After a Refund</div>
+        <p>The code, images, and designs we created belong to Jelly Development, and we take the website down. Your domain and everything you gave us (logo, photos, text, accounts) stay yours, returned or left untouched.</p>
+      </div>
+
+      <div class="term">
+        <div class="term-title">7. Ownership</div>
+        <p>Once you've paid in full and the 14-day refund window passes with no refund requested, <strong>you own the finished website</strong>. Until then, the work is ours. Your domain and materials are always yours.</p>
+      </div>
+
+      <div class="term">
+        <div class="term-title">8. Third-Party Costs</div>
+        <p>You pay directly for your domain, hosting after the free period, and any paid plugins or software. Those stay in your name, including after a refund.</p>
+      </div>
+
+      <div class="term">
+        <div class="term-title">9. Optional Care Plan</div>
+        <p>Separate from the build and not included in the price: <strong>$199/month</strong>, month-to-month, cancel anytime. The refund terms above apply to the build fee only.</p>
+      </div>
+
+      <div class="term term--wide">
+        <div class="term-title">10. The Fine Print</div>
+        <p>We both keep each other's business information private. We do the work professionally but can't guarantee uninterrupted service from third-party platforms or hosts. Our total liability is limited to what you paid us. This page is the whole agreement; changes must be in writing and signed by both of us. It is governed by the laws of the state where Jelly Development LLC is registered.</p>
+      </div>
+    </div>
+
+    <div class="signatures">
+      <div class="sig-note">By signing, we both agree to the terms above.</div>
+      <div class="sig-grid">
+        <div>
+          <div class="sig-party">Jelly Development LLC</div>
+          <div class="sig-name">Printed Name: Jarod Peachey</div>
+          <div class="sig-row">
+            <div><div class="sig-line"></div><div class="sig-label">Signature</div></div>
+            <div><div class="sig-line"></div><div class="sig-label">Date</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="sig-party">{{CLIENT_BUSINESS}}</div>
+          <div class="sig-name">Printed Name: {{CLIENT_NAME}}</div>
+          <div class="sig-row">
+            <div><div class="sig-line"></div><div class="sig-label">Signature</div></div>
+            <div><div class="sig-line"></div><div class="sig-label">Date</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

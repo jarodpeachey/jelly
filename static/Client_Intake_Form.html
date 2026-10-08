@@ -1,0 +1,213 @@
+<!--
+  Client Intake Form: send with static/WebDev_Agreement_OnePage.html (or the full contract template).
+  The client can type into it in a browser and print or save as PDF, or print it blank and fill it by hand.
+  The 14-day build clock in the agreement starts the day this form and the attached files are received.
+  It must print on one letter-size page.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Intake Form | Jelly Development</title>
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-latin-300.woff2') format('woff2');
+      font-weight: 300;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-latin-600.woff2') format('woff2');
+      font-weight: 600;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-latin-700.woff2') format('woff2');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-latin-800.woff2') format('woff2');
+      font-weight: 800;
+    }
+
+    @page { size: letter; margin: 0.45in 0.55in; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #333;
+      background: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page { max-width: 820px; margin: 0 auto; padding: 40px 48px; }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #000;
+    }
+    .header img { height: 32px; width: auto; }
+    .header-meta { text-align: right; font-size: 10px; color: #555; }
+
+    h1 { font-size: 19px; font-weight: 800; color: #000; line-height: 1.2; margin-bottom: 4px; }
+    .intro { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #ccc; }
+    .intro strong { font-weight: 600; color: #000; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
+    .wide { grid-column: 1 / -1; }
+
+    label, .label {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      color: #000;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .hint { font-size: 10px; font-weight: 300; color: #666; letter-spacing: 0; text-transform: none; }
+
+    input[type="text"], input[type="tel"], input[type="email"], textarea {
+      display: block;
+      width: 100%;
+      font: inherit;
+      color: #000;
+      border: none;
+      border-bottom: 1.5px solid #aaa;
+      background: transparent;
+      padding: 4px 2px;
+      margin-top: 2px;
+      outline: none;
+    }
+    textarea {
+      resize: none;
+      height: 67px;
+      line-height: 21px;
+      background-image: linear-gradient(transparent 20px, #ddd 20px, #ddd 21px, transparent 21px);
+      background-size: 100% 21px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    textarea.tall { height: 88px; }
+    input:focus, textarea:focus { border-bottom-color: #385dd8; }
+
+    .checks { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 4px; font-size: 11px; }
+    .checks label { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 300; letter-spacing: 0; text-transform: none; color: #333; }
+    input[type="checkbox"] { width: 12px; height: 12px; accent-color: #000; }
+
+    .send {
+      margin-top: 14px;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #f5f5f5;
+      font-size: 10.5px;
+    }
+    .send strong { font-weight: 600; color: #000; }
+
+    @media print {
+      .page { padding: 0; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="header">
+      <img src="media/img/Logo Solid.svg" alt="Jelly Development" />
+      <div class="header-meta">Client Intake Form</div>
+    </div>
+
+    <h1>Tell Us About Your Business</h1>
+    <p class="intro">
+      This is everything we need to build your site. Fill in what you can and skip anything that doesn't apply.
+      <strong>Your 14-day build starts the day we receive this form and your files.</strong>
+    </p>
+
+    <div class="grid">
+      <div>
+        <label for="business">Business name</label>
+        <input type="text" id="business" />
+      </div>
+      <div>
+        <label for="contact">Your name</label>
+        <input type="text" id="contact" />
+      </div>
+
+      <div>
+        <label for="phone">Phone for the website <span class="hint">(the one customers call)</span></label>
+        <input type="tel" id="phone" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" />
+      </div>
+
+      <div>
+        <label for="trade">Trade <span class="hint">(HVAC, roofing, plumbing...)</span></label>
+        <input type="text" id="trade" />
+      </div>
+      <div>
+        <label for="license">License number <span class="hint">(if your trade has one)</span></label>
+        <input type="text" id="license" />
+      </div>
+
+      <div class="wide">
+        <label for="services">Services you offer <span class="hint">(list the main ones, most important first)</span></label>
+        <textarea id="services" class="tall"></textarea>
+      </div>
+
+      <div class="wide">
+        <label for="area">Service area <span class="hint">(cities, counties, or how far you travel)</span></label>
+        <input type="text" id="area" />
+      </div>
+
+      <div>
+        <span class="label">Logo</span>
+        <div class="checks">
+          <label><input type="checkbox" /> Attached</label>
+          <label><input type="checkbox" /> I don't have one</label>
+        </div>
+      </div>
+      <div>
+        <span class="label">Photos <span class="hint">(your work, team, trucks)</span></span>
+        <div class="checks">
+          <label><input type="checkbox" /> Attached</label>
+          <label><input type="checkbox" /> I don't have any yet</label>
+        </div>
+      </div>
+
+      <div class="wide">
+        <label for="reviews">Reviews <span class="hint">(link to your Google reviews, or paste 2 or 3 you'd like shown)</span></label>
+        <textarea id="reviews"></textarea>
+      </div>
+
+      <div class="wide">
+        <label for="wording">Anything you want it to say <span class="hint">(a tagline, years in business, what makes you different, words to avoid)</span></label>
+        <textarea id="wording" class="tall"></textarea>
+      </div>
+
+      <div class="wide">
+        <label for="domain">Website domain <span class="hint">(e.g. yourbusiness.com, and where it's registered, if you have one)</span></label>
+        <input type="text" id="domain" />
+      </div>
+    </div>
+
+    <div class="send">
+      <strong>How to send it:</strong> email this form, your logo, and your photos to
+      <strong>jarod@jellydevelopment.com</strong>. Phone photos are fine. Not sure about something? Leave it blank and we'll ask.
+    </div>
+
+  </div>
+</body>
+</html>
