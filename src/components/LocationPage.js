@@ -8,17 +8,18 @@ import { PopupProvider, usePopup } from "../context/PopupContext";
 const JOTFORM_URL = "https://form.jotform.com/260614887108058";
 
 const PROCESS_STEPS = [
-    { step: "01", title: "Free Strategy Call", desc: "We learn about your business, goals, and local market — no pressure, no commitment." },
+    { step: "01", title: "Free Strategy Call", desc: "We learn about your business, goals, and local market. No pressure, no commitment." },
     { step: "02", title: "Design & Build", desc: "We craft a custom website optimized for conversions and local SEO, with your input throughout." },
-    { step: "03", title: "Launch in 14 Days", desc: "Your site goes live and starts attracting leads. We support you every step of the way." },
+    { step: "03", title: "Launch in 14 Days", desc: "Your site goes live 14 days from the day we receive your content, and we support you every step of the way." },
 ];
 
 const FAQS = [
-    { q: "How long does it take to build my website?", a: "Your website will be live within 2-4 weeks of receiving your content and design approval." },
-    { q: "Do I need to sign a long-term contract?", a: "Never. All packages are one-time fees, split 50/50 at the start and end of the project. The optional care plan is month-to-month — cancel anytime." },
+    { q: "How long does it take to build my website?", a: "14 days from the day we receive your content (your logo, photos, and text)." },
+    { q: "How does payment work? Do I need a long-term contract?", a: "No long-term contract. You pay half up front to get started and half at launch. If you don't love the design preview, you get your deposit back, and you have 14 days after launch to ask for a full refund. The optional care plan is month-to-month, so you can cancel anytime." },
+    { id: "refund", q: "What is your refund policy?", a: "If you don't love the design preview, we refund your full deposit, and after launch you have 14 days to ask for a full refund. If you're refunded after launch, we take the site down and keep the code, images, and designs we created. Your domain and everything you gave us (logo, photos, text, and accounts) stay yours." },
     { q: "What if I already have a website?", a: "We'll audit it for free. If it needs a full rebuild, we'll handle it. If parts are salvageable, we'll tell you." },
-    { q: "Do you handle hosting?", a: "Yes. Starter includes 1 month of free hosting, Growth includes 3 months, and Premium includes 6 months. After that, hosting is $19.99/mo — or included at no extra cost if you're on our monthly care plan." },
-    { q: "Do you provide the domain name?", a: "No — you'll need to purchase and own your own domain. We'll guide you through the process if needed, but keeping the domain in your name ensures you always have full ownership of your online presence." },
+    { q: "Do you handle hosting?", a: "Yes. Starter includes 1 month of free hosting, Growth includes 3 months, and Premium includes 6 months. After that, hosting is $19.99/mo, or included at no extra cost if you're on our monthly care plan." },
+    { q: "Do you provide the domain name?", a: "No. You'll need to purchase and own your own domain. We'll guide you through the process if needed, but keeping the domain in your name ensures you always have full ownership of your online presence." },
     { q: "Will my site rank on Google?", a: "Every site we build includes on-page SEO setup. Rankings depend on your market and competition, but we give you the best possible foundation." },
 ];
 
@@ -31,6 +32,16 @@ const LocationContent = ({ city }) => {
     const { popupShown, setPopupShown } = usePopup();
     const [showPopup, setShowPopup] = useState(false);
     const pricingRef = useRef(null);
+
+    // Open the refund FAQ when linked to, since <details> stays closed on hash jumps in some browsers
+    const openRefundFaq = () => {
+        const item = document.getElementById("refund");
+        if (item) item.open = true;
+    };
+
+    useEffect(() => {
+        if (window.location.hash === "#refund") openRefundFaq();
+    }, []);
 
     useEffect(() => {
         if (popupShown) return;
@@ -85,9 +96,13 @@ const LocationContent = ({ city }) => {
                                 </p>
                                 <div className="hero__cta-row">
                                     <a className="btn" href={JOTFORM_URL} target="_blank" rel="noopener noreferrer">
-                                        Get a Free Website Audit
+                                        Get Your Free Homepage Preview
                                     </a>
                                 </div>
+                                <p className="hero__guarantee">
+                                    Love your site or get a full refund. No hoops.{" "}
+                                    <a href="#refund" onClick={openRefundFaq}>How it works</a>
+                                </p>
                             </div>
                             <div className="col-lg-6 d-none d-lg-flex align-items-center hero__right">
                                 <div className="hero__visual">
@@ -169,7 +184,7 @@ const LocationContent = ({ city }) => {
                                     { icon: "💀", text: "Your website looks like it was built in 2009" },
                                     { icon: "👻", text: "You don't show up anywhere on Google" },
                                     { icon: "🐢", text: "It loads so slowly visitors leave before seeing anything" },
-                                    { icon: "📵", text: "It looks broken on mobile — where 70% of your customers are" },
+                                    { icon: "📵", text: "It looks broken on mobile, where 70% of your customers are" },
                                     { icon: "🔇", text: "You're not getting calls, leads, or new customers from it" },
                                     { icon: "💸", text: "You paid for a website that isn't actually working for you" },
                                 ].map(({ icon, text }) => (
@@ -197,7 +212,7 @@ const LocationContent = ({ city }) => {
                                     <div className="feature card">
                                         <div className="feature__icon feature__icon--red"><img width="62" height="48" src="/media/img/icons/icon--target.svg" alt="Target icon" /></div>
                                         <h3>Built To Convert</h3>
-                                        <p>Every page is designed with one goal — turning visitors into calls, bookings and real customers.</p>
+                                        <p>Every page is designed with one goal: turning visitors into calls, bookings and real customers.</p>
                                     </div>
                                 </div>
                                 <div className="col-sm-6 col-md-4">
@@ -270,7 +285,7 @@ const LocationContent = ({ city }) => {
                                                 "Performance optimization",
                                                 "Mobile-first design",
                                                 "2 revision rounds",
-                                                "14-day delivery guarantee",
+                                                "Live 14 days after we receive your content",
                                                 "1 month free hosting & support",
                                             ].map((item, i) => (
                                                 <li key={i}><span className="pricing-card__check">✓</span>{item}</li>
@@ -293,7 +308,7 @@ const LocationContent = ({ city }) => {
                                                 "Advanced local SEO",
                                                 "Custom logo design",
                                                 "3 revision rounds",
-                                                "Priority 14-day delivery",
+                                                "Live 14 days after we receive your content",
                                                 "3 months free hosting & support",
                                             ].map((item, i) => (
                                                 <li key={i}><span className="pricing-card__check">✓</span>{item}</li>
@@ -327,10 +342,21 @@ const LocationContent = ({ city }) => {
                             </div>
                             <div className="row">
                                 <div className="col-12">
+                                    <div className="pricing-guarantee">
+                                        <h3>Love your site or get a full refund. No hoops.</h3>
+                                        <p>
+                                            Pay half up front and half at launch. Don't love the design preview? Get your deposit back. Changed your mind after launch? You have 14 days to ask for a full refund.{" "}
+                                            <a href="#refund" onClick={openRefundFaq}>See the refund details</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-12">
                                     <div className="pricing-addon">
                                         <div className="pricing-addon__info">
                                             <div className="pricing-addon__label pill">Add-On</div>
-                                            <h3>Monthly Care Plan — $199/mo</h3>
+                                            <h3>Monthly Care Plan: $199/mo</h3>
                                             <p>Keep your site fast, secure, and ranking. Includes hosting, SSL, security monitoring, weekly backups, plugin/software updates, Google Analytics reporting, and up to 2 hours of content edits per month.</p>
                                         </div>
                                         <div className="pricing-addon__cta">
@@ -341,7 +367,7 @@ const LocationContent = ({ city }) => {
                             </div>
                             <div className="row">
                                 <div className="col-12">
-                                    <p className="pricing__hosting-note">* Hosting is $19.99/mo after the free period — or included at no extra cost with our Monthly Care Plan.</p>
+                                    <p className="pricing__hosting-note">* Hosting is $19.99/mo after the free period, or included at no extra cost with our Monthly Care Plan.</p>
                                 </div>
                             </div>
                         </div>
@@ -359,7 +385,7 @@ const LocationContent = ({ city }) => {
                                 <div className="col-lg-8 offset-lg-2">
                                     <div className="faq__list">
                                         {FAQS.map((faq, i) => (
-                                            <details key={i} className="faq-item card card--sm">
+                                            <details key={i} id={faq.id} className="faq-item card card--sm">
                                                 <summary className="faq-item__question">{faq.q}</summary>
                                                 <p className="faq-item__answer">{faq.a}</p>
                                             </details>
@@ -391,9 +417,9 @@ const LocationContent = ({ city }) => {
                             <div className="row">
                                 <div className="col-12">
                                     <h2>Ready to Get More Customers From Your Website?</h2>
-                                    <p className="final-cta__subtitle">Join {city} businesses that are finally getting real results online. Your free audit is waiting.</p>
+                                    <p className="final-cta__subtitle">Join {city} businesses that are finally getting real results online. Your free homepage preview is waiting.</p>
                                     <a href={JOTFORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--white">
-                                        Book Your Free Website Strategy Call →
+                                        Get Your Free Homepage Preview →
                                     </a>
                                 </div>
                             </div>
@@ -407,18 +433,18 @@ const LocationContent = ({ city }) => {
                 <div className="exit-popup" onClick={() => setShowPopup(false)}>
                     <div className="exit-popup__card" onClick={e => e.stopPropagation()}>
                         <button className="exit-popup__close" onClick={() => setShowPopup(false)}>×</button>
-                        <span className="pill exit-popup__pill">Wait — Before You Go!</span>
-                        <h2>Free Website Audit — No Strings Attached</h2>
-                        <p className="exit-popup__desc">We'll review your current website and show you exactly what's holding you back from more leads. No pressure, no commitment.</p>
+                        <span className="pill exit-popup__pill">Wait, Before You Go!</span>
+                        <h2>Free Homepage Preview, No Strings Attached</h2>
+                        <p className="exit-popup__desc">Tell us about your business and we'll show you what your new homepage could look like. No pressure, no commitment.</p>
                         <div className="exit-popup__grid">
-                            {["Free Homepage Mockup", "14-Day Launch Guarantee", "No Long-Term Contracts", "Local SEO Roadmap Included"].map((item, i) => (
+                            {["Free Homepage Mockup", "Live 14 Days After Content", "No Long-Term Contracts", "Local SEO Roadmap Included"].map((item, i) => (
                                 <div key={i} className="exit-popup__item">
                                     <span className="exit-popup__check">✓</span>
                                     <span className="exit-popup__item-text">{item}</span>
                                 </div>
                             ))}
                         </div>
-                        <a href={JOTFORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--white">Claim My Free Website Audit</a>
+                        <a href={JOTFORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--white">Get Your Free Homepage Preview</a>
                     </div>
                 </div>
             )}
