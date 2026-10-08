@@ -106,7 +106,7 @@ All packages include a **free strategy call**.
 - Performance optimization
 - Mobile-first design
 - 2 revision rounds
-- 14-day delivery guarantee
+- Live 14 days from the day we receive content
 - 1 month included support
 
 ---
@@ -119,7 +119,7 @@ All packages include a **free strategy call**.
 - Mobile-first design
 - Custom logo design
 - 3 revision rounds
-- Priority 14-day delivery
+- Live 14 days from the day we receive content
 - 3 months included support
 
 ---
@@ -134,7 +134,7 @@ All packages include a **free strategy call**.
 - Full brand identity
 - Competitor & market research
 - Unlimited revisions
-- Priority 14-day delivery
+- Live 14 days from the day we receive content
 - 6 months included support
 
 ---
@@ -151,6 +151,12 @@ Reliable, fast hosting after the free period ends. Always included at no extra c
 
 ## Payment & Policies
 
-- **Payment:** 50% upfront to start, 50% on completion
+- **Payment:** 50% up front (the deposit, $250 on Starter), 50% at launch
+- **Timeline:** 14 days from the day we receive the client's content
+- **Refund at design preview:** after seeing the initial design preview, the client can decline and get a full deposit refund
+- **Refund after launch:** the client can request a refund for up to 14 days after the launch date
+- **After a refund:** code, images, and designs created by Jelly Development stay with Jelly Development, and the site is taken down. Domains and anything the client provided (logo, photos, text, accounts) stay with the client
+- **Ownership:** once paid in full with no refund, the client owns the finished site
+- **Contract template:** `static/WebDev_Contract_Template.html` (needs Florida attorney review before first use)
 - **Contracts:** Month-to-month on maintenance — cancel anytime
 - **Strategy call:** Free with every package
