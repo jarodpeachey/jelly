@@ -38,6 +38,11 @@ const Navigation = () => {
                                     Pricing
                                 </a>
                             </li>
+                            <li>
+                                <Link to="/contact" className="menu__item">
+                                    Contact
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

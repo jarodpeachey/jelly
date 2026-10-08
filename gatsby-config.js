@@ -99,11 +99,12 @@ module.exports = {
                     // Allowing 'unsafe-eval' here unblocks code that relies on eval/new Function
                     // (for example webpack runtime in some builds). This is the pragmatic fix.
                     // Add Google tag/ads domains so their conversion/viewthrough scripts can load.
-                    // Also allow JotForm for embedded forms.
-                        "script-src": "'self' 'unsafe-inline' 'unsafe-eval' data: https://www.googletagmanager.com https://googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.googletagservices.com https://form.jotform.com",
+                    // Also allow JotForm for embedded forms (form.jotform.com) and its embed
+                    // resize handler (cdn.jotfor.ms), used on the /contact page.
+                        "script-src": "'self' 'unsafe-inline' 'unsafe-eval' data: https://www.googletagmanager.com https://googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.googletagservices.com https://form.jotform.com https://cdn.jotfor.ms",
                     // For older browsers and explicit script element loads, set script-src-elem as well.
                     // Also allow JotForm for embedded forms.
-                        "script-src-elem": "'self' 'unsafe-inline' 'unsafe-eval' data: https://www.googletagmanager.com https://googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.googletagservices.com https://form.jotform.com",
+                        "script-src-elem": "'self' 'unsafe-inline' 'unsafe-eval' data: https://www.googletagmanager.com https://googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.googletagservices.com https://form.jotform.com https://cdn.jotfor.ms",
                     "style-src": "'self' 'unsafe-inline' https://form.jotform.com",
                     // you can add your directives or override defaults
                 },
