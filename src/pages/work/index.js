@@ -5,6 +5,8 @@ import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 import "../../styles/partials/pages/_work.scss";
 
+// TODO: add concept designs (one per trade: HVAC, roofing, plumbing, electrical, landscaping)
+// once the trade templates exist. Do not add sample sites until then.
 const PROJECTS = [
     {
         slug: "lakeland-painting",

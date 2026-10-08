@@ -29,6 +29,9 @@ function SEO({ description, title, bodyClass, image = null }) {
       <meta name="og:description" content={description || defaultDescription} />
       <meta name="og:type" content="website" />
       <link rel="icon" type="image/svg+xml" href="/media/img/Logo Solid.png"></link>
+      {/* Preload the weights used above the fold (h1 and body) so the hero renders sooner */}
+      <link rel="preload" href="/media/fonts/poppins/poppins-latin-800.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      <link rel="preload" href="/media/fonts/poppins/poppins-latin-300.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       <meta name="og:image" content={image || `https://jellydevelopment.com/media/img/SEO.png?test=true`} />
       <meta name="twitter:image" content={image || `https://jellydevelopment.com/media/img/SEO.png?test=true`} />
       <meta name="twitter:card" content="summary_large_image" />

@@ -1,0 +1,606 @@
+<!--
+  ATTORNEY REVIEW REQUIRED: This is a reusable template drafted in plain English by Jelly Development, not by a lawyer.
+  Before it is used with a client for the first time, have a Florida-licensed attorney review it, especially the refund,
+  ownership, takedown, liability, and governing law sections, and confirm it complies with Florida law and any consumer
+  protection rules that apply to your clients.
+
+  PLACEHOLDERS (find and replace every {{...}} before sending; none should remain in the printed copy):
+    {{EFFECTIVE_DATE}}         Date the agreement is signed and takes effect, e.g. October 8, 2026
+    {{CLIENT_NAME}}            Full name of the person signing for the client
+    {{CLIENT_BUSINESS}}        Client's legal business name, e.g. Example Plumbing LLC
+    {{CLIENT_ADDRESS}}         Client's mailing address (street, city, state, ZIP)
+    {{CLIENT_EMAIL}}           Client's email address for notices and refund requests
+    {{PACKAGE_NAME}}           Starter, Growth, or Premium
+    {{PRICE}}                  Total build fee, e.g. $500.00 (Starter), $1,400.00 (Growth), $3,000.00 (Premium)
+    {{DEPOSIT}}                Half of {{PRICE}}, due at signing, e.g. $250.00 on Starter
+    {{FINAL_PAYMENT}}          The other half of {{PRICE}}, due at launch, e.g. $250.00 on Starter
+    {{PAGES_INCLUDED}}         Number of pages in the package, e.g. 1 (Starter), up to 5 (Growth), up to 10 (Premium)
+    {{REVISIONS_INCLUDED}}     Revision rounds in the package, e.g. 2 (Starter), 3 (Growth), unlimited (Premium)
+    {{HOSTING_MONTHS}}         Months of free hosting and support in the package, e.g. 1 (Starter), 3 (Growth), 6 (Premium)
+    {{CONTENT_RECEIVED_DATE}}  Date all client content was received. If signing before content arrives,
+                               write "the date all content is received" and confirm the date by email later.
+    {{DELIVERY_DATE}}          Target launch date: 14 days after {{CONTENT_RECEIVED_DATE}}. If the content date
+                               is not known yet, write "14 days after all content is received".
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development Services Agreement | {{CLIENT_BUSINESS}}</title>
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-light-webfont.woff2') format('woff2'),
+           url('media/fonts/poppins/poppins-light-webfont.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-regular-webfont.woff2') format('woff2'),
+           url('media/fonts/poppins/poppins-regular-webfont.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-medium-webfont.woff2') format('woff2'),
+           url('media/fonts/poppins/poppins-medium-webfont.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-semibold-webfont.woff2') format('woff2'),
+           url('media/fonts/poppins/poppins-semibold-webfont.woff') format('woff');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-bold-webfont.woff2') format('woff2'),
+           url('media/fonts/poppins/poppins-bold-webfont.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('media/fonts/poppins/poppins-extrabold-webfont.woff2') format('woff2'),
+           url('media/fonts/poppins/poppins-extrabold-webfont.woff') format('woff');
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #48484b;
+      background: #ffffff;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 64px 72px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 2px solid #000;
+    }
+
+    .header-logo img {
+      height: 44px;
+      width: auto;
+    }
+
+    .header-meta {
+      text-align: right;
+      font-size: 12px;
+      font-weight: 400;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .header-meta strong {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 2px;
+    }
+
+    /* Title */
+    .contract-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #000;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .contract-intro {
+      font-size: 14px;
+      font-weight: 300;
+      color: #333;
+      line-height: 1.85;
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .contract-intro strong {
+      font-weight: 600;
+      color: #000;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #000;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 14px;
+      background: #000;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .section p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section p strong {
+      font-weight: 600;
+      color: #000;
+    }
+
+    ul.deliverables {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 12px;
+    }
+
+    ul.deliverables li {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #333;
+      padding: 4px 0 4px 20px;
+      position: relative;
+    }
+
+    ul.deliverables li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 6px;
+      height: 6px;
+      background: #000;
+      border-radius: 50%;
+    }
+
+    /* Timeline grid */
+    .timeline {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 0;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .timeline-row {
+      display: contents;
+    }
+
+    .timeline-week {
+      background: #f0f0f0;
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #000;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .timeline-desc {
+      background: #fff;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 300;
+      color: #333;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+    }
+
+    .timeline-row:last-child .timeline-week,
+    .timeline-row:last-child .timeline-desc {
+      border-bottom: none;
+    }
+
+    /* Payment list */
+    .payment-list {
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .payment-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 16px;
+      font-size: 13px;
+      border-bottom: 1px solid #ccc;
+      gap: 16px;
+    }
+
+    .payment-item:last-child {
+      border-bottom: none;
+      background: #f0f0f0;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .payment-item-label {
+      font-weight: 300;
+      color: #333;
+      flex: 1;
+    }
+
+    .payment-item:last-child .payment-item-label {
+      font-weight: 700;
+      color: #000;
+    }
+
+    .payment-item-amount {
+      font-weight: 700;
+      color: #000;
+      white-space: nowrap;
+    }
+
+    .payment-item-due {
+      font-weight: 300;
+      color: #555;
+      font-size: 12px;
+      flex: 1;
+      text-align: right;
+    }
+
+    .payment-item:last-child .payment-item-due {
+      visibility: hidden;
+    }
+
+    /* Signature section */
+    .signatures {
+      margin-top: 48px;
+      padding-top: 36px;
+      border-top: 2px solid #000;
+    }
+
+    .signatures-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .signatures-subtitle {
+      font-size: 12px;
+      font-weight: 300;
+      color: #555;
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 40px;
+    }
+
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .sig-block {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sig-party {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: -4px;
+    }
+
+    .sig-name {
+      font-size: 13px;
+      font-weight: 400;
+      color: #333;
+    }
+
+    .sig-line-group {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .sig-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sig-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    .sig-line {
+      border: none;
+      border-bottom: 1.5px solid #aaa;
+      height: 32px;
+      width: 100%;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { padding: 40px 48px; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="header-logo">
+        <img src="media/img/Logo Solid.svg" alt="Jelly Development" />
+      </div>
+      <div class="header-meta">
+        <strong>Contract Date</strong>
+        {{EFFECTIVE_DATE}}<br />
+        {{PACKAGE_NAME}} Package, {{PRICE}}
+      </div>
+    </div>
+
+    <!-- Title -->
+    <h1 class="contract-title">Web Development Services Agreement</h1>
+    <p class="contract-intro">
+      This Web Development Services Agreement ("Agreement") is entered into as of <strong>{{EFFECTIVE_DATE}}</strong> between
+      <strong>Jelly Development LLC</strong> ("Developer"), represented by Jarod Peachey, and <strong>{{CLIENT_BUSINESS}}</strong> ("Client"),
+      represented by {{CLIENT_NAME}}, {{CLIENT_ADDRESS}}, {{CLIENT_EMAIL}}. Both parties agree to the following terms.
+    </p>
+
+    <!-- 1. Scope of Work -->
+    <div class="section">
+      <div class="section-title">1. Scope of Work</div>
+      <p>Developer will design and build a website for Client under the <strong>{{PACKAGE_NAME}}</strong> package. The package includes:</p>
+      <ul class="deliverables">
+        <li>{{PAGES_INCLUDED}} website page(s)</li>
+        <li>Mobile-first, responsive design (phone, tablet, and desktop)</li>
+        <li>On-page SEO setup</li>
+        <li>Performance optimization</li>
+        <li>{{REVISIONS_INCLUDED}} round(s) of revisions during the build</li>
+        <li>{{HOSTING_MONTHS}} month(s) of free hosting and support, starting on the launch date</li>
+      </ul>
+      <p>Anything not listed above is outside this Agreement. Extra pages, features, or revisions will be quoted separately and need written approval before work starts.</p>
+    </div>
+
+    <!-- 2. Client Content and Timeline -->
+    <div class="section">
+      <div class="section-title">2. Client Content and Timeline</div>
+      <p>Client will provide the content needed for the site: logo files, photos, written text, business details, and access to any accounts Developer needs (such as the domain).</p>
+      <p>Developer will launch the website within <strong>14 days from the day all of Client's content is received</strong>. Content received: <strong>{{CONTENT_RECEIVED_DATE}}</strong>. Target launch date: <strong>{{DELIVERY_DATE}}</strong>. The 14-day clock does not start until the content is received, and it pauses while Developer is waiting on Client for feedback or missing items.</p>
+      <div class="timeline">
+        <div class="timeline-row">
+          <div class="timeline-week">Start</div>
+          <div class="timeline-desc">Client's content is received and the 14-day clock starts</div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-week">Preview</div>
+          <div class="timeline-desc">Developer shares the initial design preview. Client approves it or declines it for a full deposit refund (Section 4)</div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-week">Build</div>
+          <div class="timeline-desc">Developer builds the site and works through the included revision rounds</div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-week">Launch</div>
+          <div class="timeline-desc">The site goes live, the final payment is due, and the 14-day refund window starts (Section 5)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Payment Terms -->
+    <div class="section">
+      <div class="section-title">3. Payment Terms</div>
+      <p>The total build fee is <strong>{{PRICE}}</strong>, paid in two halves:</p>
+      <div class="payment-list">
+        <div class="payment-item">
+          <span class="payment-item-label">Deposit (50%)</span>
+          <span class="payment-item-amount">{{DEPOSIT}}</span>
+          <span class="payment-item-due">Due at signing, before work starts</span>
+        </div>
+        <div class="payment-item">
+          <span class="payment-item-label">Final Payment (50%)</span>
+          <span class="payment-item-amount">{{FINAL_PAYMENT}}</span>
+          <span class="payment-item-due">Due at launch</span>
+        </div>
+        <div class="payment-item">
+          <span class="payment-item-label">Total</span>
+          <span class="payment-item-amount">{{PRICE}}</span>
+          <span class="payment-item-due"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Design Preview and Deposit Refund -->
+    <div class="section">
+      <div class="section-title">4. Design Preview and Deposit Refund</div>
+      <p>After Client sees the initial design preview, Client can decline it and receive a <strong>full refund of the deposit ({{DEPOSIT}})</strong>. To decline, Client tells Developer in writing (email is fine). The project then ends, no final payment is owed, and Section 6 applies to the preview designs.</p>
+    </div>
+
+    <!-- 5. Post-Launch Refund Window -->
+    <div class="section">
+      <div class="section-title">5. Post-Launch Refund Window</div>
+      <p>Client can request a refund in writing (email is fine) for up to <strong>14 days after the launch date</strong>. If Client requests a refund within that window, Developer will refund the fees Client paid for the build, and Section 6 applies. After the 14 days pass, the build fee is no longer refundable.</p>
+    </div>
+
+    <!-- 6. What Happens After a Refund -->
+    <div class="section">
+      <div class="section-title">6. What Happens After a Refund</div>
+      <p>If a refund is issued at any point, all code files, images, and designs created by Developer belong to <strong>Jelly Development LLC</strong>, and Client may not use them. If the website is live, Developer will take it down.</p>
+      <p>Client's domain and everything Client provided (logo, photos, text, and accounts) stay Client's. Developer will return them or leave them untouched.</p>
+    </div>
+
+    <!-- 7. Ownership -->
+    <div class="section">
+      <div class="section-title">7. Ownership</div>
+      <p>Once Client has paid in full and the 14-day refund window has passed with no refund requested, <strong>Client owns the finished website</strong>, including the code, images, and designs Developer created for it. Developer will hand over the site files and any logins Developer set up for Client on request.</p>
+      <p>Until then, the work belongs to Developer. Client's domain and the materials Client provided are always Client's.</p>
+    </div>
+
+    <!-- 8. Third-Party Costs -->
+    <div class="section">
+      <div class="section-title">8. Third-Party Costs</div>
+      <p>Client pays directly for any third-party services, such as the domain name, hosting after the free period, and paid plugins or software. Those accounts and purchases are in Client's name and stay with Client, including after a refund.</p>
+    </div>
+
+    <!-- 9. Optional Care Plan -->
+    <div class="section">
+      <div class="section-title">9. Optional Care Plan</div>
+      <p>The Care Plan is optional, separate from the build, and not included in the build fee. It costs <strong>$199 per month</strong>, is month-to-month, and can be canceled anytime. It includes hosting, SSL, security monitoring, weekly backups, plugin and software updates, Google Analytics reporting, and up to 2 hours of content edits per month.</p>
+      <p>Client signs up for the Care Plan only by opting in separately. The refund terms in Sections 4 and 5 apply to the build fee only.</p>
+    </div>
+
+    <!-- 10. Confidentiality -->
+    <div class="section">
+      <div class="section-title">10. Confidentiality</div>
+      <p>Both parties will keep private any business information shared during this project and will not share it with others without written permission.</p>
+    </div>
+
+    <!-- 11. Warranties & Liability -->
+    <div class="section">
+      <div class="section-title">11. Warranties &amp; Liability</div>
+      <p>Developer will do the work in a professional manner. Developer does not guarantee uninterrupted service from third-party platforms or hosting providers. Developer's total liability is limited to the amount Client paid under this Agreement.</p>
+    </div>
+
+    <!-- 12. Governing Law -->
+    <div class="section">
+      <div class="section-title">12. Governing Law</div>
+      <p>This Agreement is governed by the laws of the state in which Jelly Development LLC is registered. Both parties agree to first try to settle any dispute through good-faith discussion.</p>
+    </div>
+
+    <!-- 13. Entire Agreement -->
+    <div class="section">
+      <div class="section-title">13. Entire Agreement</div>
+      <p>This Agreement is the full understanding between both parties and replaces any earlier discussions. Any changes must be in writing and signed by both parties.</p>
+    </div>
+
+    <!-- Signatures -->
+    <div class="signatures">
+      <div class="signatures-title">Signatures</div>
+      <div class="signatures-subtitle">By signing below, both parties confirm they have read and agree to all terms of this Agreement.</div>
+      <div class="sig-grid">
+        <div class="sig-block">
+          <div>
+            <div class="sig-party">Jelly Development LLC</div>
+            <div class="sig-name">Printed Name: Jarod Peachey</div>
+          </div>
+          <div class="sig-line-group">
+            <div class="sig-field">
+              <div class="sig-label">Signature</div>
+              <div class="sig-line"></div>
+            </div>
+            <div class="sig-field">
+              <div class="sig-label">Date</div>
+              <div class="sig-line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="sig-block">
+          <div>
+            <div class="sig-party">{{CLIENT_BUSINESS}}</div>
+            <div class="sig-name">Printed Name: {{CLIENT_NAME}}</div>
+          </div>
+          <div class="sig-line-group">
+            <div class="sig-field">
+              <div class="sig-label">Signature</div>
+              <div class="sig-line"></div>
+            </div>
+            <div class="sig-field">
+              <div class="sig-label">Date</div>
+              <div class="sig-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
