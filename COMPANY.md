@@ -158,5 +158,7 @@ Reliable, fast hosting after the free period ends. Always included at no extra c
 - **After a refund:** code, images, and designs created by Jelly Development stay with Jelly Development, and the site is taken down. Domains and anything the client provided (logo, photos, text, accounts) stay with the client
 - **Ownership:** once paid in full with no refund, the client owns the finished site
 - **Contract template:** `static/WebDev_Contract_Template.html` (needs Florida attorney review before first use)
+- **One-page agreement:** `static/WebDev_Agreement_OnePage.html` (same terms, short form; also needs attorney review)
+- **Client intake form:** `static/Client_Intake_Form.html` (content list; the 14-day clock starts when it and the files are received)
 - **Contracts:** Month-to-month on maintenance — cancel anytime
 - **Strategy call:** Free with every package
