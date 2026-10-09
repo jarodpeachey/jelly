@@ -54,7 +54,7 @@ Fallback: `"Raleway", sans-serif`
 | Element | Size | Line Height | Weight |
 |---|---|---|---|
 | h1 | 2.875rem (46px) | 3.45rem | 800 |
-| h2 | 2.25rem (36px) | 2.75rem | 800 |
+| h2 | 2.025rem (~32px) | 2.5rem | 800 |
 | h3 | 1.25rem (20px) | 1.925rem | 700 |
 | h4 | 22px | 34px | 700 |
 | Body / p / li | 17px | 32px | 300 |

@@ -1,0 +1,15 @@
+@use "spacing" as *;
+
+.landing-nav {
+    display: flex;
+    justify-content: center;
+    padding: $space--lg $space--md;
+    position: relative;
+    z-index: 1;
+
+    img {
+        display: block;
+        height: 36px;
+        width: auto;
+    }
+}

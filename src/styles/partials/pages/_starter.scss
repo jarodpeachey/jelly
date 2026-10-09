@@ -1,0 +1,326 @@
+@use "../breakpoints" as *;
+@use "../colors" as *;
+@use "../spacing" as *;
+
+// Starter page only: Mont for headings, Nunito Sans for everything else, Raleway fallback.
+// The rest of the site stays on Poppins. Fonts only download on pages that use them.
+$starter--font-heading: "Mont", "Raleway", sans-serif;
+$starter--font-body: "Nunito Sans", "Raleway", sans-serif;
+
+// Mont ships as a single file, so it covers every weight (no faux bold).
+@font-face {
+    font-family: "Mont";
+    src: url("/media/fonts/mont/mont.woff2") format("woff2"), url("/media/fonts/mont/mont.woff") format("woff");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("/media/fonts/nunito-sans/nunitosans-regular-webfont.woff2") format("woff2"), url("/media/fonts/nunito-sans/nunitosans-regular-webfont.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("/media/fonts/nunito-sans/nunitosans-semibold-webfont.woff2") format("woff2"), url("/media/fonts/nunito-sans/nunitosans-semibold-webfont.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("/media/fonts/nunito-sans/nunitosans-bold-webfont.woff2") format("woff2"), url("/media/fonts/nunito-sans/nunitosans-bold-webfont.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("/media/fonts/nunito-sans/nunitosans-extrabold-webfont.woff2") format("woff2"), url("/media/fonts/nunito-sans/nunitosans-extrabold-webfont.woff") format("woff");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("/media/fonts/nunito-sans/nunitosans-black-webfont.woff2") format("woff2"), url("/media/fonts/nunito-sans/nunitosans-black-webfont.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Ad landing page (/starter): whole page on the navy blue grid,
+// hero on navy, everything below it in one white card.
+// 900px centered column, centered h1, everything else left aligned.
+.starter-page {
+    background-color: $color--primary-dark;
+    background-image: linear-gradient(rgba(56, 93, 216, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 93, 216, 0.07) 1px, transparent 1px);
+    background-size: 80px 80px;
+
+    // Override the global Poppins rules (they target elements directly, so inheritance alone won't do it)
+    &,
+    * {
+        font-family: $starter--font-body;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $starter--font-heading;
+    }
+
+    section {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .starter {
+        margin: 0 auto;
+        max-width: 900px;
+        padding: $space--xl $space--lg $space--xxxl;
+
+        section {
+            margin-bottom: $space--xxxl;
+        }
+
+        // Smaller on phones; desktop uses the global h2 size
+        h2 {
+            font-size: 1.75rem;
+            line-height: 2.25rem;
+
+            @include media-breakpoint-up(md) {
+                font-size: 2.025rem;
+                line-height: 2.5rem;
+            }
+        }
+
+        p,
+        ul,
+        li {
+            color: $color--text;
+            font-weight: 400;
+            font-size: 20px;
+        }
+
+        h3 {
+            margin-bottom: $space--sm;
+            margin-top: $space--lg;
+        }
+
+        .btn {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        strong {
+            color: $color--heading;
+            font-weight: 800;
+        }
+
+        ul,
+        ol {
+            margin-bottom: $space--lg;
+            padding-left: 1.25rem;
+        }
+
+        li {
+            margin-bottom: $space--sm;
+        }
+
+        sup a {
+            color: $color--primary;
+            font-size: 0.75rem;
+            line-height: 1;
+            margin-left: 2px;
+            text-decoration: none;
+        }
+
+        .btn {
+            margin-top: $space--sm;
+        }
+    }
+
+    .starter__hero {
+        margin-bottom: $space--xxl !important;
+        padding-top: $space--xl;
+        text-align: center;
+
+        h1,
+        strong {
+            color: #fff;
+        }
+
+        .starter__lead {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 22px;
+        }
+
+        .pill {
+            margin-bottom: $space--md;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            line-height: 2.75rem;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 760px;
+            text-align: center;
+
+            @include media-breakpoint-up(md) {
+                font-size: 2.875rem;
+                line-height: 3.45rem;
+            }
+        }
+    }
+
+    .starter__lead {
+        font-size: 1.125rem;
+        line-height: 1.9rem;
+        text-align: center;
+    }
+
+    .starter__fine {
+        color: $color--gray-three;
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+
+    // The white card holding everything below the hero
+    .starter__content {
+        background: $color--background;
+        border-radius: $radius--lg;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+        padding: $space--xl $space--lg;
+
+        @include media-breakpoint-up(md) {
+            padding: $space--xxl;
+        }
+
+        > section:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // Highlighted blocks inside the white card
+    .starter__card {
+        background: $color--primary-lightest;
+        border: 1px solid $color--primary-light;
+        border-radius: $radius--md;
+        padding: $space--lg;
+
+        @include media-breakpoint-up(md) {
+            padding: $space--xl;
+        }
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // Photo centered on top, short intro centered below it
+    .starter__intro {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: $space--lg;
+        text-align: center;
+
+        p {
+            max-width: 560px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .starter__photo {
+        align-items: center;
+        aspect-ratio: 1;
+        background: $color--primary;
+        border: 3px solid $color--primary-light;
+        border-radius: 50%;
+        color: #fff;
+        display: flex;
+        font-size: 3.5rem;
+        font-weight: 800;
+        justify-content: center;
+        overflow: hidden;
+        width: 140px;
+
+        @include media-breakpoint-up(md) {
+            width: 180px;
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    .starter__checks {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            padding-left: 1.75rem;
+            position: relative;
+
+            &::before {
+                color: $color--primary;
+                content: "✓";
+                font-weight: 700;
+                left: 0;
+                position: absolute;
+            }
+        }
+    }
+
+    .starter__stats {
+        margin-bottom: $space--xl;
+
+        li {
+            margin-bottom: $space--md;
+        }
+    }
+
+    .starter__stat-number {
+        color: $color--primary;
+        font-weight: 800;
+    }
+
+    .starter__final {
+        border-color: $color--primary;
+    }
+
+    .starter__sources {
+        border-top: 1px solid rgba(56, 93, 216, 0.15);
+        padding-top: $space--xl;
+
+        h2 {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        li {
+            color: $color--gray-three;
+            font-size: 0.8125rem;
+            line-height: 1.6;
+        }
+    }
+}

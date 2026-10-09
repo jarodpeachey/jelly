@@ -99,8 +99,8 @@ h1 {
 
 h2,
 .h2 {
-  font-size: 2.25rem;
-  line-height: 2.75rem;
+  font-size: 2.025rem;
+  line-height: 2.5rem;
 }
 
 h3,
@@ -120,6 +120,7 @@ h4,
 
 p,
 ul,
+ol,
 li {
   font-weight: 300;
   font-size: 17px; /* 1.03rem -> ~16.48px, rounded to 17px for readability */
@@ -144,6 +145,12 @@ li {
 
 li {
   margin-bottom: 0px;
+}
+
+// Keep superscripts (e.g. source numbers) from stretching the line height
+sup,
+sub {
+  line-height: 0;
 }
 
 .display {
