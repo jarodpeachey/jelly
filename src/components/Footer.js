@@ -2,9 +2,8 @@ import "../styles/partials/_footer.scss";
 import React from "react";
 
 // TODO: replace PHONE and MAILING_ADDRESS with real values before deploying
-const PHONE = "TODO_PHONE";
+const PHONE = "717-682-2910";
 const EMAIL = "jarod@jellydevelopment.com";
-const MAILING_ADDRESS = "TODO_MAILING_ADDRESS";
 
 const Footer = () => {
     return (
@@ -14,7 +13,6 @@ const Footer = () => {
                 <address className="footer__contact">
                     <a href={`tel:${PHONE.replace(/[^\d+]/g, "")}`}>{PHONE}</a>
                     <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-                    <span>{MAILING_ADDRESS}</span>
                 </address>
                 <p>© 2026 Jelly Development LLC</p>
             </div>
