@@ -109,5 +109,6 @@ Note: the website itself uses Poppins and primary blue `#385dd8` (see COMPANY.md
 
 - Use the existing SCSS tokens (colors, spacing, radii, shadows) instead of hard-coded values.
 - New page styles go in `src/styles/partials/pages/_<page>.scss`.
+- "Secondary page style": the dark navy hero with the blue grid, defined once as `.secondary-hero` in `src/styles/partials/_secondary-page.scss`. Used on `/work`, the case study pages, and `/contact`. Put a pill, h1, and p inside it; add page-specific modifiers alongside (e.g. `secondary-hero case-hero`). Also add `secondary-page` to the page's SEO `bodyClass` so the desktop nav links turn white (90% opacity, 100% on hover).
 - Match the site's type: headings weight 800, body weight 300, pills 13px/600 uppercase. Full specs in COMPANY.md.
 - Site copy follows the same copy rules as outreach: concise, friendly, conversational, no em dashes.

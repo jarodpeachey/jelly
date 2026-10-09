@@ -11,7 +11,7 @@ const TECH = ["React", "HTML", "CSS", "Custom Hosting", "Analytics Dashboard"];
 const LakelandPainting = () => (
     <>
         <SEO
-            bodyClass="case-study"
+            bodyClass="case-study secondary-page"
             title="Lakeland Painting — Web Design Case Study | Jelly Development"
             description="How Jelly Development rebuilt Lakeland Painting's website — cut their monthly costs in half, improved mobile experience, and boosted local SEO."
         />
@@ -20,7 +20,7 @@ const LakelandPainting = () => (
         </header>
         <div id="wrapper" className="wrapper">
             {/* Hero */}
-            <section className="case-hero">
+            <section className="secondary-hero case-hero">
                 <div className="container">
                     <span className="pill">Case Study</span>
                     <h1>Lakeland Painting</h1>

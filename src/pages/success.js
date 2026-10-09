@@ -1,29 +1,31 @@
 import React from "react";
+import { Link } from "gatsby";
 import SEO from "../components/SEO";
 import Navigation from "../components/Navigation";
-import "../styles/partials/pages/_default.scss";
 import Footer from "../components/Footer";
 
-const Thanks = ({ props }) => {
+const Success = () => {
   return (
     <>
-      <SEO bodyClass="default" />
+      <SEO bodyClass="success-page secondary-page" title="Thank You | Jelly Development" />
 
       <header>
-        <Navigation noButton={true} />
+        <Navigation />
       </header>
 
-      <section className="hero">
-        <div className="container">
-          <div className="card">
-            <h1 className="">Thanks for contacting us!</h1>
-            <p className="section-description">We'll get back to you within 24 hours.</p>
+      <div id="wrapper" className="wrapper">
+        <section className="secondary-hero">
+          <div className="container">
+            <span className="pill">Message Sent</span>
+            <h1>Thanks for reaching out!</h1>
+            <p>We got your message and will get back to you within 24 hours.</p>
+            <Link to="/" className="btn">Back to homepage</Link>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
       <Footer />
     </>
   );
 };
 
-export default Thanks;
+export default Success;

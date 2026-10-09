@@ -2,8 +2,8 @@ import "../styles/partials/_footer.scss";
 import React from "react";
 
 // TODO: replace PHONE and MAILING_ADDRESS with real values before deploying
-const PHONE = "717-682-2910";
-const EMAIL = "jarod@jellydevelopment.com";
+export const PHONE = "717-682-2910";
+export const EMAIL = "jarod@jellydevelopment.com";
 
 const Footer = () => {
     return (

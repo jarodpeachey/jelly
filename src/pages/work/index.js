@@ -20,7 +20,7 @@ const PROJECTS = [
 const WorkIndex = () => (
     <>
         <SEO
-            bodyClass="work"
+            bodyClass="work secondary-page"
             title="Our Work | Jelly Development"
             description="See how Jelly Development has helped small businesses across Central Florida with fast, modern websites that rank on Google and convert visitors into leads."
         />
@@ -28,7 +28,7 @@ const WorkIndex = () => (
             <Navigation />
         </header>
         <div id="wrapper" className="wrapper">
-            <section className="work-hero">
+            <section className="secondary-hero">
                 <div className="container">
                     <span className="pill">Our Work</span>
                     <h1>Projects We're Proud Of</h1>

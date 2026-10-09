@@ -5,23 +5,6 @@
 
 // ── /work index ───────────────────────────────────────────────
 .work {
-    .work-hero {
-        background: $color--primary-lightest;
-        padding-top: 123px;
-        padding-bottom: $space--xxl;
-
-        h1 {
-            margin-top: $space--sm;
-            margin-bottom: $space--sm;
-        }
-
-        p {
-            color: $color--text;
-            font-size: 1.1rem;
-            max-width: 520px;
-        }
-    }
-
     .work-grid {
         padding: $space--xxl 0;
         display: grid;
@@ -104,33 +87,6 @@
 // ── Case study page ───────────────────────────────────────────
 .case-study {
     .case-hero {
-        background: $color--primary-dark;
-        padding-top: 123px;
-        padding-bottom: $space--xxl;
-        position: relative;
-        overflow: hidden;
-
-        &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(56, 93, 216, 0.07) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(56, 93, 216, 0.07) 1px, transparent 1px);
-            background-size: 80px 80px;
-            pointer-events: none;
-        }
-
-        > * { position: relative; z-index: 1; }
-
-        .pill { margin-bottom: $space--sm; }
-
-        h1 {
-            color: #fff;
-            margin-top: $space--sm;
-            margin-bottom: $space--sm;
-        }
-
         &__sub {
             color: rgba(255,255,255,0.7);
             font-size: 1.05rem;

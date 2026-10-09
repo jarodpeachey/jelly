@@ -5,10 +5,17 @@
 // @use "utilities" as *;
 
 .btn {
+  // Reset browser defaults when .btn is on a <button> or submit input
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: inherit;
+
   background: $color--primary;
   border: 1px solid $color--primary;
   border-radius: 999px;
-  box-shadow: 2px 2px 12px 0px #1c2c5e1a;
+  box-shadow: 1px 2px 6px 0px #1c2c5e12;
   color: white;
   display: block;
   height: fit-content;
@@ -38,7 +45,7 @@
   // }
 
   &:hover {
-    box-shadow: 2px 2px 24px 0px #101a3656;
+    box-shadow: 1px 3px 12px 0px #101a3626;
     background-color: #2b48a9;
     border-color: #2b48a9;
   }
@@ -111,7 +118,7 @@
   &:hover {
     background: #f0f4ff;
     border-color: #f0f4ff;
-    box-shadow: 2px 2px 24px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 3px 12px 0px rgba(0, 0, 0, 0.1);
     color: $color--primary;
   }
 }

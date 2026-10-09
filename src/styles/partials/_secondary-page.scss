@@ -1,0 +1,74 @@
+@use "colors" as *;
+@use "spacing" as *;
+@use "breakpoints" as *;
+
+// Secondary page style: dark navy hero with the blue grid.
+// Used on /work, /work/<case-study>, and /contact.
+// Pages opt in with the `secondary-page` body class (via SEO bodyClass).
+
+// Desktop nav links sit on the navy hero, so they go white.
+// The mobile dropdown keeps its white background and default link colors.
+.secondary-page .navigation-menu .menu__main a.menu__item {
+    @include media-breakpoint-up(lg) {
+        color: rgba(255, 255, 255, 0.9);
+
+        &:hover {
+            color: #ffffff;
+        }
+    }
+}
+
+.secondary-hero {
+    background: $color--primary-dark;
+    overflow: hidden;
+    padding-bottom: $space--xxl;
+    padding-top: 123px;
+    position: relative;
+
+    &::before {
+        background-image:
+            linear-gradient(rgba(56, 93, 216, 0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(56, 93, 216, 0.07) 1px, transparent 1px);
+        background-size: 80px 80px;
+        content: "";
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+    }
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .pill {
+        margin-bottom: $space--sm;
+    }
+
+    h1 {
+        color: #fff;
+        margin-bottom: $space--sm;
+        margin-top: $space--sm;
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1.05rem;
+        max-width: 560px;
+    }
+
+    .btn {
+        margin-top: $space--lg;
+    }
+}
+
+// /success has no content below the hero, so let the hero fill the screen.
+.success-page .secondary-hero {
+    align-items: center;
+    display: flex;
+    min-height: 70vh;
+
+    > .container {
+        width: 100%;
+    }
+}

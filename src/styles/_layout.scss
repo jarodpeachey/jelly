@@ -8,6 +8,7 @@
 @use "partials/_sections" as *;
 @use "partials/_inputs" as *;
 @use "partials/_footer.scss" as *;
+@use "partials/_secondary-page" as *;
 
 html body .document-root div.request-storage-access {
     justify-content: flex-start !important;
