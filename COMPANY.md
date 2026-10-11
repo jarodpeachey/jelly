@@ -100,7 +100,7 @@ All packages include a **free strategy call**.
 ---
 
 ### Starter — $500 (one-time)
-- 1 page
+- Up to 3 pages
 - 1 month free hosting
 - On-page SEO setup
 - Performance optimization
@@ -141,11 +141,11 @@ All packages include a **free strategy call**.
 
 ## Add-Ons
 
-### Monthly Care Plan — $199/mo
-Includes: hosting, SSL, security monitoring, weekly backups, plugin/software updates, Google Analytics reporting, and up to 2 hours of content edits per month.
+### Monthly Care Plan — $59.99/mo
+Includes: hosting, SSL, security monitoring, weekly backups, plugin/software updates, Google Analytics reporting, and up to 5 hours of content edits per month.
 
-### Hosting — $19.99/mo
-Reliable, fast hosting after the free period ends. Always included at no extra cost with the Monthly Care Plan.
+### Hosting — $9.99/mo
+Reliable, fast hosting after the free period ends. Always included at no extra cost with the Monthly Care Plan. The client pays Jelly Development for hosting, and Jelly Development pays the hosting provider.
 
 ---
 

@@ -9,7 +9,7 @@
 
 ## Offer (live on jellydevelopment.com)
 
-- Starter $500, Growth $1,400, Premium $3,000, plus a $199/mo Care Plan add-on.
+- Starter $500 (up to 3 pages), Growth $1,400 (up to 5), Premium $3,000 (up to 10), plus a $59.99/mo Care Plan add-on. Hosting is $9.99/mo after the free period.
 - Current push (Oct 2026): lead with the $500 Starter with a refund if unhappy. Give something free first (audit and a homepage mockup), then email.
 - Preference: cheap and high volume over a few expensive clients. One $500 client a month is enough.
 - Suggested refund structure (needs attorney review): $250 deposit, full deposit refund if the design is rejected at preview, final $250 at launch, 14-day post-launch refund window.

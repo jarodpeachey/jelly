@@ -111,7 +111,7 @@ $starter--font-body: "Nunito Sans", "Raleway", sans-serif;
         li {
             color: $color--text;
             font-weight: 400;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         h3 {
@@ -291,36 +291,94 @@ $starter--font-body: "Nunito Sans", "Raleway", sans-serif;
         }
     }
 
-    .starter__stats {
-        margin-bottom: $space--xl;
+    // Agency pain points: muted X marks
+    .starter__pains {
+        list-style: none;
+        padding-left: 0;
 
         li {
-            margin-bottom: $space--md;
+            padding-left: 1.75rem;
+            position: relative;
+
+            &::before {
+                color: $color--gray-three;
+                content: "✕";
+                font-weight: 700;
+                left: 0;
+                position: absolute;
+            }
         }
     }
 
-    .starter__stat-number {
-        color: $color--primary;
-        font-weight: 800;
+    // $500 list: bold item title with a short line of detail under it
+    .starter__checks--detailed {
+        li {
+            margin-bottom: $space--md;
+        }
+
+        strong,
+        span {
+            display: block;
+        }
+
+        span {
+            color: $color--text;
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+    }
+
+    // Typical agency vs Jelly Development
+    .starter__compare-wrap {
+        overflow-x: auto;
+    }
+
+    .starter__compare {
+        border-collapse: collapse;
+        font-size: 0.9375rem;
+        line-height: 1.5;
+        min-width: 480px;
+        width: 100%;
+
+        th,
+        td {
+            border-bottom: 1px solid $color--gray-two;
+            padding: $space--md $space--sm;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        thead th {
+            color: $color--heading;
+            font-weight: 700;
+        }
+
+        tbody th {
+            color: $color--heading;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        td {
+            color: $color--gray-three;
+        }
+
+        // Highlight the Jelly Development column
+        thead th:last-child,
+        td:last-child {
+            background: $color--primary-lightest;
+            color: $color--heading;
+            font-weight: 600;
+        }
+
+        thead th:last-child {
+            border-top-left-radius: $radius--sm;
+            border-top-right-radius: $radius--sm;
+            color: $color--primary;
+        }
     }
 
     .starter__final {
         border-color: $color--primary;
-    }
-
-    .starter__sources {
-        border-top: 1px solid rgba(56, 93, 216, 0.15);
-        padding-top: $space--xl;
-
-        h2 {
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        li {
-            color: $color--gray-three;
-            font-size: 0.8125rem;
-            line-height: 1.6;
-        }
     }
 }

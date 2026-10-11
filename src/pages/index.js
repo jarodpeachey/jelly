@@ -20,7 +20,7 @@ const FAQS = [
     { q: "How does payment work? Do I need a long-term contract?", a: "No long-term contract. You pay half up front to get started and half at launch. If you don't love the design preview, you get your deposit back, and you have 14 days after launch to ask for a full refund. The optional care plan is month-to-month, so you can cancel anytime." },
     { id: "refund", q: "What is your refund policy?", a: "If you don't love the design preview, we refund your full deposit, and after launch you have 14 days to ask for a full refund. If you're refunded after launch, we take the site down and keep the code, images, and designs we created. Your domain and everything you gave us (logo, photos, text, and accounts) stay yours." },
     { q: "What if I already have a website?", a: "We'll audit it for free. If it needs a full rebuild, we'll handle it. If parts are salvageable, we'll tell you." },
-    { q: "Do you handle hosting?", a: "Yes. Starter includes 1 month of free hosting, Growth includes 3 months, and Premium includes 6 months. After that, hosting is $19.99/mo, or included at no extra cost if you're on our monthly care plan." },
+    { q: "Do you handle hosting?", a: "Yes. Starter includes 1 month of free hosting, Growth includes 3 months, and Premium includes 6 months. After that, hosting is $9.99/mo, or included at no extra cost if you're on our monthly care plan." },
     { q: "Do you provide the domain name?", a: "No. You'll need to purchase and own your own domain. We'll guide you through the process if needed, but keeping the domain in your name ensures you always have full ownership of your online presence." },
     { q: "Will my site rank on Google?", a: "Every site we build includes on-page SEO setup. Rankings depend on your market and competition, but we give you the best possible foundation." },
 ];
@@ -441,7 +441,7 @@ const HomeContent = () => {
                                         <p className="pricing-card__desc">Perfect for new businesses that need a fast, professional online presence without the bloat.</p>
                                         <ul className="pricing-card__features">
                                             {[
-                                                "1-page website",
+                                                "Up to 3 pages",
                                                 "On-page SEO setup",
                                                 "Performance optimization",
                                                 "Mobile-first design",
@@ -517,8 +517,8 @@ const HomeContent = () => {
                                     <div className="pricing-addon">
                                         <div className="pricing-addon__info">
                                             <div className="pricing-addon__label pill">Add-On</div>
-                                            <h3>Monthly Care Plan: $199/mo</h3>
-                                            <p>Keep your site fast, secure, and ranking. Includes hosting, SSL, security monitoring, weekly backups, plugin/software updates, Google Analytics reporting, and up to 2 hours of content edits per month.</p>
+                                            <h3>Monthly Care Plan: $59.99/mo</h3>
+                                            <p>Keep your site fast, secure, and ranking. Includes hosting, SSL, security monitoring, weekly backups, plugin/software updates, Google Analytics reporting, and up to 5 hours of content edits per month.</p>
                                         </div>
                                         <div className="pricing-addon__cta">
                                             <a href={JOTFORM_URL} target="_blank" rel="noopener noreferrer" className="btn">Add to My Package →</a>
@@ -528,7 +528,7 @@ const HomeContent = () => {
                             </div>
                             <div className="row">
                                 <div className="col-12">
-                                    <p className="pricing__hosting-note">* Hosting is $19.99/mo after the free period, or included at no extra cost with our Monthly Care Plan.</p>
+                                    <p className="pricing__hosting-note">* Hosting is $9.99/mo after the free period, or included at no extra cost with our Monthly Care Plan.</p>
                                 </div>
                             </div>
                         </div>
