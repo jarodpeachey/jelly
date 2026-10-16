@@ -91,6 +91,7 @@ Note: the website itself uses Poppins and primary blue `#385dd8` (see COMPANY.md
 - `/blog` and `/blog/<slug>`: generated in `gatsby-node.js` from markdown in `src/content/posts/` using `src/templates/blog.js` and `post.js`
 - City landing pages built on `src/components/LocationPage.js`: altamonte-springs, apopka, clermont, deltona, kissimmee, lake-mary, oviedo, sanford, winter-garden, winter-park
 - `/starter` (`src/pages/starter.js`): ad landing page for the $500 Starter. Full-page navy blue grid, 900px centered column, `LandingNav` (centered logo, no menu). All CTAs use the `CALENDLY_URL` constant at the top of the file.
+- `/partners` (`src/pages/partners.js`): referral partner program page (secondary page style, text only). Commission rate is the `RATE` constant; payouts are calculated from the package prices in that file, so update them with any price change.
 - Other: `landing-pages.js`, `success.js`, `error.js`, `404.js`
 - Navigation links: Work, Pricing (`/#pricing`), Contact
 

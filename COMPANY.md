@@ -149,6 +149,17 @@ Reliable, fast hosting after the free period ends. Always included at no extra c
 
 ---
 
+## Partner Program
+
+Page: `/partners` (`src/pages/partners.js`)
+
+- **Commission:** 15% of the one-time build fee ($75 Starter, $210 Growth, $450 Premium)
+- **When paid:** after the referred site is live, paid in full, and its 14-day refund window has closed
+- **Not included:** hosting and the Monthly Care Plan
+- **Eligibility:** the business must be new to Jelly Development; free to join, no cap
+
+---
+
 ## Payment & Policies
 
 - **Payment:** 50% up front (the deposit, $250 on Starter), 50% at launch

@@ -1,0 +1,44 @@
+@use "../colors" as *;
+@use "../spacing" as *;
+
+// /partners: secondary page header, then a single readable column of text.
+.partners-page {
+    .partners {
+        max-width: 760px;
+        padding-bottom: $space--xxxl;
+        padding-top: $space--xxl;
+
+        h2 {
+            margin-top: $space--xxl;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        ul {
+            margin-bottom: $space--lg;
+            padding-left: 1.25rem;
+        }
+
+        li {
+            margin-bottom: $space--sm;
+        }
+
+        strong {
+            color: $color--heading;
+            font-weight: 600;
+        }
+    }
+
+    .partners__contact {
+        display: flex;
+        flex-direction: column;
+        font-style: normal;
+        gap: $space--xs;
+
+        a {
+            color: $color--primary;
+        }
+    }
+}
