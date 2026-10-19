@@ -32,6 +32,9 @@ const Partners = () => (
                     <span className="pill">Partner Program</span>
                     <h1>Send us a client. Get paid.</h1>
                     <p>Earn {RATE * 100}% of every website project you refer to Jelly Development.</p>
+                    <a href={`mailto:${EMAIL}?subject=Referral`} className="btn">
+                        Send a referral
+                    </a>
                 </div>
             </section>
 
