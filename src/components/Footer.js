@@ -50,7 +50,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="container footer__links">
                 {LINKS.map((col) => (
-                    <nav key={col.heading} aria-label={col.heading} className="footer__col">
+                    <div key={col.heading} className="footer__col">
                         <h2 className="footer__heading">{col.heading}</h2>
                         <ul>
                             {col.items.map((item) => (
@@ -59,7 +59,7 @@ const Footer = () => {
                                 </li>
                             ))}
                         </ul>
-                    </nav>
+                    </div>
                 ))}
             </div>
             <div className="container">
