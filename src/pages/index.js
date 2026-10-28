@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import SEO from "../components/SEO";
+import SEO, { faqSchema } from "../components/SEO";
 import Navigation from "../components/Navigation";
 import "../styles/partials/pages/_home.scss";
 import Footer from "../components/Footer";
+import FinalCta from "../components/FinalCta";
 import Form from "../components/Form";
 import Carousel from "../components/Carousel";
 import { PopupProvider, usePopup } from "../context/PopupContext";
@@ -72,7 +73,7 @@ const HomeContent = () => {
 
     return (
         <>
-            <SEO bodyClass="home" />
+            <SEO bodyClass="home" schema={faqSchema(FAQS)} />
 
             <header>
                 <Navigation />
@@ -85,7 +86,7 @@ const HomeContent = () => {
                             <div className="col-12 col-lg-6 hero__left">
                                 <span className="pill">Orlando Web Design</span>
                                 <h1>
-                                    Websites That Bring More Customers to <span>Orlando Small Businesses</span>
+                                    Orlando Web Design That Brings More Customers to <span>Small Businesses</span>
                                 </h1>
                                 <p className="section-description hero__paragraph">
                                     Fast, mobile-optimized websites built to rank on Google and convert visitors into real leads - starting at just $500
@@ -318,7 +319,7 @@ const HomeContent = () => {
                             <div className="row">
                                 <div className="col-12">
                                     <span className="pill">The Solution</span>
-                                    <h2>We Build Websites That Turn<br /> <span className="color-primary">Traffic Into Customers</span></h2>
+                                    <h2>Orlando Web Design That Turns<br /> <span className="color-primary">Traffic Into Customers</span></h2>
                                 </div>
                             </div>
                             <div className="row">
@@ -577,19 +578,7 @@ const HomeContent = () => {
                     </section>
 
                     {/* FINAL CTA */}
-                    <section className="final-cta">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-12">
-                                    <h2>Ready to Get More Customers From Your Website?</h2>
-                                    <p className="final-cta__subtitle">Join Orlando businesses that are finally getting real results online. Your free homepage preview is waiting.</p>
-                                    <a href={JOTFORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--white">
-                                        Get Your Free Homepage Preview →
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <FinalCta />
                 </main>
             </div>
             <Footer />

@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 const NotFound = ({ props }) => {
   return (
     <>
-      <SEO bodyClass="default" />
+      <SEO bodyClass="default" noindex />
 
       <header>
         <Navigation noButton={true} />

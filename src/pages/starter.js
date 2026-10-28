@@ -24,6 +24,7 @@ const Starter = () => (
     <>
         <SEO
             bodyClass="starter-page"
+            noindex
             title="A Better Website for $500 | Jelly Development"
             description="Your business needs a better website. Jelly Development will build you one for $500. Love the design or get your money back."
         />

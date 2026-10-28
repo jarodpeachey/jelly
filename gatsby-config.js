@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: `Jelly Development | Website design agency in Orlando`,
-        description: `Website design agency for small businesses in Orlando and Winter Garden - specializing in WordPress, Shopify, Squarespace and custom solutions.`,
+        title: `Orlando Web Design for Small Businesses | Jelly Development`,
+        description: `Orlando web design for small businesses. Fast, custom websites built to rank on Google and bring in customers. Flat pricing from $500. Free strategy call.`,
         author: `Jelly Development`,
         siteUrl: "https://jellydevelopment.com",
     },
@@ -86,7 +86,13 @@ module.exports = {
         //   },
         // },
         "gatsby-plugin-robots-txt",
-        "gatsby-plugin-sitemap",
+        {
+            resolve: "gatsby-plugin-sitemap",
+            options: {
+                // Utility pages are noindex; keep them out of the sitemap too
+                excludes: ["/success/", "/error/", "/404/", "/404.html", "/dev-404-page/", "/starter/"],
+            },
+        },
         {
             resolve: `gatsby-plugin-csp`,
             options: {

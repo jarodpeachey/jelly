@@ -9,6 +9,7 @@
 @use "partials/_inputs" as *;
 @use "partials/_footer.scss" as *;
 @use "partials/_secondary-page" as *;
+@use "partials/_final-cta" as *;
 
 html body .document-root div.request-storage-access {
     justify-content: flex-start !important;

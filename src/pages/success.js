@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 const Success = () => {
   return (
     <>
-      <SEO bodyClass="success-page secondary-page" title="Thank You | Jelly Development" />
+      <SEO bodyClass="success-page secondary-page" title="Thank You | Jelly Development" noindex />
 
       <header>
         <Navigation />

@@ -1,0 +1,20 @@
+@use "../spacing" as *;
+
+// /services/* pages: secondary page header, a short readable column of text, then the final CTA.
+.service-page {
+    .service-page__body {
+        max-width: 760px;
+        padding-bottom: $space--xxxl;
+        padding-top: $space--xxl;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // Keep the final CTA's grid inside its own section (on the homepage it bleeds into the section above)
+    .final-cta::before {
+        height: 100%;
+        top: 0;
+    }
+}

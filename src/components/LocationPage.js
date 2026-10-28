@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import SEO from "./SEO";
+import SEO, { faqSchema } from "./SEO";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
+import FinalCta from "./FinalCta";
 import "../styles/partials/pages/_home.scss";
 import { PopupProvider, usePopup } from "../context/PopupContext";
 
@@ -72,6 +73,7 @@ const LocationContent = ({ city }) => {
         <>
             <SEO
                 bodyClass="home"
+                schema={faqSchema(FAQS)}
                 title={`Web Design ${city}, FL | Jelly Development`}
                 description={`Affordable, fast web design for ${city} small businesses. Custom websites built to rank on Google and convert visitors into real leads. Free strategy call.`}
             />
@@ -412,19 +414,7 @@ const LocationContent = ({ city }) => {
                         </div>
                     </section>
 
-                    <section className="final-cta">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-12">
-                                    <h2>Ready to Get More Customers From Your Website?</h2>
-                                    <p className="final-cta__subtitle">Join {city} businesses that are finally getting real results online. Your free homepage preview is waiting.</p>
-                                    <a href={JOTFORM_URL} target="_blank" rel="noopener noreferrer" className="btn btn--white">
-                                        Get Your Free Homepage Preview →
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <FinalCta city={city} />
                 </main>
             </div>
             <Footer />

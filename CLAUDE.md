@@ -92,8 +92,10 @@ Note: the website itself uses Poppins and primary blue `#385dd8` (see COMPANY.md
 - City landing pages built on `src/components/LocationPage.js`: altamonte-springs, apopka, clermont, deltona, kissimmee, lake-mary, oviedo, sanford, winter-garden, winter-park
 - `/starter` (`src/pages/starter.js`): ad landing page for the $500 Starter. Full-page navy blue grid, 900px centered column, `LandingNav` (centered logo, no menu). All CTAs use the `CALENDLY_URL` constant at the top of the file.
 - `/partners` (`src/pages/partners.js`): referral partner program page (secondary page style, text only). Commission rate is the `RATE` constant; payouts are calculated from the package prices in that file, so update them with any price change.
+- `/services/*` (`src/pages/services/`): short service pages (orlando-seo, mobile-first-web-design, website-maintenance, landing-page-design) built on `src/components/ServicePage.js`: secondary page header, 2-3 paragraphs, then the shared `FinalCta` section. Linked from the footer.
 - Other: `landing-pages.js`, `success.js`, `error.js`, `404.js`
 - Navigation links: Work, Pricing (`/#pricing`), Contact
+- Footer links (`src/components/Footer.js`): Services, Service Areas (all city pages), Company. Add new public pages here so Google can find them.
 
 ## Code layout
 
@@ -112,5 +114,6 @@ Note: the website itself uses Poppins and primary blue `#385dd8` (see COMPANY.md
 - Use the existing SCSS tokens (colors, spacing, radii, shadows) instead of hard-coded values.
 - New page styles go in `src/styles/partials/pages/_<page>.scss`.
 - "Secondary page style": the dark navy hero with the blue grid, defined once as `.secondary-hero` in `src/styles/partials/_secondary-page.scss`. Used on `/work`, the case study pages, and `/contact`. Put a pill, h1, and p inside it; add page-specific modifiers alongside (e.g. `secondary-hero case-hero`). Also add `secondary-page` to the page's SEO `bodyClass` so the desktop nav links turn white (90% opacity, 100% on hover).
+- SEO: every page gets canonical, Open Graph, and business/website JSON-LD from `SEO.js`. Pass `schema` for page-specific JSON-LD (`faqSchema(FAQS)` builds FAQPage from an FAQ list) and `noindex` for pages that shouldn't be in Google (also add them to the sitemap `excludes` in `gatsby-config.js`). `/starter`, `/success`, `/error`, and 404 are noindex.
 - Match the site's type: headings weight 800, body weight 300, pills 13px/600 uppercase. Full specs in COMPANY.md.
 - Site copy follows the same copy rules as outreach: concise, friendly, conversational, no em dashes.

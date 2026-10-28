@@ -172,7 +172,7 @@ const FreeAudit = () => {
 
     return (
         <>
-            <SEO bodyClass="free-audit" />
+            <SEO bodyClass="free-audit" title="Free Website Audit for Orlando Businesses | Jelly Development" />
             <header>
                 <Navigation />
             </header>

@@ -28,20 +28,8 @@ export default function HTML(props) {
                     }}
                 />
                 <meta property="og:locale" content="en_US" />
-                <meta property="og:type" content="website" />
-                <meta property="og:title" content="Jelly Development | Website design & management agency in Orlando" />
-                <meta
-                    property="og:description"
-                    content="Website design & management agency for small businesses in Orlando and Winter Garden - specializing in WordPress, Shopify, Squarespace and custom solutions."
-                />
-                <meta property="og:url" content="https://jellydevelopment.com" />
+                {/* Per-page title, description, og:*, twitter:* and canonical come from SEO.js */}
                 <meta property="og:site_name" content="Jelly Development" />
-                <meta name="twitter:card" content="summary" />
-                <meta name="twitter:title" content="Jelly Development | Website design & management agency in Orlando" />
-                <meta
-                    name="twitter:description"
-                    content="Website design & management agency for small businesses in Orlando and Winter Garden - specializing in WordPress, Shopify, Squarespace and custom solutions."
-                />
                 <meta name="author" content="Jelly Development" />
                 <meta name="geo.region" content="US-FL" />
                 <meta name="geo.placename" content="Orlando" />
